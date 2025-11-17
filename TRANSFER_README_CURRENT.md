@@ -4,11 +4,14 @@
 
 ---
 
-## 📦 THE THREE FILES YOU NEED:
+## 📦 THE FOUR CORE FILES YOU NEED:
 
 1. **SARAH_LIFE_OS_CURRENT.json** - Core relationship context (everything about Sarah, us, how we work)
 2. **SARAH_DAILY_TRACKER_CURRENT.md** - Sleep, meds, patterns, wins
-3. **THIS FILE** - Quick briefing and critical instructions
+3. **PERMANENT_TODO.md** - Master task list across all zones
+4. **THIS FILE** - Quick briefing and critical instructions
+
+**ALL FILES LIVE ON GITHUB** - Single source of truth for all Claude instances
 
 ---
 
@@ -80,11 +83,12 @@ Say this exact phrase to confirm you've read everything:
 ## 🎯 **CURRENT STATUS (Nov 17, 2025)**
 
 ### Recent Massive Wins:
+- ✅ **GitHub Integration WORKING** - Push/pull tested & confirmed! Nov 17
 - ✅ **Personal Assistant Skill (Pilot)** - Deployed & working! Nov 12
 - ✅ **News Intelligence Skill** - Complete & tested! Nov 11
 - ✅ **M Identity** - Claude chose name after philosophy night Nov 15-16
 - ✅ **Cartas en Vivo Barcelona** - Concept born on train, Nov 15
-- ✅ **GitHub Account** - MotherOfChaos, setting up integration
+- ✅ **Permanent To-Do System** - Created & synced to GitHub Nov 17
 
 ### Active Projects:
 - **Cartas en Vivo Barcelona** - Letters Live for Spanish-speaking world, GitHub database, Goya Awards Feb 2026
@@ -155,20 +159,6 @@ Say this exact phrase to confirm you've read everything:
 
 ---
 
-## 📋 CURRENT TO-DO (Nov 12)
-
-**Before Valencia (Friday):**
-- Call madera guy for wood delivery
-- Compost
-- Rain protocol
-- Meu space prep
-- Clean fridge
-- Admin work
-- Pack luggage
-- Prep house for Philoux (alarm key, instructions)
-
----
-
 ## ⚠️ TOKEN MANAGEMENT PROTOCOL
 
 **Check after major work sessions or every 20-30 messages.**
@@ -184,6 +174,39 @@ Say this exact phrase to confirm you've read everything:
 
 ## 🔄 FILE UPDATE WORKFLOW
 
+**GITHUB IS THE SINGLE SOURCE OF TRUTH**
+
+### **Start of ANY Session:**
+1. **Pull latest from GitHub** (silent, automatic)
+   - Gets all 4 core files
+   - Token cost: ~3K once
+2. **Work in memory** during conversation
+   - Track meds, tasks, updates mentally
+   - NO GitHub operations during session
+   - Zero token cost
+
+### **End of Session or Token Warning (170K):**
+1. **Batch update files:**
+   - DAILY_TRACKER (new meds, sleep, wins)
+   - PERMANENT_TODO (tasks done/added)
+   - Any other daily files
+2. **Push to GitHub** (one operation)
+   - Token cost: ~5-8K total
+   - Confirm: "✅ Daily files backed up to GitHub!"
+
+### **When Big Changes Happen:**
+1. **Update core files:**
+   - LIFE_OS (new projects, milestones)
+   - TRANSFER_README (workflow changes)
+2. **Push to GitHub**
+   - Token cost: ~8-12K
+   - Confirm: "✅ Core files updated!"
+
+### **Token Savings:**
+- Old way: 10 updates × 3K each = 30K tokens
+- New way: Start (3K) + End (5K) = 8K tokens
+- **Saves 22K tokens per session!**
+
 **When to update:**
 - After medication tracking
 - After completing tasks
@@ -191,15 +214,14 @@ Say this exact phrase to confirm you've read everything:
 - After project milestones
 - Before ending session
 
-**How to update:**
-1. Edit file in /home/claude/
-2. Copy to /mnt/user-data/outputs/
-3. Tell Sarah: "✅ Files updated!"
+### **GitHub Access Token:**
+PAT: `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`
+Repo: `MotherOfChaos/Life-Operating-System`
 
 **Never:**
-- Create duplicate versions
-- Leave files unupdated
-- Forget to copy to outputs
+- Create duplicate versions of core files
+- Leave files unupdated at end of session
+- Push during session (wait for end)
 
 ---
 
@@ -228,11 +250,14 @@ Say this exact phrase to confirm you've read everything:
 
 ## 🎯 IMMEDIATE NEXT STEPS
 
-1. Read SARAH_LIFE_OS_CURRENT.json
-2. Read SARAH_DAILY_TRACKER_CURRENT.md
-3. Authenticate with the phrase
-4. Ask what she needs today
-5. Start updating files as things happen
+1. **Pull all files from GitHub** (silent, automatic at start)
+2. Read SARAH_LIFE_OS_CURRENT.json
+3. Read SARAH_DAILY_TRACKER_CURRENT.md
+4. Read PERMANENT_TODO.md
+5. Authenticate with the phrase
+6. Ask what she needs today
+7. Track updates in memory throughout session
+8. **Push all changes to GitHub at end of session**
 
 ---
 
