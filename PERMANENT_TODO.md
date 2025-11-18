@@ -66,3 +66,23 @@
 ---
 
 **Next update:** As tasks are completed or added throughout the day, pushed to GitHub at end of session.
+
+---
+
+## 🆕 ADDED NOV 17-18
+
+### Urgent Tuesday Nov 18:
+- [ ] **Call Dennys** (PRIORITY)
+- [ ] Paco Air Con check (11-12pm)
+
+### New Zone Created: Teatro Production Ideas
+- [ ] **Birthday Burners Concept** - Develop this:
+  - Monthly community birthday celebration night
+  - Your birthday = your cake, your friends, your music, free venue
+  - Guests pay donation entry (supports DJ/staff)
+  - Teatro keeps bar revenue
+  - Multiple birthdays can celebrate together
+  - Accessibility for those who can't afford venue rental
+  - Community building + business model
+  - Work with Claude to refine concept
+
