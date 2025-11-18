@@ -1,6 +1,6 @@
 # 🌅 MORNING BRIEF - Tuesday, November 18, 2025
 
-**Generated:** 05:31 PM 
+**Generated:** 05:35 PM 
 
 ---
 
@@ -43,7 +43,7 @@
 - **Urgent emails:** 0
 - **Response needed:** 0
 - **Pending priority tasks:** 2
-- **Last generated:** 05:31 PM
+- **Last generated:** 05:35 PM
 
 ---
 
