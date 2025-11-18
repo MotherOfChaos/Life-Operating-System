@@ -1,0 +1,1438 @@
+{
+  "database_info": {
+    "name": "Global Media Database",
+    "version": "2.0 - Complete Rebuild",
+    "created": "2025-11-08",
+    "updated": "2025-11-11",
+    "purpose": "Comprehensive global news sources for Claude Skill - balanced news intelligence",
+    "total_sources": 95,
+    "creator": "Sarah Poer / Mother Of Chaos",
+    "status": "Ready for Claude Skill integration"
+  },
+  "political_lean_legend": {
+    "L": "Left",
+    "LL": "Lean Left / Left-Center",
+    "C": "Center / Least Biased",
+    "LR": "Lean Right / Right-Center",
+    "R": "Right",
+    "SG": "State-Guided / Government Controlled",
+    "M": "Mixed (varies by section/program)"
+  },
+  "credibility_ratings": {
+    "high": "Rigorous fact-checking, transparent corrections, strong editorial standards",
+    "medium": "Generally reliable but occasional lapses, less rigorous fact-checking",
+    "mixed": "Quality varies significantly by section or journalist",
+    "low": "Frequent inaccuracies, poor fact-checking, sensationalism",
+    "propaganda": "State-controlled narrative, not independent journalism"
+  },
+  "legitimacy_criteria": {
+    "tier_1": "Automatic inclusion - Established outlets (50+ years), major awards (Pulitzer, etc.), recognized as paper of record, IFCN fact-checker certification",
+    "tier_2": "Credentialed individuals - Professional journalism background, verified credentials (PhD, major outlet experience), consistent quality track record",
+    "tier_3": "Emerging quality - Transparent practices, documented fact-checking, independent verification possible, growing reputation"
+  },
+  "usage_notes": {
+    "for_claude_skill": "Cross-reference articles from different political leans and geographic regions. Compare coverage of same event across Center, Left-leaning, and Right-leaning sources. Prioritize 'high' credibility sources. Flag 'propaganda' sources as single-perspective only. Use geographic diversity to avoid Western-centric bias.",
+    "fact_checking_method": "1) Identify key claims in article. 2) Search for same claims in sources with different political leans. 3) Check if facts are reported consistently. 4) Flag opinion vs fact. 5) Note when sources disagree on facts (rare for legitimate news). 6) Provide user with factual core + range of perspectives.",
+    "bias_handling": "Political lean ≠ unreliable. High credibility sources with clear lean are valuable for understanding different perspectives. The goal is presenting facts + noting where interpretation differs."
+  },
+  "global_news_agencies": [
+    {
+      "name": "Associated Press (AP)",
+      "type": "news_agency",
+      "url": "https://apnews.com",
+      "political_lean": "L",
+      "political_lean_notes": "Moved from Lean Left to Left (Nov 2024) per AllSides review. Some conservative critics note progressive social issue framing.",
+      "credibility": "high",
+      "founded": 1846,
+      "headquarters": "New York, USA",
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialty": "Breaking news, wire service, global coverage",
+      "notes": "Oldest news agency in USA. Cooperative owned by member newspapers. Pulitzer Prize winner. IFCN certified fact-checker. Updates bias rating based on blind surveys.",
+      "tier": 1
+    },
+    {
+      "name": "Reuters",
+      "type": "news_agency",
+      "url": "https://www.reuters.com",
+      "political_lean": "C",
+      "political_lean_notes": "Center rating with high confidence. Recognized as least biased of major agencies.",
+      "credibility": "high",
+      "founded": 1851,
+      "headquarters": "London, UK",
+      "languages": [
+        "en",
+        "es",
+        "fr",
+        "de",
+        "it",
+        "pt",
+        "ar",
+        "zh",
+        "ja",
+        "ko"
+      ],
+      "specialty": "Financial news, international breaking news, wire service",
+      "notes": "One of 'Big Three' global agencies. Owned by Thomson Reuters. Multiple Pulitzer Prizes. Reuters Fact Check certified by IFCN. Trust Principles guarantee editorial independence.",
+      "tier": 1
+    },
+    {
+      "name": "Agence France-Presse (AFP)",
+      "type": "news_agency",
+      "url": "https://www.afp.com",
+      "political_lean": "C",
+      "political_lean_notes": "Center. Some right-leaning critics note occasional progressive framing on social issues.",
+      "credibility": "high",
+      "founded": 1835,
+      "headquarters": "Paris, France",
+      "languages": [
+        "fr",
+        "en",
+        "es",
+        "de",
+        "pt",
+        "ar"
+      ],
+      "specialty": "International news, wire service, global coverage",
+      "notes": "One of 'Big Three' global agencies. Public establishment with autonomous status. 2,400 journalists in 260 bureaus across 151 countries. AFP Fact Check certified by IFCN.",
+      "tier": 1
+    },
+    {
+      "name": "ANSA (Agenzia Nazionale Stampa Associata)",
+      "type": "news_agency",
+      "url": "https://www.ansa.it",
+      "political_lean": "C",
+      "political_lean_notes": "Least biased - neutral, balanced.",
+      "credibility": "high",
+      "languages": [
+        "it",
+        "en",
+        "es",
+        "de",
+        "pt",
+        "ar"
+      ],
+      "founded": 1945,
+      "ownership": "Non-profit cooperative - 36 member newspapers are shareholders",
+      "headquarters": "Rome, Italy",
+      "specialty": "National and international news agency - Italy's leading",
+      "notes": "Founded January 15, 1945 post-WWII by Italian Resistance representatives. Explicitly NOT government-controlled, created as cooperative to avoid government/private control. 22 offices in Italy, 81 offices in 78 countries. Distributes 3,500+ news items, 1,500+ photos daily. IFCN-certified fact-checker. 'Most legitimate source of Italian news internationally.'",
+      "tier": 1
+    },
+    {
+      "name": "Deutsche Presse-Agentur (DPA)",
+      "type": "news_agency",
+      "url": "https://www.dpa.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1949,
+      "headquarters": "Hamburg, Germany",
+      "languages": [
+        "de",
+        "en",
+        "es",
+        "ar"
+      ],
+      "specialty": "German and European news, wire service",
+      "notes": "Germany's largest news agency. Cooperative owned by German media companies. IFCN fact-checker. About 1,000 journalists worldwide.",
+      "tier": 1
+    },
+    {
+      "name": "EFE",
+      "type": "news_agency",
+      "url": "https://www.efe.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1939,
+      "headquarters": "Madrid, Spain",
+      "languages": [
+        "es",
+        "en",
+        "pt",
+        "ar"
+      ],
+      "specialty": "Spanish and Latin American news, wire service",
+      "notes": "Spain's international news agency. Fourth largest wire service globally. Public company but editorially independent. EFE Verifica fact-checking service.",
+      "tier": 1
+    },
+    {
+      "name": "Xinhua News Agency",
+      "type": "news_agency",
+      "url": "http://www.xinhuanet.com",
+      "political_lean": "SG",
+      "credibility": "propaganda",
+      "founded": 1931,
+      "headquarters": "Beijing, China",
+      "languages": [
+        "zh",
+        "en",
+        "es",
+        "fr",
+        "ru",
+        "ar",
+        "pt"
+      ],
+      "specialty": "Chinese state perspective, international news",
+      "notes": "Official state press agency of China. Directly controlled by Communist Party. Largest in Asia. Useful for understanding Chinese government perspective but NOT independent journalism.",
+      "tier": 1
+    },
+    {
+      "name": "TASS (Russian News Agency)",
+      "type": "news_agency",
+      "url": "https://tass.com",
+      "political_lean": "SG",
+      "credibility": "propaganda",
+      "founded": 1904,
+      "headquarters": "Moscow, Russia",
+      "languages": [
+        "ru",
+        "en",
+        "es",
+        "ar"
+      ],
+      "specialty": "Russian state perspective, international news",
+      "notes": "State-owned news agency. Official government mouthpiece. Useful for understanding Russian government perspective but NOT independent journalism.",
+      "tier": 1
+    },
+    {
+      "name": "Press Trust of India (PTI)",
+      "type": "news_agency",
+      "url": "https://www.ptinews.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1947,
+      "headquarters": "New Delhi, India",
+      "languages": [
+        "en",
+        "hi"
+      ],
+      "specialty": "Indian news, South Asian coverage",
+      "notes": "India's largest news agency. Non-profit cooperative. 500+ journalists across India. Provides news to most Indian publications.",
+      "tier": 1
+    },
+    {
+      "name": "Kyodo News",
+      "type": "news_agency",
+      "url": "https://english.kyodonews.net",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1945,
+      "headquarters": "Tokyo, Japan",
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "specialty": "Japanese news, Asian coverage",
+      "notes": "Japan's leading news agency. Nonprofit cooperative owned by member newspapers and broadcasters. About 50 bureaus worldwide.",
+      "tier": 1
+    }
+  ],
+  "italy": [
+    {
+      "name": "Corriere della Sera",
+      "type": "newspaper",
+      "url": "https://www.corriere.it",
+      "political_lean": "C",
+      "political_lean_notes": "Centre/centre-right. Least biased - balanced story selection with both left and right-wing writers.",
+      "credibility": "high",
+      "languages": [
+        "it"
+      ],
+      "founded": 1876,
+      "circulation": "246,278 (May 2023)",
+      "ownership": "RCS MediaGroup (Diego della Valle + RCS)",
+      "specialty": "General news, Italy's national newspaper of record",
+      "notes": "Italy's most-read and oldest newspaper. Founded 1876. Represents moderate bourgeoisie. Balanced/impartial reporting. 9M+ monthly website visitors. Over 500K digital subscribers. Cultural supplement La Lettura. 600 correspondents throughout Italy, bureaus in 20 foreign cities. Media Bias Fact Check: Least Biased, High factual reporting.",
+      "tier": 1
+    },
+    {
+      "name": "La Repubblica",
+      "type": "newspaper",
+      "url": "https://www.repubblica.it",
+      "political_lean": "LL",
+      "political_lean_notes": "Left-center/centre-left. Founded as radical left, moderated to milder centre-left stance.",
+      "credibility": "high",
+      "languages": [
+        "it"
+      ],
+      "founded": 1976,
+      "circulation": "275,200 (2015)",
+      "ownership": "GEDI Gruppo Editoriale (majority owned by Exor/Agnelli family since 2020)",
+      "specialty": "General news, politics, culture, investigative",
+      "notes": "Founded by Eugenio Scalfari & Carlo Caracciolo 1976. Second most-circulated Italian newspaper. 10 local editions. Known for culture, intellect, fact-checking. Ownership: Agnelli family (Fiat, Economist Group). Media Bias Fact Check: Left-Center bias, High factual reporting. Progressive outlet despite corporate ownership.",
+      "tier": 1
+    },
+    {
+      "name": "Internazionale",
+      "type": "magazine",
+      "url": "https://www.internazionale.it",
+      "political_lean": "LL",
+      "political_lean_notes": "Progressive/left-leaning. Independent.",
+      "credibility": "high",
+      "languages": [
+        "it"
+      ],
+      "founded": 1993,
+      "circulation": "123,000 weekly",
+      "ownership": "Independent (founded by Giovanni De Mauro + 3 co-founders, still run by founders)",
+      "specialty": "Translated international press, long-form journalism, international affairs",
+      "notes": "Selects and translates best articles from international press into Italian. Weekly magazine. Features work from Noam Chomsky, Christopher Hitchens, Nick Hornby, Joe Sacco, Marjane Satrapi. Organizes annual 'Internazionale a Ferrara' journalism festival (76,000 attendees). Progressive International member. Crucially independent in Italy's media-concentrated landscape. One of Italy's most popular current-affairs weeklies.",
+      "tier": 1
+    },
+    {
+      "name": "il Fatto Quotidiano",
+      "type": "independent_newspaper",
+      "url": "https://www.ilfattoquotidiano.it",
+      "founder": "Marco Travaglio + Antonio Padellaro",
+      "political_lean": "LL",
+      "political_lean_notes": "Left-wing populist, anti-establishment. Pro-Five Star Movement.",
+      "credibility": "high",
+      "languages": [
+        "it"
+      ],
+      "founded": 2009,
+      "funding_model": "Sales + subscriptions + advertising, NO state subsidies",
+      "circulation": "113,000+ (2009 launch)",
+      "specialty": "Anti-corruption, investigative, political accountability",
+      "notes": "Third most-visited news site in Italy. Rated most independent and trustworthy online Italian news. Refuses government subsidies unlike rivals. Media Bias Fact Check: Left-Center bias, High factual reporting.",
+      "tier": 1
+    }
+  ],
+  "spain": [
+    {
+      "name": "El País",
+      "type": "newspaper",
+      "url": "https://elpais.com",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1976,
+      "headquarters": "Madrid, Spain",
+      "languages": [
+        "es",
+        "en",
+        "pt"
+      ],
+      "specialty": "General news, Spanish politics, culture",
+      "notes": "Spain's highest-circulation daily. Center-left editorial line. Owned by PRISA. Strong international coverage. English edition available.",
+      "tier": 1
+    },
+    {
+      "name": "El Mundo",
+      "type": "newspaper",
+      "url": "https://www.elmundo.es",
+      "political_lean": "LR",
+      "credibility": "high",
+      "founded": 1989,
+      "headquarters": "Madrid, Spain",
+      "languages": [
+        "es"
+      ],
+      "specialty": "General news, investigative journalism",
+      "notes": "Spain's second-largest newspaper. Center-right lean. Known for investigative reporting. Owned by Unidad Editorial.",
+      "tier": 1
+    },
+    {
+      "name": "elDiario.es",
+      "type": "independent_digital_newspaper",
+      "url": "https://www.eldiario.es",
+      "founder": "Ignacio Escolar",
+      "political_lean": "LL",
+      "credibility": "high",
+      "languages": [
+        "es"
+      ],
+      "founded": 2012,
+      "funding_model": "Membership subscriptions (socios) + advertising",
+      "subscribers": "14,500+ paying partners (2015), growing",
+      "specialty": "Investigative journalism, politics, corruption",
+      "notes": "Financially successful independent model. Revenue €2.6M (2015), profitable. Defended source protection in court (CPJ commendation). Third most-visited news site in Spain by traffic.",
+      "tier": 1
+    },
+    {
+      "name": "CTXT (Revista Contexto)",
+      "type": "independent_digital_newspaper",
+      "url": "https://ctxt.es",
+      "founder": "Miguel Mora + 14 journalists",
+      "political_lean": "L",
+      "credibility": "high",
+      "languages": [
+        "es",
+        "en"
+      ],
+      "founded": 2015,
+      "funding_model": "Subscriptions + donations, minimal advertising",
+      "specialty": "Long-form analysis, political & economic context, culture",
+      "notes": "Focus on in-depth journalism, not breaking news. Founded by journalists from El País, El Mundo, La Repubblica. Director Miguel Mora was Paris/Rome correspondent for El País for 22 years. Progressive International member.",
+      "tier": 1
+    }
+  ],
+  "france": [
+    {
+      "name": "Le Monde",
+      "type": "newspaper",
+      "url": "https://www.lemonde.fr",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1944,
+      "headquarters": "Paris, France",
+      "languages": [
+        "fr",
+        "en"
+      ],
+      "specialty": "General news, international affairs, analysis",
+      "notes": "France's newspaper of record. Center-left editorial line. Employee-owned. Strong international reporting. Les Décodeurs fact-checking team.",
+      "tier": 1
+    },
+    {
+      "name": "Le Figaro",
+      "type": "newspaper",
+      "url": "https://www.lefigaro.fr",
+      "political_lean": "LR",
+      "credibility": "high",
+      "founded": 1826,
+      "headquarters": "Paris, France",
+      "languages": [
+        "fr"
+      ],
+      "specialty": "General news, conservative perspective",
+      "notes": "France's oldest national newspaper. Center-right editorial line. High circulation. Owned by Dassault Group.",
+      "tier": 1
+    },
+    {
+      "name": "Mediapart",
+      "type": "independent_investigative_newspaper",
+      "url": "https://www.mediapart.fr",
+      "founder": "Edwy Plenel + co-founders",
+      "political_lean": "L",
+      "credibility": "high",
+      "languages": [
+        "fr",
+        "en",
+        "es"
+      ],
+      "founded": 2008,
+      "funding_model": "Digital subscriptions only, NO advertising, NO subsidies",
+      "subscribers": "220,000+ paid subscribers (2021), growing",
+      "specialty": "Investigative journalism, political corruption, financial fraud",
+      "revenue": "€21.3 million annual revenue (2021), 98% from subscriptions",
+      "notes": "Converted to nonprofit 2019 (Fonds pour une Presse Libre). Broken major scandals: Bettencourt affair, Sarkozy-Gaddafi case, Cahuzac affair, Benalla affair. NYT calls it 'France's leading investigative news site'. Sued 200+ times. 6.5M monthly visitors.",
+      "tier": 1
+    }
+  ],
+  "germany": [
+    {
+      "name": "Der Spiegel",
+      "type": "magazine",
+      "url": "https://www.spiegel.de",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1947,
+      "headquarters": "Hamburg, Germany",
+      "languages": [
+        "de",
+        "en"
+      ],
+      "specialty": "Investigative journalism, political affairs",
+      "notes": "Germany's leading news magazine. Center-left. Known for investigative reporting. English edition Spiegel International.",
+      "tier": 1
+    },
+    {
+      "name": "Frankfurter Allgemeine Zeitung (FAZ)",
+      "type": "newspaper",
+      "url": "https://www.faz.net",
+      "political_lean": "LR",
+      "credibility": "high",
+      "founded": 1949,
+      "headquarters": "Frankfurt, Germany",
+      "languages": [
+        "de"
+      ],
+      "specialty": "Business, politics, conservative perspective",
+      "notes": "Germany's newspaper of record. Center-right. High-quality journalism. Strong business coverage.",
+      "tier": 1
+    },
+    {
+      "name": "CORRECTIV",
+      "type": "nonprofit_investigative_newsroom",
+      "url": "https://correctiv.org",
+      "founder": "David Schraven + co-founders",
+      "political_lean": "C",
+      "credibility": "high",
+      "languages": [
+        "de",
+        "en",
+        "ar",
+        "fr",
+        "ru",
+        "tr"
+      ],
+      "founded": 2014,
+      "funding_model": "Donations + foundation grants, NO advertising",
+      "specialty": "Investigative journalism, fact-checking, data journalism",
+      "budget": "€4 million annual budget",
+      "notes": "Germany's first nonprofit investigative newsroom. Staff of 70+. Broken major stories including far-right deportation plan (2024) that sparked massive protests. Runs CORRECTIV.Faktencheck, CORRECTIV.Lokal (1,700+ local journalists network). GIJN member. Multiple journalism awards.",
+      "tier": 1
+    }
+  ],
+  "uk": [
+    {
+      "name": "BBC News",
+      "type": "broadcaster",
+      "url": "https://www.bbc.com/news",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1922,
+      "headquarters": "London, UK",
+      "languages": [
+        "en",
+        "multiple"
+      ],
+      "specialty": "Global news, broadcasting",
+      "notes": "UK public broadcaster. Funded by TV license fee. Editorial independence. BBC Reality Check fact-checking. Available in 40+ languages.",
+      "tier": 1
+    },
+    {
+      "name": "The Guardian",
+      "type": "newspaper",
+      "url": "https://www.theguardian.com",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1821,
+      "headquarters": "London, UK",
+      "languages": [
+        "en"
+      ],
+      "specialty": "Investigative journalism, progressive perspective",
+      "notes": "UK left-leaning quality newspaper. Owned by Scott Trust. Reader-funded model. Strong environmental coverage. Multiple Pulitzers.",
+      "tier": 1
+    },
+    {
+      "name": "The Telegraph",
+      "type": "newspaper",
+      "url": "https://www.telegraph.co.uk",
+      "political_lean": "LR",
+      "credibility": "high",
+      "founded": 1855,
+      "headquarters": "London, UK",
+      "languages": [
+        "en"
+      ],
+      "specialty": "General news, conservative perspective",
+      "notes": "UK conservative quality newspaper. Owned by Barclay family. Strong political coverage.",
+      "tier": 1
+    },
+    {
+      "name": "Financial Times",
+      "type": "newspaper",
+      "url": "https://www.ft.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1888,
+      "headquarters": "London, UK",
+      "languages": [
+        "en"
+      ],
+      "specialty": "Business, finance, economics",
+      "notes": "Leading global business newspaper. Center editorial line. Owned by Nikkei. High-quality analysis.",
+      "tier": 1
+    }
+  ],
+  "usa": [
+    {
+      "name": "The New York Times",
+      "type": "newspaper",
+      "url": "https://www.nytimes.com",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1851,
+      "headquarters": "New York, USA",
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialty": "General news, investigative journalism",
+      "notes": "US newspaper of record. Left-center editorial line. 130+ Pulitzer Prizes. Strong international bureau. Paywall model successful.",
+      "tier": 1
+    },
+    {
+      "name": "The Washington Post",
+      "type": "newspaper",
+      "url": "https://www.washingtonpost.com",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1877,
+      "headquarters": "Washington DC, USA",
+      "languages": [
+        "en"
+      ],
+      "specialty": "US politics, investigative journalism",
+      "notes": "Major US newspaper. Center-left. Owned by Jeff Bezos. 69 Pulitzer Prizes. Strong political coverage. Fact Checker column.",
+      "tier": 1
+    },
+    {
+      "name": "The Wall Street Journal",
+      "type": "newspaper",
+      "url": "https://www.wsj.com",
+      "political_lean": "LR",
+      "credibility": "high",
+      "founded": 1889,
+      "headquarters": "New York, USA",
+      "languages": [
+        "en"
+      ],
+      "specialty": "Business, finance, economics",
+      "notes": "Leading US business newspaper. News section center, opinion section right. Owned by News Corp. 37 Pulitzer Prizes.",
+      "tier": 1
+    },
+    {
+      "name": "NPR (National Public Radio)",
+      "type": "broadcaster",
+      "url": "https://www.npr.org",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1970,
+      "headquarters": "Washington DC, USA",
+      "languages": [
+        "en"
+      ],
+      "specialty": "Public broadcasting, in-depth reporting",
+      "notes": "US public radio. Membership-funded. Left-center lean. High-quality journalism. 1,000+ member stations.",
+      "tier": 1
+    }
+  ],
+  "global_international": [
+    {
+      "name": "Al Jazeera",
+      "type": "news_network",
+      "url": "https://www.aljazeera.com",
+      "political_lean": "LL",
+      "political_lean_notes": "Lean Left / Left-Center. State-funded by Qatar. Straight news minimally biased, opinion pages exhibit significant bias.",
+      "credibility": "mixed_to_high",
+      "credibility_notes": "Straight news: high. Opinion content: lower due to bias. State influence: concern.",
+      "languages": [
+        "ar",
+        "en",
+        "es",
+        "tr"
+      ],
+      "founded": 1996,
+      "ownership": "Qatar Media Corporation / Al Jazeera Media Network (Qatar state-funded)",
+      "headquarters": "Doha, Qatar",
+      "specialty": "International news, Middle East focus, underrepresented global regions",
+      "notes": "First independent news channel in Middle East. 80+ bureaus, 270M households in 140+ countries. STRENGTHS: Covers underrepresented regions, valuable Palestinian perspective. CONTROVERSIES: Not critical of Qatar, opinion pages significant anti-Israel bias, different editorial tones Arabic vs English services. After 10/7/2023, valuable voice for Palestinians. Media Bias Fact Check: Left-Center bias, Mixed factual.",
+      "tier": 1
+    },
+    {
+      "name": "The Economist",
+      "type": "magazine",
+      "url": "https://www.economist.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1843,
+      "headquarters": "London, UK",
+      "languages": [
+        "en"
+      ],
+      "specialty": "International affairs, economics, analysis",
+      "notes": "Global news magazine. Center editorial line. Anonymous journalism. Strong analysis. Owned by Economist Group (Agnelli family).",
+      "tier": 1
+    }
+  ],
+  "latin_america": [
+    {
+      "name": "El Faro",
+      "country": "El Salvador",
+      "url": "https://elfaro.net",
+      "founder": "Carlos Dada + co-founders",
+      "political_lean": "C-L",
+      "credibility": "high",
+      "languages": [
+        "es"
+      ],
+      "founded": 1998,
+      "funding_model": "Subscriptions + donations",
+      "specialty": "Investigative journalism, Central America",
+      "notes": "Latin America's first online-only publication. ALiados network member. Operates under repressive government (Nicaragua). Multiple journalism awards. Co-founder Carlos Dada in Americas Quarterly Top 5 Journalists.",
+      "tier": 1
+    },
+    {
+      "name": "Agência Pública",
+      "country": "Brazil",
+      "url": "https://apublica.org",
+      "founder": "Natália Viana + Marina Amaral",
+      "political_lean": "L",
+      "credibility": "high",
+      "languages": [
+        "pt"
+      ],
+      "founded": 2011,
+      "funding_model": "Nonprofit - foundations + donations",
+      "specialty": "Investigative journalism, data journalism",
+      "notes": "Brazil's first nonprofit investigative journalism agency. ALiados network member. Co-founder Natália Viana won Cabot Prize 2024. Major investigations on corruption, environment, human rights.",
+      "tier": 1
+    },
+    {
+      "name": "Animal Político",
+      "country": "Mexico",
+      "url": "https://www.animalpolitico.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "languages": [
+        "es"
+      ],
+      "founded": 2010,
+      "funding_model": "Mixed - ads + memberships",
+      "specialty": "Investigative journalism, fact-checking",
+      "notes": "Major Mexican digital outlet. ALiados network member. El Sabueso fact-checking project. Operates in world's deadliest country for journalists.",
+      "tier": 1
+    },
+    {
+      "name": "CIPER Chile",
+      "country": "Chile",
+      "url": "https://www.ciperchile.cl",
+      "political_lean": "C",
+      "credibility": "high",
+      "languages": [
+        "es"
+      ],
+      "founded": 2007,
+      "funding_model": "University-based + foundations",
+      "specialty": "Investigative journalism",
+      "notes": "Center for Investigative Journalism. ALiados network member. Based at Universidad Diego Portales. Major corruption investigations.",
+      "tier": 1
+    },
+    {
+      "name": "Plaza Pública",
+      "country": "Guatemala",
+      "url": "https://www.plazapublica.com.gt",
+      "political_lean": "C",
+      "credibility": "high",
+      "languages": [
+        "es"
+      ],
+      "founded": 2011,
+      "funding_model": "Nonprofit",
+      "specialty": "Investigative journalism",
+      "notes": "ALiados network member. Operates under challenging press freedom conditions.",
+      "tier": 1
+    },
+    {
+      "name": "IDL-Reporteros",
+      "country": "Peru",
+      "url": "https://www.idl-reporteros.pe",
+      "political_lean": "C",
+      "credibility": "high",
+      "languages": [
+        "es"
+      ],
+      "founded": 2010,
+      "funding_model": "Mixed",
+      "specialty": "Investigative journalism",
+      "notes": "ALiados network member. Strong investigative team.",
+      "tier": 1
+    },
+    {
+      "name": "Armando.info",
+      "country": "Venezuela",
+      "url": "https://armando.info",
+      "political_lean": "C",
+      "credibility": "high",
+      "languages": [
+        "es"
+      ],
+      "founded": 2014,
+      "funding_model": "Nonprofit",
+      "specialty": "Investigative journalism, corruption",
+      "notes": "ALiados network member. Focus on Venezuelan corruption. Operates in exile.",
+      "tier": 1
+    },
+    {
+      "name": "Runrun.es",
+      "country": "Venezuela",
+      "url": "https://runrun.es",
+      "political_lean": "C",
+      "credibility": "high",
+      "languages": [
+        "es"
+      ],
+      "founded": 2014,
+      "funding_model": "Digital ads + memberships",
+      "specialty": "News, investigative",
+      "notes": "ALiados network member. Major Venezuelan digital outlet despite government pressure.",
+      "tier": 1
+    },
+    {
+      "name": "Confidencial",
+      "country": "Nicaragua",
+      "url": "https://confidencial.digital",
+      "political_lean": "C",
+      "credibility": "high",
+      "languages": [
+        "es"
+      ],
+      "founded": 1996,
+      "funding_model": "Exiled operations",
+      "specialty": "Investigative journalism",
+      "notes": "ALiados network member. Operating in exile since 2021. Nicaragua has worst press freedom in LatAm (172nd globally).",
+      "tier": 1
+    },
+    {
+      "name": "El Surtidor",
+      "country": "Paraguay",
+      "url": "https://elsurtidor.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "languages": [
+        "es"
+      ],
+      "founded": 2016,
+      "funding_model": "Memberships + foundations",
+      "specialty": "Investigative journalism",
+      "notes": "ALiados network member. Young but credible Paraguayan outlet.",
+      "tier": 1
+    },
+    {
+      "name": "Chequeado",
+      "country": "Argentina",
+      "url": "https://chequeado.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "languages": [
+        "es"
+      ],
+      "founded": 2010,
+      "funding_model": "Nonprofit",
+      "specialty": "Fact-checking",
+      "notes": "IFCN-certified fact-checker. Pioneer in Latin American fact-checking.",
+      "tier": 1
+    },
+    {
+      "name": "ColombiaCheck",
+      "country": "Colombia",
+      "url": "https://colombiacheck.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "languages": [
+        "es"
+      ],
+      "specialty": "Fact-checking",
+      "notes": "IFCN-certified. Colombian fact-checking initiative.",
+      "tier": 1
+    },
+    {
+      "name": "El Sabueso",
+      "country": "Mexico",
+      "url": "https://elsebueso.animalpolitico.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "specialty": "Fact-checking",
+      "notes": "Mexican fact-checking project by Animal Político. IFCN-certified.",
+      "tier": 1
+    },
+    {
+      "name": "Agência Lupa",
+      "country": "Brazil",
+      "url": "https://lupa.uol.com.br",
+      "political_lean": "C",
+      "credibility": "high",
+      "specialty": "Fact-checking",
+      "notes": "Brazilian fact-checking outlet. IFCN-certified.",
+      "tier": 1
+    },
+    {
+      "name": "Aos Fatos",
+      "country": "Brazil",
+      "url": "https://www.aosfatos.org",
+      "political_lean": "C",
+      "credibility": "high",
+      "specialty": "Fact-checking",
+      "notes": "Brazilian fact-checking initiative. IFCN-certified.",
+      "tier": 1
+    },
+    {
+      "name": "Efecto Cocuyo",
+      "country": "Venezuela",
+      "url": "https://efectococuyo.com",
+      "founder": "Luz Mely Reyes",
+      "political_lean": "C",
+      "credibility": "high",
+      "specialty": "Real-time news, investigative",
+      "notes": "Main independent digital news site in Venezuela. Operating despite fear and repression. Americas Quarterly Top 5 Journalists (Luz Mely Reyes).",
+      "tier": 1
+    }
+  ],
+  "canada": [
+    {
+      "name": "CBC News",
+      "type": "broadcaster",
+      "url": "https://www.cbc.ca/news",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1936,
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "specialty": "Canadian news, public broadcasting",
+      "notes": "Canada's public broadcaster. Left-center lean. Funded by government but editorially independent.",
+      "tier": 1
+    },
+    {
+      "name": "The Globe and Mail",
+      "type": "newspaper",
+      "url": "https://www.theglobeandmail.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1844,
+      "languages": [
+        "en"
+      ],
+      "specialty": "General news, business",
+      "notes": "Canada's newspaper of record. Center editorial line. High-quality journalism.",
+      "tier": 1
+    }
+  ],
+  "australia": [
+    {
+      "name": "ABC News (Australia)",
+      "type": "broadcaster",
+      "url": "https://www.abc.net.au/news",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1932,
+      "languages": [
+        "en"
+      ],
+      "specialty": "Australian news, public broadcasting",
+      "notes": "Australia's public broadcaster. Center editorial line. Editorially independent.",
+      "tier": 1
+    },
+    {
+      "name": "The Sydney Morning Herald",
+      "type": "newspaper",
+      "url": "https://www.smh.com.au",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1831,
+      "languages": [
+        "en"
+      ],
+      "specialty": "General news",
+      "notes": "Major Australian newspaper. Center-left. Owned by Nine Entertainment.",
+      "tier": 1
+    }
+  ],
+  "japan": [
+    {
+      "name": "The Japan Times",
+      "type": "newspaper",
+      "url": "https://www.japantimes.co.jp",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1897,
+      "languages": [
+        "en"
+      ],
+      "specialty": "Japanese news for English readers",
+      "notes": "Japan's oldest English-language newspaper. Independent voice in Japanese media landscape.",
+      "tier": 1
+    },
+    {
+      "name": "NHK World",
+      "type": "broadcaster",
+      "url": "https://www3.nhk.or.jp/nhkworld/",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1926,
+      "languages": [
+        "en",
+        "ja",
+        "multiple"
+      ],
+      "specialty": "Japanese news, international broadcasting",
+      "notes": "Japan's public broadcaster. Center editorial line. International service.",
+      "tier": 1
+    }
+  ],
+  "india": [
+    {
+      "name": "The Hindu",
+      "type": "newspaper",
+      "url": "https://www.thehindu.com",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1878,
+      "languages": [
+        "en"
+      ],
+      "specialty": "Indian news, South Asian affairs",
+      "notes": "Major Indian newspaper. Center-left. High editorial standards. Family-owned.",
+      "tier": 1
+    },
+    {
+      "name": "The Times of India",
+      "type": "newspaper",
+      "url": "https://timesofindia.indiatimes.com",
+      "political_lean": "C",
+      "credibility": "medium",
+      "founded": 1838,
+      "languages": [
+        "en"
+      ],
+      "specialty": "General news",
+      "notes": "India's largest English newspaper. Center. Owned by Bennett Coleman. Mass market focus.",
+      "tier": 1
+    }
+  ],
+  "brazil": [
+    {
+      "name": "Folha de S.Paulo",
+      "type": "newspaper",
+      "url": "https://www.folha.uol.com.br",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1921,
+      "languages": [
+        "pt"
+      ],
+      "specialty": "Brazilian news, investigative",
+      "notes": "Brazil's most influential newspaper. Center-left. Family-owned. Strong investigative team.",
+      "tier": 1
+    },
+    {
+      "name": "O Globo",
+      "type": "newspaper",
+      "url": "https://oglobo.globo.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1925,
+      "languages": [
+        "pt"
+      ],
+      "specialty": "Brazilian news",
+      "notes": "Major Brazilian newspaper. Center. Part of Grupo Globo media conglomerate.",
+      "tier": 1
+    }
+  ],
+  "middle_east": [
+    {
+      "name": "Haaretz",
+      "type": "newspaper",
+      "url": "https://www.haaretz.com",
+      "country": "Israel",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1918,
+      "languages": [
+        "he",
+        "en"
+      ],
+      "specialty": "Israeli news, Middle East affairs",
+      "notes": "Israel's oldest daily newspaper. Left-leaning, critical of Israeli government. High editorial standards. English edition available.",
+      "tier": 1
+    },
+    {
+      "name": "The Times of Israel",
+      "type": "online_newspaper",
+      "url": "https://www.timesofisrael.com",
+      "country": "Israel",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 2012,
+      "languages": [
+        "en"
+      ],
+      "specialty": "Israeli news, Middle East",
+      "notes": "Independent online newspaper. Center editorial line. English-language focus.",
+      "tier": 1
+    }
+  ],
+  "science_health": [
+    {
+      "name": "Nature",
+      "type": "journal",
+      "url": "https://www.nature.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1869,
+      "languages": [
+        "en"
+      ],
+      "specialty": "Peer-reviewed science",
+      "notes": "Leading multidisciplinary science journal. Rigorous peer review. High impact factor.",
+      "tier": 1
+    },
+    {
+      "name": "Science",
+      "type": "journal",
+      "url": "https://www.science.org",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1880,
+      "languages": [
+        "en"
+      ],
+      "specialty": "Peer-reviewed science",
+      "notes": "Published by AAAS. Rigorous peer review. Covers all scientific disciplines.",
+      "tier": 1
+    },
+    {
+      "name": "The Lancet",
+      "type": "journal",
+      "url": "https://www.thelancet.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1823,
+      "languages": [
+        "en"
+      ],
+      "specialty": "Medical research",
+      "notes": "Leading medical journal. Rigorous peer review. Global health focus.",
+      "tier": 1
+    },
+    {
+      "name": "NEJM (New England Journal of Medicine)",
+      "type": "journal",
+      "url": "https://www.nejm.org",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1812,
+      "languages": [
+        "en"
+      ],
+      "specialty": "Medical research",
+      "notes": "Most prestigious medical journal. Highest impact factor in medicine. Rigorous standards.",
+      "tier": 1
+    },
+    {
+      "name": "Scientific American",
+      "type": "magazine",
+      "url": "https://www.scientificamerican.com",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1845,
+      "languages": [
+        "en"
+      ],
+      "specialty": "Science communication",
+      "notes": "Oldest continuously published magazine in US. Science for general audience. Evidence-based.",
+      "tier": 1
+    }
+  ],
+  "technology": [
+    {
+      "name": "Ars Technica",
+      "type": "online_publication",
+      "url": "https://arstechnica.com",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1998,
+      "languages": [
+        "en"
+      ],
+      "specialty": "Technology, science",
+      "notes": "In-depth technology journalism. Technical accuracy. Owned by Condé Nast.",
+      "tier": 1
+    },
+    {
+      "name": "The Verge",
+      "type": "online_publication",
+      "url": "https://www.theverge.com",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 2011,
+      "languages": [
+        "en"
+      ],
+      "specialty": "Technology, culture",
+      "notes": "Technology news and reviews. Part of Vox Media. Strong editorial team.",
+      "tier": 1
+    },
+    {
+      "name": "Wired",
+      "type": "magazine",
+      "url": "https://www.wired.com",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 1993,
+      "languages": [
+        "en"
+      ],
+      "specialty": "Technology, culture, science",
+      "notes": "Technology and culture magazine. Owned by Condé Nast. Long-form journalism.",
+      "tier": 1
+    }
+  ],
+  "finance_business": [
+    {
+      "name": "Bloomberg",
+      "type": "news_service",
+      "url": "https://www.bloomberg.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1981,
+      "languages": [
+        "en",
+        "multiple"
+      ],
+      "specialty": "Finance, markets, business",
+      "notes": "Leading financial news service. Real-time market data. Global bureaus.",
+      "tier": 1
+    },
+    {
+      "name": "The Economist",
+      "type": "magazine",
+      "url": "https://www.economist.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1843,
+      "languages": [
+        "en"
+      ],
+      "specialty": "Global affairs, economics, business",
+      "notes": "Global news and analysis magazine. Classical liberal perspective. Anonymous journalism.",
+      "tier": 1
+    }
+  ],
+  "sports": [
+    {
+      "name": "ESPN",
+      "type": "broadcaster",
+      "url": "https://www.espn.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 1979,
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialty": "Sports",
+      "notes": "Leading sports network. Comprehensive coverage. Owned by Disney.",
+      "tier": 1
+    },
+    {
+      "name": "The Athletic",
+      "type": "subscription_sports",
+      "url": "https://theathletic.com",
+      "political_lean": "C",
+      "credibility": "high",
+      "founded": 2016,
+      "languages": [
+        "en"
+      ],
+      "specialty": "In-depth sports journalism",
+      "notes": "Subscription sports journalism. No ads. High-quality reporting. Owned by NYT.",
+      "tier": 1
+    }
+  ],
+  "arts_culture": {
+    "visual_arts": [
+      {
+        "name": "Artforum",
+        "url": "https://www.artforum.com",
+        "political_lean": "LL",
+        "credibility": "high",
+        "specialty": "Contemporary art criticism",
+        "notes": "Leading contemporary art magazine. International coverage. Prestigious.",
+        "tier": 1
+      },
+      {
+        "name": "Artnet News",
+        "url": "https://news.artnet.com",
+        "political_lean": "C",
+        "credibility": "high",
+        "specialty": "Art market, news",
+        "notes": "Daily art world news. Market analysis. Global coverage.",
+        "tier": 1
+      },
+      {
+        "name": "Hyperallergic",
+        "url": "https://hyperallergic.com",
+        "political_lean": "LL",
+        "credibility": "high",
+        "specialty": "Contemporary art, culture",
+        "notes": "Independent online arts magazine. Progressive perspective.",
+        "tier": 1
+      },
+      {
+        "name": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com",
+        "political_lean": "C",
+        "credibility": "high",
+        "specialty": "Art world news, museums",
+        "notes": "International art news. Museums, exhibitions, market.",
+        "tier": 1
+      }
+    ],
+    "music": [
+      {
+        "name": "Pitchfork",
+        "url": "https://pitchfork.com",
+        "political_lean": "LL",
+        "credibility": "high",
+        "specialty": "Indie and alternative music",
+        "notes": "Influential music criticism. Owned by Condé Nast.",
+        "tier": 1
+      },
+      {
+        "name": "Rolling Stone",
+        "url": "https://www.rollingstone.com",
+        "political_lean": "LL",
+        "credibility": "high",
+        "specialty": "Music, culture, politics",
+        "notes": "Iconic music magazine. Expanded to politics and culture.",
+        "tier": 1
+      },
+      {
+        "name": "NPR Music",
+        "url": "https://www.npr.org/music",
+        "political_lean": "LL",
+        "credibility": "high",
+        "specialty": "Music journalism, reviews",
+        "notes": "NPR's music coverage. Tiny Desk Concerts. High quality.",
+        "tier": 1
+      }
+    ],
+    "film": [
+      {
+        "name": "Variety",
+        "url": "https://variety.com",
+        "political_lean": "LL",
+        "credibility": "high",
+        "specialty": "Entertainment industry news",
+        "notes": "Leading entertainment trade publication. Industry standard.",
+        "tier": 1
+      },
+      {
+        "name": "The Hollywood Reporter",
+        "url": "https://www.hollywoodreporter.com",
+        "political_lean": "LL",
+        "credibility": "high",
+        "specialty": "Film and TV industry",
+        "notes": "Major entertainment industry publication.",
+        "tier": 1
+      },
+      {
+        "name": "IndieWire",
+        "url": "https://www.indiewire.com",
+        "political_lean": "LL",
+        "credibility": "high",
+        "specialty": "Independent film, TV",
+        "notes": "Focus on independent and international cinema.",
+        "tier": 1
+      },
+      {
+        "name": "Criterion Collection",
+        "url": "https://www.criterion.com",
+        "political_lean": "C",
+        "credibility": "high",
+        "specialty": "Film criticism, classics",
+        "notes": "High-quality film criticism. Classic and contemporary cinema.",
+        "tier": 1
+      }
+    ],
+    "theater": [
+      {
+        "name": "American Theatre",
+        "url": "https://www.americantheatre.org",
+        "political_lean": "LL",
+        "credibility": "high",
+        "specialty": "Theater news, criticism",
+        "notes": "Theatre Communications Group publication. National coverage.",
+        "tier": 1
+      },
+      {
+        "name": "The Stage",
+        "url": "https://www.thestage.co.uk",
+        "political_lean": "C",
+        "credibility": "high",
+        "specialty": "UK and international theater",
+        "notes": "Leading UK theater publication. Industry standard.",
+        "tier": 1
+      }
+    ],
+    "literature": [
+      {
+        "name": "The Paris Review",
+        "url": "https://www.theparisreview.org",
+        "political_lean": "C",
+        "credibility": "high",
+        "specialty": "Literary magazine",
+        "notes": "Prestigious literary quarterly. The Art of Fiction interviews.",
+        "tier": 1
+      },
+      {
+        "name": "The New York Review of Books",
+        "url": "https://www.nybooks.com",
+        "political_lean": "LL",
+        "credibility": "high",
+        "specialty": "Book reviews, intellectual essays",
+        "notes": "High-level intellectual discourse. Long-form reviews.",
+        "tier": 1
+      },
+      {
+        "name": "Literary Hub",
+        "url": "https://lithub.com",
+        "political_lean": "LL",
+        "credibility": "high",
+        "specialty": "Books, literary culture",
+        "notes": "Daily literary news and culture. Wide coverage.",
+        "tier": 1
+      }
+    ],
+    "architecture": [
+      {
+        "name": "ArchDaily",
+        "url": "https://www.archdaily.com",
+        "political_lean": "C",
+        "credibility": "high",
+        "specialty": "Architecture news, projects",
+        "notes": "World's most visited architecture website. Daily updates.",
+        "tier": 1
+      },
+      {
+        "name": "Dezeen",
+        "url": "https://www.dezeen.com",
+        "political_lean": "C",
+        "credibility": "high",
+        "specialty": "Architecture and design",
+        "notes": "Leading architecture and design magazine. Global coverage.",
+        "tier": 1
+      }
+    ]
+  },
+  "global_networks": [
+    {
+      "name": "International Consortium of Investigative Journalists (ICIJ)",
+      "type": "global_network",
+      "url": "https://www.icij.org",
+      "political_lean": "C",
+      "credibility": "high",
+      "specialty": "Cross-border investigative journalism",
+      "notes": "Panama Papers, Pandora Papers. Works with journalists worldwide. Selected Mediapart and independent outlets for major leaks.",
+      "tier": 1
+    },
+    {
+      "name": "Organized Crime and Corruption Reporting Project (OCCRP)",
+      "type": "global_network",
+      "url": "https://www.occrp.org",
+      "political_lean": "C",
+      "credibility": "high",
+      "specialty": "Organized crime, corruption investigations",
+      "notes": "Global network of investigative journalists. Major cross-border investigations.",
+      "tier": 1
+    },
+    {
+      "name": "Global Investigative Journalism Network (GIJN)",
+      "type": "global_network",
+      "url": "https://gijn.org",
+      "political_lean": "C",
+      "credibility": "high",
+      "specialty": "Supporting investigative journalism globally",
+      "notes": "Network of 200+ organizations. Training, resources, conferences.",
+      "tier": 1
+    }
+  ]
+}
