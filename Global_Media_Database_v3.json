@@ -5,7 +5,7 @@
     "created": "2025-11-08",
     "updated": "2025-11-18",
     "purpose": "Comprehensive global news sources for Claude news-intelligence skill",
-    "total_sources": 151,
+    "total_sources": 154,
     "creator": "Mother Of Chaos",
     "status": "Complete - Ready for Claude Skill"
   },
@@ -345,6 +345,45 @@
       "languages": ["es"],
       "specialty": "Business, politics, investigative",
       "notes": "Leading online-native Spanish outlet. Center editorial line. Strong business and political coverage.",
+      "tier": 1
+    },
+    {
+      "name": "Público",
+      "type": "online_newspaper",
+      "url": "https://www.publico.es",
+      "political_lean": "L",
+      "credibility": "high",
+      "founded": 2007,
+      "countries": "Spain",
+      "languages": ["es"],
+      "specialty": "Politics, social issues, investigative",
+      "notes": "Progressive Spanish newspaper. Strong social and political coverage. Independent editorial line.",
+      "tier": 1
+    },
+    {
+      "name": "elDiario.es",
+      "type": "online_newspaper",
+      "url": "https://www.eldiario.es",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 2012,
+      "countries": "Spain",
+      "languages": ["es"],
+      "specialty": "Investigative journalism, politics, corruption",
+      "notes": "Reader-funded independent model. Financially successful. Third most-visited news site in Spain.",
+      "tier": 1
+    },
+    {
+      "name": "infoLibre",
+      "type": "online_newspaper",
+      "url": "https://www.infolibre.es",
+      "political_lean": "LL",
+      "credibility": "high",
+      "founded": 2013,
+      "countries": "Spain",
+      "languages": ["es"],
+      "specialty": "Investigative journalism, politics, social issues",
+      "notes": "Independent digital newspaper. Reader-supported. Strong investigative reporting and political analysis.",
       "tier": 1
     }
   ],
