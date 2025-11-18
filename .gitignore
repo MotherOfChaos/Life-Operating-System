@@ -2,3 +2,5 @@ automation/config.py
 automation/token.json
 automation/credentials.json
 automation/*.log
+__pycache__/
+automation/__pycache__/
