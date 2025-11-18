@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "google-calendar": {
+      "command": "python3",
+      "args": [
+        "/home/user/Life-Operating-System/calendar-integration/src/calendar_mcp_server.py"
+      ],
+      "env": {}
+    }
+  }
+}
