@@ -1,0 +1,4 @@
+automation/config.py
+automation/token.json
+automation/credentials.json
+automation/*.log
