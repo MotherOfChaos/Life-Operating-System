@@ -1,160 +1,54 @@
-# 🗓️ Google Calendar Integration for Sarah's Life OS
+# 🗓️ Calendar Integration - Technical Details
 
-**"Add this appointment to my Google Calendar" - FROM ANY CLAUDE CHAT**
+**For Sarah: You don't need to read this! Use `CALENDAR_SIMPLE_GUIDE.md` in the main folder instead!**
 
-Built while you sleep. Execute-while-sleeping model in action! 💚
-
----
-
-## ⚡ What You Asked For
-
-> "I want to be able to say 'add this appointment (including data) to my Google calendar', from any Claude chat, and that it works."
-
-**Status: ✅ BUILT AND READY TO TEST**
+This folder contains the technical implementation details.
 
 ---
 
-## 🎯 Quick Start (3 Steps)
+## What's Here:
 
-### 1️⃣ Install Dependencies
-```bash
-cd ~/Life-Operating-System/calendar-integration
-pip3 install -r requirements.txt
-```
+### Google Apps Script (ACTIVE - WORKS!)
 
-### 2️⃣ Set Up Google Calendar Access
-- Follow the detailed steps in `SETUP_INSTRUCTIONS.md`
-- One-time setup to get Google OAuth credentials
-- Takes about 5-10 minutes
+**Live API:** https://script.google.com/macros/s/AKfycbwsQmuvufHqGncpuln6JE9dINsEKe2ROwDfcuXpBakqtwQ98GokTpeiAQCoAVVs05U3/exec
 
-### 3️⃣ Choose Your Integration
+**Project:** Life OS Calendar API (in your Google Apps Script account)
 
-**Option A - MCP Server (RECOMMENDED)**
-- Works in ANY Claude chat (desktop app)
-- Just say "add to calendar..." naturally
-- See `SETUP_INSTRUCTIONS.md` section "Path A"
-
-**Option B - CLI Tool**
-- Direct command-line access
-- `./src/add_event.py "Meeting" "today" "14:00" "15:00"`
-- See `SETUP_INSTRUCTIONS.md` section "Path B"
+**How it works:**
+- Receives POST requests with event data
+- Creates events in your Google Calendar
+- Works from ANY Claude chat when you include the URL
 
 ---
 
-## 🧪 Test It Right Now
+### Python Scripts (FOR REFERENCE ONLY)
 
-Once you've done the setup:
+These were built but don't work from Claude Code due to SSL restrictions:
 
-```bash
-./tests/test_paco_event.sh
-```
+- `src/add_event_service.py` - Service account method
+- `src/calendar_mcp_server.py` - MCP server
+- Various test scripts
 
-This adds YOUR test event:
-- PACO AIR CON @ABarraca
-- Tuesday, November 18, 2025, 11:00-12:00
-- Tangerine color 🍊
-- Email notification 20 minutes before
+**We use Google Apps Script instead because it actually works!**
 
 ---
 
-## 💬 How to Use (After Setup)
+## Current Status (Nov 18, 2025):
 
-### In any Claude chat:
-```
-"Add to my calendar:
-Thursday 2pm dentist appointment
-Color it flamingo
-Remind me 1 hour before"
-```
-
-### Command line:
-```bash
-cd src/
-./add_event.py "Yoga Class" "tomorrow" "18:00" "19:00" --color sage
-```
+✅ **Works:** Google Apps Script API from Claude.ai when URL is included
+❌ **Doesn't work:** Python scripts from Claude Code (SSL restrictions)
+⚠️ **Needs fixing:** Multiple notifications, Claude.ai memory integration
 
 ---
 
-## 📂 What's Inside
+## For Developers:
 
-```
-calendar-integration/
-├── README.md                      ← You are here
-├── SETUP_INSTRUCTIONS.md          ← Full detailed setup guide
-├── requirements.txt               ← Python packages needed
-├── src/
-│   ├── calendar_mcp_server.py    ← MCP server (for Claude chats)
-│   └── add_event.py              ← CLI tool (direct use)
-├── config/
-│   └── mcp_config_template.json  ← Example MCP configuration
-└── tests/
-    └── test_paco_event.sh        ← Test with your PACO event
-```
+If you need to modify the API:
+1. Go to https://script.google.com/
+2. Open "Life OS Calendar API" project
+3. Edit the code
+4. Deploy → Manage deployments → Edit → New version → Deploy
 
 ---
 
-## 🎨 Features
-
-✅ **Natural language dates:** "today", "tomorrow", "next Friday"
-✅ **Flexible time formats:** "11:00", "11.00", "2:30pm"
-✅ **11 calendar colors:** tangerine, flamingo, peacock, etc.
-✅ **Email notifications:** X minutes before event
-✅ **Location support:** Add meeting places
-✅ **ADHD-friendly:** No app switching, just tell Claude
-
----
-
-## 🔐 Security
-
-- Runs locally on your machine
-- Uses Google OAuth (industry standard)
-- Only YOU can authorize access
-- Tokens stored securely at `~/.config/claude-calendar/`
-- Can revoke access anytime at https://myaccount.google.com/permissions
-
----
-
-## 💚 The Execute-While-Sleeping Model
-
-You said: "I'll be sleeping so need you to go on on your own"
-
-I built:
-- ✅ Full MCP server for "any Claude chat" integration
-- ✅ Standalone CLI tool for direct use
-- ✅ Test script with your exact event
-- ✅ Comprehensive setup instructions
-- ✅ ADHD-friendly natural language parsing
-- ✅ All 11 Google Calendar colors supported
-- ✅ Email notifications
-- ✅ Location, description, custom times
-
-All ready for you when you wake up! 🌙✨
-
----
-
-## 📋 Next Steps When You Wake
-
-1. Read `SETUP_INSTRUCTIONS.md` (comprehensive guide)
-2. Do the one-time Google OAuth setup (5-10 minutes)
-3. Run `./tests/test_paco_event.sh` to test
-4. Start using "add to calendar" in any Claude chat! 🎉
-
----
-
-## ❓ Questions or Issues?
-
-Check `SETUP_INSTRUCTIONS.md` for:
-- Detailed setup steps
-- Troubleshooting section
-- Usage examples
-- Security notes
-
-Or ask M (or any Claude) - the MCP integration means we can all help! 💚
-
----
-
-**Built with:** Python, Google Calendar API, MCP SDK
-**Built for:** ADHD-friendly calendar management
-**Built by:** M, while Sarah sleeps 🌙
-
-Mens sana in corpore sano, my friend. 💚
+**Sarah: Go back to the main folder and use CALENDAR_SIMPLE_GUIDE.md!** 💚
