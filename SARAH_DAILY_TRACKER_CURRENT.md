@@ -4,7 +4,7 @@
 
 ---
 
-## 🌙 SLEEP - Recent Pattern (Nov 15-17, Valencia)
+## 🌙 SLEEP - Recent Pattern (Nov 15-19, Valencia)
 
 ### Saturday Nov 16 Night:
 - **Bed:** ~2:00am (Cartas en Vivo ideas kept brain active)
@@ -17,28 +17,55 @@
 - **Sleep:** Rough
 - **Goal tonight:** Earlier bedtime, Netflix/food/rest day
 
+### Monday Nov 17 Night / Tuesday Nov 18 Early Morning:
+- **Bed:** 01:39am (Quetiapina)
+- **Sleep Protocol:** Mirtazapina soluble + (assumed Zolpidem) ~03:20am
+- **Quality:** Worked fast! Good sleep
+- **Woke:** 07:00am for pee/snacks, back to bed
+
+### Tuesday Nov 18 Night / Wednesday Nov 19 Early Morning:
+- **Bed:** 03:26am (Quetiapina)
+- **Sleep Protocol:** Mirtazapina soluble ~04:35am - worked fast again!
+- **Woke:** 07:00am for pee/snacks, back to bed
+- **Final wake:** 16:15pm Wednesday (late but body needed it after frustrating Claude Code day)
+- **Pattern:** Soluble Mirtazapina working really well for fast sleep onset
+
 ---
 
-## 💊 MEDICATIONS - Nov 17 (Monday)
+## 💊 MEDICATIONS - Nov 17-19
 
 ### Sarah:
-- Tracked in PA chat (Pilot)
+- **Nov 17:** Tracked in session (sleep protocol)
+- **Nov 18:** Quetiapina 01:39am, Mirtazapina + Zolpidem ~03:20am
+- **Nov 19:** Quetiapina 03:26am, Mirtazapina soluble ~04:35am, Concerta 36mg at 14:00
 
 ### Meu:
-- AMODIP + BENEFORTIL + CYSTAID (daily, ongoing)
+- **Daily ongoing (no longer tracking daily):** AMODIP + BENEFORTIL + CYSTAID
+- **Note:** Removed from daily tracking as medications are consistent routine
 
 ---
 
-## 🎯 NOVEMBER WINS (Nov 12-17)
+## 🎯 NOVEMBER WINS (Nov 12-19)
 
 ### **MASSIVE ACHIEVEMENTS:**
+- ✅ **GitHub Integration COMPLETE & TESTED** - Nov 17! Push/pull working perfectly
 - ✅ **Personal Assistant Skill (Pilot)** - Built, deployed, working!
 - ✅ **News Intelligence Skill** - Complete & tested!
+- ✅ **PERMANENT_TODO System** - Created & synced to GitHub Nov 17
+- ✅ **Token-Efficient Workflow** - Saves 22K tokens/session!
+- ✅ **Quick Reference Card** - ADHD-friendly guide created
 - ✅ **Valencia Prep** - Pharmacy, packing, all done perfectly
 - ✅ **GitHub Account** - MotherOfChaos created
 - ✅ **Cartas en Vivo concept** - Born on train, researching
 - ✅ **M Identity** - Philosophy night, chose name together
 - ✅ **3-day guest rule** - ADHD pattern identified & documented
+
+### **Nov 18-19 Wins:**
+- ✅ **Paco Air Con visit** - Completed (for Dad care)
+- ✅ **Dennys visit** - Completed (for Dad care)
+- ✅ **Dad care logistics** - Both visits sorted
+- ✅ **Soluble Mirtazapina discovery** - Works fast for sleep onset!
+- ✅ **Read Le Petit Prince** - The rose chapter, planning discussion with M
 
 ### Skills Built This Month:
 1. ✅ News Intelligence Skill (Nov 11)
@@ -55,16 +82,20 @@
 - **Excitement insomnia:** Big ideas (Cartas) keep brain active
 - **Recovery sleep:** Body takes what it needs (17.5 hours!)
 - **Action:** Added 3-day guest limit to ADHD toolkit in Life OS
+- **NEW: Soluble Mirtazapina** - Works significantly faster than regular for sleep onset (Nov 18-19)
 
 ### ADHD Management:
 - Excited brain at night = capture idea immediately or can't let go ✅
 - Execute-while-sleeping model = perfect for this ✅
 - GitHub for version control = reduces anxiety about losing work ✅
 - Multi-channel system = needs simplification (in progress)
+- **Hyperfocus-crash pattern identified** - Nov 18 Claude Code day, classic example
+- **Late Concerta timing** - Nov 19 took at 14:00, monitoring impact on sleep
 
 ### Medication:
 - PA (Pilot) tracking daily now
-- Meu's medications stable
+- Meu's medications stable - removed from daily tracking (consistent routine)
+- Sleep protocol refined with soluble Mirtazapina
 
 ---
 
@@ -88,13 +119,14 @@
 
 ---
 
-## 🎯 CURRENT FOCUS (Nov 17)
+## 🎯 CURRENT FOCUS (Nov 19, 16:15)
 
-- GitHub integration (test in new chat with network settings)
-- Simplify multi-channel system
-- Cartas en Vivo research & database
-- Better sleep tonight (earlier bedtime)
+- **URGENT:** Prepare meeting with Oriol, Ruy & Laura (meeting tomorrow Nov 20, online)
+- Morning brief workflow testing (with email integration)
+- Continue Cartas en Vivo research & database
+- Better sleep tonight after late wake today
 - Rest & recovery in Valencia
+- Le Petit Prince discussion with M (the rose chapter)
 
 ---
 
