@@ -17,16 +17,9 @@ from pathlib import Path
 # Add current directory to path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-try:
-    import config
-    from github_integration import GitHubIntegration
-    from brief_generator import BriefGenerator
-    from news_fetcher import NewsFetcher
-except ImportError as e:
-    print(f"⚠️  Import error: {str(e)}")
-    print("Note: This script runs in GitHub Actions with environment variables")
-    # In GitHub Actions, we'll use env vars instead of config.py
-    pass
+# Import modules - github_integration handles missing config internally
+from github_integration import GitHubIntegration
+from brief_generator import BriefGenerator
 
 
 class GitHubActionsBrief:
