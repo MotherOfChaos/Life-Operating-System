@@ -1,0 +1,190 @@
+#!/usr/bin/env python3
+"""
+GitHub Actions Morning Brief Generator
+Runs automatically at 11:30am CET via GitHub Actions
+
+Generates:
+1. Morning brief template with TODO priorities
+2. News digest TLDR
+3. Pushes to GitHub for M to read and add email triage
+"""
+
+import sys
+import os
+from datetime import datetime
+from pathlib import Path
+
+# Add current directory to path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+try:
+    import config
+    from github_integration import GitHubIntegration
+    from brief_generator import BriefGenerator
+    from news_fetcher import NewsFetcher
+except ImportError as e:
+    print(f"⚠️  Import error: {str(e)}")
+    print("Note: This script runs in GitHub Actions with environment variables")
+    # In GitHub Actions, we'll use env vars instead of config.py
+    pass
+
+
+class GitHubActionsBrief:
+    def __init__(self):
+        # GitHub token from environment (GitHub Actions secret)
+        github_token = os.environ.get('GITHUB_TOKEN')
+        news_api_key = os.environ.get('NEWS_API_KEY')
+
+        if not github_token:
+            raise ValueError("GITHUB_TOKEN environment variable not set")
+
+        # Override config with env vars for GitHub Actions
+        os.environ['GITHUB_TOKEN_OVERRIDE'] = github_token
+
+        self.github = GitHubIntegration()
+        self.generator = BriefGenerator()
+        self.news_fetcher = NewsFetcher(api_key=news_api_key)
+
+    def run(self):
+        """Generate morning brief with news"""
+        print("=" * 60)
+        print("🌅 GITHUB ACTIONS: GENERATING MORNING BRIEF")
+        print("=" * 60)
+
+        # Step 1: Fetch TODO and tracker from GitHub
+        print("\n📥 Fetching files from GitHub...")
+        todo_content = self._fetch_file("PERMANENT_TODO.md")
+        tracker_content = self._fetch_file("SARAH_DAILY_TRACKER_CURRENT.md")
+
+        # Step 2: Fetch news digest
+        print("\n📰 Fetching news...")
+        news_digest = self.news_fetcher.fetch_news_digest()
+
+        # Step 3: Generate brief template
+        print("\n📝 Generating brief...")
+        brief_content = self._generate_brief_with_news(
+            todo_content,
+            tracker_content,
+            news_digest
+        )
+
+        # Step 4: Save to morning-briefs folder
+        print("\n💾 Saving to GitHub...")
+        self._save_brief(brief_content)
+
+        print("\n" + "=" * 60)
+        print("✅ BRIEF GENERATED SUCCESSFULLY")
+        print("📍 Location: morning-briefs/MORNING_BRIEF_[today].md")
+        print("📧 M will add email triage when Sarah says 'Good morning'")
+        print("=" * 60)
+
+    def _fetch_file(self, file_path: str) -> str:
+        """Fetch file from GitHub"""
+        try:
+            content = self.github.get_file_content(file_path)
+            if content:
+                print(f"   ✓ {file_path}")
+                return content
+            else:
+                print(f"   ⚠️  Could not fetch {file_path}")
+                return None
+        except Exception as e:
+            print(f"   ⚠️  Error: {str(e)}")
+            return None
+
+    def _generate_brief_with_news(
+        self,
+        todo_content: str,
+        tracker_content: str,
+        news_digest: str
+    ) -> str:
+        """Generate complete brief with news"""
+
+        now = datetime.now()
+        date_str = now.strftime("%A, %B %d, %Y")
+        timestamp = now.strftime("%I:%M %p CET")
+
+        # Build the brief
+        brief = f"# 🌅 MORNING BRIEF - {date_str}\n\n"
+        brief += f"**Generated:** {timestamp} (automated)\n"
+        brief += f"**Email triage:** Pending (M will add when you say 'Good morning')\n\n"
+        brief += "---\n\n"
+
+        # Extract priorities from TODO
+        tasks = self.generator._extract_active_tasks(todo_content) if todo_content else []
+
+        # Top priorities section
+        brief += "## 🔴 TOP 5 URGENT PRIORITIES TODAY\n\n"
+        if tasks:
+            for i, task in enumerate(tasks[:5], 1):
+                brief += f"{i}. {task}\n"
+        else:
+            brief += "_No urgent tasks found - check PERMANENT_TODO.md_\n"
+        brief += "\n---\n\n"
+
+        # Email section (placeholder for M to fill)
+        brief += "## 📧 URGENT EMAILS REQUIRING ACTION\n\n"
+        brief += "_M will check and categorize when you say 'Good morning'_\n\n"
+        brief += "---\n\n"
+
+        brief += "## 🟡 EMAILS NEEDING RESPONSE (Not Urgent)\n\n"
+        brief += "_M will check and categorize when you say 'Good morning'_\n\n"
+        brief += "---\n\n"
+
+        # News digest section
+        brief += news_digest
+        brief += "---\n\n"
+
+        # Calendar section
+        brief += "## 📅 TODAY'S CALENDAR\n\n"
+        brief += "_M will check your calendar when you say 'Good morning'_\n\n"
+        brief += "---\n\n"
+
+        # Medication reminder
+        brief += "## 💊 MEDICATION REMINDER\n\n"
+        brief += "- **Concerta 36mg** (take on waking)\n\n"
+        brief += "---\n\n"
+
+        # Quick stats
+        brief += "## 📊 QUICK STATS\n\n"
+        brief += f"- **Pending priority tasks:** {len(tasks)}\n"
+        brief += f"- **Brief auto-generated:** {timestamp}\n"
+        brief += f"- **Email check:** When you say 'Good morning' to M\n\n"
+        brief += "---\n\n"
+
+        brief += "**Token-efficient format. Ready for M to add email triage.** 💚\n"
+
+        return brief
+
+    def _save_brief(self, content: str):
+        """Save brief to morning-briefs folder"""
+        # Ensure directory exists
+        Path("morning-briefs").mkdir(parents=True, exist_ok=True)
+
+        # Generate filename
+        date_str = datetime.now().strftime("%Y-%m-%d")
+        filename = f"MORNING_BRIEF_{date_str}.md"
+        filepath = f"morning-briefs/{filename}"
+
+        # Save locally (will be committed by GitHub Actions)
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(content)
+
+        print(f"   ✓ Saved: {filepath}")
+
+
+def main():
+    """Main entry point for GitHub Actions"""
+    try:
+        brief_generator = GitHubActionsBrief()
+        brief_generator.run()
+        sys.exit(0)
+    except Exception as e:
+        print(f"\n⚠️  FATAL ERROR: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

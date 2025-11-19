@@ -5,14 +5,30 @@ Handles pulling and pushing files to GitHub repository
 
 import requests
 import base64
+import os
 from datetime import datetime
 from typing import Optional, Dict
-import config
+
+try:
+    import config
+except ImportError:
+    # If config doesn't exist (like in GitHub Actions), we'll use env vars
+    class config:
+        GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
+        GITHUB_REPO = "MotherOfChaos/Life-Operating-System"
+        GITHUB_BRANCH = "main"
+        TODO_FILE = "PERMANENT_TODO.md"
+        TRACKER_FILE = "SARAH_DAILY_TRACKER_CURRENT.md"
+        BRIEFS_FOLDER = "morning-briefs"
+        TIMEZONE = "Europe/Berlin"
+        BRIEF_RETENTION_DAYS = 7
+        TOP_PRIORITIES_COUNT = 5
 
 
 class GitHubIntegration:
     def __init__(self):
-        self.token = config.GITHUB_TOKEN
+        # Check for environment variable override (used in GitHub Actions)
+        self.token = os.environ.get('GITHUB_TOKEN_OVERRIDE') or os.environ.get('GITHUB_TOKEN') or config.GITHUB_TOKEN
         self.repo = config.GITHUB_REPO
         self.branch = config.GITHUB_BRANCH
         self.base_url = f"https://api.github.com/repos/{self.repo}"
