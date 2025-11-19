@@ -176,7 +176,7 @@ class BriefGenerator:
         return section
 
     def _generate_calendar_section(self, calendar_events: Optional[List[Dict]]) -> str:
-        """Generate calendar section"""
+        """Generate calendar section with filtering"""
         section = "## 📅 TODAY'S CALENDAR\n\n"
 
         if calendar_events is None:
@@ -184,14 +184,56 @@ class BriefGenerator:
         elif not calendar_events:
             section += "✨ *No scheduled events today*\n\n"
         else:
-            for event in calendar_events:
-                time = event.get('time', 'TBD')
-                title = event.get('title', 'Untitled Event')
-                section += f"- **{time}:** {title}\n"
-            section += "\n"
+            # Filter calendar events
+            filtered_events = self._filter_calendar_events(calendar_events)
+
+            if not filtered_events:
+                section += "✨ *No scheduled events today (after filtering)*\n\n"
+            else:
+                for event in filtered_events:
+                    time = event.get('time', 'TBD')
+                    title = event.get('title', 'Untitled Event')
+                    section += f"- **{time}:** {title}\n"
+                section += "\n"
 
         section += "---\n\n"
         return section
+
+    def _filter_calendar_events(self, events: List[Dict]) -> List[Dict]:
+        """
+        Filter calendar events based on Sarah's preferences:
+        - Exclude events with "notes" in title
+        - Exclude all-day events
+        - Exclude "Baja medica" events
+        - Only show time-specific appointments
+        """
+        filtered = []
+
+        for event in events:
+            title = event.get('title', '').lower()
+            is_all_day = event.get('all_day', False)
+            time = event.get('time', '')
+
+            # Skip if it contains "notes" (case insensitive)
+            if 'notes' in title:
+                continue
+
+            # Skip if it contains "baja medica" (case insensitive)
+            if 'baja medica' in title or 'baja médica' in title:
+                continue
+
+            # Skip if it's an all-day event
+            if is_all_day:
+                continue
+
+            # Skip if there's no specific time
+            if not time or time == 'TBD' or time.lower() == 'all day':
+                continue
+
+            # This event passed all filters
+            filtered.append(event)
+
+        return filtered
 
     def _generate_medication_section(self) -> str:
         """Generate medication reminder"""

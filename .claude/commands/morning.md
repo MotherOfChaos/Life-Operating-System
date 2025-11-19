@@ -32,6 +32,24 @@ After the script completes, check Sarah's Gmail and categorize emails into these
 6. 📧 **Newsletters/Promotions** - marketing, subscriptions (keywords: unsubscribe, newsletter, promotion)
 7. ✅ **Can Archive** - already handled or irrelevant (especially no-reply emails)
 
+## Step 2b: Check Google Calendar (Optional)
+
+If Sarah has granted calendar access, check today's Google Calendar events and apply these filters:
+
+**Calendar Filtering Rules:**
+- **EXCLUDE** any event with "notes" in the title (case insensitive)
+- **EXCLUDE** any all-day events
+- **EXCLUDE** "Baja medica" or "Baja médica" events
+- **ONLY SHOW** time-specific appointments with actual times
+
+Return calendar events in this format:
+```python
+[
+    {'time': '10:00 AM', 'title': 'Event Name', 'all_day': False},
+    {'time': '2:30 PM', 'title': 'Another Event', 'all_day': False}
+]
+```
+
 ## Step 3: Present Complete Morning Brief
 
 Combine the brief from the script with your email triage and present in this format:
@@ -67,7 +85,15 @@ Combine the brief from the script with your email triage and present in this for
 
 ---
 
-## 📅 OTHER EMAIL CATEGORIES
+## 📅 TODAY'S CALENDAR
+
+[If calendar checked, show filtered events with time and title]
+[Example: "- **10:00 AM:** Doctor appointment"]
+[Or: "✨ *No scheduled events today*"]
+
+---
+
+## 📧 OTHER EMAIL CATEGORIES
 
 **Calendar/Events:** [count] emails
 **Financial/Invoices:** [count] emails
