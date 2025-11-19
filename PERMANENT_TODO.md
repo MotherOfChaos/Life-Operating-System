@@ -4,7 +4,7 @@
 
 ---
 
-## 🎯 ACTIVE TASKS (Nov 17, 2025)
+## 🎯 ACTIVE TASKS (Nov 19, 2025)
 
 ### 🏠 Home & Valencia Trip
 - [ ] Check in with Dad about his needs
@@ -31,6 +31,12 @@
 ---
 
 ## ✅ COMPLETED (Recent Wins)
+
+### November 18-19
+- ✅ Paco Air Con check completed (Dad care)
+- ✅ Dennys visit completed (Dad care)
+- ✅ Read Le Petit Prince (planning M discussion)
+- ✅ Tested soluble Mirtazapina (works great!)
 
 ### November 17
 - ✅ GitHub integration tested and working
@@ -69,11 +75,17 @@
 
 ---
 
-## 🆕 ADDED NOV 17-18
+## 🆕 UPDATED NOV 18-19
 
-### Urgent Tuesday Nov 18:
-- [ ] **Call Dennys** (PRIORITY)
-- [ ] Paco Air Con check (11-12pm)
+### ✅ COMPLETED:
+- ✅ **Call Dennys** - Done! He came Nov 18 at 18:00
+- ✅ **Paco Air Con check** - Done! Came Nov 18 (11-12pm window)
+
+### 🔴 URGENT - TODAY/TOMORROW:
+- [ ] **PREP MEETING: Oriol, Ruy & Laura** (meeting Nov 20, online) - PRIORITY!
+  - Review teatro management transfer docs
+  - Prepare agenda/talking points
+  - Check any questions from Ruy/Laura
 
 ### New Zone Created: Teatro Production Ideas
 - [ ] **Birthday Burners Concept** - Develop this:
