@@ -28,10 +28,15 @@ jobs:
           cd automation
           pip install -r requirements.txt
 
+      - name: Generate news digest (your perfected system)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python automation/news_digest_generator.py
+
       - name: Generate morning brief with news
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
         run: |
           cd automation
           python github_actions_morning_brief.py
@@ -40,5 +45,5 @@ jobs:
         run: |
           git config --global user.name 'Morning Brief Bot'
           git config --global user.email 'bot@morningbrief.local'
-          git add morning-briefs/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-generate morning brief - $(date +'%Y-%m-%d %H:%M %Z')" && git push)
+          git add morning-briefs/ news-digests/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-generate morning brief + news digest - $(date +'%Y-%m-%d %H:%M %Z')" && git push)

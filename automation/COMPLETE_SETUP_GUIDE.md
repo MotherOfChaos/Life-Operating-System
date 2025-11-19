@@ -40,22 +40,29 @@
 
 ---
 
-### Step 2: Add News API Key (Optional but Recommended - 2 minutes)
+### Step 2: Add Anthropic API Key (Required for News - 2 minutes)
 
-**Without this:** Brief still works, but news section says "check manually"
-**With this:** Get automatic news headlines daily
+**This enables YOUR perfected news digest system to run automatically!**
 
-1. Get free API key (100 requests/day, free forever):
-   - Go to: https://newsapi.org/register
-   - Enter your email
-   - Copy the API key
+1. Get your Anthropic API key:
+   - Go to: https://console.anthropic.com/settings/keys
+   - Click "Create Key"
+   - Copy the API key (starts with `sk-ant-`)
 
 2. Add to GitHub secrets:
    - Same page as Step 1: https://github.com/MotherOfChaos/Life-Operating-System/settings/secrets/actions
    - Click **"New repository secret"**
-   - Name: `NEWS_API_KEY`
+   - Name: `ANTHROPIC_API_KEY`
    - Value: [paste your API key]
    - Click **"Add secret"**
+
+**This uses your perfected news digest system:**
+- ✅ Global_Media_Database_v3.json (154 curated sources)
+- ✅ Spanish sources in Spanish (Público, elDiario.es, infoLibre)
+- ✅ v4 format (TL;DR + detailed sections)
+- ✅ Cross-referenced political leans
+- ✅ Fact vs opinion separation
+- ✅ Your curated interests
 
 **Done!**
 
@@ -171,17 +178,34 @@ Test the automation manually before waiting for 11:30am:
 
 ---
 
-## 🎨 News Integration
+## 🎨 News Integration - YOUR Perfected System!
 
-The news digest is automatically generated using:
-- **Sources:** NewsAPI (100+ international sources)
-- **Focus:** Spain, Italy, Europe, Science, Tech
-- **Format:** TLDR bullet points (ADHD-friendly)
-- **Updates:** Daily at 11:30am CET
+The news digest uses YOUR perfected system automatically:
 
-**For detailed news coverage:**
-- The news-digest branch has full detailed format
-- Can be integrated later if you want
+**Sources:** Global_Media_Database_v3.json (154 curated sources)
+- Spanish sources in Spanish: Público, elDiario.es, infoLibre
+- Italian sources: ANSA, Corriere, La Repubblica
+- Cross-referenced political leans
+- High credibility sources
+
+**Format:** Your v4 format
+- TL;DR section (for morning brief)
+- Detailed sections by region (saved to news-digests/)
+- Fact vs opinion clearly separated
+- ADHD-friendly headers and formatting
+
+**Focus:** Your interests
+- Spain & Barcelona, Italy, Europe
+- Psychology, neuroscience, HMI
+- Theater & performing arts
+- Political corruption & accountability
+- Gender violence & social justice
+
+**Updates:** Daily at 11:30am CET (automated via Anthropic API)
+
+**Output:**
+- `morning-briefs/MORNING_BRIEF_[date].md` - Includes TLDR
+- `news-digests/news-digest-[date].md` - Full detailed digest
 
 ---
 
@@ -189,7 +213,7 @@ The news digest is automatically generated using:
 
 **What's in GitHub Secrets (not visible in code):**
 - ✅ `GH_PAT` - Your GitHub token
-- ✅ `NEWS_API_KEY` - Your news API key
+- ✅ `ANTHROPIC_API_KEY` - Your Anthropic API key (for news generation)
 
 **What's in .gitignore (never committed):**
 - ✅ `automation/config.py` - Local config
@@ -214,9 +238,10 @@ Common issues:
 
 ### "No news in brief"
 
-- Add `NEWS_API_KEY` secret (Step 2)
-- Or news API is down (rare)
-- Brief still works without news
+- Add `ANTHROPIC_API_KEY` secret (Step 2)
+- Check Anthropic API credits/quota
+- Check GitHub Actions logs for errors
+- Brief still works without news (shows placeholder)
 
 ### "Brief not generated today"
 

@@ -1,9 +1,9 @@
 # Morning Brief Automation - Python Dependencies
 
-# For GitHub API
+# For GitHub API and Anthropic API
 requests>=2.31.0
 
-# For Gmail API
+# For Gmail API (optional - only if setting up Gmail OAuth)
 google-auth>=2.23.0
 google-auth-oauthlib>=1.1.0
 google-auth-httplib2>=0.1.1
@@ -11,3 +11,6 @@ google-api-python-client>=2.100.0
 
 # For timezone handling
 pytz>=2023.3
+
+# For Anthropic API (news digest generation)
+anthropic>=0.18.0

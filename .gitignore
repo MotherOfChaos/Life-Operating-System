@@ -5,3 +5,5 @@ automation/*.log
 automation/backups/
 __pycache__/
 automation/__pycache__/
+automation/.news_tldr_cache.md
+news-digests/
