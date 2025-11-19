@@ -1,0 +1,49 @@
+name: Morning Brief Automation
+
+on:
+  schedule:
+    # Runs at 11:30 AM CET/CEST (10:30 AM UTC in winter, 9:30 AM UTC in summer)
+    # Using 10:30 UTC which works for CET (winter time)
+    - cron: '30 10 * * *'
+
+  workflow_dispatch:  # Allow manual trigger for testing
+
+jobs:
+  generate-morning-brief:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          cd automation
+          pip install -r requirements.txt
+
+      - name: Generate news digest (your perfected system)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python automation/news_digest_generator.py
+
+      - name: Generate morning brief with news
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          cd automation
+          python github_actions_morning_brief.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'Morning Brief Bot'
+          git config --global user.email 'bot@morningbrief.local'
+          git add morning-briefs/ news-digests/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-generate morning brief + news digest - $(date +'%Y-%m-%d %H:%M %Z')" && git push)
