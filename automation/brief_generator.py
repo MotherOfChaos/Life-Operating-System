@@ -6,7 +6,15 @@ Creates ADHD-friendly morning briefs combining emails, todos, and tracker data
 from datetime import datetime
 from typing import Dict, List, Optional
 import re
-import config
+import os
+
+try:
+    import config
+except ImportError:
+    # If config doesn't exist (like in GitHub Actions), use defaults
+    class config:
+        TIMEZONE = "Europe/Berlin"
+        TOP_PRIORITIES_COUNT = 5
 
 
 class BriefGenerator:
