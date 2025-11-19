@@ -26,7 +26,6 @@ class GitHubActionsBrief:
     def __init__(self):
         # GitHub token from environment (GitHub Actions secret)
         github_token = os.environ.get('GITHUB_TOKEN')
-        news_api_key = os.environ.get('NEWS_API_KEY')
 
         if not github_token:
             raise ValueError("GITHUB_TOKEN environment variable not set")
@@ -36,7 +35,6 @@ class GitHubActionsBrief:
 
         self.github = GitHubIntegration()
         self.generator = BriefGenerator()
-        self.news_fetcher = NewsFetcher(api_key=news_api_key)
 
     def run(self):
         """Generate morning brief with news"""
