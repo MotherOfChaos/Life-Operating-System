@@ -98,3 +98,33 @@
   - Community building + business model
   - Work with Claude to refine concept
 
+
+---
+
+## 🆕 UPDATED NOV 19 (EVENING)
+
+### ✅ COMPLETED TODAY:
+- ✅ Called Bulio
+- ✅ Contacted CAJAMAR
+- ✅ RENFE refund requested
+- ✅ Emailed Amparo & Noemi (Cmss Cabaña)
+
+### 🔴 URGENT - TOMORROW (NOV 20):
+- [ ] **MEETING: Oriol, Ruy & Laura** (online) - PREP TONIGHT!
+- [ ] **Pick up dental prop** - Pharmacy tomorrow
+- [ ] **Laura's Fringe invoice** - Forward for payment
+
+### 🟡 THIS WEEK:
+- [ ] **Follow up Cmss Cabañal** - Email + possibly visit office Friday
+- [ ] **Follow up Dennys & Paco** - Request quotes ASAP
+- [ ] **Get appointments: James & Daniel** - Physio sessions needed
+
+### 🟠 CALL VITTORIO PACKAGE:
+- [ ] Send research done so far
+- [ ] Tell him about Jesus (French-speaking lawyer for house acquisition)
+
+### 🎯 TRAIN EXTENSION (if extending Valencia stay):
+- [ ] Check with Philoux about staying longer
+- [ ] Check new train options + change costs
+- [ ] Get new ticket if extending
+
