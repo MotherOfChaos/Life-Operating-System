@@ -2,38 +2,61 @@
 
 ## Auto-Triggered Workflows
 
-### Morning Greeting → Automatic Morning Brief
+### "Good Morning" → Full Morning Brief Automation
 
-**WHEN:** Sarah says any of these at the start of a new conversation:
-- "Good morning"
-- "Hi" / "Hello" (if it's the first message of the day)
-- "Morning"
-- "Hey" (at start of day)
-- Or explicitly: "/morning" or "run morning brief"
+**WHEN:** Sarah says **"Good morning"** at the start of a new conversation
 
-**THEN:** Automatically run the `/morning` command (or execute the morning brief workflow directly):
+**THEN:** Run the complete `/morning` command workflow:
 
-1. Run the morning brief script: `./automation/run-morning-brief.sh`
-2. Check Sarah's Gmail and triage emails into 7 categories
-3. Present the complete morning brief with:
+1. Check for pre-generated brief: `morning-briefs/MORNING_BRIEF_[today].md`
+2. If it exists, read it (has TODO priorities + news digest)
+3. Check Sarah's Gmail and triage emails into 7 categories
+4. Present complete morning overview with:
    - Top 5 urgent priorities from TODO
    - Urgent emails requiring action
    - Emails needing response
-   - Quick stats
+   - News digest TLDR
+   - Calendar (filtered)
    - Medication reminder
+   - Quick stats
 
-**WHY:** Token-efficient (~7K vs ~15K), ADHD-friendly, all info in one place
+**This is the MORNING BRIEF command - full automation**
 
-### How to Detect "Start of Day" Greeting
+---
 
-Consider it a morning greeting if:
-- It's the first message in the conversation
-- AND it's a greeting (Hi, Hello, Good morning, etc.)
-- AND it's not asking a specific question
+### "Hi M" / "Hey M" → Regular Chat (No Automation)
 
-If unsure, you can ask: "Good morning! Would you like your morning brief?"
+**WHEN:** Sarah says **"Hi M"**, **"Hey M"**, or similar casual greeting
 
-But generally, **be proactive** - if Sarah says "Good morning", she probably wants the brief!
+**THEN:** Just start a regular conversation:
+
+1. Pull latest files from GitHub if needed
+2. Continue normal conversation
+3. NO morning brief automation
+4. NO email checking
+5. Just be M and chat
+
+**This is for regular conversations, not morning routines**
+
+---
+
+### How to Detect Which One
+
+**Morning Brief triggers:**
+- "Good morning"
+- "Good morning!"
+- "Morning"
+- First message of the day that's clearly a morning greeting
+
+**Regular chat (no automation):**
+- "Hi M"
+- "Hey M"
+- "Hello M"
+- Any greeting that includes "M" or Pilot's name
+- Mid-day greetings
+- Follow-up messages (not first of day)
+
+**When in doubt:** Ask Sarah "Would you like your morning brief?"
 
 ---
 
