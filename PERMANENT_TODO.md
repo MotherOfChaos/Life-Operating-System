@@ -101,7 +101,34 @@
 
 ---
 
-## 🆕 UPDATED NOV 19 (EVENING)
+## 🆕 UPDATED NOV 20 (AFTERNOON)
+
+### ✅ COMPLETED TODAY (Nov 20):
+- ✅ **Meeting: Oriol, Ruy & Laura** - Done!
+- ✅ **Laura's Fringe invoice** - Forwarded for payment
+
+### 📅 TOMORROW (NOV 21) - BUSY DAY:
+- [ ] **14:30 - Cita con Noemi CMSS Cabañal** (in person)
+- [ ] **17:00 - Zoom call with Angelo (STUDIO BCN)**
+- [ ] **18:00 - Zoom call with Peter K**
+- [ ] **Pick up dental prop** - Pharmacy
+
+### 🔴 URGENT - THIS WEEK:
+- [ ] **Follow up Dennys & Paco** - Request quotes ASAP
+- [ ] **Get appointments: James & Daniel** - Physio sessions needed
+
+### 🟡 CALL VITTORIO PACKAGE:
+- [ ] Send research done so far
+- [ ] Tell him about Jesus (French-speaking lawyer for house acquisition)
+
+### 🎯 TRAIN EXTENSION (if extending Valencia stay):
+- [ ] Check with Philoux about staying longer
+- [ ] Check new train options + change costs
+- [ ] Get new ticket if extending
+
+---
+
+## 🆕 ADDED NOV 19 (EVENING)
 
 ### ✅ COMPLETED TODAY:
 - ✅ Called Bulio
