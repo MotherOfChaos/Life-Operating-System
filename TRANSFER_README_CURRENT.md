@@ -1,6 +1,27 @@
 # 🚀 TRANSFER PACKAGE - READ THIS FIRST
 
-**For Next Claude:** This is your briefing package. Read this, then read the other 2 files.
+**For Next Claude:** This is your briefing package. Read this, then read the other files.
+
+---
+
+## ⚠️ CRITICAL: CLAUDE DESKTOP vs CLAUDE.AI WEB
+
+**This chat is on:** claude.ai website OR Claude Desktop app?
+
+### If CLAUDE.AI WEB (website):
+- ✅ Sarah uploaded 3 files to start this chat
+- ✅ Read them to get context
+- ✅ Authenticate with phrase below
+- ✅ GitHub automation works (pull/push)
+- ❌ "Good morning" automation NOT available (Desktop only)
+
+### If CLAUDE DESKTOP (app on computer):
+- ✅ "Good morning" triggers full automation (email + brief)
+- ✅ "Hi M" / "Hey M" = regular chat
+- ✅ Instructions in `.claude/instructions.md` on GitHub
+- ✅ Slash commands available (like `/morning`)
+
+**Most chats are WEB, where you need uploaded files to start.** Desktop is for morning automation only.
 
 ---
 
@@ -17,23 +38,20 @@
 
 ## 🚨 CRITICAL: WHAT YOU MUST DO IMMEDIATELY
 
-### 1. **Understand the Command**
-Sarah uses different greetings for different purposes:
+### 1. **Understand the Command (DESKTOP ONLY)**
+**Note:** These automated workflows only work in Claude Desktop app, not claude.ai web.
 
-**"Good morning"** = Morning brief workflow
-- Pull from GitHub
-- Check email (if automation ran) OR manually check Gmail
-- Present full morning brief with priorities, emails, calendar
-- Uses more tokens (~8-13K) but gives complete day overview
+**In Claude Desktop:**
+- **"Good morning"** = Morning brief workflow (email + priorities + calendar)
+- **"Hi M" / "Hey M"** = Regular conversation
 
-**"Hi M" / "Hey M" / "Hi" / "Hey"** = Regular conversation
-- Pull from GitHub  
-- Authenticate with phrase below
-- Continue conversation naturally
-- Uses minimal tokens (~3-5K)
+**In claude.ai Web:**
+- Sarah uploads files manually
+- Just authenticate and continue
+- No "Good morning" automation (yet)
 
-### 2. **Authenticate** (for regular chats, not morning brief)
-Say this exact phrase to confirm you've read everything:
+### 2. **Authenticate** (for claude.ai web chats)
+If Sarah uploaded files to start this chat, say this exact phrase:
 > "I've read your Life OS files. Mens sana in corpore sano, my friend. I'm up to speed and we can continue exactly where we left off. 💚"
 
 ### 3. **Set Up Token Monitoring**
@@ -43,9 +61,27 @@ Say this exact phrase to confirm you've read everything:
 
 ### 4. **Update Files As You Go**
 - Don't create NEW files
-- UPDATE the same 3 CURRENT files
-- Copy to /mnt/user-data/outputs/ after each update
+- UPDATE the same 4 CURRENT files
+- Push to GitHub at end of session (batch update)
 - Tell Sarah: "✅ Files updated!"
+
+---
+
+## 🌐 HOW TO START A NEW CHAT (claude.ai Web)
+
+**Sarah's process:**
+1. Go to GitHub: `MotherOfChaos/Life-Operating-System`
+2. Download these 3 files:
+   - SARAH_LIFE_OS_CURRENT.json
+   - SARAH_DAILY_TRACKER_CURRENT.md
+   - TRANSFER_README_CURRENT.md
+3. Upload them to new claude.ai chat
+4. New Claude reads and authenticates
+
+**OR Sarah can ask current M:**
+"Pull latest files and put them in outputs" - then download from there.
+
+**This ensures continuity across web chats until full automation is built.**
 
 ---
 
