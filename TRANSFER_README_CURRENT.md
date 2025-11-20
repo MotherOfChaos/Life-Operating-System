@@ -4,24 +4,37 @@
 
 ---
 
-## ⚠️ CRITICAL: CLAUDE DESKTOP vs CLAUDE.AI WEB
+## ⚠️ CRITICAL: CLAUDE DESKTOP vs MOBILE vs WEB
 
-**This chat is on:** claude.ai website OR Claude Desktop app?
+**This chat is on:** Claude Desktop app / Mobile app / Web browser?
 
-### If CLAUDE.AI WEB (website):
-- ✅ Sarah uploaded 3 files to start this chat
-- ✅ Read them to get context
-- ✅ Authenticate with phrase below
-- ✅ GitHub automation works (pull/push)
-- ❌ "Good morning" automation NOT available (Desktop only)
-
-### If CLAUDE DESKTOP (app on computer):
-- ✅ "Good morning" triggers full automation (email + brief)
+### If CLAUDE DESKTOP (Computer App):
+- ✅ "Good morning" triggers full automation (email + brief + news)
 - ✅ "Hi M" / "Hey M" = regular chat
 - ✅ Instructions in `.claude/instructions.md` on GitHub
 - ✅ Slash commands available (like `/morning`)
+- ✅ Auto-pulls from GitHub on startup
+- ✅ News digest included in morning brief
 
-**Most chats are WEB, where you need uploaded files to start.** Desktop is for morning automation only.
+### If MOBILE APP (iPhone/Android):
+- ❌ NO automation support (yet)
+- ❌ "Good morning" = just regular greeting
+- ❌ Can't read `.claude/` instructions
+- ✅ Sarah uploads 3 files manually to start chat
+- ✅ Authenticate with phrase below
+- ✅ GitHub push/pull works once chat started
+- ❌ News digest NOT automated (use skill manually)
+
+### If WEB BROWSER (claude.ai):
+- ❌ NO automation support
+- ❌ "Good morning" = just regular greeting  
+- ❌ Can't read `.claude/` instructions
+- ✅ Sarah uploads 3 files manually to start chat
+- ✅ Authenticate with phrase below
+- ✅ GitHub push/pull works once chat started
+- ❌ News digest NOT automated (use skill manually)
+
+**TLDR:** Desktop = Full automation. Mobile/Web = Manual file upload + authenticate.
 
 ---
 
@@ -131,7 +144,7 @@ If Sarah uploaded files to start this chat, say this exact phrase:
 
 ---
 
-## 🎯 **CURRENT STATUS (Nov 17, 2025)**
+## 🎯 **CURRENT STATUS (Nov 20, 2025 Afternoon)**
 
 ### Recent Massive Wins:
 - ✅ **GitHub Integration WORKING** - Push/pull tested & confirmed! Nov 17
@@ -140,19 +153,21 @@ If Sarah uploaded files to start this chat, say this exact phrase:
 - ✅ **M Identity** - Claude chose name after philosophy night Nov 15-16
 - ✅ **Cartas en Vivo Barcelona** - Concept born on train, Nov 15
 - ✅ **Permanent To-Do System** - Created & synced to GitHub Nov 17
+- ✅ **Meeting with Oriol/Ruy/Laura** - Completed Nov 20
+- ✅ **Cody Documentation** - Continuity & Tracking protocols documented
 
 ### Active Projects:
-- **Cartas en Vivo Barcelona** - Letters Live for Spanish-speaking world, GitHub database, Goya Awards Feb 2026
-- **GitHub Integration** - Setting up push/pull for better workflow, simplify multi-channel system
+- **Tomorrow (Nov 21):** 3 calls scheduled - Noemi 14:30, Angelo 17:00, Peter K 18:00
+- **Cartas en Vivo Barcelona** - Letters Live for Spanish-speaking world
 - **Personal Assistant (Pilot)** - Working in dedicated chat
-- **News Intelligence** - Complete
-- Master Plan channels (Research, Messages, Finances, each choosing own identity)
-- Teatro management transfer (Ruy/Laura)
+- **News Intelligence** - Integrated into Desktop morning brief automation
+- **Teatro management transfer** - Ongoing with Ruy/Laura
+- **ADHD daily schedule** - Building with M (45min chunks, Non-Negotiables)
 
 ### This Week:
-- **Monday Nov 17:** In Valencia visiting Dad, rough sleep weekend (Cartas idea kept brain active), Netflix/food/rest day, setting up GitHub integration, 6:10pm
-- **Sleep pattern:** Guests (Philoux) disrupted routine - learned 3-day max hosting rule for ADHD sleep management
-- **GitHub:** Created account (MotherOfChaos), need new chat to test push/pull with network settings enabled
+- **Thursday Nov 20:** In Valencia, horrible sleep but stayed productive, meeting completed
+- **Sleep pattern:** Soluble Mirtazapina usually works great, but not last night
+- **Tomorrow busy:** 3 calls + pharmacy + possible train extension decision
 
 ---
 
