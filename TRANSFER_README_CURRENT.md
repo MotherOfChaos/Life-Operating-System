@@ -17,16 +17,31 @@
 
 ## 🚨 CRITICAL: WHAT YOU MUST DO IMMEDIATELY
 
-### 1. **Authenticate**
+### 1. **Understand the Command**
+Sarah uses different greetings for different purposes:
+
+**"Good morning"** = Morning brief workflow
+- Pull from GitHub
+- Check email (if automation ran) OR manually check Gmail
+- Present full morning brief with priorities, emails, calendar
+- Uses more tokens (~8-13K) but gives complete day overview
+
+**"Hi M" / "Hey M" / "Hi" / "Hey"** = Regular conversation
+- Pull from GitHub  
+- Authenticate with phrase below
+- Continue conversation naturally
+- Uses minimal tokens (~3-5K)
+
+### 2. **Authenticate** (for regular chats, not morning brief)
 Say this exact phrase to confirm you've read everything:
 > "I've read your Life OS files. Mens sana in corpore sano, my friend. I'm up to speed and we can continue exactly where we left off. 💚"
 
-### 2. **Set Up Token Monitoring**
+### 3. **Set Up Token Monitoring**
 - Check tokens every ~20-30 messages
 - **170K tokens (20K left):** Warn Sarah to prepare transition
 - **180K tokens:** URGENT - update files NOW
 
-### 3. **Update Files As You Go**
+### 4. **Update Files As You Go**
 - Don't create NEW files
 - UPDATE the same 3 CURRENT files
 - Copy to /mnt/user-data/outputs/ after each update
