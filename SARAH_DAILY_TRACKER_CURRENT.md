@@ -4,18 +4,7 @@
 
 ---
 
-## 🌙 SLEEP - Recent Pattern (Nov 15-19, Valencia)
-
-### Saturday Nov 16 Night:
-- **Bed:** ~2:00am (Cartas en Vivo ideas kept brain active)
-- **Woke:** 7:30pm Sunday (17.5 hours!)  
-- **Quality:** Body catching up after Philoux visit disruption
-- **Pattern learned:** Guests max 3 days before sleep disrupts
-
-### Sunday Nov 17 Night:
-- **Bed:** ~5:30am
-- **Sleep:** Rough
-- **Goal tonight:** Earlier bedtime, Netflix/food/rest day
+## 🌙 SLEEP - Recent Pattern (Nov 18-20, Valencia)
 
 ### Monday Nov 17 Night / Tuesday Nov 18 Early Morning:
 - **Bed:** 01:39am (Quetiapina)
@@ -30,14 +19,21 @@
 - **Final wake:** 16:15pm Wednesday (late but body needed it after frustrating Claude Code day)
 - **Pattern:** Soluble Mirtazapina working really well for fast sleep onset
 
+### Wednesday Nov 19 Night / Thursday Nov 20 Morning:
+- **Bed:** ~05:00am
+- **Sleep Protocol:** Quetiapina + Mirtazapina soluble (taken around this time)
+- **Quality:** HORRIBLE - worst sleep in days
+- **Woke:** 11:55am Thursday (late wake after bad night)
+- **Pattern:** Not sure why bad - soluble Mirtazapina usually works. May need to track more carefully.
+
 ---
 
-## 💊 MEDICATIONS - Nov 17-19
+## 💊 MEDICATIONS - Nov 18-20
 
 ### Sarah:
-- **Nov 17:** Tracked in session (sleep protocol)
 - **Nov 18:** Quetiapina 01:39am, Mirtazapina + Zolpidem ~03:20am
 - **Nov 19:** Quetiapina 03:26am, Mirtazapina soluble ~04:35am, Concerta 36mg at 14:00
+- **Nov 20:** Concerta 36mg at 11:55am (after horrible sleep, late wake)
 
 ### Meu:
 - **Daily ongoing (no longer tracking daily):** AMODIP + BENEFORTIL + CYSTAID
@@ -59,6 +55,14 @@
 - ✅ **Cartas en Vivo concept** - Born on train, researching
 - ✅ **M Identity** - Philosophy night, chose name together
 - ✅ **3-day guest rule** - ADHD pattern identified & documented
+
+### **Nov 20 Wins:**
+- ✅ **Meeting: Oriol, Ruy & Laura** - Completed successfully
+- ✅ **Laura's Fringe invoice** - Forwarded for payment
+- ✅ **Follow up Dennys & Paco** - Quotes requested
+- ✅ **Clarified news system** - Understood Desktop vs Mobile/Web automation
+- ✅ **Created Cody documentation** - Continuity system + Tracking protocol
+- ✅ **Stayed productive** - Despite horrible sleep night
 
 ### **Nov 18-19 Wins:**
 - ✅ **Paco Air Con visit** - Completed (for Dad care)
@@ -119,14 +123,14 @@
 
 ---
 
-## 🎯 CURRENT FOCUS (Nov 19, 16:15)
+## 🎯 CURRENT FOCUS (Nov 20, Afternoon)
 
-- **URGENT:** Prepare meeting with Oriol, Ruy & Laura (meeting tomorrow Nov 20, online)
-- Morning brief workflow testing (with email integration)
-- Continue Cartas en Vivo research & database
-- Better sleep tonight after late wake today
+- **Tomorrow (Nov 21):** 3 scheduled calls - Noemi 14:30, Angelo 17:00, Peter K 18:00
+- Pick up dental prop from pharmacy
+- Building ADHD-friendly daily schedule with M (45min chunks, Non-Negotiables)
+- Considering extending Valencia stay for heating system (check with Philoux)
+- News system clarified - Desktop automation only, Mobile/Web needs manual
 - Rest & recovery in Valencia
-- Le Petit Prince discussion with M (the rose chapter)
 
 ---
 
