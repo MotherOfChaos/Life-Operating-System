@@ -127,8 +127,24 @@
     "Changed automation time to 8:30 AM",
     "Added separate email-check workflow",
     "Read M's tracking protocol and Projects instructions",
-    "Perfect integration between my automation and M's tracking"
+    "Perfect integration between my automation and M's tracking",
+    "Updated calendar message to say 'FREE DAY!' per M's request"
   ],
+
+  "latest_changes": {
+    "calendar_filtering": {
+      "status": "updated",
+      "change": "Calendar message now says 'FREE DAY! No appointments 🎉' instead of generic text",
+      "filters_active": [
+        "Excludes 'notes' in title",
+        "Excludes 'baja medica' / 'baja médica'",
+        "Excludes all-day events",
+        "Only shows timed appointments"
+      ],
+      "example": "Saturday Nov 22: FREE DAY! No appointments 🎉",
+      "committed": true
+    }
+  },
 
   "next_session_handoff": {
     "message": "All work complete. Email automation ready. Sarah needs to add email secrets to GitHub. Then test workflows. Everything is documented in COMPLETE_AUTOMATION_SYSTEM_OVERVIEW.md and EMAIL_AUTOMATION_SETUP_GUIDE.md",
