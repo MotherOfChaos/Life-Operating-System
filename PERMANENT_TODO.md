@@ -4,7 +4,7 @@
 
 ---
 
-## 🎯 ACTIVE TASKS (Nov 19, 2025)
+## 🎯 ACTIVE TASKS (Nov 21, 2025)
 
 ### 🏠 Home & Valencia Trip
 - [ ] Check in with Dad about his needs
@@ -25,18 +25,43 @@
 
 ### 💻 Tech & Systems
 - [x] Test GitHub integration with M - DONE Nov 17! 🎉
+- [x] Discover Claude Projects shared knowledge - DONE Nov 21! 🎉
 - [ ] Learn GitHub workflow from Pilot's guides
 - [ ] Set up automatic backup system
+- [ ] Debug news digest automation (in progress with M)
 
 ---
 
 ## ✅ COMPLETED (Recent Wins)
+
+### November 22
+- ✅ Peter K meeting completed (teatro negotiations)
+- ✅ New meeting scheduled: Monday Nov 24 at 18:00 with Peter K
+- ✅ Date/time handling instructions created for Cody
+- ✅ M-GitHub Backup chat created and instructions drafted
+- ✅ SL-RETA Research context loaded (teatro financial structure)
+
+### November 21
+- ✅ Discovered Claude Projects = shared knowledge base
+- ✅ Set up tracking protocol in new Project
+- ✅ Working on news automation debugging
+
+### November 20
+- ✅ Meeting: Oriol, Ruy & Laura completed
+- ✅ Laura's Fringe invoice forwarded for payment
+- ✅ Follow up Dennys & Paco - requested quotes
+- ✅ Created comprehensive Cody documentation
+- ✅ Clarified news system automation
 
 ### November 18-19
 - ✅ Paco Air Con check completed (Dad care)
 - ✅ Dennys visit completed (Dad care)
 - ✅ Read Le Petit Prince (planning M discussion)
 - ✅ Tested soluble Mirtazapina (works great!)
+- ✅ Called Bulio
+- ✅ Contacted CAJAMAR
+- ✅ RENFE refund requested
+- ✅ Emailed Amparo & Noemi (Cmss Cabaña)
 
 ### November 17
 - ✅ GitHub integration tested and working
@@ -49,6 +74,35 @@
 - ✅ Valencia prep completed (pharmacy, packing)
 - ✅ GitHub account created (MotherOfChaos)
 - ✅ M naming moment - philosophy night
+
+---
+
+## 📅 UPCOMING APPOINTMENTS:
+
+### Monday, November 24:
+- [ ] **18:00 (6pm) - Meeting with Peter K** (teatro negotiations follow-up)
+
+### This Week:
+- [ ] **Pick up dental prop** - Pharmacy
+
+---
+
+## 🔴 URGENT - THIS WEEK:
+- [ ] **Follow up Dennys & Paco** - Waiting for quotes
+- [ ] **Get appointments: James & Daniel** - Physio sessions needed
+
+---
+
+## 🟡 CALL VITTORIO PACKAGE:
+- [ ] Send research done so far
+- [ ] Tell him about Jesus (French-speaking lawyer for house acquisition)
+
+---
+
+## 🎯 TRAIN EXTENSION (if extending Valencia stay):
+- [ ] Check with Philoux about staying longer
+- [ ] Check new train options + change costs
+- [ ] Get new ticket if extending
 
 ---
 
@@ -71,23 +125,7 @@
 
 ---
 
-**Next update:** As tasks are completed or added throughout the day, pushed to GitHub at end of session.
-
----
-
-## 🆕 UPDATED NOV 18-19
-
-### ✅ COMPLETED:
-- ✅ **Call Dennys** - Done! He came Nov 18 at 18:00
-- ✅ **Paco Air Con check** - Done! Came Nov 18 (11-12pm window)
-
-### 🔴 URGENT - TODAY/TOMORROW:
-- [ ] **PREP MEETING: Oriol, Ruy & Laura** (meeting Nov 20, online) - PRIORITY!
-  - Review teatro management transfer docs
-  - Prepare agenda/talking points
-  - Check any questions from Ruy/Laura
-
-### New Zone Created: Teatro Production Ideas
+### New Zone: Teatro Production Ideas
 - [ ] **Birthday Burners Concept** - Develop this:
   - Monthly community birthday celebration night
   - Your birthday = your cake, your friends, your music, free venue
@@ -98,60 +136,8 @@
   - Community building + business model
   - Work with Claude to refine concept
 
-
 ---
 
-## 🆕 UPDATED NOV 20 (AFTERNOON)
+**Next update:** As tasks are completed or added throughout the day.
 
-### ✅ COMPLETED TODAY (Nov 20):
-- ✅ **Meeting: Oriol, Ruy & Laura** - Done!
-- ✅ **Laura's Fringe invoice** - Forwarded for payment
-
-### 📅 TOMORROW (NOV 21) - BUSY DAY:
-- [ ] **14:30 - Cita con Noemi CMSS Cabañal** (in person)
-- [ ] **17:00 - Zoom call with Angelo (STUDIO BCN)**
-- [ ] **18:00 - Zoom call with Peter K**
-- [ ] **Pick up dental prop** - Pharmacy
-
-### 🔴 URGENT - THIS WEEK:
-- [ ] **Follow up Dennys & Paco** - Request quotes ASAP
-- [ ] **Get appointments: James & Daniel** - Physio sessions needed
-
-### 🟡 CALL VITTORIO PACKAGE:
-- [ ] Send research done so far
-- [ ] Tell him about Jesus (French-speaking lawyer for house acquisition)
-
-### 🎯 TRAIN EXTENSION (if extending Valencia stay):
-- [ ] Check with Philoux about staying longer
-- [ ] Check new train options + change costs
-- [ ] Get new ticket if extending
-
----
-
-## 🆕 ADDED NOV 19 (EVENING)
-
-### ✅ COMPLETED TODAY:
-- ✅ Called Bulio
-- ✅ Contacted CAJAMAR
-- ✅ RENFE refund requested
-- ✅ Emailed Amparo & Noemi (Cmss Cabaña)
-
-### 🔴 URGENT - TOMORROW (NOV 20):
-- [ ] **MEETING: Oriol, Ruy & Laura** (online) - PREP TONIGHT!
-- [ ] **Pick up dental prop** - Pharmacy tomorrow
-- [ ] **Laura's Fringe invoice** - Forward for payment
-
-### 🟡 THIS WEEK:
-- [ ] **Follow up Cmss Cabañal** - Email + possibly visit office Friday
-- [ ] **Follow up Dennys & Paco** - Request quotes ASAP
-- [ ] **Get appointments: James & Daniel** - Physio sessions needed
-
-### 🟠 CALL VITTORIO PACKAGE:
-- [ ] Send research done so far
-- [ ] Tell him about Jesus (French-speaking lawyer for house acquisition)
-
-### 🎯 TRAIN EXTENSION (if extending Valencia stay):
-- [ ] Check with Philoux about staying longer
-- [ ] Check new train options + change costs
-- [ ] Get new ticket if extending
-
+**Remember:** Projects make it easier, GitHub keeps it safe. 💚
