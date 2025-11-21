@@ -3,6 +3,9 @@
 # For GitHub API and Anthropic API
 requests>=2.31.0
 
+# For Gmail IMAP automation (multi-account support)
+imap-tools>=1.7.0
+
 # For Gmail API (optional - only if setting up Gmail OAuth)
 google-auth>=2.23.0
 google-auth-oauthlib>=1.1.0
