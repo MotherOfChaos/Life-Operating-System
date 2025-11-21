@@ -394,10 +394,20 @@ def main():
     print("\n" + "=" * 60)
     print("📊 TRIAGE REPORT")
     print("=" * 60)
-    print(checker.generate_triage_report())
 
-    # Save results
+    report = checker.generate_triage_report()
+    print(report)
+
+    # Save results (JSON)
     checker.save_results()
+
+    # Save readable report (Markdown)
+    from datetime import datetime
+    report_file = f"email_check_{datetime.now().strftime('%Y-%m-%d_%H-%M')}.md"
+    with open(report_file, 'w', encoding='utf-8') as f:
+        f.write(f"# Email Check - {datetime.now().strftime('%Y-%m-%d %H:%M')}\n\n")
+        f.write(report)
+    print(f"\n💾 Readable report saved: {report_file}")
 
 
 if __name__ == "__main__":
