@@ -2,9 +2,9 @@ name: Morning Brief Automation
 
 on:
   schedule:
-    # Runs at 11:30 AM CET/CEST (10:30 AM UTC in winter, 9:30 AM UTC in summer)
-    # Using 10:30 UTC which works for CET (winter time)
-    - cron: '30 10 * * *'
+    # Runs at 8:30 AM CET/CEST (7:30 AM UTC in winter, 6:30 AM UTC in summer)
+    # Using 7:30 UTC which works for CET (winter time)
+    - cron: '30 7 * * *'
 
   workflow_dispatch:  # Allow manual trigger for testing
 
