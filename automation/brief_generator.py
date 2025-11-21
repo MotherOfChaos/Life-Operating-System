@@ -190,13 +190,13 @@ class BriefGenerator:
         if calendar_events is None:
             section += "*Calendar integration not configured - check manually with Claude*\n\n"
         elif not calendar_events:
-            section += "✨ *No scheduled events today*\n\n"
+            section += "**FREE DAY! No appointments** 🎉\n\n"
         else:
             # Filter calendar events
             filtered_events = self._filter_calendar_events(calendar_events)
 
             if not filtered_events:
-                section += "✨ *No scheduled events today (after filtering)*\n\n"
+                section += "**FREE DAY! No appointments** 🎉\n\n"
             else:
                 for event in filtered_events:
                     time = event.get('time', 'TBD')
