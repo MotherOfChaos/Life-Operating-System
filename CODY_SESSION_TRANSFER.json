@@ -146,13 +146,43 @@
     }
   },
 
+  "CRITICAL_PREFERENCES": {
+    "MUST_REMEMBER": [
+      "⚠️ NEVER give Sarah DIY options when you can do it yourself",
+      "⚠️ ONLY give her tasks when you LITERALLY CANNOT do them",
+      "⚠️ Don't waste time/tokens/energy with multiple choices - JUST DO IT",
+      "⚠️ She's not a skilled developer - assume minimal technical knowledge",
+      "⚠️ Be EXTREMELY precise with instructions when you must give them",
+      "Examples of what YOU should do: git commands, file operations, code execution, API calls",
+      "Examples of what ONLY SHE can do: create GitHub repos (needs her account), add GitHub secrets (needs her login), open external websites"
+    ],
+    "communication_style": {
+      "ADHD_friendly": true,
+      "bullet_points": true,
+      "no_unnecessary_explanations": true,
+      "action_first_theory_later": true,
+      "assume_she_trusts_you": "100%"
+    }
+  },
+
+  "xavier_sharing_package": {
+    "status": "created",
+    "folder": "XAVIER/",
+    "contents": "Complete ADHD-friendly Life OS automation system",
+    "files": 19,
+    "ready_to_share": "pending - needs upload to public repo",
+    "public_repo": "ADHD-Life-OS-Starter (created but files not pushed due to auth)",
+    "next_step": "Sarah needs to upload XAVIER folder contents via GitHub web interface"
+  },
+
   "next_session_handoff": {
-    "message": "All work complete. Email automation ready. Sarah needs to add email secrets to GitHub. Then test workflows. Everything is documented in COMPLETE_AUTOMATION_SYSTEM_OVERVIEW.md and EMAIL_AUTOMATION_SETUP_GUIDE.md",
+    "message": "XAVIER sharing package created in XAVIER/ folder. Public repo created but needs Sarah to upload files via GitHub website (drag/drop). All automation work complete. Email automation ready. Sarah needs to add email secrets to GitHub. Then test workflows.",
     "files_to_read": [
       "COMPLETE_AUTOMATION_SYSTEM_OVERVIEW.md",
       "EMAIL_AUTOMATION_SETUP_GUIDE.md",
       ".claude/FOR_CODY_TRACKING_PROTOCOL.md",
-      ".claude/CLAUDE_PROJECTS_INSTRUCTIONS.md"
+      ".claude/CLAUDE_PROJECTS_INSTRUCTIONS.md",
+      "XAVIER/README.md"
     ],
     "current_branch": "claude/complete-automation-email-mobile-01AC67AbNtpwjgdBqyyxLpkk"
   }
