@@ -1,0 +1,38 @@
+Service_Type,Provider_Name,Amount_EUR_Monthly,Amount_EUR_Annual,Percentage_Monthly,Recurrent_Payment,Payment_Frequency,Next_Due_Date,Account_Used,Property_Location,Notes,Search_Keywords,Confidence_Level
+Property_Tax,Ayuntamiento Valencia,TBD,TBD,TBD,YES,Annual,TBD,Personal,Barraca 182 Valencia,IBI property tax,"IBI|impuesto|ayuntamiento|valencia",TBD
+Property_Tax,Ayuntamiento Barcelona,TBD,TBD,TBD,YES,Annual,TBD,Personal,Malnom Barcelona,IBI property tax,"IBI|impuesto|ayuntamiento|barcelona|malnom",TBD
+Property_Insurance,Insurance Company,TBD,TBD,TBD,YES,Annual,TBD,Personal,Barraca 182 Valencia,Home insurance Valencia,"seguro|hogar|vivienda|valencia",TBD
+Property_Insurance,Insurance Company,TBD,TBD,TBD,YES,Annual,TBD,Personal,Malnom Barcelona,Home insurance Malnom flat,"seguro|hogar|vivienda|malnom|barcelona|piso",TBD
+Property_Insurance,Insurance Company,TBD,TBD,TBD,YES,Annual,TBD,Personal,Can Booty,Contents/renter's insurance if applicable,"seguro|hogar|contenido",TBD
+Vehicle_Insurance,Insurance Company,TBD,TBD,TBD,YES,Annual,TBD,Personal,N/A,Motorcycle insurance,"seguro|moto|motorcycle",TBD
+Vehicle_Insurance,Insurance Company,TBD,TBD,TBD,YES,Annual,TBD,Personal,N/A,Van insurance,"seguro|furgoneta|van",TBD
+Health_Insurance,SANITAS,TBD,TBD,TBD,YES,Monthly,TBD,Personal,N/A,Private health insurance,"sanitas|salud|health",TBD
+Security_System,Securitas Direct,TBD,TBD,TBD,YES,Monthly,TBD,Personal,Can Booty,Home alarm system,"securitas|alarma|alarm",TBD
+Water_Bill,Water Company,TBD,TBD,TBD,YES,Bimonthly,TBD,Personal,Can Booty,Water utility,"agua|water|aigües|can booty|santa coloma",TBD
+Gas_Bill,Gas Company,TBD,TBD,TBD,YES,Bimonthly,TBD,Personal,Can Booty,Gas utility,"gas|natural|can booty|santa coloma",TBD
+Electricity_Bill,Electric Company,TBD,TBD,TBD,YES,Bimonthly,TBD,Personal,Can Booty,Electricity utility,"luz|electric|endesa|iberdrola|naturgy|can booty|santa coloma",TBD
+Water_Bill,Water Company,TBD,TBD,TBD,YES,Bimonthly,TBD,Personal,Malnom Barcelona,Water utility Malnom,"agua|water|aigües|malnom|barcelona centro",TBD
+Gas_Bill,Gas Company,TBD,TBD,TBD,YES,Bimonthly,TBD,Personal,Malnom Barcelona,Gas utility Malnom,"gas|natural|malnom|barcelona centro",TBD
+Electricity_Bill,Electric Company,TBD,TBD,TBD,YES,Bimonthly,TBD,Personal,Malnom Barcelona,Electricity utility Malnom,"luz|electric|endesa|iberdrola|naturgy|malnom|barcelona centro",TBD
+Water_Bill,Water Company,TBD,TBD,TBD,YES,Bimonthly,TBD,Personal,Barraca 182 Valencia,Water utility Valencia,"agua|water|aigües|valencia|barraca",TBD
+Gas_Bill,Gas Company,TBD,TBD,TBD,YES,Bimonthly,TBD,Personal,Barraca 182 Valencia,Gas utility Valencia,"gas|natural|valencia|barraca",TBD
+Electricity_Bill,Electric Company,TBD,TBD,TBD,YES,Bimonthly,TBD,Personal,Barraca 182 Valencia,Electricity utility Valencia,"luz|electric|endesa|iberdrola|naturgy|valencia|barraca",TBD
+Social_Security,TGSS,TBD,TBD,TBD,YES,Monthly,TBD,Personal,N/A,Seguridad Social payments,"seguridad social|TGSS|SS|tesoreria",TBD
+Social_Security,TGSS,TBD,TBD,TBD,YES,Variable,TBD,Personal,N/A,Seguridad Social surcharges/recargos,"seguridad social|recargo|TGSS",TBD
+Accountant,Oriol,TBD,TBD,TBD,YES,Monthly,TBD,Personal,N/A,Current tax advisor/accountant,"asesoria|asesor|gestor|contable|oriol",TBD
+Accountant,Elena,TBD,TBD,TBD,Variable,Variable,TBD,Personal,N/A,Previous accountant - check pending,"asesoria|asesor|gestor|contable|elena",TBD
+Pharmacy,Pharmacy/Vet,TBD,TBD,TBD,YES,Monthly,TBD,Personal,N/A,Meu (cat) medications,"farmacia|veterinario|medicamento|meu",TBD
+Pharmacy,Pharmacy,TBD,TBD,TBD,YES,Monthly,TBD,Personal,N/A,Sarah's prescriptions,"farmacia|medicamento|receta",TBD
+Subscription,Amazon,TBD,TBD,TBD,YES,Monthly,TBD,Personal,N/A,Amazon Prime,"amazon|prime",TBD
+Subscription,Netflix,TBD,TBD,TBD,YES,Monthly,TBD,Personal,N/A,Netflix streaming,"netflix",TBD
+Subscription,Patreon,TBD,TBD,TBD,YES,Monthly,TBD,Personal,N/A,Patreon - may be multiple creators,"patreon",TBD
+Subscription,Anthropic,TBD,TBD,TBD,YES,Monthly,TBD,Personal,N/A,Claude Pro subscription,"anthropic|claude",TBD
+Bank_Fees,Caixabank,TBD,TBD,TBD,YES,Monthly,TBD,Caixabank,N/A,Account maintenance fees,"comision|comisiones|mantenimiento|cuenta|caixabank",TBD
+Bank_Fees,Cajamar,TBD,TBD,TBD,YES,Monthly,TBD,Cajamar,N/A,Account maintenance fees,"comision|comisiones|mantenimiento|cuenta|cajamar",TBD
+Payment_Plan,Rafa - Multas,84.00,1008.00,100.00,YES,Monthly,TBD,Personal,N/A,Fines payment plan - 36 months remaining,"multa|rafa|sancion",HIGH
+Payment_Plan,Fergie,TBD,TBD,TBD,YES,Monthly,TBD,Personal,N/A,Payment plan to Fergie - multi-year,"fergie",TBD
+Vehicle_Maintenance,Various Mechanics,TBD,TBD,TBD,NO,Variable,N/A,Personal,N/A,Van/motorcycle repairs - CALCULATE MONTHLY AVERAGE,"taller|mecanico|reparacion|motor",TBD
+Home_Maintenance,Various Providers,TBD,TBD,TBD,NO,Variable,N/A,Personal,Multiple,House appliances repairs/replacements - CALCULATE MONTHLY AVERAGE,"electrodomestico|reparacion|fontanero|electricista",TBD
+Personal_Expense,Various,TBD,TBD,TBD,NO,Variable,N/A,Personal,N/A,Bryan-related expenses - CALCULATE MONTHLY AVERAGE,"bryan",TBD
+Vehicle_Maintenance,Motorbike Services,TBD,TBD,TBD,NO,Variable,N/A,Personal,N/A,Motorbike maintenance - CALCULATE MONTHLY AVERAGE,"moto|mantenimiento|revision",TBD
+Traffic_Fines,Ayuntamiento/DGT,TBD,TBD,TBD,NO,Variable,N/A,Personal,N/A,Parking/traffic tickets - CALCULATE MONTHLY AVERAGE (EXCLUDE Rafa multas),"multa|aparcamiento|trafico|DGT|parking",TBD
