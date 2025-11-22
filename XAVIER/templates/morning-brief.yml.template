@@ -1,0 +1,71 @@
+name: Morning Brief Automation
+
+on:
+  schedule:
+    # Runs at 8:30 AM CET/CEST (7:30 AM UTC in winter, 6:30 AM UTC in summer)
+    # Using 7:30 UTC which works for CET (winter time)
+    - cron: '30 7 * * *'
+
+  workflow_dispatch:  # Allow manual trigger for testing
+
+jobs:
+  generate-morning-brief:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          cd automation
+          pip install -r requirements.txt
+
+      - name: Generate news digest (your perfected system)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python automation/news_digest_generator.py
+
+      - name: Generate morning brief with news AND email
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          # Email Account 1 (Personal)
+          EMAIL_1_NAME: ${{ secrets.EMAIL_1_NAME }}
+          EMAIL_1_ADDRESS: ${{ secrets.EMAIL_1_ADDRESS }}
+          EMAIL_1_PASSWORD: ${{ secrets.EMAIL_1_PASSWORD }}
+          EMAIL_1_IMAP: ${{ secrets.EMAIL_1_IMAP || 'imap.gmail.com' }}
+          EMAIL_1_MODE: ${{ secrets.EMAIL_1_MODE || 'standard' }}
+          EMAIL_1_LOOKBACK: ${{ secrets.EMAIL_1_LOOKBACK || '24' }}
+          # Email Account 2 (Work)
+          EMAIL_2_NAME: ${{ secrets.EMAIL_2_NAME }}
+          EMAIL_2_ADDRESS: ${{ secrets.EMAIL_2_ADDRESS }}
+          EMAIL_2_PASSWORD: ${{ secrets.EMAIL_2_PASSWORD }}
+          EMAIL_2_IMAP: ${{ secrets.EMAIL_2_IMAP || 'imap.gmail.com' }}
+          EMAIL_2_MODE: ${{ secrets.EMAIL_2_MODE || 'artist_database' }}
+          EMAIL_2_LOOKBACK: ${{ secrets.EMAIL_2_LOOKBACK || '24' }}
+          # Email Account 3 (Optional)
+          EMAIL_3_NAME: ${{ secrets.EMAIL_3_NAME }}
+          EMAIL_3_ADDRESS: ${{ secrets.EMAIL_3_ADDRESS }}
+          EMAIL_3_PASSWORD: ${{ secrets.EMAIL_3_PASSWORD }}
+          EMAIL_3_IMAP: ${{ secrets.EMAIL_3_IMAP || 'imap.gmail.com' }}
+          EMAIL_3_MODE: ${{ secrets.EMAIL_3_MODE || 'standard' }}
+          EMAIL_3_LOOKBACK: ${{ secrets.EMAIL_3_LOOKBACK || '24' }}
+        run: |
+          cd automation
+          python github_actions_morning_brief_with_email.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'Morning Brief Bot'
+          git config --global user.email 'bot@morningbrief.local'
+          git add morning-briefs/ news-digests/ automation/email_triage_results.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-generate morning brief + news + email triage - $(date +'%Y-%m-%d %H:%M %Z')" && git push)
