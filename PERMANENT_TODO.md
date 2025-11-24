@@ -80,6 +80,7 @@
 ## 📅 UPCOMING APPOINTMENTS:
 
 ### Monday, November 24:
+- [ ] **13:00 (1pm) - Dennys Earth Wire installation**
 - [ ] **18:00 (6pm) - Meeting with Peter K** (teatro negotiations follow-up)
 
 ### This Week:
@@ -90,6 +91,13 @@
 ## 🔴 URGENT - THIS WEEK:
 - [ ] **Follow up Dennys & Paco** - Waiting for quotes
 - [ ] **Get appointments: James & Daniel** - Physio sessions needed
+- [x] **Get Dennys day sorted** - ✅ DONE! Monday Nov 24, 13:00
+- [ ] **Move money & have cash ready for Dennys** - URGENT for Monday
+- [ ] **Change train tickets** - URGENT
+- [ ] **Tell Philoux about new schedule** - URGENT
+- [ ] **Re-book medical appointment (if needed)** - Check and book
+- [ ] **Change Neo surgery appointment** - URGENT  
+- [ ] **Circle back to Philoux** - Update needed
 
 ---
 
