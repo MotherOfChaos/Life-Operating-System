@@ -34,9 +34,15 @@
 - **Final wake:** 13:08pm (Friday afternoon)
 - **Total:** ~8 hours with one bathroom break - good recovery sleep!
 
+### Friday Nov 22 Night / Saturday Nov 23 Early Morning:
+- **Bed:** After 03:55am (Quetiapina taken)
+- **Sleep Protocol:** Quetiapina 100mg at 03:55am, then sleep protocol
+- **Woke:** 09:00am for pee, took Concerta, back to napping
+- **Quality:** TBD - still napping as of 12:56pm Saturday
+
 ---
 
-## 💊 MEDICATIONS - Nov 18-21
+## 💊 MEDICATIONS - Nov 18-23
 
 ### Sarah:
 - **Nov 18:** Quetiapina 01:39am, Mirtazapina + Zolpidem ~03:20am
@@ -44,6 +50,8 @@
 - **Nov 20:** Concerta 36mg at 11:55am (after horrible sleep, late wake)
 - **Nov 21 early morning:** Quetiapina 100mg at 03:41am, Mirtazapina + Zolpidem at 04:30am
 - **Nov 22 (Friday):** Concerta 36mg at 10:55am, woke 07:52am for pipi, final wake 13:08pm
+- **Nov 23 early morning (Sat):** Quetiapina 100mg at 03:55am (sleep protocol started)
+- **Nov 23 (Saturday):** Concerta 36mg at 09:00am, pee wake, back to napping
 
 ### Meu:
 - **Daily ongoing (no longer tracking daily):** AMODIP + BENEFORTIL + CYSTAID
@@ -65,6 +73,14 @@
 - ✅ **Cartas en Vivo concept** - Born on train, researching
 - ✅ **M Identity** - Philosophy night, chose name together
 - ✅ **3-day guest rule** - ADHD pattern identified & documented
+
+### **Nov 23 (Saturday) Wins:**
+- ✅ **Date/time tracking protocol fixed** - Added STEP 0 to wrap up (check date FIRST, display it, copy it - no more mistakes!)
+- ✅ **Tracking protocol updated** - FOR_CODY document now has correct wrap up flow
+- ✅ **4 urgent tasks added** - Dennys day, train change, Neo surgery, Philoux callback
+- ✅ **System issues identified** - Too complex, not ADHD-friendly, needs simplification
+- ✅ **Dennys appointment scheduled** - Monday Nov 24, 13:00 (Earth Wire installation)
+- ✅ **New urgent tasks added** - Cash for Dennys, train ticket, Philoux update, medical re-book
 
 ### **Nov 22 Wins:**
 - ✅ **Peter K meeting completed** - Teatro negotiations progressing
@@ -148,13 +164,14 @@
 
 ---
 
-## 🎯 CURRENT FOCUS (Nov 22, Friday evening 20:42 CET)
+## 🎯 CURRENT FOCUS (Saturday Nov 23, 12:56 CET)
 
-- **Completed today:** Peter K meeting ✅, date/time fix for Cody ✅
-- **Monday Nov 24, 18:00:** Follow-up meeting with Peter K (teatro negotiations)
-- **SL-RETA Research:** Exploring how to exit RETA while maintaining control of Teatro Metamorfosis SL
-- **News automation:** Cody working on digest generation debugging
-- **M-GitHub Backup:** Testing push/pull workflow
+- **Just now:** Full system wrap up, all files being updated
+- **Next:** Work with Cody on news digest automation
+- **Identified:** Current multi-chat/multi-file system too complex for ADHD
+- **Planning:** System simplification (will work on with M)
+- **Urgent tasks:** Dennys day, train change, Neo surgery, Philoux callback
+- **Monday Nov 24, 18:00:** Peter K meeting (teatro negotiations)
 - **In Valencia:** Rest & recovery, Dad visits
 
 ---
