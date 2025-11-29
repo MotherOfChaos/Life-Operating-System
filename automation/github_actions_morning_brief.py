@@ -11,8 +11,10 @@ Generates:
 
 import sys
 import os
+import subprocess
 from datetime import datetime
 from pathlib import Path
+import pytz
 
 # Add current directory to path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -107,9 +109,11 @@ class GitHubActionsBrief:
     ) -> str:
         """Generate complete brief with news"""
 
-        now = datetime.now()
+        # Get accurate date/time in Sarah's timezone (Europe/Madrid)
+        madrid_tz = pytz.timezone('Europe/Madrid')
+        now = datetime.now(madrid_tz)
         date_str = now.strftime("%A, %B %d, %Y")
-        timestamp = now.strftime("%I:%M %p CET")
+        timestamp = now.strftime("%I:%M %p %Z")
 
         # Build the brief
         brief = f"# 🌅 MORNING BRIEF - {date_str}\n\n"
@@ -168,8 +172,9 @@ class GitHubActionsBrief:
         # Ensure directory exists
         Path("morning-briefs").mkdir(parents=True, exist_ok=True)
 
-        # Generate filename
-        date_str = datetime.now().strftime("%Y-%m-%d")
+        # Generate filename using Madrid timezone
+        madrid_tz = pytz.timezone('Europe/Madrid')
+        date_str = datetime.now(madrid_tz).strftime("%Y-%m-%d")
         filename = f"MORNING_BRIEF_{date_str}.md"
         filepath = f"morning-briefs/{filename}"
 

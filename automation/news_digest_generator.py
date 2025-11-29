@@ -17,6 +17,7 @@ import json
 import requests
 from datetime import datetime
 from typing import Optional
+import pytz
 
 
 class NewsDigestGenerator:
@@ -43,7 +44,9 @@ class NewsDigestGenerator:
         print("📰 Calling Claude API to generate news digest...")
         print("   Using your perfected system with WebSearch...")
 
-        today = datetime.now().strftime("%B %d, %Y")
+        # Use Madrid timezone for accurate date
+        madrid_tz = pytz.timezone('Europe/Madrid')
+        today = datetime.now(madrid_tz).strftime("%B %d, %Y")
 
         prompt = f"""Today is {today}.
 
@@ -72,19 +75,14 @@ Generate the complete news digest for today following the v4 format from the ski
         headers = {
             "x-api-key": self.api_key,
             "anthropic-version": "2023-06-01",
+            "anthropic-beta": "web-search-2025-01-29",
             "content-type": "application/json"
         }
 
         payload = {
             "model": "claude-sonnet-4-20250514",
             "max_tokens": 16000,
-            "tools": [
-                {
-                    "type": "web_search_tool_20241101",
-                    "name": "web_search",
-                    "search_depth": "basic"
-                }
-            ],
+            "tools": [{"type": "web_search"}],
             "messages": [
                 {
                     "role": "user",
@@ -149,7 +147,8 @@ Generate the complete news digest for today following the v4 format from the ski
 
     def _fallback_digest(self) -> tuple[str, str]:
         """Fallback when API fails"""
-        today = datetime.now().strftime("%B %d, %Y")
+        madrid_tz = pytz.timezone('Europe/Madrid')
+        today = datetime.now(madrid_tz).strftime("%B %d, %Y")
         fallback = f"""# 📰 News Digest for Sarah - {today}
 
 ## ⚠️  Automated Generation Unavailable
@@ -170,7 +169,9 @@ The automated news digest could not be generated. Please:
         """Save the detailed digest to file"""
         os.makedirs(output_dir, exist_ok=True)
 
-        date_str = datetime.now().strftime("%Y-%m-%d")
+        # Use Madrid timezone for filename
+        madrid_tz = pytz.timezone('Europe/Madrid')
+        date_str = datetime.now(madrid_tz).strftime("%Y-%m-%d")
         filename = f"news-digest-{date_str}.md"
         filepath = os.path.join(output_dir, filename)
 
