@@ -39,8 +39,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          cd automation
-          python github_actions_morning_brief.py
+          python automation/github_actions_morning_brief.py
 
       - name: Commit and push if changed
         run: |
