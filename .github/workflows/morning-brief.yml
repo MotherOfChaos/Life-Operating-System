@@ -11,6 +11,8 @@ on:
 jobs:
   generate-morning-brief:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Allow reading files and pushing commits
 
     steps:
       - name: Checkout repository
