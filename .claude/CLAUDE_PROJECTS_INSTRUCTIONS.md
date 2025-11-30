@@ -37,6 +37,45 @@
 
 ---
 
+## GitHub API Access (For Phone/Web - ADHD-Friendly Automation)
+
+**CRITICAL:** Sarah needs the `/morning` command to work from phone/web with ZERO manual steps. This requires fetching files from the private GitHub repo via API.
+
+**GitHub Personal Access Token (GH_PAT):**
+```
+[SARAH WILL ADD TOKEN HERE]
+```
+
+**How to fetch files from private repo:**
+
+Use this format to fetch any file via GitHub API:
+
+```
+URL: https://api.github.com/repos/MotherOfChaos/Life-Operating-System/contents/PATH_TO_FILE
+Headers:
+  - Authorization: token [GH_PAT from above]
+  - Accept: application/vnd.github.v3.raw
+```
+
+**Example - Fetch today's morning brief:**
+```
+GET https://api.github.com/repos/MotherOfChaos/Life-Operating-System/contents/morning-briefs/MORNING_BRIEF_2025-11-30.md
+Authorization: token [GH_PAT]
+Accept: application/vnd.github.v3.raw
+```
+
+This returns the raw file content, ready to read.
+
+**Files you'll commonly fetch:**
+- `morning-briefs/MORNING_BRIEF_[today's date in YYYY-MM-DD].md` - Daily brief
+- `PERMANENT_TODO.md` - Task list
+- `SARAH_DAILY_TRACKER_CURRENT.md` - Daily tracker
+- `news-digests/[today's date]_news_digest.md` - News digest
+
+**IMPORTANT:** Always use `Accept: application/vnd.github.v3.raw` header to get raw file content (not base64 encoded JSON).
+
+---
+
 ## Communication Style
 
 **Token-efficient:**
