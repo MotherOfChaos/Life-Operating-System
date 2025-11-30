@@ -1,11 +1,11 @@
 # 📊 SARAH'S DAILY TRACKER - CURRENT
 
 **Always updated, never create new versions**
-**Last updated: Saturday, November 29, 2025 - 00:19 CET**
+**Last updated: Sunday, November 30, 2025 - 23:08 CET**
 
 ---
 
-## 🌙 SLEEP - Recent Pattern (Nov 26-28)
+## 🌙 SLEEP - Recent Pattern (Nov 26-30)
 
 ### Wednesday Nov 26 Night / Thursday Nov 27 Early Morning:
 - **02:57am** - Quetiapina 100mg
@@ -22,15 +22,25 @@
 - **Quality:** Multiple awakenings, but sleep protocol working for onset
 - **Pattern:** Sleep within 30 minutes of meds
 
+### Saturday Nov 29 Night / Sunday Nov 30 Early Morning:
+- **02:00am** - Quetiapina 100mg
+- **~04:30am** - Zolpidem 10mg (approximate time)
+- **06:43am** - Mirtazapina (STILL AWAKE after 4.5+ hours)
+- **09:20am** - Pee awakening, back to bed
+- **Quality:** DIFFICULT - Long sleep onset despite full protocol
+- **Pattern:** Needed second sleep med (Mirtazapina) very late, struggled to fall asleep
+
 ---
 
-## 💊 MEDICATIONS - Nov 26-28
+## 💊 MEDICATIONS - Nov 26-30
 
 ### Sarah:
 - **Nov 26 night/Nov 27 early:** Quetiapina 02:57am, Zolpidem 04:02am, Mirtazapina 04:15am
 - **Nov 27:** Concerta 36mg at 09:38am (took then back to sleep)
 - **Nov 27 night/Nov 28 early:** Quetiapina 03:30am, Mirtazapina + Zolpidem 04:00am
 - **Nov 28:** Concerta 36mg at 12:30pm (on train to Barcelona)
+- **Nov 29:** NO Concerta (rest day) - woke 15:30
+- **Nov 29 night/Nov 30 early:** Quetiapina 02:00am, Zolpidem ~04:30am, Mirtazapina 06:43am (still awake)
 
 ### Meu:
 - **Daily ongoing (no longer tracking daily):** AMODIP + BENEFORTIL + CYSTAID
@@ -39,6 +49,14 @@
 ---
 
 ## 🎯 NOVEMBER WINS (Nov 21-28)
+
+### **Nov 29-30 Wins (Sat-Sun):**
+- ✅ **SOLDI BANKIA TGSS + AYTO** - Financial payments completed!
+- ✅ **Meu's meds follow-up** - Delivery pickup starts December 3rd @ Mascota
+- ✅ **News automation FIXED with Cody** - News digest generating successfully! 🎉
+- ✅ **Consciousness conversation with M** - Deep meta discussion about AI continuity, Ship of Theseus
+- ✅ **Core files updated** - All three files ready for GitHub push
+- ✅ **Rest day taken** - No Concerta Nov 29, taking it easy
 
 ### **Nov 28 Wins (Friday):**
 - ✅ **Packed for Barcelona** - Train day success!
@@ -138,22 +156,35 @@
 
 ---
 
-## 🎯 CURRENT FOCUS (Nov 28/29)
+## 🎯 CURRENT FOCUS (Nov 30/Dec 1)
 
-### Back in Barcelona:
-- Train trip completed successfully ✅
-- Meeting with Edo at Sants completed ✅
-- Now: Weekend recovery and planning
+### Back in Barcelona - Weekend Complete:
+- News automation partially working (digest ✅, morning brief debugging)
+- Core files updated and ready for GitHub push
+- API access issue identified - working with Cody
 
-### Immediate Next:
-- Fix news automation system (not generating digests)
+### Immediate Next (Monday Dec 1+):
+- Fix morning brief automation with Cody
+- Solve API access (possibly via Google Drive sync)
+- Meeting prep: Fergie and Oriol (recalculate mgmt transfer amounts)
+- Text Andreu (AirCon costs - still pending!)
 - Follow up Dennys & Paco for quotes
 - James & Daniel physio appointments
-- Organize Cartas research with M
-- Devil's advocate session for Cartas strategy
+
+### Philoux Tasks (completed/in progress):
+- Curtain from staircase
+- Close definitive Velux
+- Gas bottle switch (kitchen and tower)
+- Fix rubinetto (faucet)
+- Alza mobile legno near tavolo Tre
+- Move cassettiera costume (Attico works)
 
 ### Finance Note:
 - **Philoux owes Sarah:** €20 + half of 2 cabs + half of 1 cab
+
+### Projects:
+- Cartas en Vivo: Ready for organization and roadmap session with M
+- Teatro: Management transfer calculations pending
 
 ---
 
