@@ -43,7 +43,7 @@
 
 **GitHub Personal Access Token (GH_PAT):**
 ```
-[SARAH WILL ADD TOKEN HERE]
+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
 ```
 
 **How to fetch files from private repo:**
