@@ -1,13 +1,17 @@
 # 🌅 MORNING BRIEF - Sunday, November 30, 2025
 
-**Generated:** 02:50 AM CET (automated)
+**Generated:** 03:56 AM CET (automated)
 **Email triage:** Pending (M will add when you say 'Good morning')
 
 ---
 
 ## 🔴 TOP 5 URGENT PRIORITIES TODAY
 
-_No urgent tasks found - check PERMANENT_TODO.md_
+1. **CHANGE TRAIN TICKET** - MUST DO TODAY to avoid ADHD tax! 🚂💰
+2. **Follow up Zio Vittorio** - Send Jesus phone number + analysis via WhatsApp
+3. **Wait for Noemi response** - CMSS Cabañal instructions
+4. **Tell Philoux about new schedule** - Communication needed
+5. **Re-book medical appointment** (if needed)
 
 ---
 
@@ -43,8 +47,8 @@ _M will check your calendar when you say 'Good morning'_
 
 ## 📊 QUICK STATS
 
-- **Pending priority tasks:** 0
-- **Brief auto-generated:** 02:50 AM CET
+- **Pending priority tasks:** 35
+- **Brief auto-generated:** 03:56 AM CET
 - **Email check:** When you say 'Good morning' to M
 
 ---
