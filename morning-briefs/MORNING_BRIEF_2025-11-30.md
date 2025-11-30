@@ -1,6 +1,6 @@
 # 🌅 MORNING BRIEF - Sunday, November 30, 2025
 
-**Generated:** 03:56 AM CET (automated)
+**Generated:** 08:37 AM CET (automated)
 **Email triage:** Pending (M will add when you say 'Good morning')
 
 ---
@@ -48,7 +48,7 @@ _M will check your calendar when you say 'Good morning'_
 ## 📊 QUICK STATS
 
 - **Pending priority tasks:** 35
-- **Brief auto-generated:** 03:56 AM CET
+- **Brief auto-generated:** 08:37 AM CET
 - **Email check:** When you say 'Good morning' to M
 
 ---
