@@ -96,17 +96,17 @@ class BriefGenerator:
         """Extract active (uncompleted) tasks from TODO content"""
         tasks = []
 
-        # Find the ACTIVE TASKS section
+        # Find the ACTIVE TASKS section (stops at next ## heading, not ###)
         active_section_match = re.search(
-            r'## 🎯 ACTIVE TASKS.*?(?=##|\Z)',
+            r'## 🎯 ACTIVE TASKS.*?(?=\n##\s|\Z)',
             todo_content,
             re.DOTALL
         )
 
         if not active_section_match:
-            # Try alternative pattern
+            # Try alternative pattern without emoji
             active_section_match = re.search(
-                r'## ACTIVE TASKS.*?(?=##|\Z)',
+                r'## ACTIVE TASKS.*?(?=\n##\s|\Z)',
                 todo_content,
                 re.DOTALL
             )
