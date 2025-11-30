@@ -39,7 +39,7 @@ jobs:
 
       - name: Generate morning brief with news
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           python automation/github_actions_morning_brief.py
 
