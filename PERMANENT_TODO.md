@@ -1,21 +1,28 @@
 # 📋 SARAH'S PERMANENT TO-DO LIST
 
 **Always updated, never create new versions**
-**Last updated: Friday, November 28, 2025**
+**Last updated: Sunday, November 30, 2025 - 23:08 CET**
 
 ---
 
-## 🎯 ACTIVE TASKS (Nov 28, 2025)
-
-### 🔴 URGENT - SATURDAY NOV 29:
-- [ ] **MEU'S MEDS** - CRITICAL!
-- [ ] **SOLDI BANKIA TGSS + AYTO** - Financial payments
-- [ ] **Text Andreu** - AirCon costs (NOT done yet)
+## 🎯 ACTIVE TASKS (Nov 30, 2025)
 
 ### 🔴 URGENT - THIS WEEK:
+- [ ] **Text Andreu** - AirCon costs (STILL NOT DONE!)
+- [ ] **Prepare meeting: Fergie & Oriol** - Recalculate amounts for mgmt transfer to Ruy/Laura
 - [ ] **Follow up Dennys & Paco** - Request quotes for completed work
 - [ ] **Get appointments: James & Daniel** - Physio sessions needed
-- [ ] **Fix news automation system** - Not generating daily digests
+- [ ] **Fix morning brief automation** - News digest working ✅, morning brief debugging ❌
+
+### 🏠 PHILOUX SUNDAY TASKS:
+- [ ] Curtain from staircase
+- [ ] Close definitive Velux
+- [ ] Gas bottle switch (kitchen and tower)
+- [ ] Fix rubinetto (faucet)
+- [ ] Alza mobile legno near tavolo Tre
+
+### 🏠 ATTICO WORKS:
+- [ ] Move cassettiera costume camp
 
 ### 🎭 Teatro / Work:
 - [ ] Email Ruy about December schedule
@@ -53,7 +60,14 @@
 
 ---
 
-## ✅ COMPLETED (November 21-28)
+## ✅ COMPLETED (November 21-30)
+
+### November 29-30 (Sat-Sun):
+- ✅ **SOLDI BANKIA TGSS + AYTO** - Financial payments completed
+- ✅ **Meu's meds follow-up** - Delivery pickup starts December 3rd @ Mascota
+- ✅ **News automation debugging with Cody** - News digest now working!
+- ✅ **Core files updated** - All three ready for GitHub push
+- ✅ **Rest day** - No Concerta Saturday, took it easy
 
 ### November 28 (Friday):
 - ✅ **Packed for Barcelona** - Train day success!
