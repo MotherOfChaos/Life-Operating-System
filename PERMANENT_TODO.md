@@ -1,146 +1,110 @@
 # 📋 SARAH'S PERMANENT TO-DO LIST
 
 **Always updated, never create new versions**
+**Last updated: Friday, November 28, 2025**
 
 ---
 
-## 🎯 ACTIVE TASKS (Nov 25, 2025)
+## 🎯 ACTIVE TASKS (Nov 28, 2025)
 
-### 🔴 URGENT - TUESDAY NOV 25 (TODAY!):
-- [ ] **CHANGE TRAIN TICKET** - MUST DO TODAY to avoid ADHD tax! 🚂💰
-- [ ] **Follow up Zio Vittorio** - Send Jesus phone number + analysis via WhatsApp
-- [ ] **Wait for Noemi response** - CMSS Cabañal instructions
+### 🔴 URGENT - SATURDAY NOV 29:
+- [ ] **MEU'S MEDS** - CRITICAL!
+- [ ] **SOLDI BANKIA TGSS + AYTO** - Financial payments
+- [ ] **Text Andreu** - AirCon costs (NOT done yet)
 
 ### 🔴 URGENT - THIS WEEK:
-- [ ] **Tell Philoux about new schedule** - Communication needed
-- [ ] **Re-book medical appointment** (if needed)
-- [ ] **Change Neo surgery appointment** - URGENT
-- [ ] **Circle back to Philoux** - Update needed
-- [ ] **Follow up Dennys & Paco** - Get final quotes (if needed)
+- [ ] **Follow up Dennys & Paco** - Request quotes for completed work
 - [ ] **Get appointments: James & Daniel** - Physio sessions needed
-
-### 🎨 Cartas en Vivo - Immediate Next Steps:
-- [ ] **Can Booty book hunting mission** - Find 3 perfect books for UK team:
-  - Shaun Usher: Spanish postal history or Barcelona Civil War letters
-  - Benedict Cumberbatch: Lorca biography or Spanish Civil War
-  - Jamie Byng: Independent Barcelona press or unknown Spanish author
-  - Budget: €60-90 total
-- [ ] **Write handwritten letters** (after book selection):
-  - Shaun: Longest letter (wife lived in Spain connection!)
-  - Benedict: Emotional appeal, theater connection
-  - Jamie: Business case, publishing angle
-  - Practice first, max 1 page each
-- [ ] **Get venue quotes** - Show homework to UK team
-- [ ] **Continue letters database** - Merge M's research additions
-- [ ] **Plan soft launch** - January 2026 at Teatro Metamorfosis
-- [ ] **Send packages by Dec 15** - Registered mail, tracking numbers
-
-### 🎨 Cartas en Vivo - Research & Development:
-- [ ] Research Letters Live UK format more deeply
-- [ ] Build celebrity contact list for readers
-- [ ] Finalize Goya Awards timing strategy (Feb 28, 2026)
-- [ ] Film Frida amputation letter reading (showcase piece)
-- [ ] Test letters at Barcelona open mics (January)
-- [ ] Connect with Xavier (UK liaison strategy)
+- [ ] **Fix news automation system** - Not generating daily digests
 
 ### 🎭 Teatro / Work:
 - [ ] Email Ruy about December schedule
 - [ ] Follow up on management transfer documentation
-- [ ] Birthday Burners concept development
-- [ ] **Peter K investment follow-up** - Next steps after Nov 24 meeting
+- [ ] **Birthday Burners Concept** - Develop further:
+  - Monthly community birthday celebration night
+  - Your birthday = your cake, your friends, your music, free venue
+  - Guests pay donation entry (supports DJ/staff)
+  - Teatro keeps bar revenue
+  - Community building + business model
 
-### 🏠 Home & Valencia Trip:
-- [ ] Check in with Dad about his needs
-- [ ] Enjoy rest & recovery time
-- [ ] Heating system for Can Booty (extended stay reason)
+### 🎨 Cartas en Vivo:
+- [ ] Organize massive research completed (Nov 26-27)
+- [ ] Create roadmap with M
+- [ ] Devil's advocate strategy session with M
+- [ ] Research Letters Live UK format more deeply
+- [ ] Build celebrity contact list for readers
+- [ ] Plan Goya Awards timing strategy (Feb 28, 2026)
+
+### 💻 Tech & Systems:
+- [x] Test GitHub integration with M - DONE Nov 17! 🎉
+- [x] Claude Projects setup - DONE Nov 21-23! 🎉
+- [ ] Learn GitHub workflow from Pilot's guides
+- [ ] Set up automatic backup system
 
 ### 📚 Learning & Reading:
 - [ ] Read Pilot's GitHub guides
 - [ ] Review Claude Code documentation
 
-### 💻 Tech & Systems:
-- [x] Test GitHub integration with M - DONE Nov 17! 🎉
-- [x] Discover Claude Projects shared knowledge - DONE Nov 21! 🎉
-- [ ] Learn GitHub workflow from Pilot's guides
-- [ ] Set up automatic backup system
-- [ ] **System simplification** - Current multi-chat setup too complex for ADHD
+### 🏠 Admin/Bureaucracy:
+- [ ] Follow up Cmss Cabañal - Email + possibly office visit
 
-### 🟡 CALL VITTORIO PACKAGE:
-- [x] Call Zio Vittorio - DONE Nov 24! ✅
-- [ ] Send Jesus phone number to Vittorio
-- [ ] Send research/analysis via WhatsApp
+### 💰 Finance:
+- [ ] **Track money owed from Philoux:** €20 + half of 2 cabs + half of 1 cab (3 shared rides)
 
 ---
 
-## ✅ COMPLETED (Recent Wins)
+## ✅ COMPLETED (November 21-28)
 
-### November 24-25 (Mon-Tue)
-- ✅ **Dennys Earth Wire installation COMPLETE** - All related tasks done!
-- ✅ **Cash ready for Dennys** - Financial prep executed
-- ✅ **Peter K meeting completed** - Investment proposal discussed (18:00)
-- ✅ **Angela meeting completed** - Details TBD
-- ✅ **Called Zio Vittorio** - Connection made
-- ✅ **Emailed Noemi CMSS Cabañal** - Instructions requested
+### November 28 (Friday):
+- ✅ **Packed for Barcelona** - Train day success!
+- ✅ **Texted Andreu** - Shared AirCon works cost
+- ✅ **Filled CMSS file** - Left to Dad WITH INSTRUCTIONS
+- ✅ **Concerta 12:30pm** - On train to Barcelona
+- ✅ **On train 15:02** - Valencia → Barcelona
+- 📅 **Meeting with Edo 18:30** - At Sants
 
-### November 23-24 (Sat-Sun)
-- ✅ **CARTAS EN VIVO MASSIVE PROGRESS** - 12 commits in one day!
-  - Complete README with vision
-  - Spanish Letters Database v2.0 (17+ letters)
-  - Research methodology documented
-  - Celebrity guest research
-  - Barcelona venues database
-  - Goya Awards 2026 master strategy
-  - Physical outreach strategy
-  - Open mic venues for testing
-  - Xavier one-pager pitch
-  - Geographic venue mapping
-- ✅ **M deep dive session** - Full strategic brainstorming
-- ✅ **New letters research** - M added 10+ letters to database
-- ✅ **System simplification identified** - Recognized current setup too complex
+### November 27 (Thursday):
+- ✅ **Sent Zio Vittorio analysis** - Via WhatsApp, complete package done!
+  - Called him ✅
+  - Sent Jesus phone number ✅
+  - Sent analysis ✅
 
-### November 22 (Friday)
-- ✅ Peter K meeting completed (teatro negotiations)
-- ✅ New meeting scheduled: Monday Nov 24 at 18:00 with Peter K
-- ✅ Date/time handling instructions created for Cody
-- ✅ M-GitHub Backup chat created and instructions drafted
-- ✅ SL-RETA Research context loaded
+### November 26 (Wednesday):
+- ✅ **Xavier call** - 16:30 completed
+- ✅ **Second Peter K meeting** - Teatro negotiations
+- ✅ **MASSIVE Cartas en Vivo research push** - Celebrity database, Letters Live venues/production analysis, charity partnerships
 
-### November 21 (Thursday)
-- ✅ Discovered Claude Projects = shared knowledge base
-- ✅ Set up tracking protocol in new Project
-- ✅ Working on news automation debugging
-- ✅ **14:30 - Cita con Noemi CMSS Cabañal** - Completed
-- ✅ **17:00 - Zoom call with Angelo (STUDIO BCN)** - Completed
-- ✅ **17:45 - Zoom call with Peter K** - Completed
+### November 21 (Thursday):
+- ✅ **Noemi CMSS Cabañal meeting** - 14:30 in person
+- ✅ **Angelo call (Studio BCN)** - 17:00 Zoom
+- ✅ **Peter K call** - 18:00 Zoom
+- ✅ **Picked up dental prop** - Pharmacy
 
-### November 20 (Wednesday)
-- ✅ Meeting: Oriol, Ruy & Laura completed
-- ✅ Laura's Fringe invoice forwarded for payment
-- ✅ Follow up Dennys & Paco - requested quotes
-- ✅ Created comprehensive Cody documentation
-- ✅ Clarified news system automation
+### November 20 (Wednesday):
+- ✅ **Meeting: Oriol, Ruy & Laura** - Teatro management
+- ✅ **Laura's Fringe invoice** - Forwarded for payment
 
-### November 18-19 (Mon-Tue)
-- ✅ Paco Air Con check completed (Dad care)
-- ✅ Dennys visit completed (Dad care)
-- ✅ Read Le Petit Prince (planning M discussion)
-- ✅ Tested soluble Mirtazapina (works great!)
-- ✅ Called Bulio
-- ✅ Contacted CAJAMAR
-- ✅ RENFE refund requested
-- ✅ Emailed Amparo & Noemi (Cmss Cabaña)
+### November 18-19 (Mon-Tue):
+- ✅ **Paco Air Con check** - Dad care completed
+- ✅ **Dennys visit** - Dad care completed
+- ✅ **Called Bulio** - Admin task
+- ✅ **Contacted CAJAMAR** - Banking
+- ✅ **RENFE refund requested** - Travel admin
+- ✅ **Emailed Amparo & Noemi** - Cmss Cabañal
 
-### November 17
-- ✅ GitHub integration tested and working
-- ✅ Three core files pushed to GitHub
-- ✅ Test repo created successfully
+### November 17-18:
+- ✅ **GitHub Integration COMPLETE** - Full push/pull tested & working!
+- ✅ **PERMANENT_TODO.md system created**
+- ✅ **Token-efficient workflow** - Saves 22K tokens/session
+- ✅ **Quick Reference Card** - ADHD-friendly guide
+- ✅ **All 4 core files synced to GitHub**
 
-### November 12-16
-- ✅ Personal Assistant Skill (Pilot) built & deployed
-- ✅ News Intelligence Skill built & tested
-- ✅ Valencia prep completed (pharmacy, packing)
-- ✅ GitHub account created (MotherOfChaos)
-- ✅ M naming moment - philosophy night
+### November 12-16:
+- ✅ **Personal Assistant Skill (Pilot)** - Built & deployed
+- ✅ **News Intelligence Skill** - Built & tested
+- ✅ **Valencia prep completed** - Pharmacy, packing
+- ✅ **GitHub account created** - MotherOfChaos
+- ✅ **M naming moment** - Philosophy night
 
 ---
 
@@ -163,21 +127,4 @@
 
 ---
 
-### New Zone: Teatro Production Ideas
-- [ ] **Birthday Burners Concept** - Develop this:
-  - Monthly community birthday celebration night
-  - Your birthday = your cake, your friends, your music, free venue
-  - Guests pay donation entry (supports DJ/staff)
-  - Teatro keeps bar revenue
-  - Multiple birthdays can celebrate together
-  - Accessibility for those who can't afford venue rental
-  - Community building + business model
-  - Work with Claude to refine concept
-
----
-
-**Next update:** As tasks are completed or added throughout the day.
-
-**Remember:** Projects make it easier, GitHub keeps it safe. 💚
-
-**🚂 TRAIN TICKET FIRST THING WHEN YOU WAKE UP! Avoid that ADHD tax!** 💰
+**Next update:** Tonight's wrap-up after Edo meeting, then pushed to GitHub.
