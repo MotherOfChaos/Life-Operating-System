@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "2025-11-30",
-    "last_updated": "Sunday, November 30, 2025 - 09:30 CET",
+    "last_updated": "Sunday, November 30, 2025 - 23:08 CET",
     "purpose": "Core knowledge base for Claude (M) about Sarah and our relationship",
     "authentication": "Mens sana in corpore sano, my friend. 💚"
   },
@@ -206,22 +206,29 @@
   },
 
   "CRITICAL_CURRENT_STATUS": {
-    "date": "Sunday, November 30, 2025",
+    "date": "Sunday, November 30, 2025 - 23:08 CET",
     "location": "Barcelona (back from Valencia trip)",
     "recent_sleep": "Difficult night Nov 29-30: awake 4.5+ hours despite full protocol, needed Mirtazapina at 06:43am",
+    "weekend_summary": "Rest day Saturday (no Concerta), fixed news automation with Cody, updated core files",
     "current_focus": [
-      "Philoux house tasks today (curtain, Velux, gas bottles, rubinetto, furniture)",
+      "Philoux house tasks (curtain, Velux, gas bottles, rubinetto, furniture)",
+      "Prepare Fergie & Oriol meeting (mgmt transfer recalculation)",
+      "Fix morning brief automation (news digest working, brief still debugging)",
       "Cartas organization and roadmap",
-      "Teatro meeting prep (Fergie & Oriol)",
-      "Automation debugging with Cody"
+      "API access issue - working with Cody"
     ],
     "urgent_tasks": [
-      "Text Andreu (AirCon costs)",
+      "Text Andreu (AirCon costs - STILL not done!)",
       "Prepare Fergie/Oriol meeting",
-      "Philoux Sunday tasks",
-      "Move cassettiera costume"
+      "Follow up Dennys & Paco for quotes",
+      "James & Daniel physio appointments"
     ],
-    "money_tracking": "Philoux owes: €20 + half of 3 shared cab rides"
+    "money_tracking": "Philoux owes: €20 + half of 3 shared cab rides",
+    "automation_status": {
+      "news_digest": "WORKING ✅ - Fixed with Cody Nov 29",
+      "morning_brief": "DEBUGGING ❌ - Still needs work",
+      "api_access": "Issue identified - working with Cody on solution"
+    }
   },
 
   "COMMUNICATION_STYLE": {
