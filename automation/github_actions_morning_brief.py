@@ -125,9 +125,9 @@ class GitHubActionsBrief:
         tasks = self.generator._extract_active_tasks(todo_content) if todo_content else []
 
         # Top priorities section
-        brief += "## 🔴 TOP 5 URGENT PRIORITIES TODAY\n\n"
+        brief += "## 🔴 TOP 7 URGENT PRIORITIES TODAY\n\n"
         if tasks:
-            for i, task in enumerate(tasks[:5], 1):
+            for i, task in enumerate(tasks[:7], 1):
                 brief += f"{i}. {task}\n"
         else:
             brief += "_No urgent tasks found - check PERMANENT_TODO.md_\n"

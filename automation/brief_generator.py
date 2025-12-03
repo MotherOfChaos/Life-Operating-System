@@ -14,7 +14,7 @@ except ImportError:
     # If config doesn't exist (like in GitHub Actions), use defaults
     class config:
         TIMEZONE = "Europe/Berlin"
-        TOP_PRIORITIES_COUNT = 5
+        TOP_PRIORITIES_COUNT = 7
 
 
 class BriefGenerator:
@@ -72,7 +72,7 @@ class BriefGenerator:
 
     def _generate_priorities_section(self, todo_content: Optional[str]) -> str:
         """Extract top priorities from TODO file"""
-        section = "## 🔴 TOP 5 URGENT PRIORITIES TODAY\n\n"
+        section = "## 🔴 TOP 7 URGENT PRIORITIES TODAY\n\n"
 
         if not todo_content:
             section += "⚠️ *Could not load PERMANENT_TODO.md - check manually*\n\n"
@@ -138,7 +138,19 @@ class BriefGenerator:
             # Add urgent tasks to the beginning
             tasks = urgent_tasks + tasks
 
-        return tasks
+        # Prioritize tasks with "URGENT" keyword (case-insensitive)
+        # Separate tasks into urgent (with keyword) and non-urgent
+        urgent_keyword_tasks = []
+        regular_tasks = []
+
+        for task in tasks:
+            if 'URGENT' in task.upper():
+                urgent_keyword_tasks.append(task)
+            else:
+                regular_tasks.append(task)
+
+        # Return: Urgent keyword tasks first, then regular tasks
+        return urgent_keyword_tasks + regular_tasks
 
     def _generate_urgent_emails_section(self, urgent_emails: List[Dict]) -> str:
         """Generate urgent emails section"""
