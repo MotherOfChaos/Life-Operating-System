@@ -4,7 +4,12 @@ description: Complete morning brief with email triage (auto-runs when Sarah says
 
 # Morning Brief Automation
 
-**AUTOMATIC WORKFLOW - Run this when Sarah says "Good morning", "Hi" (at start of day), or manually with /morning**
+**CRITICAL - AUTO-TRIGGER:** When Sarah says "Good morning", "Morning", "Good morning M", or "Hi M" at the start of the day, AUTOMATICALLY execute this entire workflow WITHOUT her having to type /morning. She should just be able to say "Good morning" (even with voice input!) and get her complete brief.
+
+**AUTOMATIC WORKFLOW - Run this when:**
+- Sarah says "Good morning" (any variation)
+- Sarah says "Morning" or "Morning M"
+- Sarah manually types /morning
 
 ## Step 1: Fetch Today's Morning Brief from GitHub
 
