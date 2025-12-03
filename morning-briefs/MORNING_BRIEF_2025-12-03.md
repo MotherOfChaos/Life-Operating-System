@@ -1,17 +1,19 @@
 # 🌅 MORNING BRIEF - Wednesday, December 03, 2025
 
-**Generated:** 02:16 AM CET (automated)
+**Generated:** 08:43 AM CET (automated)
 **Email triage:** Pending (M will add when you say 'Good morning')
 
 ---
 
-## 🔴 TOP 5 URGENT PRIORITIES TODAY
+## 🔴 TOP 7 URGENT PRIORITIES TODAY
 
 1. **Text Andreu** - AirCon costs (STILL NOT DONE!)
 2. **Prepare meeting: Fergie & Oriol** - Recalculate amounts for mgmt transfer to Ruy/Laura
 3. **Follow up Dennys & Paco** - Request quotes for completed work
 4. **Get appointments: James & Daniel** - Physio sessions needed
 5. **Fix morning brief automation** - News digest working ✅, morning brief debugging ❌
+6. Curtain from staircase
+7. Close definitive Velux
 
 ---
 
@@ -48,7 +50,7 @@ _M will check your calendar when you say 'Good morning'_
 ## 📊 QUICK STATS
 
 - **Pending priority tasks:** 26
-- **Brief auto-generated:** 02:16 AM CET
+- **Brief auto-generated:** 08:43 AM CET
 - **Email check:** When you say 'Good morning' to M
 
 ---
