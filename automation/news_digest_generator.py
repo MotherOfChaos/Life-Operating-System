@@ -28,12 +28,14 @@ class NewsDigestGenerator:
 
         self.api_url = "https://api.anthropic.com/v1/messages"
 
-        # Load media database
-        with open('Global_Media_Database_v3.json', 'r', encoding='utf-8') as f:
+        # Load media database (from root directory)
+        db_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'Global_Media_Database_v3.json')
+        with open(db_path, 'r', encoding='utf-8') as f:
             self.media_db = json.load(f)
 
         # Load news intelligence skill
-        with open('automation/news-intelligence-SKILL.md', 'r', encoding='utf-8') as f:
+        skill_path = os.path.join(os.path.dirname(__file__), 'news-intelligence-SKILL.md')
+        with open(skill_path, 'r', encoding='utf-8') as f:
             self.skill_instructions = f.read()
 
     def generate_digest(self) -> tuple[str, str]:
