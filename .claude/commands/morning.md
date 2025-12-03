@@ -39,7 +39,47 @@ Headers:
 - Tell Sarah: "⚠️ GitHub token issue - please ask Cody to check the setup"
 - Do NOT expose token details
 
+## Step 1b: Generate News Digest (Using Web Search - FREE!)
+
+**IMPORTANT:** Use your web_search tool to generate today's news. This uses Claude Pro tokens (FREE), NOT the paid API.
+
+**Instructions:**
+
+1. **Search today's news** from Sarah's priority sources:
+   - 🇪🇸 **Spain** (search in Spanish!): El País, El Diario, Público
+   - 🇮🇹 **Italy**: ANSA, La Repubblica, Corriere della Sera
+   - 🌍 **Europe/World**: BBC, Reuters, AFP
+   - 🎭 **Arts/Culture**: The Guardian culture, arts sections
+   - 🧠 **Science**: BBC Science, major discoveries
+
+2. **Focus on Sarah's interests (priority order):**
+   - Spain/Barcelona news (HIGH)
+   - Italy news (HIGH)
+   - Europe/EU news (HIGH)
+   - Arts & Culture (theater, museums, events)
+   - Science (neuroscience, psychology, breakthroughs)
+   - Tech/Business (AI, major dev only)
+   - Skip sports unless major
+
+3. **Present as concise TL;DR (3-5 bullets):**
+   - SCANNABLE for ADHD
+   - Separate [Fact] from [Opinion]
+   - Actionable/interesting info only
+
+**Format:**
+```
+## 📰 NEWS TL;DR
+
+🇪🇸 **Spain:** [Fact] Major development...
+🇮🇹 **Italy:** [Fact] Event in Rome...
+🌍 **World:** [Fact] EU announces...
+🎭 **Culture:** Barcelona theater...
+🧠 **Science:** Discovery in neuroscience...
+```
+
 ## Step 2: Check and Triage Gmail
+
+After fetching the brief and generating news, check Sarah's Gmail and categorize emails into these 7 categories:
 
 After fetching the morning brief, check Sarah's Gmail and categorize emails into these 7 categories:
 
@@ -102,6 +142,12 @@ Combine the brief from the script with your email triage and present in this for
 **Count:** [X emails]
 
 [List top 3-5 with sender/subject]
+
+---
+
+## 📰 NEWS TL;DR
+
+[Show the news digest generated in Step 1b]
 
 ---
 
