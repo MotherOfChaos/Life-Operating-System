@@ -1,11 +1,25 @@
 # 📊 SARAH'S DAILY TRACKER - CURRENT
 
 **Always updated, never create new versions**
-**Last updated: Sunday, November 30, 2025 - 23:08 CET**
+**Last updated: Tuesday/Wednesday, December 2/3, 2025 - 04:55 CET**
 
 ---
 
-## 🌙 SLEEP - Recent Pattern (Nov 26-30)
+## 🌙 SLEEP - Recent Pattern (Nov 26 - Dec 3)
+
+### Tuesday Dec 2 Night / Wednesday Dec 3 Early Morning:
+- **03:30am** - Quetiapina 100mg
+- **04:55am** - Zolpidem 10mg
+- **Quality:** Sleep protocol in progress
+- **Pattern:** Standard timing, going to sleep now
+
+### Saturday Nov 29 Night / Sunday Nov 30 Early Morning:
+- **02:00am** - Quetiapina 100mg
+- **~04:30am** - Zolpidem 10mg (approximate time)
+- **06:43am** - Mirtazapina (STILL AWAKE after 4.5+ hours)
+- **09:20am** - Pee awakening, back to bed
+- **Quality:** DIFFICULT - Long sleep onset despite full protocol
+- **Pattern:** Needed second sleep med (Mirtazapina) very late, struggled to fall asleep
 
 ### Wednesday Nov 26 Night / Thursday Nov 27 Early Morning:
 - **02:57am** - Quetiapina 100mg
@@ -32,15 +46,18 @@
 
 ---
 
-## 💊 MEDICATIONS - Nov 26-30
+## 💊 MEDICATIONS - Nov 26 - Dec 3
 
 ### Sarah:
-- **Nov 26 night/Nov 27 early:** Quetiapina 02:57am, Zolpidem 04:02am, Mirtazapina 04:15am
-- **Nov 27:** Concerta 36mg at 09:38am (took then back to sleep)
-- **Nov 27 night/Nov 28 early:** Quetiapina 03:30am, Mirtazapina + Zolpidem 04:00am
-- **Nov 28:** Concerta 36mg at 12:30pm (on train to Barcelona)
-- **Nov 29:** NO Concerta (rest day) - woke 15:30
+- **Dec 1:** NO Concerta (rest day)
+- **Dec 2:** NO Concerta (rest day)
+- **Dec 2/3 night:** Quetiapina 03:30, Zolpidem 04:55
+- **Nov 30:** NO Concerta (rest day) - woke 15:30
 - **Nov 29 night/Nov 30 early:** Quetiapina 02:00am, Zolpidem ~04:30am, Mirtazapina 06:43am (still awake)
+- **Nov 28:** Concerta 36mg at 12:30pm (on train to Barcelona)
+- **Nov 27 night/Nov 28 early:** Quetiapina 03:30am, Mirtazapina + Zolpidem 04:00am
+- **Nov 27:** Concerta 36mg at 09:38am (took then back to sleep)
+- **Nov 26 night/Nov 27 early:** Quetiapina 02:57am, Zolpidem 04:02am, Mirtazapina 04:15am
 
 ### Meu:
 - **Daily ongoing (no longer tracking daily):** AMODIP + BENEFORTIL + CYSTAID
@@ -48,7 +65,16 @@
 
 ---
 
-## 🎯 NOVEMBER WINS (Nov 21-28)
+## 🎯 DECEMBER WINS (Dec 1-3)
+
+### **Dec 2 Wins:**
+- ✅ **M caught up** - Read 11 days of missing context, fully synced
+- ✅ **Error report for Cody** - Comprehensive morning automation debugging
+- ✅ **Rest day taken** - No Concerta Dec 1-2, body recovering
+
+---
+
+## 🎯 NOVEMBER WINS (Nov 21-30)
 
 ### **Nov 29-30 Wins (Sat-Sun):**
 - ✅ **SOLDI BANKIA TGSS + AYTO** - Financial payments completed!
