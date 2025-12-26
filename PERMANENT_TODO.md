@@ -5,20 +5,44 @@
 
 ---
 
+## 💚 DAILY NON-NEGOTIABLES
+*(Check these every day!)*
+- [ ] **Basic back hygiene (James routine)** - 3 exercises
+- [ ] **Drink water** - Stay hydrated
+- [ ] **Meu's meds** - AMODIP + BENEFORTIL + CYSTAID
+
+---
+
 ## 🎯 ACTIVE TASKS
 
 ### 🔴 URGENT - Health & Medical:
 - [ ] **Reprogramar cirugía Neo** - Reschedule Neo's surgery
 - [ ] **Programar examen mioma** - Find gynecologist Sanitas for exam
 - [ ] **Get appointments: James & Daniel** - Physio sessions needed
+- [ ] **Cita Cap Montigala** + pedir cita con:
+  - Traumatologo
+  - Neurocirujano
+  - Physiotherapeuta
+  - Ginecologa
+- [ ] **Get teeth cleaning appointment with Sanitas**
 
-### 🔴 URGENT - Admin:
+### 🔴 URGENT - Admin/Financial:
 - [ ] **READ EMAILS FROM SEG.SOCIAL** - Urgent admin
 - [ ] **READ BILLS** - Urgent admin
 - [ ] **Follow up Dennys & Paco** - Request quotes for completed work
+- [ ] **Create new tally after Notary papers (UPDATED NUMBERS)** - Post-Dec 11 Notary signing
+- [ ] **Follow up Oriol about Mutua and pension**
+- [ ] **Read work emails**
+- [ ] **Read Monica's email** - Legal case
 
-### 🟡 THIS WEEK:
-- [ ] **Watch Simon's material and call him** - This week
+### 🟡 THIS WEEK/MONTH:
+- [ ] **Watch Simon's material and call him**
+- [ ] **Research house for Vic** (deadline January 2026)
+  - **PREFERRED SOLUTION:** Flat with extra room for Sarah (no taxis back to Can Booty when in center)
+  - Calculate total costs (w/wo agency, taxes, IBI annual, impuesto propiedades, other?) for options at 200K and 250K
+  - Calculate monthly taxi expenses last 2 years → derive possible mortgage to assume (add cash to Vittorio's help)
+  - Mortgage needs to be paid back by rental income
+  - Check current rental prices for each area considered (both whole flats and sharing options)
 
 ### 🎭 Teatro:
 - [ ] Email Ruy about December schedule
@@ -43,8 +67,13 @@
 
 ### 🏠 Home & Personal:
 - [ ] Research synagogue visits (family heritage exploration)
-- [ ] Follow up Cmss Cabañal - Email + possibly office visit
-- [ ] Text Andreu - Share AirCon costs (STILL PENDING from Nov!)
+- [ ] **Text Andreu** - Share AirCon costs (STILL PENDING from November!)
+
+### 🏠 ATTICO WORKS:
+- [ ] **Trova stoffe utilizzabili per tende** (find usable fabrics):
+  - Ask Malaka if there's a spare bit to use
+  - Ask Charlie for spare bits of wool fabric (or fleece or any heavy air-blocking fabric)
+- [ ] **Find spray to make fabric ignifugo** (fireproof spray)
 
 ### 💼 Legal:
 - [ ] Review legal evidence timeline with attorney Monica
@@ -52,70 +81,42 @@
 
 ---
 
-## ✅ COMPLETED (Dec 4-15, 2025)
+## ✅ COMPLETED (December 25, 2025 - Christmas Day!)
 
-### December 15 (Monday):
-- ✅ **Email Fringe artists** - Invoice template created & sent
-- ✅ **Fergie & Oriol meeting prep** - Completed!
+**Today's wins:**
+- ✅ Spare e lavare tenda nera (washed black curtain)
+- ✅ Costruire sistema tenda (built curtain system)
+- ✅ Send 150€ to Fergie
+- ✅ Check with Amparo about January 7
+- ✅ Move money from Cajamar to Caixa
+- ✅ Follow up Cmss Cabañal
+- ✅ Add 150€ sent to Fergie (25 Dec 2025) to main spreadsheet
+- ✅ Get tickets BCN → VLC for January 7
+- ✅ Amodip process for Yakir (pharmacy: https://maps.app.goo.gl/zVawSyB7uXy4uhsM8)
 
-### December 11 (Thursday):
-- ✅ **Fergie meeting** - HUGE SUCCESS!
-- ✅ **Notary appointment** (13:00, Calle Mallorca 277) with Fergie
-- ✅ **Correos run** (Avenida Mistral 44)
-- ✅ **James physiotherapist appointment** (17:30, Carrer Pau Claris)
-- ✅ **Mirtazapina refill** - From farmacia
+**9 TASKS COMPLETED ON CHRISTMAS DAY!** 🎄🔥
 
-### December 9-10 (Mon-Tue):
-- ✅ **Legal case evidence compilation** - Comprehensive timeline for Monica
-  - 13 chat logs analyzed
-  - Excel cross-reference timeline created
-  - Witness availability documented
+---
 
-### December 4-5 (Wed-Thu):
-- ✅ **Payment Google Workspace** (€45.72)
-- ✅ **Meu's medicines** - Pharmacy pickup
-- ✅ **Colla per topi** - Mouse glue purchased
-- ✅ **Heating system for Valencia** - Arranged
-- ✅ **Angela follow-up call** - Budget for Cartas scheduled
-- ✅ **Circus Raluy tickets** - Sorted (phone: 648701591)
-- ✅ **Ruy per dinero Malnon** - Handled
-- ✅ **Kindlings for fire** - Picked up
-- ✅ **Bernat texted** - Repo access given
-- ✅ **Edo texted** - Friday meeting confirmed
+## ✅ COMPLETED (December 4-15, 2025)
 
-### November 29-30 (Sat-Sun):
-- ✅ **SOLDI BANKIA TGSS + AYTO** - Financial payments
-- ✅ **Meu's meds follow-up** - Delivery pickup starts Dec 3 @ Mascota
-- ✅ **News automation debugging with Cody** - News digest working!
+### December 15:
+- ✅ Email Fringe artists - Invoice template created & sent
+- ✅ Fergie & Oriol meeting prep
 
-### November 28 (Friday):
-- ✅ **Packed for Barcelona** - Train day success
-- ✅ **Texted Edo** - Confirmed meeting
-- ✅ **Filled CMSS file** - Left to Dad with instructions
-- ✅ **Train Valencia→Barcelona** - On time
+### December 11:
+- ✅ Fergie meeting - HUGE SUCCESS!
+- ✅ Notary appointment with Fergie
+- ✅ Correos run
+- ✅ James physiotherapist appointment
+- ✅ Mirtazapina refill
 
-### November 27 (Thursday):
-- ✅ **Sent Zio Vittorio analysis** - Complete package via WhatsApp
+### December 9-10:
+- ✅ Legal case evidence compilation - Comprehensive timeline for Monica
 
-### November 26 (Wednesday):
-- ✅ **Xavier call** - 16:30 completed
-- ✅ **Second Peter K meeting** - Teatro negotiations
-- ✅ **MASSIVE Cartas en Vivo research** - Celebrity database, venues, partnerships
-
-### November 21 (Thursday):
-- ✅ **Noemi CMSS Cabañal meeting** - 14:30 in person
-- ✅ **Angelo call (Studio BCN)** - 17:00 Zoom
-- ✅ **Peter K call** - 18:00 Zoom (actually 17:45)
-- ✅ **Picked up dental prop** - Pharmacy
-
-### November 20 (Wednesday):
-- ✅ **Meeting: Oriol, Ruy & Laura** - Teatro management
-- ✅ **Laura's Fringe invoice** - Forwarded for payment
-
-### November 17-19 (Mon-Wed):
-- ✅ **Paco Air Con check** - Dad care
-- ✅ **Dennys visit** - Dad care
-- ✅ **Called Bulio, CAJAMAR, RENFE refund, emails**
+### December 4-5:
+- ✅ Payment Google Workspace (€45.72)
+- ✅ Meu's medicines, Colla per topi, Heating system, Angela call, Circus tickets, Ruy dinero, Kindlings, Bernat & Edo texts
 
 ---
 
@@ -139,6 +140,4 @@
 
 ---
 
-**Next update:** After gathering any Dec 16-25 activity + pushing to GitHub via Sync.
-
-**Christmas Day 2025** - Taking time to rest and catch up! 🎄💚
+**Christmas Day 2025** - 9 tasks completed! Productive and restful! 🎄💚
