@@ -1,0 +1,92 @@
+name: Calendar Management
+
+on:
+  workflow_dispatch:  # On-demand when M needs to manage calendar
+    inputs:
+      action:
+        description: 'Action to perform (list|add|delete|find)'
+        required: true
+        default: 'list'
+      title:
+        description: 'Event title (for add action)'
+        required: false
+      start_time:
+        description: 'Start time (YYYY-MM-DD HH:MM for add action)'
+        required: false
+      end_time:
+        description: 'End time (YYYY-MM-DD HH:MM for add action)'
+        required: false
+      event_id:
+        description: 'Event ID (for delete action)'
+        required: false
+      search_term:
+        description: 'Search term (for find action)'
+        required: false
+      days:
+        description: 'Days ahead to list (for list action)'
+        required: false
+        default: '7'
+
+jobs:
+  calendar-action:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          cd automation
+          pip install -r requirements.txt
+
+      - name: Execute calendar action
+        env:
+          GOOGLE_CALENDAR_CREDENTIALS: ${{ secrets.GOOGLE_CALENDAR_CREDENTIALS }}
+        run: |
+          cd automation
+
+          # Write credentials if available
+          if [ ! -z "$GOOGLE_CALENDAR_CREDENTIALS" ]; then
+            echo "$GOOGLE_CALENDAR_CREDENTIALS" > calendar_credentials.json
+          fi
+
+          # Execute based on action
+          case "${{ github.event.inputs.action }}" in
+            list)
+              python calendar_manager.py list ${{ github.event.inputs.days }}
+              ;;
+            add)
+              python calendar_manager.py add "${{ github.event.inputs.title }}" "${{ github.event.inputs.start_time }}" "${{ github.event.inputs.end_time }}"
+              ;;
+            delete)
+              python calendar_manager.py delete "${{ github.event.inputs.event_id }}"
+              ;;
+            find)
+              python calendar_manager.py find "${{ github.event.inputs.search_term }}"
+              ;;
+            *)
+              echo "Unknown action: ${{ github.event.inputs.action }}"
+              exit 1
+              ;;
+          esac
+
+      - name: Save results
+        run: |
+          mkdir -p calendar-actions
+          echo "Action: ${{ github.event.inputs.action }}" > calendar-actions/last-action-$(date +'%Y-%m-%d-%H-%M').txt
+          echo "Timestamp: $(date)" >> calendar-actions/last-action-$(date +'%Y-%m-%d-%H-%M').txt
+          git config --global user.name 'Calendar Bot'
+          git config --global user.email 'bot@calendar.local'
+          git add calendar-actions/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Calendar action - $(date +'%Y-%m-%d %H:%M %Z')" && git push)

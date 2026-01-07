@@ -1,0 +1,49 @@
+name: News Digest Automation
+
+on:
+  schedule:
+    # Runs at 08:30 AM CET (07:30 UTC in winter, 06:30 UTC in summer)
+    - cron: '30 7 * * *'
+
+  workflow_dispatch:  # Allow manual trigger (when M asks for news)
+    inputs:
+      force_regenerate:
+        description: 'Force regenerate even if today exists'
+        required: false
+        default: 'false'
+
+jobs:
+  generate-news-digest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          cd automation
+          pip install -r requirements.txt
+
+      - name: Generate news digest
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python automation/news_digest_generator.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'News Digest Bot'
+          git config --global user.email 'bot@newsdigest.local'
+          git add news-digests/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-generate news digest - $(date +'%Y-%m-%d %H:%M %Z')" && git push)
