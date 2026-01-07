@@ -1,7 +1,7 @@
 # 📋 SARAH'S PERMANENT TO-DO LIST
 
 **Always updated, never create new versions**
-**Last updated:** December 27, 2025
+**Last updated:** December 28, 2025
 
 ---
 
@@ -39,8 +39,6 @@
 - [ ] **Call LINEA DIRECTA** (919.180.004) - Follow up kitchen water leak
   - Expediente: 15600223
   - Codigo postal: Valencia 46011
-- [ ] **Call BOMBONAS GAS** (963.956.006) - Get 2 bombonas for Dad
-  - Dad's phone: 605036245
 - [ ] **Follow up Dennys & Paco** - Request quotes for completed work
 
 ### 🟡 THIS WEEK:
@@ -51,14 +49,15 @@
   - Facturas Fringe
   - New Santander tarjeta (check details first)
   - Pago autonomo Enero
-- [ ] **Check details: Unipersonale vs S.L.** - Pro/Con regarding property purchase (ask M in Vittorio channel)
+- [ ] **Check details: Unipersonal vs S.L.** - Pro/Con regarding property purchase (ask M in Vittorio channel)
 - [ ] **Change payment details in Workspace** - New tarjeta Santander
 - [ ] **Delete Adobe payments** - From Google Pay/PayPal
 - [ ] **Get confirmation from Marco P** - Inviting people for New Year's Eve (Coiazzi +1 and Yakir +1)
-- [ ] **Create multiple email reading automation on GitHub with Cody** (for M to fetch)
+- [ ] **FOR CODY: Create multiple email reading automation on GitHub** (for M to fetch)
+- [ ] **FOR CODY: Create art grants scanner automation** - Daily scan, email notifications
 
 ### 🟡 THIS MONTH (January deadline):
-- [ ] **Research house for Vic** - Comprehensive analysis in progress (Zio Vittorio chat)
+- [ ] **Research house for Vic** - See ZIO_VITTORIO.md for complete analysis
 
 ### 🎭 Teatro:
 - [ ] Email Ruy about December schedule
@@ -100,6 +99,9 @@
 
 ## ✅ COMPLETED 
 
+### December 28 (Sunday):
+- ✅ **Checked herbology book emails** - No tracking found, only newsletters
+
 ### December 27 (Saturday):
 - ✅ **Read work emails**
 - ✅ **Daily Non-Negotiables progress:**
@@ -108,33 +110,15 @@
   - Meu's meds: DONE ✅
 
 ### December 25 (Christmas Day) - 9 TASKS:
-- ✅ Spare e lavare tenda nera (washed black curtain)
-- ✅ Costruire sistema tenda (built curtain system)
+- ✅ Spare e lavare tenda nera
+- ✅ Costruire sistema tenda
 - ✅ Send 150€ to Fergie
 - ✅ Check with Amparo about January 7
 - ✅ Move money from Cajamar to Caixa
 - ✅ Follow up Cmss Cabañal
-- ✅ Add 150€ sent to Fergie (25 Dec 2025) to main spreadsheet
+- ✅ Add 150€ to spreadsheet
 - ✅ Get tickets BCN → VLC for January 7
 - ✅ Amodip process for Yakir
-
-### December 15:
-- ✅ Email Fringe artists - Invoice template created & sent
-- ✅ Fergie & Oriol meeting prep
-
-### December 11:
-- ✅ Fergie meeting - HUGE SUCCESS!
-- ✅ Notary appointment with Fergie
-- ✅ Correos run
-- ✅ James physiotherapist appointment
-- ✅ Mirtazapina refill
-
-### December 9-10:
-- ✅ Legal case evidence compilation - Comprehensive timeline for Monica
-
-### December 4-5:
-- ✅ Payment Google Workspace (€45.72)
-- ✅ Meu's medicines, Colla per topi, Heating system, Angela call, Circus tickets, Ruy dinero, Kindlings, Bernat & Edo texts
 
 ---
 
@@ -159,4 +143,4 @@
 
 ---
 
-**Weekend wrap - Saturday, December 27, 2025** 💚
+**On train to Barcelona!** 🚂
