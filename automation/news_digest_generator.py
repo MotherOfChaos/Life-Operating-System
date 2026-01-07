@@ -77,7 +77,7 @@ Generate the complete news digest for today following the v4 format from the ski
         headers = {
             "x-api-key": self.api_key,
             "anthropic-version": "2023-06-01",
-            "anthropic-beta": "web-search-2025-01-29",
+            
             "content-type": "application/json"
         }
 
