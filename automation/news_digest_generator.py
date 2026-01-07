@@ -84,7 +84,7 @@ Generate the complete news digest for today following the v4 format from the ski
         payload = {
             "model": "claude-sonnet-4-20250514",
             "max_tokens": 16000,
-            "tools": [{"type": "web_search"}],
+            "tools": [{"type": "web_search_20250305"}],
             "messages": [
                 {
                     "role": "user",
