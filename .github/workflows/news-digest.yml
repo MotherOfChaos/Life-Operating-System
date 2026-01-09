@@ -35,11 +35,12 @@ jobs:
           cd automation
           pip install -r requirements.txt
 
-      - name: Generate news digest
+      - name: Generate news digest with NewsAPI
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
         run: |
-          python automation/news_digest_generator.py
+          python automation/news_digest_with_newsapi.py
 
       - name: Commit and push if changed
         run: |
