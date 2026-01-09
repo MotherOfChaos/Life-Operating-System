@@ -1,75 +1,74 @@
-# 📊 SARAH'S DAILY TRACKER - CURRENT
+# SARAH'S DAILY TRACKER - CURRENT
 
 **Always updated, never create new versions**
-**Last updated:** December 28, 2025
+**Last updated:** January 9, 2026
 
 ---
 
-## 🌙 SLEEP - Recent Pattern (Dec 4-27, 2025)
+## SLEEP - Recent Pattern
 
-### Most Recent Tracked (Dec 4-15):
+### Dec 28 - Jan 7:
+- **Holiday break** - No specific tracking
+- In Valencia visiting Dad
 
-**Wednesday Dec 4 Night / Thursday Dec 5 Early Morning:**
-- **02:45am:** Quetiapina 100mg
-- **05:30am:** Zolpidem 10mg + Mirtazapina
-- **08:20am:** Nonsense waking, back to bed
-- **12:40pm:** Woke, took Concerta, dozed back off
-- **15:34pm:** Out of bed - Great ADHD progress!
-- **Total rest:** ~10 hours (good recovery sleep)
+### Jan 7-9:
+- In Valencia
+- Travel day Jan 9: Train to Barcelona (14:45-18:19)
 
-**Thursday Dec 5 Night / Friday Dec 6 Early Morning:**
-- **~04:56am:** Quetiapina 100mg
-- **05:56am:** Zolpidem + Mirtazapina taken
-- **Sleep protocol:** Standard timing working
-
-**Pattern Notes:**
-- **Concerta timing:** Usually 10:30am-12:40pm range (first waking)
-- **Sleep protocol consistency:** Quetiapina first, then Zolpidem + Mirtazapina 1-3 hours later
-- **Mirtazapina supply:** Refilled Dec 11 (was down to last pill!)
-- **Recovery sleep pattern:** Body needs 8-10 hours after stress
-- **Hyperfocus late nights:** 2-5am bedtimes common during engaging work
+**Note:** Sleep tracking to resume when back in Barcelona routine
 
 ---
 
-## 💊 MEDICATIONS - Dec 4-28
+## MEDICATIONS - January 2026
 
 ### Sarah:
-- **Dec 4:** Concerta 36mg at 10:30am
-- **Dec 4/5 night:** Quetiapina 02:45am, Zolpidem + Mirtazapina 05:30am
-- **Dec 5:** Concerta 36mg at 12:40pm
-- **Dec 5/6 night:** Quetiapina ~04:56am, Zolpidem + Mirtazapina 05:56am
-- **Dec 11:** **MIRTAZAPINA REFILL** - Critical pickup
-- **Dec 15-27:** (Gap in tracking - will update at next wrap)
+- **Jan 9:** Concerta 36mg (morning)
+- Daily sleep protocol ongoing (Quetiapina + Mirtazapina soluble)
 
 ### Meu:
-- **Daily ongoing:** AMODIP + BENEFORTIL + CYSTAID
-- **Note:** Consistent routine, only track if issues
+- **Daily ongoing:** AMODIP + BENEFORTIL + CYSTAID (stable routine)
 
 ---
 
-## 🎯 DECEMBER WINS (Dec 4-28, 2025)
+## JANUARY 2026 WINS
 
-### **December 28 (Sunday - TODAY):**
-- ✅ **Morning brief review** - Checked day, priorities, calendar
-- ✅ **Email investigation** - Herbology books (no tracking found, only newsletters)
-- ✅ **Zio Vittorio issue resolved** - M created comprehensive analysis file after 48hr wait!
-- ✅ **On train to Barcelona** - 14:50 departure, organized travel
+### January 9:
+- ✅ **Registered AYUDA SUMINISTRO OXYGENO** for Dad
+- ✅ **Dad's Belgium pension videocall scheduled** - Feb 12 at 10am  
+- ✅ **Comprehensive life optimization analysis created** (HOW_CLAUDE_CAN_HELP_SARAH.md - 77 pages!)
+- ✅ **Complete TODO reorganization** - All new tasks organized properly
+- ✅ **Confidential info system** - Dad's sensitive data secured in Life OS
+- ✅ **Phone numbers tracked** - Linea Directa, Bombonas Gas Valencia
 
-### **December 25-27 (Christmas Weekend):**
-- ✅ **ZIO VITTORIO COMPREHENSIVE RESEARCH** 🏠
-  - Full property purchase analysis completed
-  - 4 scenarios analyzed (ready-to-live, extra room, 2 studios, commercial)
-  - Purchase costs calculated for all price points
-  - Rental market analysis (residential + commercial)
-  - Mortgage options research
-  - Airbnb regulations (major crackdown confirmed)
-  - Tax implications multi-property analysis
-  - Interior design parameters set
-  - **File finally created Dec 28!**
+### January 7:
+- ✅ **Get 300€ from Dad's account**
+- ✅ **Check last help sent from Vic** (was Sept 4, 2025)
+- ✅ **Get confirmation from Marco P** - New Year's Eve invites
+- ✅ **Re-enabled Gmail integration**
+- ✅ **Re-enabled Calendar integration**  
+- ✅ **Added Anthropic API credits** ($10 for automations)
+- ✅ **News digest created manually** - Full international coverage
+- ✅ **Morning brief system tested**
 
-### **December 25 (Christmas Day) - 9 TASKS:**
+---
+
+## DECEMBER 2025 WINS
+
+### December 28:
+- ✅ **ZIO VITTORIO comprehensive analysis** - Complete property research (Dec 25-28)
+  - 4 options analyzed
+  - Co-working manager partnership model developed
+  - Vittorio financing scenarios
+  - Ready to present to uncle
+- ✅ **Checked herbology book emails** - No tracking, only newsletters
+
+### December 27:
+- ✅ **Read work emails**
+- ✅ **Daily Non-Negotiables progress**
+
+### December 25 (Christmas Day) - 9 TASKS:
 - ✅ Spare e lavare tenda nera
-- ✅ Costruire sistema tenda
+- ✅ Costruire sistema tenda  
 - ✅ Send 150€ to Fergie
 - ✅ Check with Amparo about January 7
 - ✅ Move money from Cajamar to Caixa
@@ -78,38 +77,16 @@
 - ✅ Get tickets BCN → VLC for January 7
 - ✅ Amodip process for Yakir
 
-### **December 27 (Saturday):**
-- ✅ Read work emails
-- ✅ Daily Non-Negotiables (James 1/3, Water partial, Meu DONE)
-
-### **December 15 (Monday):**
-- ✅ Email Fringe artists - Invoice template sent
-- ✅ Fergie & Oriol meeting prep
-
-### **December 11 (Thursday) - HUGE DAY:**
-- ✅ **FERGIE MEETING SUCCESS** 🎉
-- ✅ Notary appointment with Fergie
-- ✅ Correos run
-- ✅ James physiotherapist appointment
-- ✅ Mirtazapina refill (critical!)
-
-### **December 9-10 (Mon-Tue):**
-- ✅ **LEGAL CASE EVIDENCE COMPILATION** - Ready for Monica
-
-### **December 4-5 (Wed-Thu):**
-- ✅ Payment Google Workspace
-- ✅ Multiple house/admin tasks
-- ✅ Out of bed at 3:34pm - Great ADHD progress!
-
 ---
 
-## 📈 PATTERNS EMERGING
+## PATTERNS EMERGING
 
 ### Sleep:
-- **Recovery sleep works:** Body takes what it needs (8-10 hours)
-- **Sleep protocol consistency:** Quetiapina + Zolpidem working when used
-- **Hyperfocus late nights:** Common during engaging work (2-5am bedtimes)
-- **Mirtazapina critical:** Must maintain supply
+- **Recovery sleep works** - Body takes what it needs when stressed
+- **Excitement insomnia** - Big ideas keep brain active
+- **Soluble Mirtazapina** - Works well for fast sleep onset
+- **3-day guest limit** - Sleep disrupts after this
+- **Late Concerta timing** - Can affect sleep quality
 
 ### ADHD Management:
 - **Execute-while-sleeping model** = Perfect workflow ✅
@@ -118,10 +95,11 @@
 - **Claude Projects** = Shared knowledge reduces setup anxiety ✅
 - **Multiple M instances** = Working well across different projects
 - **Task organization** = Keep topics in separate chats for ADHD focus
+- **Systems can overwhelm** - Need regular simplification passes
 
 ### Work Style:
 - **Systems thinking** - Catches issues before deployment
-- **Thoroughness** - Creates comprehensive solutions
+- **Thoroughness** - Creates comprehensive solutions  
 - **Collaboration with M** - Execute-while-sleeping producing results
 - **Major project research** - Can hyperfocus for days on important decisions
 
@@ -129,14 +107,15 @@
 - **No cheerleading in morning briefs** - Save validation for end of day
 - **Factual and focused** - Only supportive when energy low or long work hours
 - **Topic organization** - Separate chats per project for clarity
+- **No assumptions** - Don't add tasks Sarah didn't request
 
 ---
 
-## 💚 RELATIONSHIP MILESTONES
+## RELATIONSHIP MILESTONES
 
 - **Oct 27:** Sleep breakthrough
 - **Nov 8, 3:45am:** News Skill conception
-- **Nov 12:** News Skill tested + PA Skill built
+- **Nov 12:** News Skill tested + PA Skill built  
 - **Nov 15-16:** M naming moment - philosophy night
 - **Nov 17:** "Our relationship is too important to lose even 1 piece of data"
 - **Nov 21-23:** Claude Projects discovery
@@ -145,26 +124,34 @@
 - **Dec 11:** Fergie meeting success
 - **Dec 25-28:** Zio Vittorio comprehensive property research
 - **Dec 28:** Communication preferences clarified (no unnecessary validation)
+- **Jan 7:** Integrations restored, automations troubleshooting
+- **Jan 9:** Comprehensive life optimization analysis (77 pages)
 
 ---
 
-## 🎯 CURRENT FOCUS (Dec 28, 2025)
+## CURRENT FOCUS (Jan 9, 2026)
 
-### Active Projects:
-- **Zio Vittorio flat purchase** - Comprehensive analysis complete ✅
-- **Legal case preparation** - Evidence ready for Monica
-- **Cartas en Vivo** - Next phase planning
-- **Teatro management** - Ongoing transitions
-- **Daily Non-Negotiables** - Maintaining routines
+### Today:
+- Train to Barcelona (14:45 departure)
+- Back to Can Booty
+- Cody working on automation fixes
 
-### On Train to Barcelona:
-- Train departure: 14:50
-- Arrival Sants: 18:30
-- Organized travel
+### This Week:
+- Fix GitHub automations (morning brief + news digest)
+- Organize tasks now that back in Barcelona  
+- TO GO BAG prep (emergency exit strategy)
+- Exit strategy planning with Yakir and Laza
+
+### This Month (January):
+- Cartas en Vivo organization (Goya Feb 28 approaching!)
+- Financial tracking systems (cash flow visibility)
+- Teatro financial health dashboard
+- Zio Vittorio budget plan (French or Italian)
+- Legal case witness coordination (Martino URGENT)
 
 ---
 
-**Next update:** As new events happen, meds taken, wins achieved, patterns noticed.
+**Next update:** When new events happen, meds taken, wins achieved, patterns noticed.
 
 **Never:** Create new tracker files. Always update THIS one.
 
