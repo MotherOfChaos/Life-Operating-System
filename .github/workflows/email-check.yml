@@ -1,7 +1,7 @@
 name: Email Check Automation
 
 on:
-  workflow_dispatch:  # Only runs when M triggers it (on-demand)
+  workflow_dispatch:  # On-demand when M triggers it
     inputs:
       hours:
         description: 'How many hours back to check'
@@ -30,13 +30,15 @@ jobs:
         run: |
           cd automation
           pip install -r requirements.txt
+          pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
 
-      - name: Check emails from all accounts
+      - name: Check emails (OAuth)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GMAIL_CREDENTIALS: ${{ secrets.GMAIL_CREDENTIALS }}
+          GMAIL_OAUTH_CREDENTIALS: ${{ secrets.GMAIL_OAUTH_CREDENTIALS }}
+          EMAIL_ACCOUNTS_TO_CHECK: ${{ secrets.EMAIL_ACCOUNTS_TO_CHECK }}
         run: |
-          python automation/email_checker.py
+          python automation/email_checker_oauth.py
 
       - name: Commit and push email digest
         run: |
