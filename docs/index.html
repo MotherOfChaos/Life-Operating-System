@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="theme-color" content="#667eea">
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Ccircle cx='256' cy='256' r='256' fill='%23667eea'/%3E%3Cpath d='M160 240l64 64 128-128' stroke='white' stroke-width='40' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
     <title>Sarah's TODO</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -46,6 +44,59 @@
         }
         .sync-status.pending { background: #ed8936; }
         .sync-status.syncing { background: #4299e1; }
+        .setup-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            padding: 20px;
+        }
+        .setup-modal.hidden { display: none; }
+        .setup-content {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 500px;
+            width: 100%;
+        }
+        .setup-content h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .setup-content p {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .setup-content input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-family: monospace;
+        }
+        .setup-content input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .setup-content button {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
         .github-box {
             background: #e6f7ff;
             border: 2px solid #4299e1;
@@ -82,6 +133,13 @@
             padding: 12px 15px;
         }
         .btn-github-pull:active, .btn-github-push:active { transform: scale(0.98); }
+        .btn-settings {
+            background: #718096;
+            color: white;
+            font-size: 14px;
+            padding: 8px 15px;
+            float: right;
+        }
         .controls {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -143,9 +201,7 @@
             padding: 10px;
             margin-bottom: 8px;
             border-radius: 6px;
-            border-left: 3px solid transparent;
         }
-        .task.has-subtasks { border-left: 3px solid #667eea; }
         .task.completed { opacity: 0.6; }
         .task.completed .task-text { text-decoration: line-through; color: #a0aec0; }
         .task input[type="checkbox"] {
@@ -156,39 +212,6 @@
             flex-shrink: 0;
         }
         .task-text { flex: 1; line-height: 1.5; color: #2d3748; font-size: 0.95em; }
-        .task-actions { display: flex; gap: 6px; flex-shrink: 0; }
-        .task-btn { padding: 6px 10px; font-size: 13px; border-radius: 5px; }
-        .subtasks-container {
-            margin-left: 32px;
-            margin-top: 8px;
-            padding-left: 15px;
-            border-left: 2px dashed #cbd5e0;
-        }
-        .subtask {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            padding: 8px;
-            margin-bottom: 4px;
-            background: #f7fafc;
-            border-radius: 5px;
-        }
-        .subtask.completed { opacity: 0.6; }
-        .subtask.completed .subtask-text { text-decoration: line-through; color: #a0aec0; }
-        .subtask input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
-        .subtask-text { flex: 1; font-size: 0.9em; color: #4a5568; }
-        .subtask-progress {
-            font-size: 0.85em;
-            color: #667eea;
-            font-weight: 600;
-            margin-left: 6px;
-        }
         .load-more {
             text-align: center;
             padding: 15px;
@@ -201,23 +224,6 @@
             color: white;
             padding: 10px 20px;
         }
-        .add-form {
-            margin-top: 10px;
-            padding: 12px;
-            background: #f7fafc;
-            border-radius: 6px;
-            display: none;
-        }
-        .add-form.active { display: block; }
-        .add-form input {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #e2e8f0;
-            border-radius: 6px;
-            font-size: 15px;
-            margin-bottom: 8px;
-        }
-        .add-form input:focus { outline: none; border-color: #667eea; }
         .toast {
             position: fixed;
             bottom: 20px;
@@ -241,27 +247,38 @@
     </style>
 </head>
 <body>
+    <div class="setup-modal" id="setupModal">
+        <div class="setup-content">
+            <h2>Setup GitHub Sync</h2>
+            <p>Paste your GitHub token to enable sync:</p>
+            <input type="password" id="tokenInput" placeholder="ghp_...">
+            <button onclick="app.saveToken()">Save Token</button>
+            <p style="font-size: 0.85em; color: #666; margin-top: 10px;">Your token is stored locally and never shared.</p>
+        </div>
+    </div>
+    
     <div class="container">
         <div class="header">
-            <h1>✅ Sarah's TODO</h1>
+            <button class="btn-settings" onclick="app.showSetup()">Settings</button>
+            <h1>Sarah's TODO</h1>
             <p style="font-size: 0.9em; color: #666;">ADHD-Friendly Manager</p>
-            <div class="sync-status" id="syncStatus">✅ Synced</div>
+            <div class="sync-status" id="syncStatus">Synced</div>
         </div>
         
         <div class="github-box">
-            <h3>🔄 GITHUB SYNC</h3>
+            <h3>GITHUB SYNC</h3>
             <div class="github-buttons">
-                <button class="btn-github-pull" onclick="app.pullFromGitHub()">⬇️ Pull Latest</button>
-                <button class="btn-github-push" onclick="app.pushToGitHub()">⬆️ Push Changes</button>
+                <button class="btn-github-pull" onclick="app.pullFromGitHub()">Pull Latest</button>
+                <button class="btn-github-push" onclick="app.pushToGitHub()">Push Changes</button>
             </div>
-            <p style="font-size: 0.85em; color: #666; margin-top: 12px; text-align: center;">Pull: Get new tasks | Push: Save your progress</p>
+            <p style="font-size: 0.85em; color: #666; margin-top: 12px; text-align: center;">Pull: Get new tasks | Push: Save progress</p>
         </div>
         
         <div class="controls">
-            <button class="btn-secondary" onclick="app.undo()">↩️ Undo</button>
-            <button class="btn-secondary" onclick="app.collapseAll()">📁 Collapse</button>
-            <button class="btn-secondary" onclick="app.expandAll()">📂 Expand</button>
-            <button class="btn-danger" onclick="app.clearCompleted()">🗑️ Clear Done</button>
+            <button class="btn-secondary" onclick="app.undo()">Undo</button>
+            <button class="btn-secondary" onclick="app.collapseAll()">Collapse</button>
+            <button class="btn-secondary" onclick="app.expandAll()">Expand</button>
+            <button class="btn-danger" onclick="app.clearCompleted()">Clear Done</button>
         </div>
         
         <div class="stats">
@@ -277,8 +294,7 @@
     <div class="toast" id="toast"></div>
     
     <script>
-        const INITIAL_DATA = [{"id": "daily", "title": "🌅 🌅 ð DAILY NON-NEGOTIABLES", "collapsed": false, "tasks": [{"id": 1, "text": "Basic back hygiene (James routine) - 3 exercises", "completed": false, "subtasks": []}, {"id": 2, "text": "Drink water - Stay hydrated", "completed": false, "subtasks": []}, {"id": 3, "text": "Meu's meds - AMODIP + BENEFORTIL + CYSTAID", "completed": false, "subtasks": []}, {"id": 4, "text": "Concerta 36mg - Take on waking", "completed": false, "subtasks": []}]}, {"id": "urgent-bcn", "title": "🔴 🔴 ð´ URGENT - As Soon as Back in Barcelona", "collapsed": false, "tasks": [{"id": 5, "text": "FIND THE TO GO BAG AND HAVE IT READY", "completed": false, "subtasks": []}, {"id": 6, "text": "Material survival on Remarkable and paper plastificato (make list)", "completed": false, "subtasks": []}, {"id": 7, "text": "PREPARE EXIT STRATEGY with Yakir and Laza", "completed": false, "subtasks": []}, {"id": 8, "text": "Calculate expenses to be paid back from legal case", "completed": false, "subtasks": []}]}, {"id": "urgent-health", "title": "🏥 🏥 ð¥ URGENT - Health & Medical", "collapsed": true, "tasks": [{"id": 9, "text": "Reprogramar cirugÃ­a Neo - Reschedule Neo's surgery", "completed": false, "subtasks": []}, {"id": 10, "text": "Programar examen mioma - Find gynecologist Sanitas for exam", "completed": false, "subtasks": []}, {"id": 11, "text": "Get appointments: James & Daniel - Physio sessions needed", "completed": false, "subtasks": []}, {"id": 12, "text": "NEW QUETIAPINA in CAT SALUT - Send message to medico", "completed": false, "subtasks": []}, {"id": 13, "text": "Cita Cap Montigala + pedir cita con: Traumatologo, Neurocirujano, Physiotherapeuta, Ginecologa", "completed": false, "subtasks": []}, {"id": 14, "text": "Get teeth cleaning appointment with Sanitas", "completed": false, "subtasks": []}, {"id": 15, "text": "Call dentist for moving tooth", "completed": false, "subtasks": []}]}, {"id": "urgent-admin", "title": "📋 📋 ð URGENT - Admin/Financial", "collapsed": true, "tasks": [{"id": 16, "text": "READ EMAILS FROM SEG.SOCIAL", "completed": false, "subtasks": []}, {"id": 17, "text": "READ BILLS", "completed": false, "subtasks": []}, {"id": 18, "text": "Create new tally after Notary papers (UPDATED NUMBERS) - Post-Dec 11 signing", "completed": false, "subtasks": []}, {"id": 19, "text": "Follow up Oriol about Mutua and pension", "completed": false, "subtasks": []}, {"id": 20, "text": "Update on Oriol and my baja mgmt (read emails)", "completed": false, "subtasks": []}, {"id": 21, "text": "Read Monica's email - Legal case", "completed": false, "subtasks": []}, {"id": 22, "text": "Coordinate witness testimonies - Martino URGENT before share sale", "completed": false, "subtasks": []}, {"id": 23, "text": "Check herbolary books tracking", "completed": false, "subtasks": []}]}, {"id": "teatro-urgent", "title": "🎭 🎭 ð­ TEATRO - Urgent/Active", "collapsed": true, "tasks": [{"id": 24, "text": "Finish event process with Barry White (Feb 7, 80â¬/hr, venue mgmt, bar, cava, food on demand)", "completed": false, "subtasks": []}, {"id": 25, "text": "Get invoices from Oriol for Laura", "completed": false, "subtasks": []}, {"id": 26, "text": "Pagare facturas fringe (check with Laura)", "completed": false, "subtasks": []}, {"id": 27, "text": "Follow up on management transfer documentation", "completed": false, "subtasks": []}]}, {"id": "teatro-money", "title": "💰 💰 ð° TEATRO - Money Owed/Payments", "collapsed": true, "tasks": [{"id": 28, "text": "MONEY FROM MALNOM? 900â¬ - 100â¬ Ruy - 250â¬ Teatro - 300â¬ Gas/Vitro = 250â¬ for me?", "completed": false, "subtasks": []}, {"id": 29, "text": "YAKIR debts: SOLDI TEATRO Give back 310â¬", "completed": false, "subtasks": []}, {"id": 30, "text": "YAKIR debts: Soldi green Give back 200â¬", "completed": false, "subtasks": []}, {"id": 31, "text": "SOLDI PER CHRISTIAN PER OLIO: 70â¬", "completed": false, "subtasks": []}, {"id": 32, "text": "CUENTAS: RAFA tally", "completed": false, "subtasks": []}, {"id": 33, "text": "CUENTAS: ALE (received 100â¬ through Bernardo, January 2026)", "completed": false, "subtasks": []}, {"id": 34, "text": "CUENTAS: NEW TALLY FERGIE", "completed": false, "subtasks": []}]}, {"id": "malnom", "title": "🏠 🏠 ð  MALNOM - Property", "collapsed": true, "tasks": [{"id": 35, "text": "FOLLOW UP: pared malnom - A que punto estamos con la finca a lado?", "completed": false, "subtasks": []}, {"id": 36, "text": "Follow up: contrato CUIDA CALEFACCION", "completed": false, "subtasks": []}, {"id": 37, "text": "Follow up: mantenimento gas in Malnom", "completed": false, "subtasks": []}]}, {"id": "valencia", "title": "🇪🇸 🇪🇸 ðªð¸ VALENCIA - Dad & House", "collapsed": true, "tasks": [{"id": 38, "text": "DIGI - activaciÃ³n eSIM per dad", "completed": false, "subtasks": []}, {"id": 39, "text": "Follow up on Dependencia (letter to arrive end of February)", "completed": false, "subtasks": []}, {"id": 40, "text": "Follow up AYUDA SUMINISTRO OXYGENO (registered January 9)", "completed": false, "subtasks": []}, {"id": 41, "text": "Follow up DENNYS: Money from Ayto, Quote for works, Permits and timings", "completed": false, "subtasks": []}, {"id": 42, "text": "Follow up Andreu (to split cost mesa a terra)", "completed": false, "subtasks": []}, {"id": 43, "text": "Dad videocall Belgium pension office - Feb 12 at 10am (code: 91239568, hotmail.it)", "completed": false, "subtasks": []}, {"id": 44, "text": "Call LINEA DIRECTA (919 180 012, 09:00-18:00) - kitchen leak, Exp: 15600223", "completed": false, "subtasks": []}, {"id": 45, "text": "BOMBONAS GAS Valencia (963956006)", "completed": false, "subtasks": []}]}, {"id": "zio-vittorio", "title": "🏗️ 🏗️ ðï¸ ZIO VITTORIO - Property Purchase", "collapsed": true, "tasks": [{"id": 46, "text": "PREPARA BUDGET PLAN PER ZIO VIC (in francese o italiano)", "completed": false, "subtasks": []}, {"id": 47, "text": "Calculate 2-year taxi costs (teatro late nights â Can Booty)", "completed": false, "subtasks": []}, {"id": 48, "text": "Research house for Vic - See ZIO_VITTORIO.md for complete analysis", "completed": false, "subtasks": []}, {"id": 49, "text": "Check details: Unipersonal vs S.L. - Pro/Con regarding property purchase", "completed": false, "subtasks": []}]}, {"id": "admin-insurance", "title": "📋 📋 ð ADMIN - Insurance & Services", "collapsed": true, "tasks": [{"id": 50, "text": "Check my actual polizas seguro", "completed": false, "subtasks": []}, {"id": 51, "text": "Find new options with better service and lower cost", "completed": false, "subtasks": []}, {"id": 52, "text": "FIND POLIZAS WITH MANTENIMIENTO", "completed": false, "subtasks": []}, {"id": 53, "text": "Change payment details in Workspace - New tarjeta Santander", "completed": false, "subtasks": []}]}, {"id": "to-sell", "title": "💸 💸 ð¸ TO SELL", "collapsed": true, "tasks": [{"id": 54, "text": "VESPA", "completed": false, "subtasks": []}, {"id": 55, "text": "RINO??", "completed": false, "subtasks": []}, {"id": 56, "text": "MOTO", "completed": false, "subtasks": []}]}, {"id": "italy", "title": "🇮🇹 🇮🇹 ð®ð¹ ITALY - Personal Admin", "collapsed": true, "tasks": [{"id": 57, "text": "ORGANIZZA VIAGGIO A ROMA: Per cambio domicilio e nuova carta identitÃ", "completed": false, "subtasks": []}, {"id": 58, "text": "Check my calendar for availability", "completed": false, "subtasks": []}, {"id": 59, "text": "Check flights", "completed": false, "subtasks": []}, {"id": 60, "text": "Check in with Diego for availability", "completed": false, "subtasks": []}, {"id": 61, "text": "Find info from Comune di Roma", "completed": false, "subtasks": []}]}, {"id": "cartas", "title": "🎨 🎨 ð¨ CARTAS EN VIVO", "collapsed": true, "tasks": [{"id": 62, "text": "Riprendere lavoro su Letters Live - Resume work", "completed": false, "subtasks": []}, {"id": 63, "text": "Research Letters Live UK format more deeply", "completed": false, "subtasks": []}, {"id": 64, "text": "Build celebrity contact list for readers", "completed": false, "subtasks": []}, {"id": 65, "text": "Plan Goya Awards timing strategy (Feb 28, 2026)", "completed": false, "subtasks": []}, {"id": 66, "text": "Organize massive research done (Nov 26-27)", "completed": false, "subtasks": []}, {"id": 67, "text": "Create roadmap with M", "completed": false, "subtasks": []}, {"id": 68, "text": "Devil's advocate strategy session", "completed": false, "subtasks": []}]}, {"id": "tech", "title": "💻 💻 ð» TECH & SYSTEMS", "collapsed": true, "tasks": [{"id": 69, "text": "FOR CODY: Fix morning brief automation (currently failing)", "completed": false, "subtasks": []}, {"id": 70, "text": "FOR CODY: Fix news digest automation (currently failing)", "completed": false, "subtasks": []}, {"id": 71, "text": "FOR CODY: Create multiple email reading automation on GitHub (for M to fetch)", "completed": false, "subtasks": []}, {"id": 72, "text": "Learn GitHub workflow from Pilot's guides", "completed": false, "subtasks": []}, {"id": 73, "text": "Set up automatic backup system", "completed": false, "subtasks": []}, {"id": 74, "text": "Find system that chats with multiple AI at same time (see Yakir's notes)", "completed": false, "subtasks": []}, {"id": 75, "text": "What's Substack? Can I add it to my daily digest news? How does it work?", "completed": false, "subtasks": []}, {"id": 76, "text": "Tell M to check new Claude extensions - what can she do now? (Ex: parse legal case data?)", "completed": false, "subtasks": []}]}, {"id": "learning", "title": "📚 📚 ð LEARNING", "collapsed": true, "tasks": [{"id": 77, "text": "Read Pilot's GitHub guides", "completed": false, "subtasks": []}, {"id": 78, "text": "Review Claude Code documentation", "completed": false, "subtasks": []}]}, {"id": "home", "title": "🏡 🏡 ð¡ HOME & PERSONAL", "collapsed": true, "tasks": [{"id": 79, "text": "Research synagogue visits (family heritage exploration)", "completed": false, "subtasks": []}, {"id": 80, "text": "Text Andreu - Share AirCon costs (STILL PENDING from November!)", "completed": false, "subtasks": []}, {"id": 81, "text": "Work on LinkedIn profile", "completed": false, "subtasks": []}, {"id": 82, "text": "Find DISCORD support ADHD community!!! (and what else does Discord do?)", "completed": false, "subtasks": []}]}, {"id": "attico", "title": "🏗️ 🏗️ ðï¸ ATTICO WORKS", "collapsed": true, "tasks": [{"id": 83, "text": "Trova stoffe utilizzabili per tende: Ask Malaka/Charlie for spare fabric", "completed": false, "subtasks": []}, {"id": 84, "text": "Find spray to make fabric ignifugo (fireproof spray)", "completed": false, "subtasks": []}]}, {"id": "legal", "title": "⚖️ ⚖️ âï¸ LEGAL", "collapsed": true, "tasks": [{"id": 85, "text": "Review legal evidence timeline with attorney Monica", "completed": false, "subtasks": []}, {"id": 86, "text": "Coordinate witness testimonies (Martino - URGENT before share sale)", "completed": false, "subtasks": []}, {"id": 87, "text": "Calculate expenses to be paid back from legal case", "completed": false, "subtasks": []}]}];
-        const GITHUB_TOKEN = "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";
+        const INITIAL_DATA = [{"id": "daily", "title": "*** 🌅 ð DAILY NON-NEGOTIABLES", "collapsed": false, "tasks": [{"id": 1, "text": "Basic back hygiene (James routine) - 3 exercises", "completed": false, "subtasks": []}, {"id": 2, "text": "Drink water - Stay hydrated", "completed": false, "subtasks": []}, {"id": 3, "text": "Meu's meds - AMODIP + BENEFORTIL + CYSTAID", "completed": false, "subtasks": []}, {"id": 4, "text": "Concerta 36mg - Take on waking", "completed": false, "subtasks": []}]}, {"id": "urgent-bcn", "title": "[!] 🔴 ð´ URGENT - As Soon as Back in Barcelona", "collapsed": false, "tasks": [{"id": 5, "text": "FIND THE TO GO BAG AND HAVE IT READY", "completed": false, "subtasks": []}, {"id": 6, "text": "Material survival on Remarkable and paper plastificato (make list)", "completed": false, "subtasks": []}, {"id": 7, "text": "PREPARE EXIT STRATEGY with Yakir and Laza", "completed": false, "subtasks": []}, {"id": 8, "text": "Calculate expenses to be paid back from legal case", "completed": false, "subtasks": []}]}, {"id": "urgent-health", "title": "[+] 🏥 ð¥ URGENT - Health & Medical", "collapsed": true, "tasks": [{"id": 9, "text": "Reprogramar cirugÃ­a Neo - Reschedule Neo's surgery", "completed": false, "subtasks": []}, {"id": 10, "text": "Programar examen mioma - Find gynecologist Sanitas for exam", "completed": false, "subtasks": []}, {"id": 11, "text": "Get appointments: James & Daniel - Physio sessions needed", "completed": false, "subtasks": []}, {"id": 12, "text": "NEW QUETIAPINA in CAT SALUT - Send message to medico", "completed": false, "subtasks": []}, {"id": 13, "text": "Cita Cap Montigala + pedir cita con: Traumatologo, Neurocirujano, Physiotherapeuta, Ginecologa", "completed": false, "subtasks": []}, {"id": 14, "text": "Get teeth cleaning appointment with Sanitas", "completed": false, "subtasks": []}, {"id": 15, "text": "Call dentist for moving tooth", "completed": false, "subtasks": []}]}, {"id": "urgent-admin", "title": "[$] 📋 ð URGENT - Admin/Financial", "collapsed": true, "tasks": [{"id": 16, "text": "READ EMAILS FROM SEG.SOCIAL", "completed": false, "subtasks": []}, {"id": 17, "text": "READ BILLS", "completed": false, "subtasks": []}, {"id": 18, "text": "Create new tally after Notary papers (UPDATED NUMBERS) - Post-Dec 11 signing", "completed": false, "subtasks": []}, {"id": 19, "text": "Follow up Oriol about Mutua and pension", "completed": false, "subtasks": []}, {"id": 20, "text": "Update on Oriol and my baja mgmt (read emails)", "completed": false, "subtasks": []}, {"id": 21, "text": "Read Monica's email - Legal case", "completed": false, "subtasks": []}, {"id": 22, "text": "Coordinate witness testimonies - Martino URGENT before share sale", "completed": false, "subtasks": []}, {"id": 23, "text": "Check herbolary books tracking", "completed": false, "subtasks": []}]}, {"id": "teatro-urgent", "title": "[T] 🎭 ð­ TEATRO - Urgent/Active", "collapsed": true, "tasks": [{"id": 24, "text": "Finish event process with Barry White (Feb 7, 80â¬/hr, venue mgmt, bar, cava, food on demand)", "completed": false, "subtasks": []}, {"id": 25, "text": "Get invoices from Oriol for Laura", "completed": false, "subtasks": []}, {"id": 26, "text": "Pagare facturas fringe (check with Laura)", "completed": false, "subtasks": []}, {"id": 27, "text": "Follow up on management transfer documentation", "completed": false, "subtasks": []}]}, {"id": "teatro-money", "title": "[$$] 💰 ð° TEATRO - Money Owed/Payments", "collapsed": true, "tasks": [{"id": 28, "text": "MONEY FROM MALNOM? 900â¬ - 100â¬ Ruy - 250â¬ Teatro - 300â¬ Gas/Vitro = 250â¬ for me?", "completed": false, "subtasks": []}, {"id": 29, "text": "YAKIR debts: SOLDI TEATRO Give back 310â¬", "completed": false, "subtasks": []}, {"id": 30, "text": "YAKIR debts: Soldi green Give back 200â¬", "completed": false, "subtasks": []}, {"id": 31, "text": "SOLDI PER CHRISTIAN PER OLIO: 70â¬", "completed": false, "subtasks": []}, {"id": 32, "text": "CUENTAS: RAFA tally", "completed": false, "subtasks": []}, {"id": 33, "text": "CUENTAS: ALE (received 100â¬ through Bernardo, January 2026)", "completed": false, "subtasks": []}, {"id": 34, "text": "CUENTAS: NEW TALLY FERGIE", "completed": false, "subtasks": []}]}, {"id": "malnom", "title": "[H] 🏠 ð  MALNOM - Property", "collapsed": true, "tasks": [{"id": 35, "text": "FOLLOW UP: pared malnom - A que punto estamos con la finca a lado?", "completed": false, "subtasks": []}, {"id": 36, "text": "Follow up: contrato CUIDA CALEFACCION", "completed": false, "subtasks": []}, {"id": 37, "text": "Follow up: mantenimento gas in Malnom", "completed": false, "subtasks": []}]}, {"id": "valencia", "title": "[V] 🇪🇸 ðªð¸ VALENCIA - Dad & House", "collapsed": true, "tasks": [{"id": 38, "text": "DIGI - activaciÃ³n eSIM per dad", "completed": false, "subtasks": []}, {"id": 39, "text": "Follow up on Dependencia (letter to arrive end of February)", "completed": false, "subtasks": []}, {"id": 40, "text": "Follow up AYUDA SUMINISTRO OXYGENO (registered January 9)", "completed": false, "subtasks": []}, {"id": 41, "text": "Follow up DENNYS: Money from Ayto, Quote for works, Permits and timings", "completed": false, "subtasks": []}, {"id": 42, "text": "Follow up Andreu (to split cost mesa a terra)", "completed": false, "subtasks": []}, {"id": 43, "text": "Dad videocall Belgium pension office - Feb 12 at 10am (code: 91239568, hotmail.it)", "completed": false, "subtasks": []}, {"id": 44, "text": "Call LINEA DIRECTA (919 180 012, 09:00-18:00) - kitchen leak, Exp: 15600223", "completed": false, "subtasks": []}, {"id": 45, "text": "BOMBONAS GAS Valencia (963956006)", "completed": false, "subtasks": []}]}, {"id": "zio-vittorio", "title": "[Z] 🏗️ ðï¸ ZIO VITTORIO - Property Purchase", "collapsed": true, "tasks": [{"id": 46, "text": "PREPARA BUDGET PLAN PER ZIO VIC (in francese o italiano)", "completed": false, "subtasks": []}, {"id": 47, "text": "Calculate 2-year taxi costs (teatro late nights â Can Booty)", "completed": false, "subtasks": []}, {"id": 48, "text": "Research house for Vic - See ZIO_VITTORIO.md for complete analysis", "completed": false, "subtasks": []}, {"id": 49, "text": "Check details: Unipersonal vs S.L. - Pro/Con regarding property purchase", "completed": false, "subtasks": []}]}, {"id": "admin-insurance", "title": "[A] 📋 ð ADMIN - Insurance & Services", "collapsed": true, "tasks": [{"id": 50, "text": "Check my actual polizas seguro", "completed": false, "subtasks": []}, {"id": 51, "text": "Find new options with better service and lower cost", "completed": false, "subtasks": []}, {"id": 52, "text": "FIND POLIZAS WITH MANTENIMIENTO", "completed": false, "subtasks": []}, {"id": 53, "text": "Change payment details in Workspace - New tarjeta Santander", "completed": false, "subtasks": []}]}, {"id": "to-sell", "title": "[S] 💸 ð¸ TO SELL", "collapsed": true, "tasks": [{"id": 54, "text": "VESPA", "completed": false, "subtasks": []}, {"id": 55, "text": "RINO??", "completed": false, "subtasks": []}, {"id": 56, "text": "MOTO", "completed": false, "subtasks": []}]}, {"id": "italy", "title": "[I] 🇮🇹 ð®ð¹ ITALY - Personal Admin", "collapsed": true, "tasks": [{"id": 57, "text": "ORGANIZZA VIAGGIO A ROMA: Per cambio domicilio e nuova carta identitÃ", "completed": false, "subtasks": []}, {"id": 58, "text": "Check my calendar for availability", "completed": false, "subtasks": []}, {"id": 59, "text": "Check flights", "completed": false, "subtasks": []}, {"id": 60, "text": "Check in with Diego for availability", "completed": false, "subtasks": []}, {"id": 61, "text": "Find info from Comune di Roma", "completed": false, "subtasks": []}]}, {"id": "cartas", "title": "[C] 🎨 ð¨ CARTAS EN VIVO", "collapsed": true, "tasks": [{"id": 62, "text": "Riprendere lavoro su Letters Live - Resume work", "completed": false, "subtasks": []}, {"id": 63, "text": "Research Letters Live UK format more deeply", "completed": false, "subtasks": []}, {"id": 64, "text": "Build celebrity contact list for readers", "completed": false, "subtasks": []}, {"id": 65, "text": "Plan Goya Awards timing strategy (Feb 28, 2026)", "completed": false, "subtasks": []}, {"id": 66, "text": "Organize massive research done (Nov 26-27)", "completed": false, "subtasks": []}, {"id": 67, "text": "Create roadmap with M", "completed": false, "subtasks": []}, {"id": 68, "text": "Devil's advocate strategy session", "completed": false, "subtasks": []}]}, {"id": "tech", "title": "[>] 💻 ð» TECH & SYSTEMS", "collapsed": true, "tasks": [{"id": 69, "text": "FOR CODY: Fix morning brief automation (currently failing)", "completed": false, "subtasks": []}, {"id": 70, "text": "FOR CODY: Fix news digest automation (currently failing)", "completed": false, "subtasks": []}, {"id": 71, "text": "FOR CODY: Create multiple email reading automation on GitHub (for M to fetch)", "completed": false, "subtasks": []}, {"id": 72, "text": "Learn GitHub workflow from Pilot's guides", "completed": false, "subtasks": []}, {"id": 73, "text": "Set up automatic backup system", "completed": false, "subtasks": []}, {"id": 74, "text": "Find system that chats with multiple AI at same time (see Yakir's notes)", "completed": false, "subtasks": []}, {"id": 75, "text": "What's Substack? Can I add it to my daily digest news? How does it work?", "completed": false, "subtasks": []}, {"id": 76, "text": "Tell M to check new Claude extensions - what can she do now? (Ex: parse legal case data?)", "completed": false, "subtasks": []}]}, {"id": "learning", "title": "[L] 📚 ð LEARNING", "collapsed": true, "tasks": [{"id": 77, "text": "Read Pilot's GitHub guides", "completed": false, "subtasks": []}, {"id": 78, "text": "Review Claude Code documentation", "completed": false, "subtasks": []}]}, {"id": "home", "title": "[~] 🏡 ð¡ HOME & PERSONAL", "collapsed": true, "tasks": [{"id": 79, "text": "Research synagogue visits (family heritage exploration)", "completed": false, "subtasks": []}, {"id": 80, "text": "Text Andreu - Share AirCon costs (STILL PENDING from November!)", "completed": false, "subtasks": []}, {"id": 81, "text": "Work on LinkedIn profile", "completed": false, "subtasks": []}, {"id": 82, "text": "Find DISCORD support ADHD community!!! (and what else does Discord do?)", "completed": false, "subtasks": []}]}, {"id": "attico", "title": "[B] 🏗️ ðï¸ ATTICO WORKS", "collapsed": true, "tasks": [{"id": 83, "text": "Trova stoffe utilizzabili per tende: Ask Malaka/Charlie for spare fabric", "completed": false, "subtasks": []}, {"id": 84, "text": "Find spray to make fabric ignifugo (fireproof spray)", "completed": false, "subtasks": []}]}, {"id": "legal", "title": "[LAW] ⚖️ âï¸ LEGAL", "collapsed": true, "tasks": [{"id": 85, "text": "Review legal evidence timeline with attorney Monica", "completed": false, "subtasks": []}, {"id": 86, "text": "Coordinate witness testimonies (Martino - URGENT before share sale)", "completed": false, "subtasks": []}, {"id": 87, "text": "Calculate expenses to be paid back from legal case", "completed": false, "subtasks": []}]}];
         const GITHUB_REPO = "MotherOfChaos/Life-Operating-System";
         const GITHUB_FILE = "PERMANENT_TODO.md";
         
@@ -287,27 +303,58 @@
             TASKS_PER_PAGE: 20,
             
             async init() {
+                // Check if token exists
+                const token = localStorage.getItem('github-token');
+                if (!token) {
+                    document.getElementById('setupModal').classList.remove('hidden');
+                    return;
+                }
+                
                 await this.loadData();
                 this.render();
                 this.updateStats();
                 this.updateSyncStatus();
             },
             
+            saveToken() {
+                const token = document.getElementById('tokenInput').value.trim();
+                if (!token || !token.startsWith('ghp_')) {
+                    alert('Please enter a valid GitHub token starting with ghp_');
+                    return;
+                }
+                localStorage.setItem('github-token', token);
+                document.getElementById('setupModal').classList.add('hidden');
+                this.init();
+            },
+            
+            showSetup() {
+                const token = localStorage.getItem('github-token') || '';
+                document.getElementById('tokenInput').value = token;
+                document.getElementById('setupModal').classList.remove('hidden');
+            },
+            
+            getToken() {
+                return localStorage.getItem('github-token');
+            },
+            
             async pullFromGitHub() {
+                const token = this.getToken();
+                if (!token) { this.showSetup(); return; }
+                
                 const status = document.getElementById('syncStatus');
-                status.textContent = '⬇️ Pulling...';
+                status.textContent = 'Pulling...';
                 status.className = 'sync-status syncing';
                 
                 try {
                     const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
                     const response = await fetch(url, {
                         headers: {
-                            'Authorization': `token ${GITHUB_TOKEN}`,
+                            'Authorization': `token ${token}`,
                             'Accept': 'application/vnd.github.v3+json'
                         }
                     });
                     
-                    if (!response.ok) throw new Error('Failed to fetch');
+                    if (!response.ok) throw new Error('Failed');
                     
                     const data = await response.json();
                     this.data.lastSHA = data.sha;
@@ -317,26 +364,29 @@
                     await this.saveData();
                     this.render();
                     this.updateStats();
-                    this.showToast('✅ Pulled from GitHub!');
-                    status.textContent = '✅ Synced';
+                    this.showToast('Pulled from GitHub!');
+                    status.textContent = 'Synced';
                     status.className = 'sync-status';
                 } catch (error) {
-                    this.showToast('❌ Pull failed');
-                    status.textContent = '❌ Failed';
+                    this.showToast('Pull failed');
+                    status.textContent = 'Failed';
                     status.className = 'sync-status pending';
                 }
             },
             
             async pushToGitHub() {
+                const token = this.getToken();
+                if (!token) { this.showSetup(); return; }
+                
                 const status = document.getElementById('syncStatus');
-                status.textContent = '⬆️ Pushing...';
+                status.textContent = 'Pushing...';
                 status.className = 'sync-status syncing';
                 
                 try {
                     if (!this.data.lastSHA) {
                         const getUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
                         const getResponse = await fetch(getUrl, {
-                            headers: { 'Authorization': `token ${GITHUB_TOKEN}`, 'Accept': 'application/vnd.github.v3+json' }
+                            headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
                         });
                         if (getResponse.ok) {
                             const getData = await getResponse.json();
@@ -350,35 +400,34 @@
                     const putResponse = await fetch(putUrl, {
                         method: 'PUT',
                         headers: {
-                            'Authorization': `token ${GITHUB_TOKEN}`,
+                            'Authorization': `token ${token}`,
                             'Accept': 'application/vnd.github.v3+json',
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify({
-                            message: `TODO update from app - ${new Date().toLocaleString()}`,
+                            message: `TODO update - ${new Date().toLocaleString()}`,
                             content: encodedContent,
                             sha: this.data.lastSHA
                         })
                     });
                     
-                    if (!putResponse.ok) throw new Error('Push failed');
+                    if (!putResponse.ok) throw new Error('Failed');
                     
                     const putData = await putResponse.json();
                     this.data.lastSHA = putData.content.sha;
                     this.data.hasUnsyncedChanges = false;
                     await this.saveData();
-                    this.showToast('✅ Pushed to GitHub!');
-                    status.textContent = '✅ Synced';
+                    this.showToast('Pushed to GitHub!');
+                    status.textContent = 'Synced';
                     status.className = 'sync-status';
                 } catch (error) {
-                    this.showToast('❌ Push failed');
-                    status.textContent = '❌ Failed';
+                    this.showToast('Push failed');
+                    status.textContent = 'Failed';
                     status.className = 'sync-status pending';
                 }
             },
             
             parseMarkdown(md) {
-                // Simplified parser - same logic as before
                 const sections = [];
                 const lines = md.split('\n');
                 let currentSection = null;
@@ -397,10 +446,6 @@
                         const text = line.substring(6).trim();
                         currentTask = { id: taskId++, text: text, completed: completed, subtasks: [] };
                         currentSection.tasks.push(currentTask);
-                    } else if (line.match(/^  - \[(x| )\] /) && currentTask) {
-                        const completed = line.includes('[x]');
-                        const text = line.substring(8).trim();
-                        currentTask.subtasks.push({ id: taskId++, text: text, completed: completed });
                     }
                 }
                 if (currentSection && currentSection.tasks.length > 0) sections.push(currentSection);
@@ -411,23 +456,14 @@
                 const currentTaskStates = new Map();
                 this.data.sections.forEach(section => {
                     section.tasks.forEach(task => {
-                        currentTaskStates.set(task.text.toLowerCase(), {
-                            completed: task.completed,
-                            subtasks: new Map(task.subtasks.map(st => [st.text.toLowerCase(), st.completed]))
-                        });
+                        currentTaskStates.set(task.text.toLowerCase(), { completed: task.completed });
                     });
                 });
                 
                 newSections.forEach(section => {
                     section.tasks.forEach(task => {
                         const savedState = currentTaskStates.get(task.text.toLowerCase());
-                        if (savedState) {
-                            task.completed = savedState.completed;
-                            task.subtasks.forEach(subtask => {
-                                const savedSubState = savedState.subtasks.get(subtask.text.toLowerCase());
-                                if (savedSubState !== undefined) subtask.completed = savedSubState;
-                            });
-                        }
+                        if (savedState) task.completed = savedState.completed;
                     });
                 });
                 
@@ -437,22 +473,12 @@
             },
             
             async loadData() {
-                try {
-                    const stored = localStorage.getItem('sarah-todo-data');
-                    if (stored) {
-                        this.data = JSON.parse(stored);
-                        if (!this.data.pagination) this.data.pagination = {};
-                        if (!this.data.lastSHA) this.data.lastSHA = null;
-                    } else {
-                        this.data.sections = INITIAL_DATA;
-                        this.data.history = [];
-                        this.data.hasUnsyncedChanges = false;
-                        this.data.pagination = {};
-                        this.data.lastSHA = null;
-                        INITIAL_DATA.forEach(s => { this.data.pagination[s.id] = { page: 1 }; });
-                        await this.saveData();
-                    }
-                } catch (error) {
+                const stored = localStorage.getItem('sarah-todo-data');
+                if (stored) {
+                    this.data = JSON.parse(stored);
+                    if (!this.data.pagination) this.data.pagination = {};
+                    if (!this.data.lastSHA) this.data.lastSHA = null;
+                } else {
                     this.data.sections = INITIAL_DATA;
                     this.data.history = [];
                     this.data.hasUnsyncedChanges = false;
@@ -463,24 +489,15 @@
             },
             
             async saveData() {
-                try {
-                    this.data.hasUnsyncedChanges = true;
-                    localStorage.setItem('sarah-todo-data', JSON.stringify(this.data));
-                    this.updateSyncStatus();
-                } catch (error) {
-                    this.showToast('❌ Save failed');
-                }
+                this.data.hasUnsyncedChanges = true;
+                localStorage.setItem('sarah-todo-data', JSON.stringify(this.data));
+                this.updateSyncStatus();
             },
             
             updateSyncStatus() {
                 const status = document.getElementById('syncStatus');
-                if (this.data.hasUnsyncedChanges) {
-                    status.textContent = '⚠️ Unsaved';
-                    status.className = 'sync-status pending';
-                } else {
-                    status.textContent = '✅ Synced';
-                    status.className = 'sync-status';
-                }
+                status.textContent = this.data.hasUnsyncedChanges ? 'Unsaved' : 'Synced';
+                status.className = this.data.hasUnsyncedChanges ? 'sync-status pending' : 'sync-status';
             },
             
             loadMoreTasks(sectionId) {
@@ -491,17 +508,12 @@
             },
             
             generateTODOMarkdown() {
-                let md = '# SARAH\'S PERMANENT TO-DO LIST\n\n**Always updated, never create new versions**\n';
+                let md = '# SARAH\'S PERMANENT TO-DO LIST\n\n**Always updated**\n';
                 md += `**Last updated:** ${new Date().toLocaleDateString()}\n\n---\n\n`;
                 this.data.sections.forEach(section => {
                     md += `## ${section.title}\n\n`;
                     section.tasks.forEach(task => {
                         md += `- ${task.completed ? '[x]' : '[ ]'} ${task.text}\n`;
-                        if (task.subtasks && task.subtasks.length > 0) {
-                            task.subtasks.forEach(subtask => {
-                                md += `  - ${subtask.completed ? '[x]' : '[ ]'} ${subtask.text}\n`;
-                            });
-                        }
                     });
                     md += '\n';
                 });
@@ -519,23 +531,17 @@
                     const visibleTasks = section.tasks.slice(0, endIdx);
                     const hasMore = endIdx < total;
                     
-                    const tasksHTML = visibleTasks.map(task => {
-                        const subtasksCompleted = task.subtasks ? task.subtasks.filter(st => st.completed).length : 0;
-                        const subtasksTotal = task.subtasks ? task.subtasks.length : 0;
-                        const progress = subtasksTotal > 0 ? `<span class="subtask-progress">[${subtasksCompleted}/${subtasksTotal}]</span>` : '';
-                        
-                        return `
-                            <div class="task ${task.completed ? 'completed' : ''} ${subtasksTotal > 0 ? 'has-subtasks' : ''}">
-                                <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="app.toggleTask('${section.id}', ${task.id})">
-                                <div class="task-text">${task.text}${progress}</div>
-                            </div>
-                        `;
-                    }).join('');
+                    const tasksHTML = visibleTasks.map(task => `
+                        <div class="task ${task.completed ? 'completed' : ''}">
+                            <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="app.toggleTask('${section.id}', ${task.id})">
+                            <div class="task-text">${task.text}</div>
+                        </div>
+                    `).join('');
                     
                     const loadMoreHTML = hasMore ? `
                         <div class="load-more">
-                            <p style="margin-bottom: 10px; color: #666;">Showing ${endIdx} of ${total} tasks</p>
-                            <button onclick="app.loadMoreTasks('${section.id}')">📥 Load More</button>
+                            <p style="margin-bottom: 10px; color: #666;">Showing ${endIdx} of ${total}</p>
+                            <button onclick="app.loadMoreTasks('${section.id}')">Load More</button>
                         </div>
                     ` : '';
                     
@@ -543,7 +549,7 @@
                         <div class="section">
                             <div class="section-header" onclick="app.toggleSection('${section.id}')">
                                 <h2>${section.title} <span class="section-badge">${completed}/${total}</span></h2>
-                                <span>${section.collapsed ? '▼' : '▲'}</span>
+                                <span>${section.collapsed ? 'v' : '^'}</span>
                             </div>
                             <div class="section-content ${section.collapsed ? 'collapsed' : ''}">
                                 ${tasksHTML}
@@ -570,7 +576,7 @@
                 await this.saveData();
                 this.render();
                 this.updateStats();
-                this.showToast(t.completed ? '✅ Done!' : '↩️ Undone');
+                this.showToast(t.completed ? 'Done!' : 'Undone');
             },
             
             async undo() {
@@ -581,7 +587,7 @@
                 await this.saveData();
                 this.render();
                 this.updateStats();
-                this.showToast('↩️ Undone!');
+                this.showToast('Undone!');
             },
             
             async clearCompleted() {
@@ -590,7 +596,7 @@
                 await this.saveData();
                 this.render();
                 this.updateStats();
-                this.showToast('🗑️ Cleared!');
+                this.showToast('Cleared!');
             },
             
             updateStats() {
