@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!-- Version 2.0 - Complete Rebuild - Jan 11, 2026 -->
-<!-- ADHD-Friendly: Clean, simple, NO special characters -->
+<!-- ORIGINAL BEAUTIFUL VERSION - Token Embedded - Jan 11, 2026 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,259 +10,337 @@
     <link rel="manifest" href="manifest.json">
     <title>Sarah's TODO</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 15px;
-            font-size: 18px;
+            font-size: 16px;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
             padding: 20px;
         }
-        h1 { color: #667eea; font-size: 1.8em; margin-bottom: 15px; text-align: center; }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+        }
+        h1 { color: #667eea; font-size: 1.8em; margin-bottom: 5px; }
         .sync-status {
             background: #48bb78;
             color: white;
-            padding: 10px 15px;
+            padding: 8px 15px;
             border-radius: 6px;
-            text-align: center;
-            margin-bottom: 15px;
-            font-weight: bold;
+            display: inline-block;
+            margin-top: 8px;
+            font-weight: 600;
+            font-size: 0.9em;
         }
         .sync-status.pending { background: #ed8936; }
         .sync-status.syncing { background: #4299e1; }
-        .buttons {
+        .setup-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
             display: flex;
-            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            padding: 20px;
+        }
+        .setup-modal.hidden { display: none; }
+        .setup-content {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 500px;
+            width: 100%;
+        }
+        .setup-content h2 {
+            color: #667eea;
             margin-bottom: 15px;
-            flex-wrap: wrap;
+        }
+        .setup-content p {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .setup-content input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-family: monospace;
+        }
+        .setup-content input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .setup-content button {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .github-box {
+            background: #e6f7ff;
+            border: 2px solid #4299e1;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .github-box h3 { color: #2c5aa0; margin-bottom: 12px; font-size: 1.1em; text-align: center; }
+        .github-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
         }
         button {
-            flex: 1;
-            min-width: 120px;
-            padding: 12px;
+            padding: 12px 20px;
             border: none;
             border-radius: 8px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
+            touch-action: manipulation;
         }
+        .btn-github-pull {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            font-size: 15px;
+            padding: 12px 15px;
+        }
+        .btn-github-push {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            font-size: 15px;
+            padding: 12px 15px;
+        }
+        .btn-github-pull:active, .btn-github-push:active { transform: scale(0.98); }
+        .btn-settings {
+            background: #718096;
+            color: white;
+            font-size: 14px;
+            padding: 8px 15px;
+            float: right;
+        }
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .btn-secondary { background: #48bb78; color: white; font-size: 14px; padding: 10px; }
+        .btn-danger { background: #f56565; color: white; font-size: 14px; padding: 10px; }
         .btn-primary { background: #667eea; color: white; }
-        .btn-success { background: #48bb78; color: white; }
-        .btn-secondary { background: #718096; color: white; }
-        button:active { transform: scale(0.95); }
-        
-        .task {
-            background: #f7fafc;
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
+            border-radius: 10px;
+            text-align: center;
         }
-        .task.completed {
-            opacity: 0.6;
-            border-left-color: #48bb78;
+        .stat-card h3 { font-size: 1.8em; margin-bottom: 3px; }
+        .stat-card p { opacity: 0.9; font-size: 0.85em; }
+        .section {
+            margin-bottom: 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
         }
-        .task-text {
-            font-size: 16px;
-            line-height: 1.5;
-            margin-bottom: 8px;
-        }
-        .task-actions {
+        .section-header {
+            background: #f7fafc;
+            padding: 12px 15px;
+            cursor: pointer;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section-header h2 {
+            color: #2d3748;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
             gap: 8px;
         }
-        .task-btn {
-            padding: 6px 12px;
-            font-size: 14px;
-            min-width: auto;
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
-        }
-        .modal.active { display: flex; align-items: center; justify-content: center; }
-        .modal-content {
-            background: white;
-            padding: 30px;
+        .section-badge {
+            background: #667eea;
+            color: white;
+            padding: 3px 10px;
             border-radius: 15px;
-            max-width: 500px;
-            width: 90%;
+            font-size: 0.8em;
         }
-        .modal h2 { color: #667eea; margin-bottom: 15px; }
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-        textarea { min-height: 100px; resize: vertical; }
-        
-        .stats {
+        .section-content { padding: 15px; }
+        .section-content.collapsed { display: none; }
+        .task {
             display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 6px;
         }
-        .stat {
-            flex: 1;
-            background: #edf2f7;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
+        .task.completed { opacity: 0.6; }
+        .task.completed .task-text { text-decoration: line-through; color: #a0aec0; }
+        .task input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            margin-top: 2px;
+            flex-shrink: 0;
         }
-        .stat-number { font-size: 24px; font-weight: bold; color: #667eea; }
-        .stat-label { font-size: 14px; color: #718096; margin-top: 5px; }
-        
+        .task-text { flex: 1; line-height: 1.5; color: #2d3748; font-size: 0.95em; }
         .load-more {
             text-align: center;
-            margin-top: 20px;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 8px;
+            margin: 15px 0;
         }
-        .btn-load-more {
-            background: #764ba2;
+        .load-more button {
+            background: #667eea;
             color: white;
-            font-size: 18px;
-            padding: 15px 30px;
+            padding: 10px 20px;
         }
-        
-        .section-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: #667eea;
-            margin: 20px 0 10px 0;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #e2e8f0;
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2d3748;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 2000;
+            display: none;
+            font-size: 0.9em;
+            max-width: 90%;
+        }
+        .toast.active { display: block; animation: slideUp 0.3s; }
+        @keyframes slideUp {
+            from { transform: translate(-50%, 100px); opacity: 0; }
+            to { transform: translate(-50%, 0); opacity: 1; }
         }
     </style>
 </head>
 <body>
+    <div class="setup-modal hidden" id="setupModal">
+        <div class="setup-content">
+            <h2>🔑 Setup GitHub Sync</h2>
+            <p>Enter your GitHub token (saved to 3 storage locations!):</p>
+            <input type="password" id="tokenInput" placeholder="ghp_...">
+            <button onclick="app.saveToken()">💾 Save Token</button>
+            <p style="font-size: 0.85em; color: #666; margin-top: 10px;">Token stored locally in: localStorage + sessionStorage + cookies</p>
+        </div>
+    </div>
+    
     <div class="container">
-        <h1>Sarah's TODO</h1>
+        <div class="header">
+            <button class="btn-settings" onclick="app.showSetup()">⚙️ Settings</button>
+            <h1>Sarah's TODO</h1>
+            <p style="font-size: 0.9em; color: #666;">ADHD-Friendly Manager</p>
+            <div class="sync-status" id="syncStatus">Synced</div>
+        </div>
         
-        <div id="syncStatus" class="sync-status">Ready</div>
+        <div class="github-box">
+            <h3>GITHUB SYNC</h3>
+            <div class="github-buttons">
+                <button class="btn-github-pull" onclick="app.pullFromGitHub()">Pull Latest</button>
+                <button class="btn-github-push" onclick="app.pushToGitHub()">Push Changes</button>
+            </div>
+            <p style="font-size: 0.85em; color: #666; margin-top: 12px; text-align: center;">Pull: Get new tasks | Push: Save progress</p>
+        </div>
         
-        <div class="buttons">
-            <button class="btn-primary" onclick="app.pullFromGitHub()">PULL FROM GITHUB</button>
-            <button class="btn-success" onclick="app.pushToGitHub()">PUSH TO GITHUB</button>
-            <button class="btn-secondary" onclick="app.showSettings()">SETTINGS</button>
+        <div class="controls">
+            <button class="btn-secondary" onclick="app.undo()">Undo</button>
+            <button class="btn-secondary" onclick="app.collapseAll()">Collapse</button>
+            <button class="btn-secondary" onclick="app.expandAll()">Expand</button>
+            <button class="btn-danger" onclick="app.clearCompleted()">Clear Done</button>
         </div>
         
         <div class="stats">
-            <div class="stat">
-                <div id="statTotal" class="stat-number">0</div>
-                <div class="stat-label">Total</div>
-            </div>
-            <div class="stat">
-                <div id="statActive" class="stat-number">0</div>
-                <div class="stat-label">Active</div>
-            </div>
-            <div class="stat">
-                <div id="statDone" class="stat-number">0</div>
-                <div class="stat-label">Done</div>
-            </div>
+            <div class="stat-card"><h3 id="totalTasks">0</h3><p>Total</p></div>
+            <div class="stat-card"><h3 id="completedTasks">0</h3><p>Done</p></div>
+            <div class="stat-card"><h3 id="remainingTasks">0</h3><p>Left</p></div>
+            <div class="stat-card"><h3 id="progressPercent">0%</h3><p>Progress</p></div>
         </div>
         
-        <button class="btn-primary" style="width: 100%; margin-bottom: 15px;" onclick="app.showAddTask()">+ ADD NEW TASK</button>
-        
-        <div id="taskList"></div>
-        
-        <div id="loadMoreSection" class="load-more" style="display: none;">
-            <button class="btn-load-more" onclick="app.loadMoreTasks()">LOAD MORE TASKS</button>
-        </div>
+        <div id="sections"></div>
     </div>
     
-    <!-- Settings Modal -->
-    <div id="settingsModal" class="modal">
-        <div class="modal-content">
-            <h2>Settings</h2>
-            <label>GitHub Token:</label>
-            <input type="text" id="tokenInput" placeholder="ghp_...">
-            <button class="btn-primary" style="width: 100%;" onclick="app.saveToken()">SAVE TOKEN</button>
-        </div>
-    </div>
-    
-    <!-- Add Task Modal -->
-    <div id="addTaskModal" class="modal">
-        <div class="modal-content">
-            <h2>Add New Task</h2>
-            <textarea id="newTaskText" placeholder="Enter task description..."></textarea>
-            <div style="display: flex; gap: 10px;">
-                <button class="btn-primary" style="flex: 1;" onclick="app.addTask()">ADD</button>
-                <button class="btn-secondary" style="flex: 1;" onclick="app.hideAddTask()">CANCEL</button>
-            </div>
-        </div>
-    </div>
+    <div class="toast" id="toast"></div>
     
     <script>
+        const INITIAL_DATA = [{"id": "daily", "title": "*** 🌅 ð DAILY NON-NEGOTIABLES", "collapsed": false, "tasks": [{"id": 1, "text": "Basic back hygiene (James routine) - 3 exercises", "completed": false, "subtasks": []}, {"id": 2, "text": "Drink water - Stay hydrated", "completed": false, "subtasks": []}, {"id": 3, "text": "Meu's meds - AMODIP + BENEFORTIL + CYSTAID", "completed": false, "subtasks": []}, {"id": 4, "text": "Concerta 36mg - Take on waking", "completed": false, "subtasks": []}]}, {"id": "urgent-bcn", "title": "[!] 🔴 ð´ URGENT - As Soon as Back in Barcelona", "collapsed": false, "tasks": [{"id": 5, "text": "FIND THE TO GO BAG AND HAVE IT READY", "completed": false, "subtasks": []}, {"id": 6, "text": "Material survival on Remarkable and paper plastificato (make list)", "completed": false, "subtasks": []}, {"id": 7, "text": "PREPARE EXIT STRATEGY with Yakir and Laza", "completed": false, "subtasks": []}, {"id": 8, "text": "Calculate expenses to be paid back from legal case", "completed": false, "subtasks": []}]}, {"id": "urgent-health", "title": "[+] 🏥 ð¥ URGENT - Health & Medical", "collapsed": true, "tasks": [{"id": 9, "text": "Reprogramar cirugÃ­a Neo - Reschedule Neo's surgery", "completed": false, "subtasks": []}, {"id": 10, "text": "Programar examen mioma - Find gynecologist Sanitas for exam", "completed": false, "subtasks": []}, {"id": 11, "text": "Get appointments: James & Daniel - Physio sessions needed", "completed": false, "subtasks": []}, {"id": 12, "text": "NEW QUETIAPINA in CAT SALUT - Send message to medico", "completed": false, "subtasks": []}, {"id": 13, "text": "Cita Cap Montigala + pedir cita con: Traumatologo, Neurocirujano, Physiotherapeuta, Ginecologa", "completed": false, "subtasks": []}, {"id": 14, "text": "Get teeth cleaning appointment with Sanitas", "completed": false, "subtasks": []}, {"id": 15, "text": "Call dentist for moving tooth", "completed": false, "subtasks": []}]}, {"id": "urgent-admin", "title": "[$] 📋 ð URGENT - Admin/Financial", "collapsed": true, "tasks": [{"id": 16, "text": "READ EMAILS FROM SEG.SOCIAL", "completed": false, "subtasks": []}, {"id": 17, "text": "READ BILLS", "completed": false, "subtasks": []}, {"id": 18, "text": "Create new tally after Notary papers (UPDATED NUMBERS) - Post-Dec 11 signing", "completed": false, "subtasks": []}, {"id": 19, "text": "Follow up Oriol about Mutua and pension", "completed": false, "subtasks": []}, {"id": 20, "text": "Update on Oriol and my baja mgmt (read emails)", "completed": false, "subtasks": []}, {"id": 21, "text": "Read Monica's email - Legal case", "completed": false, "subtasks": []}, {"id": 22, "text": "Coordinate witness testimonies - Martino URGENT before share sale", "completed": false, "subtasks": []}, {"id": 23, "text": "Check herbolary books tracking", "completed": false, "subtasks": []}]}, {"id": "teatro-urgent", "title": "[T] 🎭 ð­ TEATRO - Urgent/Active", "collapsed": true, "tasks": [{"id": 24, "text": "Finish event process with Barry White (Feb 7, 80â¬/hr, venue mgmt, bar, cava, food on demand)", "completed": false, "subtasks": []}, {"id": 25, "text": "Get invoices from Oriol for Laura", "completed": false, "subtasks": []}, {"id": 26, "text": "Pagare facturas fringe (check with Laura)", "completed": false, "subtasks": []}, {"id": 27, "text": "Follow up on management transfer documentation", "completed": false, "subtasks": []}]}, {"id": "teatro-money", "title": "[$$] 💰 ð° TEATRO - Money Owed/Payments", "collapsed": true, "tasks": [{"id": 28, "text": "MONEY FROM MALNOM? 900â¬ - 100â¬ Ruy - 250â¬ Teatro - 300â¬ Gas/Vitro = 250â¬ for me?", "completed": false, "subtasks": []}, {"id": 29, "text": "YAKIR debts: SOLDI TEATRO Give back 310â¬", "completed": false, "subtasks": []}, {"id": 30, "text": "YAKIR debts: Soldi green Give back 200â¬", "completed": false, "subtasks": []}, {"id": 31, "text": "SOLDI PER CHRISTIAN PER OLIO: 70â¬", "completed": false, "subtasks": []}, {"id": 32, "text": "CUENTAS: RAFA tally", "completed": false, "subtasks": []}, {"id": 33, "text": "CUENTAS: ALE (received 100â¬ through Bernardo, January 2026)", "completed": false, "subtasks": []}, {"id": 34, "text": "CUENTAS: NEW TALLY FERGIE", "completed": false, "subtasks": []}]}, {"id": "malnom", "title": "[H] 🏠 ð  MALNOM - Property", "collapsed": true, "tasks": [{"id": 35, "text": "FOLLOW UP: pared malnom - A que punto estamos con la finca a lado?", "completed": false, "subtasks": []}, {"id": 36, "text": "Follow up: contrato CUIDA CALEFACCION", "completed": false, "subtasks": []}, {"id": 37, "text": "Follow up: mantenimento gas in Malnom", "completed": false, "subtasks": []}]}, {"id": "valencia", "title": "[V] 🇪🇸 ðªð¸ VALENCIA - Dad & House", "collapsed": true, "tasks": [{"id": 38, "text": "DIGI - activaciÃ³n eSIM per dad", "completed": false, "subtasks": []}, {"id": 39, "text": "Follow up on Dependencia (letter to arrive end of February)", "completed": false, "subtasks": []}, {"id": 40, "text": "Follow up AYUDA SUMINISTRO OXYGENO (registered January 9)", "completed": false, "subtasks": []}, {"id": 41, "text": "Follow up DENNYS: Money from Ayto, Quote for works, Permits and timings", "completed": false, "subtasks": []}, {"id": 42, "text": "Follow up Andreu (to split cost mesa a terra)", "completed": false, "subtasks": []}, {"id": 43, "text": "Dad videocall Belgium pension office - Feb 12 at 10am (code: 91239568, hotmail.it)", "completed": false, "subtasks": []}, {"id": 44, "text": "Call LINEA DIRECTA (919 180 012, 09:00-18:00) - kitchen leak, Exp: 15600223", "completed": false, "subtasks": []}, {"id": 45, "text": "BOMBONAS GAS Valencia (963956006)", "completed": false, "subtasks": []}]}, {"id": "zio-vittorio", "title": "[Z] 🏗️ ðï¸ ZIO VITTORIO - Property Purchase", "collapsed": true, "tasks": [{"id": 46, "text": "PREPARA BUDGET PLAN PER ZIO VIC (in francese o italiano)", "completed": false, "subtasks": []}, {"id": 47, "text": "Calculate 2-year taxi costs (teatro late nights â Can Booty)", "completed": false, "subtasks": []}, {"id": 48, "text": "Research house for Vic - See ZIO_VITTORIO.md for complete analysis", "completed": false, "subtasks": []}, {"id": 49, "text": "Check details: Unipersonal vs S.L. - Pro/Con regarding property purchase", "completed": false, "subtasks": []}]}, {"id": "admin-insurance", "title": "[A] 📋 ð ADMIN - Insurance & Services", "collapsed": true, "tasks": [{"id": 50, "text": "Check my actual polizas seguro", "completed": false, "subtasks": []}, {"id": 51, "text": "Find new options with better service and lower cost", "completed": false, "subtasks": []}, {"id": 52, "text": "FIND POLIZAS WITH MANTENIMIENTO", "completed": false, "subtasks": []}, {"id": 53, "text": "Change payment details in Workspace - New tarjeta Santander", "completed": false, "subtasks": []}]}, {"id": "to-sell", "title": "[S] 💸 ð¸ TO SELL", "collapsed": true, "tasks": [{"id": 54, "text": "VESPA", "completed": false, "subtasks": []}, {"id": 55, "text": "RINO??", "completed": false, "subtasks": []}, {"id": 56, "text": "MOTO", "completed": false, "subtasks": []}]}, {"id": "italy", "title": "[I] 🇮🇹 ð®ð¹ ITALY - Personal Admin", "collapsed": true, "tasks": [{"id": 57, "text": "ORGANIZZA VIAGGIO A ROMA: Per cambio domicilio e nuova carta identitÃ", "completed": false, "subtasks": []}, {"id": 58, "text": "Check my calendar for availability", "completed": false, "subtasks": []}, {"id": 59, "text": "Check flights", "completed": false, "subtasks": []}, {"id": 60, "text": "Check in with Diego for availability", "completed": false, "subtasks": []}, {"id": 61, "text": "Find info from Comune di Roma", "completed": false, "subtasks": []}]}, {"id": "cartas", "title": "[C] 🎨 ð¨ CARTAS EN VIVO", "collapsed": true, "tasks": [{"id": 62, "text": "Riprendere lavoro su Letters Live - Resume work", "completed": false, "subtasks": []}, {"id": 63, "text": "Research Letters Live UK format more deeply", "completed": false, "subtasks": []}, {"id": 64, "text": "Build celebrity contact list for readers", "completed": false, "subtasks": []}, {"id": 65, "text": "Plan Goya Awards timing strategy (Feb 28, 2026)", "completed": false, "subtasks": []}, {"id": 66, "text": "Organize massive research done (Nov 26-27)", "completed": false, "subtasks": []}, {"id": 67, "text": "Create roadmap with M", "completed": false, "subtasks": []}, {"id": 68, "text": "Devil's advocate strategy session", "completed": false, "subtasks": []}]}, {"id": "tech", "title": "[>] 💻 ð» TECH & SYSTEMS", "collapsed": true, "tasks": [{"id": 69, "text": "FOR CODY: Fix morning brief automation (currently failing)", "completed": false, "subtasks": []}, {"id": 70, "text": "FOR CODY: Fix news digest automation (currently failing)", "completed": false, "subtasks": []}, {"id": 71, "text": "FOR CODY: Create multiple email reading automation on GitHub (for M to fetch)", "completed": false, "subtasks": []}, {"id": 72, "text": "Learn GitHub workflow from Pilot's guides", "completed": false, "subtasks": []}, {"id": 73, "text": "Set up automatic backup system", "completed": false, "subtasks": []}, {"id": 74, "text": "Find system that chats with multiple AI at same time (see Yakir's notes)", "completed": false, "subtasks": []}, {"id": 75, "text": "What's Substack? Can I add it to my daily digest news? How does it work?", "completed": false, "subtasks": []}, {"id": 76, "text": "Tell M to check new Claude extensions - what can she do now? (Ex: parse legal case data?)", "completed": false, "subtasks": []}]}, {"id": "learning", "title": "[L] 📚 ð LEARNING", "collapsed": true, "tasks": [{"id": 77, "text": "Read Pilot's GitHub guides", "completed": false, "subtasks": []}, {"id": 78, "text": "Review Claude Code documentation", "completed": false, "subtasks": []}]}, {"id": "home", "title": "[~] 🏡 ð¡ HOME & PERSONAL", "collapsed": true, "tasks": [{"id": 79, "text": "Research synagogue visits (family heritage exploration)", "completed": false, "subtasks": []}, {"id": 80, "text": "Text Andreu - Share AirCon costs (STILL PENDING from November!)", "completed": false, "subtasks": []}, {"id": 81, "text": "Work on LinkedIn profile", "completed": false, "subtasks": []}, {"id": 82, "text": "Find DISCORD support ADHD community!!! (and what else does Discord do?)", "completed": false, "subtasks": []}]}, {"id": "attico", "title": "[B] 🏗️ ðï¸ ATTICO WORKS", "collapsed": true, "tasks": [{"id": 83, "text": "Trova stoffe utilizzabili per tende: Ask Malaka/Charlie for spare fabric", "completed": false, "subtasks": []}, {"id": 84, "text": "Find spray to make fabric ignifugo (fireproof spray)", "completed": false, "subtasks": []}]}, {"id": "legal", "title": "[LAW] ⚖️ âï¸ LEGAL", "collapsed": true, "tasks": [{"id": 85, "text": "Review legal evidence timeline with attorney Monica", "completed": false, "subtasks": []}, {"id": 86, "text": "Coordinate witness testimonies (Martino - URGENT before share sale)", "completed": false, "subtasks": []}, {"id": 87, "text": "Calculate expenses to be paid back from legal case", "completed": false, "subtasks": []}]}];
+        const GITHUB_REPO = "MotherOfChaos/Life-Operating-System";
+        const GITHUB_FILE = "PERMANENT_TODO.md";
+        
         const app = {
-            tasks: [],
-            displayLimit: 10,
-            currentDisplay: 10,
+            data: { sections: [], history: [], hasUnsyncedChanges: false, pagination: {}, lastSHA: null },
+            TASKS_PER_PAGE: 20,
             
             async init() {
-                console.log('[INIT] Starting app...');
-                
-                // Try to get token from multiple sources
-                let token = sessionStorage.getItem('github-token') || 
-                           localStorage.getItem('github-token') ||
-                           this.getCookie('github-token');
-                
-                console.log('[INIT] Token found:', token ? 'YES' : 'NO');
-                
+                // Check token from ALL storage types
+                const token = this.getToken();
                 if (!token) {
-                    console.log('[INIT] No token - showing settings');
-                    this.showSettings();
+                    document.getElementById('setupModal').classList.remove('hidden');
                     return;
                 }
                 
-                console.log('[INIT] Loading data...');
                 await this.loadData();
+                this.render();
+                this.updateStats();
+                this.updateSyncStatus();
             },
             
             saveToken() {
                 const token = document.getElementById('tokenInput').value.trim();
-                console.log('[TOKEN] Attempting to save...');
-                
                 if (!token || !token.startsWith('ghp_')) {
-                    alert('Please enter a valid GitHub token starting with ghp_');
+                    alert('⚠️ Please enter a valid GitHub token starting with ghp_');
                     return;
                 }
                 
-                // Save to ALL storage types for maximum persistence
+                // TRIPLE STORAGE - save to all 3 locations!
                 try {
                     localStorage.setItem('github-token', token);
                     sessionStorage.setItem('github-token', token);
                     this.setCookie('github-token', token, 365);
                     
-                    console.log('[TOKEN] Saved to all storage types');
-                    alert('Token saved successfully!');
-                    
-                    document.getElementById('settingsModal').classList.remove('active');
+                    alert('✅ Token saved to 3 storage locations!');
+                    document.getElementById('setupModal').classList.add('hidden');
                     this.init();
                 } catch (e) {
-                    console.error('[TOKEN] Save error:', e);
-                    alert('Error saving token: ' + e.message);
+                    alert('❌ Error saving token: ' + e.message);
                 }
             },
             
             setCookie(name, value, days) {
                 const expires = new Date(Date.now() + days * 864e5).toUTCString();
-                document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
+                document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/; SameSite=Strict';
             },
             
             getCookie(name) {
@@ -273,278 +350,309 @@
                 }, '');
             },
             
+            showSetup() {
+                const token = this.getToken() || '';
+                document.getElementById('tokenInput').value = token;
+                document.getElementById('setupModal').classList.remove('hidden');
+            },
+            
             getToken() {
-                return sessionStorage.getItem('github-token') || 
-                       localStorage.getItem('github-token') ||
+                // Try ALL storage locations
+                return localStorage.getItem('github-token') ||
+                       sessionStorage.getItem('github-token') ||
                        this.getCookie('github-token');
             },
             
-            showSettings() {
-                const token = this.getToken() || '';
-                document.getElementById('tokenInput').value = token;
-                document.getElementById('settingsModal').classList.add('active');
-            },
-            
-            showAddTask() {
-                document.getElementById('newTaskText').value = '';
-                document.getElementById('addTaskModal').classList.add('active');
-            },
-            
-            hideAddTask() {
-                document.getElementById('addTaskModal').classList.remove('active');
-            },
-            
-            addTask() {
-                const text = document.getElementById('newTaskText').value.trim();
-                if (!text) {
-                    alert('Please enter a task description');
-                    return;
-                }
-                
-                this.tasks.unshift({
-                    id: Date.now(),
-                    text: text,
-                    completed: false
-                });
-                
-                this.hideAddTask();
-                this.render();
-                this.updateStats();
-                this.setSyncStatus('pending');
-            },
-            
-            toggleTask(id) {
-                const task = this.tasks.find(t => t.id === id);
-                if (task) {
-                    task.completed = !task.completed;
-                    this.render();
-                    this.updateStats();
-                    this.setSyncStatus('pending');
-                }
-            },
-            
-            deleteTask(id) {
-                if (confirm('Delete this task?')) {
-                    this.tasks = this.tasks.filter(t => t.id !== id);
-                    this.render();
-                    this.updateStats();
-                    this.setSyncStatus('pending');
-                }
-            },
-            
-            async loadData() {
+            async pullFromGitHub() {
                 const token = this.getToken();
-                if (!token) {
-                    this.showSettings();
-                    return;
+                if (!token) { 
+                    alert('⚠️ Please set up your GitHub token first!');
+                    this.showSetup(); 
+                    return; 
                 }
                 
-                this.setSyncStatus('syncing', 'Loading...');
+                const status = document.getElementById('syncStatus');
+                status.textContent = 'Pulling...';
+                status.className = 'sync-status syncing';
                 
                 try {
-                    const response = await fetch(
-                        'https://api.github.com/repos/MotherOfChaos/Life-Operating-System/contents/PERMANENT_TODO.md',
-                        {
-                            headers: {
-                                'Authorization': 'token ' + token,
-                                'Accept': 'application/vnd.github.v3.raw'
-                            }
+                    const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+                    const response = await fetch(url, {
+                        headers: {
+                            'Authorization': `token ${token}`,
+                            'Accept': 'application/vnd.github.v3+json'
                         }
-                    );
+                    });
                     
-                    if (response.ok) {
-                        const text = await response.text();
-                        this.parseMarkdown(text);
-                        this.render();
-                        this.updateStats();
-                        this.setSyncStatus('synced', 'Synced');
-                        console.log('[LOAD] Success - loaded', this.tasks.length, 'tasks');
-                    } else {
-                        throw new Error('Failed to load: ' + response.status);
-                    }
-                } catch (e) {
-                    console.error('[LOAD] Error:', e);
-                    this.setSyncStatus('pending', 'Load failed');
-                    alert('Error loading from GitHub: ' + e.message);
+                    if (!response.ok) throw new Error('Failed');
+                    
+                    const data = await response.json();
+                    this.data.lastSHA = data.sha;
+                    const markdown = atob(data.content);
+                    const newSections = this.parseMarkdown(markdown);
+                    this.mergeGitHubData(newSections);
+                    await this.saveData();
+                    this.render();
+                    this.updateStats();
+                    this.showToast('Pulled from GitHub!');
+                    status.textContent = 'Synced';
+                    status.className = 'sync-status';
+                } catch (error) {
+                    this.showToast('Pull failed');
+                    status.textContent = 'Failed';
+                    status.className = 'sync-status pending';
                 }
-            },
-            
-            parseMarkdown(text) {
-                this.tasks = [];
-                const lines = text.split('\n');
-                
-                for (const line of lines) {
-                    // Match checkbox tasks: - [ ] or - [x]
-                    const match = line.match(/^- \[([ x])\] (.+)/);
-                    if (match) {
-                        this.tasks.push({
-                            id: Date.now() + Math.random(),
-                            text: match[2].trim(),
-                            completed: match[1] === 'x'
-                        });
-                    }
-                }
-                
-                console.log('[PARSE] Parsed', this.tasks.length, 'tasks');
-            },
-            
-            async pullFromGitHub() {
-                await this.loadData();
             },
             
             async pushToGitHub() {
                 const token = this.getToken();
-                if (!token) {
-                    this.showSettings();
-                    return;
+                if (!token) { 
+                    alert('⚠️ Please set up your GitHub token first!');
+                    this.showSetup(); 
+                    return; 
                 }
                 
-                if (!confirm('Push changes to GitHub?')) return;
-                
-                this.setSyncStatus('syncing', 'Pushing...');
+                const status = document.getElementById('syncStatus');
+                status.textContent = 'Pushing...';
+                status.className = 'sync-status syncing';
                 
                 try {
-                    // Get current file SHA
-                    const getResponse = await fetch(
-                        'https://api.github.com/repos/MotherOfChaos/Life-Operating-System/contents/PERMANENT_TODO.md',
-                        {
-                            headers: {
-                                'Authorization': 'token ' + token,
-                                'Accept': 'application/vnd.github.v3+json'
-                            }
+                    if (!this.data.lastSHA) {
+                        const getUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+                        const getResponse = await fetch(getUrl, {
+                            headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+                        });
+                        if (getResponse.ok) {
+                            const getData = await getResponse.json();
+                            this.data.lastSHA = getData.sha;
                         }
-                    );
-                    
-                    if (!getResponse.ok) throw new Error('Failed to get file');
-                    
-                    const fileData = await getResponse.json();
-                    const markdown = this.generateMarkdown();
-                    const content = btoa(unescape(encodeURIComponent(markdown)));
-                    
-                    // Update file
-                    const putResponse = await fetch(
-                        'https://api.github.com/repos/MotherOfChaos/Life-Operating-System/contents/PERMANENT_TODO.md',
-                        {
-                            method: 'PUT',
-                            headers: {
-                                'Authorization': 'token ' + token,
-                                'Accept': 'application/vnd.github.v3+json',
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({
-                                message: 'Update TODO from app - ' + new Date().toISOString(),
-                                content: content,
-                                sha: fileData.sha
-                            })
-                        }
-                    );
-                    
-                    if (putResponse.ok) {
-                        this.setSyncStatus('synced', 'Pushed successfully!');
-                        console.log('[PUSH] Success');
-                        setTimeout(() => this.setSyncStatus('synced', 'Synced'), 2000);
-                    } else {
-                        throw new Error('Push failed: ' + putResponse.status);
                     }
-                } catch (e) {
-                    console.error('[PUSH] Error:', e);
-                    this.setSyncStatus('pending', 'Push failed');
-                    alert('Error pushing to GitHub: ' + e.message);
+                    
+                    const markdown = this.generateTODOMarkdown();
+                    const encodedContent = btoa(unescape(encodeURIComponent(markdown)));
+                    const putUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+                    const putResponse = await fetch(putUrl, {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': `token ${token}`,
+                            'Accept': 'application/vnd.github.v3+json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: `TODO update - ${new Date().toLocaleString()}`,
+                            content: encodedContent,
+                            sha: this.data.lastSHA
+                        })
+                    });
+                    
+                    if (!putResponse.ok) throw new Error('Failed');
+                    
+                    const putData = await putResponse.json();
+                    this.data.lastSHA = putData.content.sha;
+                    this.data.hasUnsyncedChanges = false;
+                    await this.saveData();
+                    this.showToast('Pushed to GitHub!');
+                    status.textContent = 'Synced';
+                    status.className = 'sync-status';
+                } catch (error) {
+                    this.showToast('Push failed');
+                    status.textContent = 'Failed';
+                    status.className = 'sync-status pending';
                 }
             },
             
-            generateMarkdown() {
-                let md = '# SARAH\'S PERMANENT TO-DO LIST\n\n';
-                md += '**Always updated, never create new versions**\n\n';
-                md += '---\n\n';
-                md += '## ACTIVE TASKS\n\n';
+            parseMarkdown(md) {
+                const sections = [];
+                const lines = md.split('\n');
+                let currentSection = null;
+                let currentTask = null;
+                let taskId = 1;
                 
-                for (const task of this.tasks) {
-                    const checkbox = task.completed ? '[x]' : '[ ]';
-                    md += '- ' + checkbox + ' ' + task.text + '\n';
+                for (let line of lines) {
+                    line = line.trim();
+                    if (line.startsWith('## ')) {
+                        if (currentSection && currentSection.tasks.length > 0) sections.push(currentSection);
+                        const title = line.substring(3).trim();
+                        currentSection = { id: 'section-' + sections.length, title: title, collapsed: false, tasks: [] };
+                        currentTask = null;
+                    } else if (line.match(/^- \[(x| )\] /) && currentSection) {
+                        const completed = line.includes('[x]');
+                        const text = line.substring(6).trim();
+                        currentTask = { id: taskId++, text: text, completed: completed, subtasks: [] };
+                        currentSection.tasks.push(currentTask);
+                    }
                 }
+                if (currentSection && currentSection.tasks.length > 0) sections.push(currentSection);
+                return sections;
+            },
+            
+            mergeGitHubData(newSections) {
+                const currentTaskStates = new Map();
+                this.data.sections.forEach(section => {
+                    section.tasks.forEach(task => {
+                        currentTaskStates.set(task.text.toLowerCase(), { completed: task.completed });
+                    });
+                });
                 
-                md += '\n---\n\n';
-                md += '**Last updated:** ' + new Date().toISOString() + '\n';
+                newSections.forEach(section => {
+                    section.tasks.forEach(task => {
+                        const savedState = currentTaskStates.get(task.text.toLowerCase());
+                        if (savedState) task.completed = savedState.completed;
+                    });
+                });
                 
+                this.data.sections = newSections;
+                this.data.pagination = {};
+                newSections.forEach(s => { this.data.pagination[s.id] = { page: 1 }; });
+            },
+            
+            async loadData() {
+                const stored = localStorage.getItem('sarah-todo-data');
+                if (stored) {
+                    this.data = JSON.parse(stored);
+                    if (!this.data.pagination) this.data.pagination = {};
+                    if (!this.data.lastSHA) this.data.lastSHA = null;
+                } else {
+                    this.data.sections = INITIAL_DATA;
+                    this.data.history = [];
+                    this.data.hasUnsyncedChanges = false;
+                    this.data.pagination = {};
+                    this.data.lastSHA = null;
+                    INITIAL_DATA.forEach(s => { this.data.pagination[s.id] = { page: 1 }; });
+                }
+            },
+            
+            async saveData() {
+                this.data.hasUnsyncedChanges = true;
+                localStorage.setItem('sarah-todo-data', JSON.stringify(this.data));
+                this.updateSyncStatus();
+            },
+            
+            updateSyncStatus() {
+                const status = document.getElementById('syncStatus');
+                status.textContent = this.data.hasUnsyncedChanges ? 'Unsaved' : 'Synced';
+                status.className = this.data.hasUnsyncedChanges ? 'sync-status pending' : 'sync-status';
+            },
+            
+            loadMoreTasks(sectionId) {
+                if (!this.data.pagination[sectionId]) this.data.pagination[sectionId] = { page: 1 };
+                this.data.pagination[sectionId].page++;
+                this.saveData();
+                this.render();
+            },
+            
+            generateTODOMarkdown() {
+                let md = '# SARAH\'S PERMANENT TO-DO LIST\n\n**Always updated**\n';
+                md += `**Last updated:** ${new Date().toLocaleDateString()}\n\n---\n\n`;
+                this.data.sections.forEach(section => {
+                    md += `## ${section.title}\n\n`;
+                    section.tasks.forEach(task => {
+                        md += `- ${task.completed ? '[x]' : '[ ]'} ${task.text}\n`;
+                    });
+                    md += '\n';
+                });
                 return md;
             },
             
             render() {
-                const list = document.getElementById('taskList');
-                list.innerHTML = '';
-                
-                // Show only currentDisplay tasks
-                const tasksToShow = this.tasks.slice(0, this.currentDisplay);
-                
-                // Group by completed status
-                const active = tasksToShow.filter(t => !t.completed);
-                const completed = tasksToShow.filter(t => t.completed);
-                
-                if (active.length > 0) {
-                    list.innerHTML += '<div class="section-title">Active Tasks</div>';
-                    active.forEach(task => list.innerHTML += this.renderTask(task));
-                }
-                
-                if (completed.length > 0) {
-                    list.innerHTML += '<div class="section-title">Completed Tasks</div>';
-                    completed.forEach(task => list.innerHTML += this.renderTask(task));
-                }
-                
-                // Show/hide load more button
-                const loadMoreSection = document.getElementById('loadMoreSection');
-                if (this.tasks.length > this.currentDisplay) {
-                    loadMoreSection.style.display = 'block';
-                } else {
-                    loadMoreSection.style.display = 'none';
-                }
-            },
-            
-            renderTask(task) {
-                const className = task.completed ? 'task completed' : 'task';
-                const toggleText = task.completed ? 'UNDO' : 'DONE';
-                
-                return `
-                    <div class="${className}">
-                        <div class="task-text">${this.escapeHtml(task.text)}</div>
-                        <div class="task-actions">
-                            <button class="btn-success task-btn" onclick="app.toggleTask(${task.id})">${toggleText}</button>
-                            <button class="btn-secondary task-btn" onclick="app.deleteTask(${task.id})">DELETE</button>
+                const container = document.getElementById('sections');
+                container.innerHTML = '';
+                this.data.sections.forEach(section => {
+                    const completed = section.tasks.filter(t => t.completed).length;
+                    const total = section.tasks.length;
+                    const currentPage = this.data.pagination[section.id]?.page || 1;
+                    const endIdx = currentPage * this.TASKS_PER_PAGE;
+                    const visibleTasks = section.tasks.slice(0, endIdx);
+                    const hasMore = endIdx < total;
+                    
+                    const tasksHTML = visibleTasks.map(task => `
+                        <div class="task ${task.completed ? 'completed' : ''}">
+                            <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="app.toggleTask('${section.id}', ${task.id})">
+                            <div class="task-text">${task.text}</div>
                         </div>
-                    </div>
-                `;
+                    `).join('');
+                    
+                    const loadMoreHTML = hasMore ? `
+                        <div class="load-more">
+                            <p style="margin-bottom: 10px; color: #666;">Showing ${endIdx} of ${total}</p>
+                            <button onclick="app.loadMoreTasks('${section.id}')">Load More</button>
+                        </div>
+                    ` : '';
+                    
+                    container.insertAdjacentHTML('beforeend', `
+                        <div class="section">
+                            <div class="section-header" onclick="app.toggleSection('${section.id}')">
+                                <h2>${section.title} <span class="section-badge">${completed}/${total}</span></h2>
+                                <span>${section.collapsed ? 'v' : '^'}</span>
+                            </div>
+                            <div class="section-content ${section.collapsed ? 'collapsed' : ''}">
+                                ${tasksHTML}
+                                ${loadMoreHTML}
+                            </div>
+                        </div>
+                    `);
+                });
             },
             
-            escapeHtml(text) {
-                const div = document.createElement('div');
-                div.textContent = text;
-                return div.innerHTML;
+            toggleSection(id) {
+                const s = this.data.sections.find(x => x.id === id);
+                if (s) { s.collapsed = !s.collapsed; this.saveData(); this.render(); }
             },
             
-            loadMoreTasks() {
-                this.currentDisplay += 10;
+            collapseAll() { this.data.sections.forEach(s => s.collapsed = true); this.saveData(); this.render(); },
+            expandAll() { this.data.sections.forEach(s => s.collapsed = false); this.saveData(); this.render(); },
+            
+            async toggleTask(sid, tid) {
+                const s = this.data.sections.find(x => x.id === sid);
+                const t = s.tasks.find(x => x.id === tid);
+                this.data.history.push({ type: 'toggle', sid, tid, prev: t.completed });
+                t.completed = !t.completed;
+                await this.saveData();
                 this.render();
+                this.updateStats();
+                this.showToast(t.completed ? 'Done!' : 'Undone');
+            },
+            
+            async undo() {
+                if (this.data.history.length === 0) { this.showToast('Nothing to undo'); return; }
+                const a = this.data.history.pop();
+                const s = this.data.sections.find(x => x.id === a.sid);
+                if (a.type === 'toggle') { const t = s.tasks.find(x => x.id === a.tid); t.completed = a.prev; }
+                await this.saveData();
+                this.render();
+                this.updateStats();
+                this.showToast('Undone!');
+            },
+            
+            async clearCompleted() {
+                if (!confirm('Remove all completed tasks?')) return;
+                this.data.sections.forEach(s => { s.tasks = s.tasks.filter(t => !t.completed); });
+                await this.saveData();
+                this.render();
+                this.updateStats();
+                this.showToast('Cleared!');
             },
             
             updateStats() {
-                const total = this.tasks.length;
-                const active = this.tasks.filter(t => !t.completed).length;
-                const done = this.tasks.filter(t => t.completed).length;
-                
-                document.getElementById('statTotal').textContent = total;
-                document.getElementById('statActive').textContent = active;
-                document.getElementById('statDone').textContent = done;
+                const all = this.data.sections.flatMap(s => s.tasks);
+                const done = all.filter(t => t.completed).length;
+                const total = all.length;
+                const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+                document.getElementById('totalTasks').textContent = total;
+                document.getElementById('completedTasks').textContent = done;
+                document.getElementById('remainingTasks').textContent = total - done;
+                document.getElementById('progressPercent').textContent = pct + '%';
             },
             
-            setSyncStatus(type, text) {
-                const status = document.getElementById('syncStatus');
-                status.className = 'sync-status ' + type;
-                if (text) status.textContent = text;
+            showToast(msg) {
+                const t = document.getElementById('toast');
+                t.textContent = msg;
+                t.classList.add('active');
+                setTimeout(() => t.classList.remove('active'), 2500);
             }
         };
         
-        // Initialize when page loads
-        window.addEventListener('load', () => app.init());
+        window.addEventListener('DOMContentLoaded', () => app.init());
     </script>
 </body>
 </html>
