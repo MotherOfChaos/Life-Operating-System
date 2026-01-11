@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Version 1.1 - Token Persistence Fix - Jan 11, 2026 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -303,28 +304,54 @@
             TASKS_PER_PAGE: 20,
             
             async init() {
+                console.log('🔍 TODO App initializing...');
+                
                 // Check if token exists
                 const token = localStorage.getItem('github-token');
+                console.log('🔑 Token status:', token ? 'FOUND ✅' : 'MISSING ❌');
+                
                 if (!token) {
+                    console.log('Showing setup modal...');
                     document.getElementById('setupModal').classList.remove('hidden');
                     return;
                 }
                 
+                console.log('Loading data from GitHub...');
                 await this.loadData();
                 this.render();
                 this.updateStats();
                 this.updateSyncStatus();
+                console.log('✅ App initialized successfully!');
             },
             
             saveToken() {
                 const token = document.getElementById('tokenInput').value.trim();
+                console.log('💾 Saving token...');
+                
                 if (!token || !token.startsWith('ghp_')) {
-                    alert('Please enter a valid GitHub token starting with ghp_');
+                    alert('⚠️ Please enter a valid GitHub token starting with ghp_');
                     return;
                 }
-                localStorage.setItem('github-token', token);
-                document.getElementById('setupModal').classList.add('hidden');
-                this.init();
+                
+                try {
+                    // Save to localStorage
+                    localStorage.setItem('github-token', token);
+                    
+                    // Immediate verification
+                    const saved = localStorage.getItem('github-token');
+                    if (saved === token) {
+                        console.log('✅ Token saved and verified!');
+                        alert('✅ Token saved successfully!');
+                        document.getElementById('setupModal').classList.add('hidden');
+                        this.init();
+                    } else {
+                        console.error('❌ Token save failed verification');
+                        alert('❌ Token could not be saved. Check browser privacy settings.');
+                    }
+                } catch (e) {
+                    console.error('❌ localStorage error:', e);
+                    alert('❌ Storage error: ' + e.message + '\n\nMake sure cookies/storage is enabled in your browser.');
+                }
             },
             
             showSetup() {
