@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#667eea">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Ccircle cx='256' cy='256' r='256' fill='%23667eea'/%3E%3Cpath d='M160 240l64 64 128-128' stroke='white' stroke-width='40' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <title>Sarah's TODO</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 15px;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+        }
+        h1 { color: #667eea; font-size: 1.8em; margin-bottom: 5px; }
+        .sync-status {
+            background: #48bb78;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 8px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        .sync-status.pending { background: #ed8936; }
+        .sync-status.syncing { background: #4299e1; }
+        .github-box {
+            background: #e6f7ff;
+            border: 2px solid #4299e1;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .github-box h3 { color: #2c5aa0; margin-bottom: 12px; font-size: 1.1em; text-align: center; }
+        .github-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            touch-action: manipulation;
+        }
+        .btn-github-pull {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            font-size: 15px;
+            padding: 12px 15px;
+        }
+        .btn-github-push {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            font-size: 15px;
+            padding: 12px 15px;
+        }
+        .btn-github-pull:active, .btn-github-push:active { transform: scale(0.98); }
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .btn-secondary { background: #48bb78; color: white; font-size: 14px; padding: 10px; }
+        .btn-danger { background: #f56565; color: white; font-size: 14px; padding: 10px; }
+        .btn-primary { background: #667eea; color: white; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-card h3 { font-size: 1.8em; margin-bottom: 3px; }
+        .stat-card p { opacity: 0.9; font-size: 0.85em; }
+        .section {
+            margin-bottom: 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .section-header {
+            background: #f7fafc;
+            padding: 12px 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section-header h2 {
+            color: #2d3748;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-badge {
+            background: #667eea;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+        }
+        .section-content { padding: 15px; }
+        .section-content.collapsed { display: none; }
+        .task {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            border-left: 3px solid transparent;
+        }
+        .task.has-subtasks { border-left: 3px solid #667eea; }
+        .task.completed { opacity: 0.6; }
+        .task.completed .task-text { text-decoration: line-through; color: #a0aec0; }
+        .task input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        .task-text { flex: 1; line-height: 1.5; color: #2d3748; font-size: 0.95em; }
+        .task-actions { display: flex; gap: 6px; flex-shrink: 0; }
+        .task-btn { padding: 6px 10px; font-size: 13px; border-radius: 5px; }
+        .subtasks-container {
+            margin-left: 32px;
+            margin-top: 8px;
+            padding-left: 15px;
+            border-left: 2px dashed #cbd5e0;
+        }
+        .subtask {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 8px;
+            margin-bottom: 4px;
+            background: #f7fafc;
+            border-radius: 5px;
+        }
+        .subtask.completed { opacity: 0.6; }
+        .subtask.completed .subtask-text { text-decoration: line-through; color: #a0aec0; }
+        .subtask input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        .subtask-text { flex: 1; font-size: 0.9em; color: #4a5568; }
+        .subtask-progress {
+            font-size: 0.85em;
+            color: #667eea;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+        .load-more {
+            text-align: center;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .load-more button {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+        }
+        .add-form {
+            margin-top: 10px;
+            padding: 12px;
+            background: #f7fafc;
+            border-radius: 6px;
+            display: none;
+        }
+        .add-form.active { display: block; }
+        .add-form input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        .add-form input:focus { outline: none; border-color: #667eea; }
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2d3748;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 2000;
+            display: none;
+            font-size: 0.9em;
+            max-width: 90%;
+        }
+        .toast.active { display: block; animation: slideUp 0.3s; }
+        @keyframes slideUp {
+            from { transform: translate(-50%, 100px); opacity: 0; }
+            to { transform: translate(-50%, 0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✅ Sarah's TODO</h1>
+            <p style="font-size: 0.9em; color: #666;">ADHD-Friendly Manager</p>
+            <div class="sync-status" id="syncStatus">✅ Synced</div>
+        </div>
+        
+        <div class="github-box">
+            <h3>🔄 GITHUB SYNC</h3>
+            <div class="github-buttons">
+                <button class="btn-github-pull" onclick="app.pullFromGitHub()">⬇️ Pull Latest</button>
+                <button class="btn-github-push" onclick="app.pushToGitHub()">⬆️ Push Changes</button>
+            </div>
+            <p style="font-size: 0.85em; color: #666; margin-top: 12px; text-align: center;">Pull: Get new tasks | Push: Save your progress</p>
+        </div>
+        
+        <div class="controls">
+            <button class="btn-secondary" onclick="app.undo()">↩️ Undo</button>
+            <button class="btn-secondary" onclick="app.collapseAll()">📁 Collapse</button>
+            <button class="btn-secondary" onclick="app.expandAll()">📂 Expand</button>
+            <button class="btn-danger" onclick="app.clearCompleted()">🗑️ Clear Done</button>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card"><h3 id="totalTasks">0</h3><p>Total</p></div>
+            <div class="stat-card"><h3 id="completedTasks">0</h3><p>Done</p></div>
+            <div class="stat-card"><h3 id="remainingTasks">0</h3><p>Left</p></div>
+            <div class="stat-card"><h3 id="progressPercent">0%</h3><p>Progress</p></div>
+        </div>
+        
+        <div id="sections"></div>
+    </div>
+    
+    <div class="toast" id="toast"></div>
+    
+    <script>
+        const INITIAL_DATA = [{"id": "daily", "title": "🌅 🌅 ð DAILY NON-NEGOTIABLES", "collapsed": false, "tasks": [{"id": 1, "text": "Basic back hygiene (James routine) - 3 exercises", "completed": false, "subtasks": []}, {"id": 2, "text": "Drink water - Stay hydrated", "completed": false, "subtasks": []}, {"id": 3, "text": "Meu's meds - AMODIP + BENEFORTIL + CYSTAID", "completed": false, "subtasks": []}, {"id": 4, "text": "Concerta 36mg - Take on waking", "completed": false, "subtasks": []}]}, {"id": "urgent-bcn", "title": "🔴 🔴 ð´ URGENT - As Soon as Back in Barcelona", "collapsed": false, "tasks": [{"id": 5, "text": "FIND THE TO GO BAG AND HAVE IT READY", "completed": false, "subtasks": []}, {"id": 6, "text": "Material survival on Remarkable and paper plastificato (make list)", "completed": false, "subtasks": []}, {"id": 7, "text": "PREPARE EXIT STRATEGY with Yakir and Laza", "completed": false, "subtasks": []}, {"id": 8, "text": "Calculate expenses to be paid back from legal case", "completed": false, "subtasks": []}]}, {"id": "urgent-health", "title": "🏥 🏥 ð¥ URGENT - Health & Medical", "collapsed": true, "tasks": [{"id": 9, "text": "Reprogramar cirugÃ­a Neo - Reschedule Neo's surgery", "completed": false, "subtasks": []}, {"id": 10, "text": "Programar examen mioma - Find gynecologist Sanitas for exam", "completed": false, "subtasks": []}, {"id": 11, "text": "Get appointments: James & Daniel - Physio sessions needed", "completed": false, "subtasks": []}, {"id": 12, "text": "NEW QUETIAPINA in CAT SALUT - Send message to medico", "completed": false, "subtasks": []}, {"id": 13, "text": "Cita Cap Montigala + pedir cita con: Traumatologo, Neurocirujano, Physiotherapeuta, Ginecologa", "completed": false, "subtasks": []}, {"id": 14, "text": "Get teeth cleaning appointment with Sanitas", "completed": false, "subtasks": []}, {"id": 15, "text": "Call dentist for moving tooth", "completed": false, "subtasks": []}]}, {"id": "urgent-admin", "title": "📋 📋 ð URGENT - Admin/Financial", "collapsed": true, "tasks": [{"id": 16, "text": "READ EMAILS FROM SEG.SOCIAL", "completed": false, "subtasks": []}, {"id": 17, "text": "READ BILLS", "completed": false, "subtasks": []}, {"id": 18, "text": "Create new tally after Notary papers (UPDATED NUMBERS) - Post-Dec 11 signing", "completed": false, "subtasks": []}, {"id": 19, "text": "Follow up Oriol about Mutua and pension", "completed": false, "subtasks": []}, {"id": 20, "text": "Update on Oriol and my baja mgmt (read emails)", "completed": false, "subtasks": []}, {"id": 21, "text": "Read Monica's email - Legal case", "completed": false, "subtasks": []}, {"id": 22, "text": "Coordinate witness testimonies - Martino URGENT before share sale", "completed": false, "subtasks": []}, {"id": 23, "text": "Check herbolary books tracking", "completed": false, "subtasks": []}]}, {"id": "teatro-urgent", "title": "🎭 🎭 ð­ TEATRO - Urgent/Active", "collapsed": true, "tasks": [{"id": 24, "text": "Finish event process with Barry White (Feb 7, 80â¬/hr, venue mgmt, bar, cava, food on demand)", "completed": false, "subtasks": []}, {"id": 25, "text": "Get invoices from Oriol for Laura", "completed": false, "subtasks": []}, {"id": 26, "text": "Pagare facturas fringe (check with Laura)", "completed": false, "subtasks": []}, {"id": 27, "text": "Follow up on management transfer documentation", "completed": false, "subtasks": []}]}, {"id": "teatro-money", "title": "💰 💰 ð° TEATRO - Money Owed/Payments", "collapsed": true, "tasks": [{"id": 28, "text": "MONEY FROM MALNOM? 900â¬ - 100â¬ Ruy - 250â¬ Teatro - 300â¬ Gas/Vitro = 250â¬ for me?", "completed": false, "subtasks": []}, {"id": 29, "text": "YAKIR debts: SOLDI TEATRO Give back 310â¬", "completed": false, "subtasks": []}, {"id": 30, "text": "YAKIR debts: Soldi green Give back 200â¬", "completed": false, "subtasks": []}, {"id": 31, "text": "SOLDI PER CHRISTIAN PER OLIO: 70â¬", "completed": false, "subtasks": []}, {"id": 32, "text": "CUENTAS: RAFA tally", "completed": false, "subtasks": []}, {"id": 33, "text": "CUENTAS: ALE (received 100â¬ through Bernardo, January 2026)", "completed": false, "subtasks": []}, {"id": 34, "text": "CUENTAS: NEW TALLY FERGIE", "completed": false, "subtasks": []}]}, {"id": "malnom", "title": "🏠 🏠 ð  MALNOM - Property", "collapsed": true, "tasks": [{"id": 35, "text": "FOLLOW UP: pared malnom - A que punto estamos con la finca a lado?", "completed": false, "subtasks": []}, {"id": 36, "text": "Follow up: contrato CUIDA CALEFACCION", "completed": false, "subtasks": []}, {"id": 37, "text": "Follow up: mantenimento gas in Malnom", "completed": false, "subtasks": []}]}, {"id": "valencia", "title": "🇪🇸 🇪🇸 ðªð¸ VALENCIA - Dad & House", "collapsed": true, "tasks": [{"id": 38, "text": "DIGI - activaciÃ³n eSIM per dad", "completed": false, "subtasks": []}, {"id": 39, "text": "Follow up on Dependencia (letter to arrive end of February)", "completed": false, "subtasks": []}, {"id": 40, "text": "Follow up AYUDA SUMINISTRO OXYGENO (registered January 9)", "completed": false, "subtasks": []}, {"id": 41, "text": "Follow up DENNYS: Money from Ayto, Quote for works, Permits and timings", "completed": false, "subtasks": []}, {"id": 42, "text": "Follow up Andreu (to split cost mesa a terra)", "completed": false, "subtasks": []}, {"id": 43, "text": "Dad videocall Belgium pension office - Feb 12 at 10am (code: 91239568, hotmail.it)", "completed": false, "subtasks": []}, {"id": 44, "text": "Call LINEA DIRECTA (919 180 012, 09:00-18:00) - kitchen leak, Exp: 15600223", "completed": false, "subtasks": []}, {"id": 45, "text": "BOMBONAS GAS Valencia (963956006)", "completed": false, "subtasks": []}]}, {"id": "zio-vittorio", "title": "🏗️ 🏗️ ðï¸ ZIO VITTORIO - Property Purchase", "collapsed": true, "tasks": [{"id": 46, "text": "PREPARA BUDGET PLAN PER ZIO VIC (in francese o italiano)", "completed": false, "subtasks": []}, {"id": 47, "text": "Calculate 2-year taxi costs (teatro late nights â Can Booty)", "completed": false, "subtasks": []}, {"id": 48, "text": "Research house for Vic - See ZIO_VITTORIO.md for complete analysis", "completed": false, "subtasks": []}, {"id": 49, "text": "Check details: Unipersonal vs S.L. - Pro/Con regarding property purchase", "completed": false, "subtasks": []}]}, {"id": "admin-insurance", "title": "📋 📋 ð ADMIN - Insurance & Services", "collapsed": true, "tasks": [{"id": 50, "text": "Check my actual polizas seguro", "completed": false, "subtasks": []}, {"id": 51, "text": "Find new options with better service and lower cost", "completed": false, "subtasks": []}, {"id": 52, "text": "FIND POLIZAS WITH MANTENIMIENTO", "completed": false, "subtasks": []}, {"id": 53, "text": "Change payment details in Workspace - New tarjeta Santander", "completed": false, "subtasks": []}]}, {"id": "to-sell", "title": "💸 💸 ð¸ TO SELL", "collapsed": true, "tasks": [{"id": 54, "text": "VESPA", "completed": false, "subtasks": []}, {"id": 55, "text": "RINO??", "completed": false, "subtasks": []}, {"id": 56, "text": "MOTO", "completed": false, "subtasks": []}]}, {"id": "italy", "title": "🇮🇹 🇮🇹 ð®ð¹ ITALY - Personal Admin", "collapsed": true, "tasks": [{"id": 57, "text": "ORGANIZZA VIAGGIO A ROMA: Per cambio domicilio e nuova carta identitÃ", "completed": false, "subtasks": []}, {"id": 58, "text": "Check my calendar for availability", "completed": false, "subtasks": []}, {"id": 59, "text": "Check flights", "completed": false, "subtasks": []}, {"id": 60, "text": "Check in with Diego for availability", "completed": false, "subtasks": []}, {"id": 61, "text": "Find info from Comune di Roma", "completed": false, "subtasks": []}]}, {"id": "cartas", "title": "🎨 🎨 ð¨ CARTAS EN VIVO", "collapsed": true, "tasks": [{"id": 62, "text": "Riprendere lavoro su Letters Live - Resume work", "completed": false, "subtasks": []}, {"id": 63, "text": "Research Letters Live UK format more deeply", "completed": false, "subtasks": []}, {"id": 64, "text": "Build celebrity contact list for readers", "completed": false, "subtasks": []}, {"id": 65, "text": "Plan Goya Awards timing strategy (Feb 28, 2026)", "completed": false, "subtasks": []}, {"id": 66, "text": "Organize massive research done (Nov 26-27)", "completed": false, "subtasks": []}, {"id": 67, "text": "Create roadmap with M", "completed": false, "subtasks": []}, {"id": 68, "text": "Devil's advocate strategy session", "completed": false, "subtasks": []}]}, {"id": "tech", "title": "💻 💻 ð» TECH & SYSTEMS", "collapsed": true, "tasks": [{"id": 69, "text": "FOR CODY: Fix morning brief automation (currently failing)", "completed": false, "subtasks": []}, {"id": 70, "text": "FOR CODY: Fix news digest automation (currently failing)", "completed": false, "subtasks": []}, {"id": 71, "text": "FOR CODY: Create multiple email reading automation on GitHub (for M to fetch)", "completed": false, "subtasks": []}, {"id": 72, "text": "Learn GitHub workflow from Pilot's guides", "completed": false, "subtasks": []}, {"id": 73, "text": "Set up automatic backup system", "completed": false, "subtasks": []}, {"id": 74, "text": "Find system that chats with multiple AI at same time (see Yakir's notes)", "completed": false, "subtasks": []}, {"id": 75, "text": "What's Substack? Can I add it to my daily digest news? How does it work?", "completed": false, "subtasks": []}, {"id": 76, "text": "Tell M to check new Claude extensions - what can she do now? (Ex: parse legal case data?)", "completed": false, "subtasks": []}]}, {"id": "learning", "title": "📚 📚 ð LEARNING", "collapsed": true, "tasks": [{"id": 77, "text": "Read Pilot's GitHub guides", "completed": false, "subtasks": []}, {"id": 78, "text": "Review Claude Code documentation", "completed": false, "subtasks": []}]}, {"id": "home", "title": "🏡 🏡 ð¡ HOME & PERSONAL", "collapsed": true, "tasks": [{"id": 79, "text": "Research synagogue visits (family heritage exploration)", "completed": false, "subtasks": []}, {"id": 80, "text": "Text Andreu - Share AirCon costs (STILL PENDING from November!)", "completed": false, "subtasks": []}, {"id": 81, "text": "Work on LinkedIn profile", "completed": false, "subtasks": []}, {"id": 82, "text": "Find DISCORD support ADHD community!!! (and what else does Discord do?)", "completed": false, "subtasks": []}]}, {"id": "attico", "title": "🏗️ 🏗️ ðï¸ ATTICO WORKS", "collapsed": true, "tasks": [{"id": 83, "text": "Trova stoffe utilizzabili per tende: Ask Malaka/Charlie for spare fabric", "completed": false, "subtasks": []}, {"id": 84, "text": "Find spray to make fabric ignifugo (fireproof spray)", "completed": false, "subtasks": []}]}, {"id": "legal", "title": "⚖️ ⚖️ âï¸ LEGAL", "collapsed": true, "tasks": [{"id": 85, "text": "Review legal evidence timeline with attorney Monica", "completed": false, "subtasks": []}, {"id": 86, "text": "Coordinate witness testimonies (Martino - URGENT before share sale)", "completed": false, "subtasks": []}, {"id": 87, "text": "Calculate expenses to be paid back from legal case", "completed": false, "subtasks": []}]}];
+        const GITHUB_TOKEN = "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";
+        const GITHUB_REPO = "MotherOfChaos/Life-Operating-System";
+        const GITHUB_FILE = "PERMANENT_TODO.md";
+        
+        const app = {
+            data: { sections: [], history: [], hasUnsyncedChanges: false, pagination: {}, lastSHA: null },
+            TASKS_PER_PAGE: 20,
+            
+            async init() {
+                await this.loadData();
+                this.render();
+                this.updateStats();
+                this.updateSyncStatus();
+            },
+            
+            async pullFromGitHub() {
+                const status = document.getElementById('syncStatus');
+                status.textContent = '⬇️ Pulling...';
+                status.className = 'sync-status syncing';
+                
+                try {
+                    const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+                    const response = await fetch(url, {
+                        headers: {
+                            'Authorization': `token ${GITHUB_TOKEN}`,
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    });
+                    
+                    if (!response.ok) throw new Error('Failed to fetch');
+                    
+                    const data = await response.json();
+                    this.data.lastSHA = data.sha;
+                    const markdown = atob(data.content);
+                    const newSections = this.parseMarkdown(markdown);
+                    this.mergeGitHubData(newSections);
+                    await this.saveData();
+                    this.render();
+                    this.updateStats();
+                    this.showToast('✅ Pulled from GitHub!');
+                    status.textContent = '✅ Synced';
+                    status.className = 'sync-status';
+                } catch (error) {
+                    this.showToast('❌ Pull failed');
+                    status.textContent = '❌ Failed';
+                    status.className = 'sync-status pending';
+                }
+            },
+            
+            async pushToGitHub() {
+                const status = document.getElementById('syncStatus');
+                status.textContent = '⬆️ Pushing...';
+                status.className = 'sync-status syncing';
+                
+                try {
+                    if (!this.data.lastSHA) {
+                        const getUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+                        const getResponse = await fetch(getUrl, {
+                            headers: { 'Authorization': `token ${GITHUB_TOKEN}`, 'Accept': 'application/vnd.github.v3+json' }
+                        });
+                        if (getResponse.ok) {
+                            const getData = await getResponse.json();
+                            this.data.lastSHA = getData.sha;
+                        }
+                    }
+                    
+                    const markdown = this.generateTODOMarkdown();
+                    const encodedContent = btoa(unescape(encodeURIComponent(markdown)));
+                    const putUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+                    const putResponse = await fetch(putUrl, {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': `token ${GITHUB_TOKEN}`,
+                            'Accept': 'application/vnd.github.v3+json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: `TODO update from app - ${new Date().toLocaleString()}`,
+                            content: encodedContent,
+                            sha: this.data.lastSHA
+                        })
+                    });
+                    
+                    if (!putResponse.ok) throw new Error('Push failed');
+                    
+                    const putData = await putResponse.json();
+                    this.data.lastSHA = putData.content.sha;
+                    this.data.hasUnsyncedChanges = false;
+                    await this.saveData();
+                    this.showToast('✅ Pushed to GitHub!');
+                    status.textContent = '✅ Synced';
+                    status.className = 'sync-status';
+                } catch (error) {
+                    this.showToast('❌ Push failed');
+                    status.textContent = '❌ Failed';
+                    status.className = 'sync-status pending';
+                }
+            },
+            
+            parseMarkdown(md) {
+                // Simplified parser - same logic as before
+                const sections = [];
+                const lines = md.split('\n');
+                let currentSection = null;
+                let currentTask = null;
+                let taskId = 1;
+                
+                for (let line of lines) {
+                    line = line.trim();
+                    if (line.startsWith('## ')) {
+                        if (currentSection && currentSection.tasks.length > 0) sections.push(currentSection);
+                        const title = line.substring(3).trim();
+                        currentSection = { id: 'section-' + sections.length, title: title, collapsed: false, tasks: [] };
+                        currentTask = null;
+                    } else if (line.match(/^- \[(x| )\] /) && currentSection) {
+                        const completed = line.includes('[x]');
+                        const text = line.substring(6).trim();
+                        currentTask = { id: taskId++, text: text, completed: completed, subtasks: [] };
+                        currentSection.tasks.push(currentTask);
+                    } else if (line.match(/^  - \[(x| )\] /) && currentTask) {
+                        const completed = line.includes('[x]');
+                        const text = line.substring(8).trim();
+                        currentTask.subtasks.push({ id: taskId++, text: text, completed: completed });
+                    }
+                }
+                if (currentSection && currentSection.tasks.length > 0) sections.push(currentSection);
+                return sections;
+            },
+            
+            mergeGitHubData(newSections) {
+                const currentTaskStates = new Map();
+                this.data.sections.forEach(section => {
+                    section.tasks.forEach(task => {
+                        currentTaskStates.set(task.text.toLowerCase(), {
+                            completed: task.completed,
+                            subtasks: new Map(task.subtasks.map(st => [st.text.toLowerCase(), st.completed]))
+                        });
+                    });
+                });
+                
+                newSections.forEach(section => {
+                    section.tasks.forEach(task => {
+                        const savedState = currentTaskStates.get(task.text.toLowerCase());
+                        if (savedState) {
+                            task.completed = savedState.completed;
+                            task.subtasks.forEach(subtask => {
+                                const savedSubState = savedState.subtasks.get(subtask.text.toLowerCase());
+                                if (savedSubState !== undefined) subtask.completed = savedSubState;
+                            });
+                        }
+                    });
+                });
+                
+                this.data.sections = newSections;
+                this.data.pagination = {};
+                newSections.forEach(s => { this.data.pagination[s.id] = { page: 1 }; });
+            },
+            
+            async loadData() {
+                try {
+                    const stored = localStorage.getItem('sarah-todo-data');
+                    if (stored) {
+                        this.data = JSON.parse(stored);
+                        if (!this.data.pagination) this.data.pagination = {};
+                        if (!this.data.lastSHA) this.data.lastSHA = null;
+                    } else {
+                        this.data.sections = INITIAL_DATA;
+                        this.data.history = [];
+                        this.data.hasUnsyncedChanges = false;
+                        this.data.pagination = {};
+                        this.data.lastSHA = null;
+                        INITIAL_DATA.forEach(s => { this.data.pagination[s.id] = { page: 1 }; });
+                        await this.saveData();
+                    }
+                } catch (error) {
+                    this.data.sections = INITIAL_DATA;
+                    this.data.history = [];
+                    this.data.hasUnsyncedChanges = false;
+                    this.data.pagination = {};
+                    this.data.lastSHA = null;
+                    INITIAL_DATA.forEach(s => { this.data.pagination[s.id] = { page: 1 }; });
+                }
+            },
+            
+            async saveData() {
+                try {
+                    this.data.hasUnsyncedChanges = true;
+                    localStorage.setItem('sarah-todo-data', JSON.stringify(this.data));
+                    this.updateSyncStatus();
+                } catch (error) {
+                    this.showToast('❌ Save failed');
+                }
+            },
+            
+            updateSyncStatus() {
+                const status = document.getElementById('syncStatus');
+                if (this.data.hasUnsyncedChanges) {
+                    status.textContent = '⚠️ Unsaved';
+                    status.className = 'sync-status pending';
+                } else {
+                    status.textContent = '✅ Synced';
+                    status.className = 'sync-status';
+                }
+            },
+            
+            loadMoreTasks(sectionId) {
+                if (!this.data.pagination[sectionId]) this.data.pagination[sectionId] = { page: 1 };
+                this.data.pagination[sectionId].page++;
+                this.saveData();
+                this.render();
+            },
+            
+            generateTODOMarkdown() {
+                let md = '# SARAH\'S PERMANENT TO-DO LIST\n\n**Always updated, never create new versions**\n';
+                md += `**Last updated:** ${new Date().toLocaleDateString()}\n\n---\n\n`;
+                this.data.sections.forEach(section => {
+                    md += `## ${section.title}\n\n`;
+                    section.tasks.forEach(task => {
+                        md += `- ${task.completed ? '[x]' : '[ ]'} ${task.text}\n`;
+                        if (task.subtasks && task.subtasks.length > 0) {
+                            task.subtasks.forEach(subtask => {
+                                md += `  - ${subtask.completed ? '[x]' : '[ ]'} ${subtask.text}\n`;
+                            });
+                        }
+                    });
+                    md += '\n';
+                });
+                return md;
+            },
+            
+            render() {
+                const container = document.getElementById('sections');
+                container.innerHTML = '';
+                this.data.sections.forEach(section => {
+                    const completed = section.tasks.filter(t => t.completed).length;
+                    const total = section.tasks.length;
+                    const currentPage = this.data.pagination[section.id]?.page || 1;
+                    const endIdx = currentPage * this.TASKS_PER_PAGE;
+                    const visibleTasks = section.tasks.slice(0, endIdx);
+                    const hasMore = endIdx < total;
+                    
+                    const tasksHTML = visibleTasks.map(task => {
+                        const subtasksCompleted = task.subtasks ? task.subtasks.filter(st => st.completed).length : 0;
+                        const subtasksTotal = task.subtasks ? task.subtasks.length : 0;
+                        const progress = subtasksTotal > 0 ? `<span class="subtask-progress">[${subtasksCompleted}/${subtasksTotal}]</span>` : '';
+                        
+                        return `
+                            <div class="task ${task.completed ? 'completed' : ''} ${subtasksTotal > 0 ? 'has-subtasks' : ''}">
+                                <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="app.toggleTask('${section.id}', ${task.id})">
+                                <div class="task-text">${task.text}${progress}</div>
+                            </div>
+                        `;
+                    }).join('');
+                    
+                    const loadMoreHTML = hasMore ? `
+                        <div class="load-more">
+                            <p style="margin-bottom: 10px; color: #666;">Showing ${endIdx} of ${total} tasks</p>
+                            <button onclick="app.loadMoreTasks('${section.id}')">📥 Load More</button>
+                        </div>
+                    ` : '';
+                    
+                    container.insertAdjacentHTML('beforeend', `
+                        <div class="section">
+                            <div class="section-header" onclick="app.toggleSection('${section.id}')">
+                                <h2>${section.title} <span class="section-badge">${completed}/${total}</span></h2>
+                                <span>${section.collapsed ? '▼' : '▲'}</span>
+                            </div>
+                            <div class="section-content ${section.collapsed ? 'collapsed' : ''}">
+                                ${tasksHTML}
+                                ${loadMoreHTML}
+                            </div>
+                        </div>
+                    `);
+                });
+            },
+            
+            toggleSection(id) {
+                const s = this.data.sections.find(x => x.id === id);
+                if (s) { s.collapsed = !s.collapsed; this.saveData(); this.render(); }
+            },
+            
+            collapseAll() { this.data.sections.forEach(s => s.collapsed = true); this.saveData(); this.render(); },
+            expandAll() { this.data.sections.forEach(s => s.collapsed = false); this.saveData(); this.render(); },
+            
+            async toggleTask(sid, tid) {
+                const s = this.data.sections.find(x => x.id === sid);
+                const t = s.tasks.find(x => x.id === tid);
+                this.data.history.push({ type: 'toggle', sid, tid, prev: t.completed });
+                t.completed = !t.completed;
+                await this.saveData();
+                this.render();
+                this.updateStats();
+                this.showToast(t.completed ? '✅ Done!' : '↩️ Undone');
+            },
+            
+            async undo() {
+                if (this.data.history.length === 0) { this.showToast('Nothing to undo'); return; }
+                const a = this.data.history.pop();
+                const s = this.data.sections.find(x => x.id === a.sid);
+                if (a.type === 'toggle') { const t = s.tasks.find(x => x.id === a.tid); t.completed = a.prev; }
+                await this.saveData();
+                this.render();
+                this.updateStats();
+                this.showToast('↩️ Undone!');
+            },
+            
+            async clearCompleted() {
+                if (!confirm('Remove all completed tasks?')) return;
+                this.data.sections.forEach(s => { s.tasks = s.tasks.filter(t => !t.completed); });
+                await this.saveData();
+                this.render();
+                this.updateStats();
+                this.showToast('🗑️ Cleared!');
+            },
+            
+            updateStats() {
+                const all = this.data.sections.flatMap(s => s.tasks);
+                const done = all.filter(t => t.completed).length;
+                const total = all.length;
+                const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+                document.getElementById('totalTasks').textContent = total;
+                document.getElementById('completedTasks').textContent = done;
+                document.getElementById('remainingTasks').textContent = total - done;
+                document.getElementById('progressPercent').textContent = pct + '%';
+            },
+            
+            showToast(msg) {
+                const t = document.getElementById('toast');
+                t.textContent = msg;
+                t.classList.add('active');
+                setTimeout(() => t.classList.remove('active'), 2500);
+            }
+        };
+        
+        window.addEventListener('DOMContentLoaded', () => app.init());
+    </script>
+</body>
+</html>
