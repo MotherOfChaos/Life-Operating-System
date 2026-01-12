@@ -1,27 +1,27 @@
 # SARAH'S PERMANENT TO-DO LIST
 
-**Always updated, never create new versions**
-**Last updated:** 11/01/2026
+**Always updated**
+**Last updated:** 12/01/2026
 
 ---
 
-## 🌅 ð DAILY NON-NEGOTIABLES
+## ð Ã°ÂÂÂ DAILY NON-NEGOTIABLES
 
 - [ ] Basic back hygiene (James routine) - 3 exercises
 - [ ] Drink water - Stay hydrated
 - [ ] Meu's meds - AMODIP + BENEFORTIL + CYSTAID
-- [ ] Concerta 36mg - Take on waking
+- [x] Concerta 36mg - Take on waking
 
-## 🔴 ð´ URGENT - As Soon as Back in Barcelona
+## ð´ Ã°ÂÂÂ´ URGENT - As Soon as Back in Barcelona
 
 - [ ] FIND THE TO GO BAG AND HAVE IT READY
 - [ ] Material survival on Remarkable and paper plastificato (make list)
 - [ ] PREPARE EXIT STRATEGY with Yakir and Laza
 - [ ] Calculate expenses to be paid back from legal case
 
-## 🏥 ð¥ URGENT - Health & Medical
+## ð¥ Ã°ÂÂÂ¥ URGENT - Health & Medical
 
-- [ ] Reprogramar cirugÃ­a Neo - Reschedule Neo's surgery
+- [ ] Reprogramar cirugÃÂ­a Neo - Reschedule Neo's surgery
 - [ ] Programar examen mioma - Find gynecologist Sanitas for exam
 - [ ] Get appointments: James & Daniel - Physio sessions needed
 - [ ] NEW QUETIAPINA in CAT SALUT - Send message to medico
@@ -29,7 +29,7 @@
 - [ ] Get teeth cleaning appointment with Sanitas
 - [ ] Call dentist for moving tooth
 
-## 📋 ð URGENT - Admin/Financial
+## ð Ã°ÂÂÂ URGENT - Admin/Financial
 
 - [ ] READ EMAILS FROM SEG.SOCIAL
 - [ ] READ BILLS
@@ -40,32 +40,32 @@
 - [ ] Coordinate witness testimonies - Martino URGENT before share sale
 - [ ] Check herbolary books tracking
 
-## 🎭 ð­ TEATRO - Urgent/Active
+## ð­ Ã°ÂÂÂ­ TEATRO - Urgent/Active
 
-- [ ] Finish event process with Barry White (Feb 7, 80â¬/hr, venue mgmt, bar, cava, food on demand)
+- [ ] Finish event process with Barry White (Feb 7, 80Ã¢ÂÂ¬/hr, venue mgmt, bar, cava, food on demand)
 - [ ] Get invoices from Oriol for Laura
 - [ ] Pagare facturas fringe (check with Laura)
 - [ ] Follow up on management transfer documentation
 
-## 💰 ð° TEATRO - Money Owed/Payments
+## ð° Ã°ÂÂÂ° TEATRO - Money Owed/Payments
 
-- [ ] MONEY FROM MALNOM? 900â¬ - 100â¬ Ruy - 250â¬ Teatro - 300â¬ Gas/Vitro = 250â¬ for me?
-- [ ] YAKIR debts: SOLDI TEATRO Give back 310â¬
-- [ ] YAKIR debts: Soldi green Give back 200â¬
-- [ ] SOLDI PER CHRISTIAN PER OLIO: 70â¬
+- [ ] MONEY FROM MALNOM? 900Ã¢ÂÂ¬ - 100Ã¢ÂÂ¬ Ruy - 250Ã¢ÂÂ¬ Teatro - 300Ã¢ÂÂ¬ Gas/Vitro = 250Ã¢ÂÂ¬ for me?
+- [ ] YAKIR debts: SOLDI TEATRO Give back 310Ã¢ÂÂ¬
+- [ ] YAKIR debts: Soldi green Give back 200Ã¢ÂÂ¬
+- [ ] SOLDI PER CHRISTIAN PER OLIO: 70Ã¢ÂÂ¬
 - [ ] CUENTAS: RAFA tally
-- [ ] CUENTAS: ALE (received 100â¬ through Bernardo, January 2026)
+- [ ] CUENTAS: ALE (received 100Ã¢ÂÂ¬ through Bernardo, January 2026)
 - [ ] CUENTAS: NEW TALLY FERGIE
 
-## 🏠 ð  MALNOM - Property
+## ð  Ã°ÂÂÂ  MALNOM - Property
 
 - [ ] FOLLOW UP: pared malnom - A que punto estamos con la finca a lado?
 - [ ] Follow up: contrato CUIDA CALEFACCION
 - [ ] Follow up: mantenimento gas in Malnom
 
-## 🇪🇸 ðªð¸ VALENCIA - Dad & House
+## ðªð¸ Ã°ÂÂÂªÃ°ÂÂÂ¸ VALENCIA - Dad & House
 
-- [ ] DIGI - activaciÃ³n eSIM per dad
+- [ ] DIGI - activaciÃÂ³n eSIM per dad
 - [ ] Follow up on Dependencia (letter to arrive end of February)
 - [ ] Follow up AYUDA SUMINISTRO OXYGENO (registered January 9)
 - [ ] Follow up DENNYS: Money from Ayto, Quote for works, Permits and timings
@@ -74,35 +74,35 @@
 - [ ] Call LINEA DIRECTA (919 180 012, 09:00-18:00) - kitchen leak, Exp: 15600223
 - [ ] BOMBONAS GAS Valencia (963956006)
 
-## 🏗️ ðï¸ ZIO VITTORIO - Property Purchase
+## ðï¸ Ã°ÂÂÂÃ¯Â¸Â ZIO VITTORIO - Property Purchase
 
 - [ ] PREPARA BUDGET PLAN PER ZIO VIC (in francese o italiano)
-- [ ] Calculate 2-year taxi costs (teatro late nights â Can Booty)
+- [ ] Calculate 2-year taxi costs (teatro late nights Ã¢ÂÂ Can Booty)
 - [ ] Research house for Vic - See ZIO_VITTORIO.md for complete analysis
 - [ ] Check details: Unipersonal vs S.L. - Pro/Con regarding property purchase
 
-## 📋 ð ADMIN - Insurance & Services
+## ð Ã°ÂÂÂ ADMIN - Insurance & Services
 
 - [ ] Check my actual polizas seguro
 - [ ] Find new options with better service and lower cost
 - [ ] FIND POLIZAS WITH MANTENIMIENTO
 - [ ] Change payment details in Workspace - New tarjeta Santander
 
-## 💸 ð¸ TO SELL
+## ð¸ Ã°ÂÂÂ¸ TO SELL
 
 - [ ] VESPA
 - [ ] RINO??
 - [ ] MOTO
 
-## 🇮🇹 ð®ð¹ ITALY - Personal Admin
+## ð®ð¹ Ã°ÂÂÂ®Ã°ÂÂÂ¹ ITALY - Personal Admin
 
-- [ ] ORGANIZZA VIAGGIO A ROMA: Per cambio domicilio e nuova carta identitÃ
+- [ ] ORGANIZZA VIAGGIO A ROMA: Per cambio domicilio e nuova carta identitÃ
 - [ ] Check my calendar for availability
 - [ ] Check flights
 - [ ] Check in with Diego for availability
 - [ ] Find info from Comune di Roma
 
-## 🎨 ð¨ CARTAS EN VIVO
+## ð¨ Ã°ÂÂÂ¨ CARTAS EN VIVO
 
 - [ ] Riprendere lavoro su Letters Live - Resume work
 - [ ] Research Letters Live UK format more deeply
@@ -112,7 +112,7 @@
 - [ ] Create roadmap with M
 - [ ] Devil's advocate strategy session
 
-## 💻 ð» TECH & SYSTEMS
+## ð» Ã°ÂÂÂ» TECH & SYSTEMS
 
 - [ ] FOR CODY: Fix morning brief automation (currently failing)
 - [ ] FOR CODY: Fix news digest automation (currently failing)
@@ -123,24 +123,24 @@
 - [ ] What's Substack? Can I add it to my daily digest news? How does it work?
 - [ ] Tell M to check new Claude extensions - what can she do now? (Ex: parse legal case data?)
 
-## 📚 ð LEARNING
+## ð Ã°ÂÂÂ LEARNING
 
 - [ ] Read Pilot's GitHub guides
 - [ ] Review Claude Code documentation
 
-## 🏡 ð¡ HOME & PERSONAL
+## ð¡ Ã°ÂÂÂ¡ HOME & PERSONAL
 
 - [ ] Research synagogue visits (family heritage exploration)
 - [ ] Text Andreu - Share AirCon costs (STILL PENDING from November!)
 - [ ] Work on LinkedIn profile
 - [ ] Find DISCORD support ADHD community!!! (and what else does Discord do?)
 
-## 🏗️ ðï¸ ATTICO WORKS
+## ðï¸ Ã°ÂÂÂÃ¯Â¸Â ATTICO WORKS
 
 - [ ] Trova stoffe utilizzabili per tende: Ask Malaka/Charlie for spare fabric
 - [ ] Find spray to make fabric ignifugo (fireproof spray)
 
-## ⚖️ âï¸ LEGAL
+## âï¸ Ã¢ÂÂÃ¯Â¸Â LEGAL
 
 - [ ] Review legal evidence timeline with attorney Monica
 - [ ] Coordinate witness testimonies (Martino - URGENT before share sale)
