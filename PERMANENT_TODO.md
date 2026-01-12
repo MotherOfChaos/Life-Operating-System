@@ -5,23 +5,23 @@
 
 ---
 
-## Â Â DAILY NON-NEGOTIABLES
+## DAILY NON-NEGOTIABLES
 
 - [ ] Basic back hygiene (James routine) - 3 exercises
 - [ ] Drink water - Stay hydrated
 - [ ] Meu's meds - AMODIP + BENEFORTIL + CYSTAID
 - [x] Concerta 36mg - Take on waking
 
-## ð´ URGENT - As Soon as Back in Barcelona
+## URGENT - Back in Barcelona
 
 - [ ] FIND THE TO GO BAG AND HAVE IT READY
 - [ ] Material survival on Remarkable and paper plastificato (make list)
 - [ ] PREPARE EXIT STRATEGY with Yakir and Laza
 - [ ] Calculate expenses to be paid back from legal case
 
-## ð¥ URGENT - Health & Medical
+## URGENT - Health & Medical
 
-- [ ] Reprogramar cirugÃ­a Neo - Reschedule Neo's surgery
+- [ ] Reprogramar ciruga Neo - Reschedule Neo's surgery
 - [ ] Programar examen mioma - Find gynecologist Sanitas for exam
 - [ ] Get appointments: James & Daniel - Physio sessions needed
 - [ ] NEW QUETIAPINA in CAT SALUT - Send message to medico
@@ -29,7 +29,7 @@
 - [ ] Get teeth cleaning appointment with Sanitas
 - [ ] Call dentist for moving tooth
 
-## ð URGENT - Admin/Financial
+## URGENT - Admin & Financial
 
 - [ ] READ EMAILS FROM SEG.SOCIAL
 - [ ] READ BILLS
@@ -40,14 +40,14 @@
 - [ ] Coordinate witness testimonies - Martino URGENT before share sale
 - [ ] Check herbolary books tracking
 
-## ð­ TEATRO - Urgent/Active
+## TEATRO - Urgent & Active
 
-- [ ] Finish event process with Barry White (Feb 7, 80â¬/hr, venue mgmt, bar, cava, food on demand)
+- [ ] Finish event process with Barry White (Feb 7, 80/hr, venue mgmt, bar, cava, food on demand)
 - [ ] Get invoices from Oriol for Laura
 - [ ] Pagare facturas fringe (check with Laura)
 - [ ] Follow up on management transfer documentation
 
-## ð° TEATRO - Money Owed/Payments
+## TEATRO - Money Owed
 
 - [ ] MONEY FROM MALNOM? 900 - 100 Ruy - 250 Teatro - 300 Gas/Vitro = 250 for me?
 - [ ] YAKIR debts: SOLDI TEATRO Give back 310
@@ -57,7 +57,7 @@
 - [ ] CUENTAS: ALE (received 100 through Bernardo, January 2026)
 - [ ] CUENTAS: NEW TALLY FERGIE
 
-## Â  Â  MALNOM - Property
+## MALNOM - Property
 
 - [ ] FOLLOW UP: pared malnom - A que punto estamos con la finca a lado?
 - [ ] Follow up: contrato CUIDA CALEFACCION
@@ -74,7 +74,7 @@
 - [ ] Call LINEA DIRECTA (919 180 012, 09:00-18:00) - kitchen leak, Exp: 15600223
 - [ ] BOMBONAS GAS Valencia (963956006)
 
-## ZIO VITTORIO - Property Purchase
+## ZIO VITTORIO
 
 - [ ] PREPARA BUDGET PLAN PER ZIO VIC (in francese o italiano)
 - [ ] Calculate 2-year taxi costs (teatro late nights Can Booty)
@@ -102,7 +102,7 @@
 - [ ] Check in with Diego for availability
 - [ ] Find info from Comune di Roma
 
-## ð¬ CARTAS EN VIVO
+## CARTAS EN VIVO
 
 - [ ] Riprendere lavoro su Letters Live - Resume work
 - [ ] Research Letters Live UK format more deeply
@@ -140,7 +140,7 @@
 - [ ] Trova stoffe utilizzabili per tende: Ask Malaka/Charlie for spare fabric
 - [ ] Find spray to make fabric ignifugo (fireproof spray)
 
-## Ã¢ÂÂÃ¯Â¸Â LEGAL
+##  LEGAL
 
 - [ ] Review legal evidence timeline with attorney Monica
 - [ ] Coordinate witness testimonies (Martino - URGENT before share sale)
