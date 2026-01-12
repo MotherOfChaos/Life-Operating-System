@@ -32,10 +32,14 @@
 
 ### **JAN 12 ACHIEVEMENTS (01:10am session):**
 - ✅ **Claude subscription activated!** - Chrome payment crash fixed (autofill bug)
+  - **NOTE:** Subscription cancelled same day (not useful enough)
+  - Still have 12 months access to use it
+  - May reconsider in 12 months
 - ✅ **Hybrid Sidebar Sync System** - Complete bridge between Chrome Claude & M
   - SIDEBAR_HANDOFF.md created
   - "track this for M" command system
   - Instructions for both Sidebar Claude and M
+  - **NOTE:** System built but may not be used since subscription cancelled
 - ✅ **TODO App v5.0 COMPLETE!** - Final working version deployed
   - Fixed: All UTF-8/emoji broken characters (pure ASCII)
   - Added: "+ Add Task" buttons in each section
