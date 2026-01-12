@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- VERSION 4.0 - Jan 12, 2026 00:50 CET - COMPLETE FIX -->
-<!-- ✅ Clean UTF-8, + Add Task buttons, 🗑️ Delete icons -->
+<!-- VERSION 5.0 - Jan 12, 2026 01:10 CET - FINAL FINAL FIX -->
+<!-- ✅ Pure ASCII text, NO pagination, ALL tasks visible -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -305,7 +305,7 @@
         <div class="header">
             <button class="btn-settings" onclick="app.showSetup()">⚙️ Settings</button>
             <h1>Sarah's TODO</h1>
-            <p style="font-size: 0.75em; color: #999; margin-top: -5px;">v4.0 - Jan 12, 00:50</p>
+            <p style="font-size: 0.75em; color: #999; margin-top: -5px;">v5.0 - Jan 12, 01:10 - ALL TASKS VISIBLE</p>
             <p style="font-size: 0.9em; color: #666;">ADHD-Friendly Manager</p>
             <div class="sync-status" id="syncStatus">Synced</div>
         </div>
@@ -345,7 +345,7 @@
         
         const app = {
             data: { sections: [], history: [], hasUnsyncedChanges: false, pagination: {}, lastSHA: null },
-            TASKS_PER_PAGE: 20,
+            TASKS_PER_PAGE: 9999, // Show ALL tasks - no pagination!
             
             async init() {
                 // Check token from ALL storage types
