@@ -5,23 +5,23 @@
 
 ---
 
-##   DAILY NON-NEGOTIABLES
+## Â Â DAILY NON-NEGOTIABLES
 
 - [ ] Basic back hygiene (James routine) - 3 exercises
 - [ ] Drink water - Stay hydrated
 - [ ] Meu's meds - AMODIP + BENEFORTIL + CYSTAID
 - [x] Concerta 36mg - Take on waking
 
-## 🔴 URGENT - As Soon as Back in Barcelona
+## ð´ URGENT - As Soon as Back in Barcelona
 
 - [ ] FIND THE TO GO BAG AND HAVE IT READY
 - [ ] Material survival on Remarkable and paper plastificato (make list)
 - [ ] PREPARE EXIT STRATEGY with Yakir and Laza
 - [ ] Calculate expenses to be paid back from legal case
 
-## 🏥 URGENT - Health & Medical
+## ð¥ URGENT - Health & Medical
 
-- [ ] Reprogramar cirugía Neo - Reschedule Neo's surgery
+- [ ] Reprogramar cirugÃ­a Neo - Reschedule Neo's surgery
 - [ ] Programar examen mioma - Find gynecologist Sanitas for exam
 - [ ] Get appointments: James & Daniel - Physio sessions needed
 - [ ] NEW QUETIAPINA in CAT SALUT - Send message to medico
@@ -29,7 +29,7 @@
 - [ ] Get teeth cleaning appointment with Sanitas
 - [ ] Call dentist for moving tooth
 
-## 📋 URGENT - Admin/Financial
+## ð URGENT - Admin/Financial
 
 - [ ] READ EMAILS FROM SEG.SOCIAL
 - [ ] READ BILLS
@@ -40,14 +40,14 @@
 - [ ] Coordinate witness testimonies - Martino URGENT before share sale
 - [ ] Check herbolary books tracking
 
-## 🎭 TEATRO - Urgent/Active
+## ð­ TEATRO - Urgent/Active
 
-- [ ] Finish event process with Barry White (Feb 7, 80€/hr, venue mgmt, bar, cava, food on demand)
+- [ ] Finish event process with Barry White (Feb 7, 80â¬/hr, venue mgmt, bar, cava, food on demand)
 - [ ] Get invoices from Oriol for Laura
 - [ ] Pagare facturas fringe (check with Laura)
 - [ ] Follow up on management transfer documentation
 
-## 💰 TEATRO - Money Owed/Payments
+## ð° TEATRO - Money Owed/Payments
 
 - [ ] MONEY FROM MALNOM? 900 - 100 Ruy - 250 Teatro - 300 Gas/Vitro = 250 for me?
 - [ ] YAKIR debts: SOLDI TEATRO Give back 310
@@ -57,7 +57,7 @@
 - [ ] CUENTAS: ALE (received 100 through Bernardo, January 2026)
 - [ ] CUENTAS: NEW TALLY FERGIE
 
-##     MALNOM - Property
+## Â  Â  MALNOM - Property
 
 - [ ] FOLLOW UP: pared malnom - A que punto estamos con la finca a lado?
 - [ ] Follow up: contrato CUIDA CALEFACCION
@@ -102,7 +102,7 @@
 - [ ] Check in with Diego for availability
 - [ ] Find info from Comune di Roma
 
-## 🎬 CARTAS EN VIVO
+## ð¬ CARTAS EN VIVO
 
 - [ ] Riprendere lavoro su Letters Live - Resume work
 - [ ] Research Letters Live UK format more deeply
@@ -140,7 +140,7 @@
 - [ ] Trova stoffe utilizzabili per tende: Ask Malaka/Charlie for spare fabric
 - [ ] Find spray to make fabric ignifugo (fireproof spray)
 
-## âï¸ LEGAL
+## Ã¢ÂÂÃ¯Â¸Â LEGAL
 
 - [ ] Review legal evidence timeline with attorney Monica
 - [ ] Coordinate witness testimonies (Martino - URGENT before share sale)
