@@ -46,6 +46,9 @@
 - [ ] Get invoices from Oriol for Laura
 - [ ] Pagare facturas fringe (check with Laura)
 - [ ] Follow up on management transfer documentation
+- [ ] PNL whatsapp message - Create template
+- [ ] Parse emails data into Excel for analysis
+- [ ] Ask Laura which admin and finance processes need automating
 
 ## TEATRO - Money Owed
 
