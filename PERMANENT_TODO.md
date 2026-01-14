@@ -1,7 +1,7 @@
 # SARAH'S PERMANENT TO-DO LIST
 
 **Always updated**
-**Last updated:** 12/01/2026
+**Last updated:** 14/01/2026
 
 ---
 
@@ -9,7 +9,7 @@
 
 - [ ] Basic back hygiene (James routine) - 3 exercises
 - [ ] Drink water - Stay hydrated
-- [ ] Meu's meds - AMODIP + BENEFORTIL + CYSTAID
+- [x] Meu's meds - AMODIP + BENEFORTIL + CYSTAID
 - [x] Concerta 36mg - Take on waking
 
 ## URGENT - Back in Barcelona
@@ -18,6 +18,7 @@
 - [ ] Material survival on Remarkable and paper plastificato (make list)
 - [ ] PREPARE EXIT STRATEGY with Yakir and Laza
 - [ ] Calculate expenses to be paid back from legal case
+- [ ] paga factura caldaia Malnom
 
 ## URGENT - Health & Medical
 
@@ -143,7 +144,7 @@
 - [ ] Trova stoffe utilizzabili per tende: Ask Malaka/Charlie for spare fabric
 - [ ] Find spray to make fabric ignifugo (fireproof spray)
 
-##  LEGAL
+## LEGAL
 
 - [ ] Review legal evidence timeline with attorney Monica
 - [ ] Coordinate witness testimonies (Martino - URGENT before share sale)
