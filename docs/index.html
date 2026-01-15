@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- VERSION 5.0 - Jan 12, 2026 01:10 CET - FINAL FINAL FIX -->
-<!-- ✅ Pure ASCII text, NO pagination, ALL tasks visible -->
+<!-- VERSION 5.1 - Jan 12, 2026 16:30 CET - TRULY ALL TASKS (No pagination!) -->
+<!-- ✅ Pure ASCII text, NO pagination at all, ALL tasks always visible -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -305,7 +305,7 @@
         <div class="header">
             <button class="btn-settings" onclick="app.showSetup()">⚙️ Settings</button>
             <h1>Sarah's TODO</h1>
-            <p style="font-size: 0.75em; color: #999; margin-top: -5px;">v5.0 - Jan 12, 01:10 - ALL TASKS VISIBLE</p>
+            <p style="font-size: 0.75em; color: #999; margin-top: -5px;">v5.1 - Jan 12, 16:30 - TRULY ALL TASKS</p>
             <p style="font-size: 0.9em; color: #666;">ADHD-Friendly Manager</p>
             <div class="sync-status" id="syncStatus">Synced</div>
         </div>
@@ -590,12 +590,8 @@
                 status.className = this.data.hasUnsyncedChanges ? 'sync-status pending' : 'sync-status';
             },
             
-            loadMoreTasks(sectionId) {
-                if (!this.data.pagination[sectionId]) this.data.pagination[sectionId] = { page: 1 };
-                this.data.pagination[sectionId].page++;
-                this.saveData();
-                this.render();
-            },
+            // loadMoreTasks - REMOVED: All tasks now show by default
+            // No pagination needed!
             
             generateTODOMarkdown() {
                 let md = '# SARAH\'S PERMANENT TO-DO LIST\n\n**Always updated**\n';
@@ -616,10 +612,8 @@
                 this.data.sections.forEach(section => {
                     const completed = section.tasks.filter(t => t.completed).length;
                     const total = section.tasks.length;
-                    const currentPage = this.data.pagination[section.id]?.page || 1;
-                    const endIdx = currentPage * this.TASKS_PER_PAGE;
-                    const visibleTasks = section.tasks.slice(0, endIdx);
-                    const hasMore = endIdx < total;
+                    // SHOW ALL TASKS - NO PAGINATION!
+                    const visibleTasks = section.tasks;
                     
                     const tasksHTML = visibleTasks.map(task => `
                         <div class="task ${task.completed ? 'completed' : ''}">
@@ -629,12 +623,7 @@
                         </div>
                     `).join('');
                     
-                    const loadMoreHTML = hasMore ? `
-                        <div class="load-more">
-                            <p style="margin-bottom: 10px; color: #666;">Showing ${endIdx} of ${total}</p>
-                            <button onclick="app.loadMoreTasks('${section.id}')">Load More</button>
-                        </div>
-                    ` : '';
+                    // NO LOAD MORE - ALL TASKS ALWAYS VISIBLE!
                     
                     const addTaskHTML = !section.collapsed ? `
                         <div class="add-task-row">
@@ -650,7 +639,6 @@
                             </div>
                             <div class="section-content ${section.collapsed ? 'collapsed' : ''}">
                                 ${tasksHTML}
-                                ${loadMoreHTML}
                                 ${addTaskHTML}
                             </div>
                         </div>
