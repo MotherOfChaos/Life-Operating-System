@@ -1,7 +1,7 @@
 # SARAH'S PERMANENT TO-DO LIST
 
 **Always updated**
-**Last updated:** 14/01/2026
+**Last updated:** 15/01/2026
 
 ---
 
@@ -9,102 +9,65 @@
 
 - [ ] Basic back hygiene (James routine) - 3 exercises
 - [ ] Drink water - Stay hydrated
-- [x] Meu's meds - AMODIP + BENEFORTIL + CYSTAID
-- [x] Concerta 36mg - Take on waking
+- [ ] Meu's meds - AMODIP + BENEFORTIL + CYSTAID
+- [ ] Concerta 36mg - Take on waking
 
 ## URGENT - Back in Barcelona
 
+- [ ] Motorbike from Teatro to Can Buty, ask Stef if she wants to buy it
+- [ ] Change payment details in Workspace - New tarjeta Santander
+- [ ] Check herbolary books tracking
+- [ ] Read Monica's email - Legal case
+- [ ] READ EMAILS FROM SEG.SOCIAL
+- [ ] READ BILLS
+- [ ] Follow up Oriol about Mutua and pension
+
+## HOME & PERSONAL
+
+- [ ] ATTICO WORKS: Find spray to make fabric ignifugo (fireproof spray)
 - [ ] FIND THE TO GO BAG AND HAVE IT READY
 - [ ] Material survival on Remarkable and paper plastificato (make list)
 - [ ] PREPARE EXIT STRATEGY with Yakir and Laza
-- [ ] Calculate expenses to be paid back from legal case
-- [ ] paga factura caldaia Malnom
+- [ ] Research synagogue visits (family heritage exploration)
+- [ ] Work on LinkedIn profile
+- [ ] Find DISCORD support ADHD community!!! (and what else does Discord do?)
 
-## URGENT - Health & Medical
+## HEALTH & MEDICAL
 
+- [ ] Get appointments: James & Daniel - Physio sessions needed
 - [ ] Reprogramar ciruga Neo - Reschedule Neo's surgery
 - [ ] Programar examen mioma - Find gynecologist Sanitas for exam
-- [ ] Get appointments: James & Daniel - Physio sessions needed
 - [ ] NEW QUETIAPINA in CAT SALUT - Send message to medico
 - [ ] Cita Cap Montigala + pedir cita con: Traumatologo, Neurocirujano, Physiotherapeuta, Ginecologa
 - [ ] Get teeth cleaning appointment with Sanitas
 - [ ] Call dentist for moving tooth
 
-## URGENT - Admin & Financial
+## ADMIN & FINANCES
 
-- [ ] READ EMAILS FROM SEG.SOCIAL
-- [ ] READ BILLS
 - [ ] Create new tally after Notary papers (UPDATED NUMBERS) - Post-Dec 11 signing
-- [ ] Follow up Oriol about Mutua and pension
-- [ ] Update on Oriol and my baja mgmt (read emails)
-- [ ] Read Monica's email - Legal case
-- [ ] Coordinate witness testimonies - Martino URGENT before share sale
-- [ ] Check herbolary books tracking
+- [ ] YAKIR debts: SOLDI TEATRO Give back 310
+- [ ] YAKIR debts: Soldi green Give back 220
+- [ ] CUENTAS: RAFA tally
+- [ ] CUENTAS: ALE (received 100 through Bernardo, January 2026)
+- [ ] Check my actual polizas seguro
+- [ ] Find new options with better service and lower cost
+- [ ] FIND POLIZAS WITH MANTENIMIENTO
 
-## TEATRO - Urgent & Active
+## TEATRO
 
-- [ ] Finish event process with Barry White (Feb 7, 80/hr, venue mgmt, bar, cava, food on demand)
+- [ ] create automation for theatre's invoices for Laura
 - [ ] Get invoices from Oriol for Laura
 - [ ] Pagare facturas fringe (check with Laura)
 - [ ] Follow up on management transfer documentation
 - [ ] PNL whatsapp message - Create template
 - [ ] Parse emails data into Excel for analysis
-- [ ] Ask Laura which admin and finance processes need automating
+- [ ] Subvenciones!!!!
 
-## TEATRO - Money Owed
+## LEGAL
 
-- [ ] MONEY FROM MALNOM? 900 - 100 Ruy - 250 Teatro - 300 Gas/Vitro = 250 for me?
-- [ ] YAKIR debts: SOLDI TEATRO Give back 310
-- [ ] YAKIR debts: Soldi green Give back 200
-- [ ] SOLDI PER CHRISTIAN PER OLIO: 70
-- [ ] CUENTAS: RAFA tally
-- [ ] CUENTAS: ALE (received 100 through Bernardo, January 2026)
-- [ ] CUENTAS: NEW TALLY FERGIE
-
-## MALNOM - Property
-
-- [ ] FOLLOW UP: pared malnom - A que punto estamos con la finca a lado?
-- [ ] Follow up: contrato CUIDA CALEFACCION
-- [ ] Follow up: mantenimento gas in Malnom
-
-## VALENCIA - Dad & House
-
-- [ ] DIGI - activaci eSIM per dad
-- [ ] Follow up on Dependencia (letter to arrive end of February)
-- [ ] Follow up AYUDA SUMINISTRO OXYGENO (registered January 9)
-- [ ] Follow up DENNYS: Money from Ayto, Quote for works, Permits and timings
-- [ ] Follow up Andreu (to split cost mesa a terra)
-- [ ] Dad videocall Belgium pension office - Feb 12 at 10am (code: 91239568, hotmail.it)
-- [ ] Call LINEA DIRECTA (919 180 012, 09:00-18:00) - kitchen leak, Exp: 15600223
-- [ ] BOMBONAS GAS Valencia (963956006)
-
-## ZIO VITTORIO
-
-- [ ] PREPARA BUDGET PLAN PER ZIO VIC (in francese o italiano)
-- [ ] Calculate 2-year taxi costs (teatro late nights Can Booty)
-- [ ] Research house for Vic - See ZIO_VITTORIO.md for complete analysis
-- [ ] Check details: Unipersonal vs S.L. - Pro/Con regarding property purchase
-
-## ADMIN - Insurance & Services
-
-- [ ] Check my actual polizas seguro
-- [ ] Find new options with better service and lower cost
-- [ ] FIND POLIZAS WITH MANTENIMIENTO
-- [ ] Change payment details in Workspace - New tarjeta Santander
-
-## TO SELL
-
-- [ ] VESPA
-- [ ] RINO??
-- [ ] MOTO
-
-## ITALY - Personal Admin
-
-- [ ] ORGANIZZA VIAGGIO A ROMA: Per cambio domicilio e nuova carta identit
-- [ ] Check my calendar for availability
-- [ ] Check flights
-- [ ] Check in with Diego for availability
-- [ ] Find info from Comune di Roma
+- [ ] Review legal evidence timeline with attorney Monica
+- [ ] Coordinate witness testimonies (Martino - URGENT before share sale)
+- [ ] Calculate expenses to be paid back from legal case
 
 ## CARTAS EN VIVO
 
@@ -116,6 +79,40 @@
 - [ ] Create roadmap with M
 - [ ] Devil's advocate strategy session
 
+## MALNOM - Property
+
+- [ ] FOLLOW UP: pared malnom - A que punto estamos con la finca a lado?
+- [ ] Follow up: contrato CUIDA CALEFACCION (mantenimento gas in Malnom)
+
+## VALENCIA - Dad & House
+
+- [ ] DIGI - activaci eSIM per dad
+- [ ] Follow up DENNYS: Money from Ayto, Quote for works, Permits and timings
+- [ ] Dad videocall Belgium pension office - Feb 12 at 10am (code: 91239568, hotmail.it)
+- [ ] Call LINEA DIRECTA (919 180 012, 09:00-18:00) - kitchen leak, Exp: 15600223
+- [ ] Text Andreu - Share AirCon costs instalación with cherry picker + initial costs of messa a terra)
+- [ ] Follow up on Dependencia (letter to arrive end of February)
+- [ ] Follow up AYUDA SUMINISTRO OXYGENO (registered January 9)
+
+## ZIO VITTORIO
+
+- [ ] PREPARA BUDGET PLAN PER ZIO VIC (in francese o italiano)
+- [ ] Calculate 2-year taxi costs (teatro late nights Can Booty)
+- [ ] Research house for Vic - See ZIO_VITTORIO.md for complete analysis
+- [ ] Check details: Unipersonal vs S.L. - Pro/Con regarding property purchase
+
+## BIG PROJECTS
+
+- [ ] THINK ABOUT SELLING: VESPA, rino, moto
+- [ ] SAILING LICENCE!!! get studying material, info, money back from Malaka
+- [ ] TRIP TO ITALY: ORGANIZZA VIAGGIO A ROMA: (Per cambio domicilio e nuova carta identità // Check my calendar for availability // Check flights // Check in with Diego for availability // Find info from Comune di Roma)
+
+## LEARNING
+
+- [ ] Learn Hebrew
+- [ ] Read Pilot's GitHub guides
+- [ ] Review Claude Code documentation
+
 ## TECH & SYSTEMS
 
 - [ ] FOR CODY: Fix morning brief automation (currently failing)
@@ -126,27 +123,3 @@
 - [ ] Find system that chats with multiple AI at same time (see Yakir's notes)
 - [ ] What's Substack? Can I add it to my daily digest news? How does it work?
 - [ ] Tell M to check new Claude extensions - what can she do now? (Ex: parse legal case data?)
-
-## LEARNING
-
-- [ ] Read Pilot's GitHub guides
-- [ ] Review Claude Code documentation
-
-## HOME & PERSONAL
-
-- [ ] Research synagogue visits (family heritage exploration)
-- [ ] Text Andreu - Share AirCon costs (STILL PENDING from November!)
-- [ ] Work on LinkedIn profile
-- [ ] Find DISCORD support ADHD community!!! (and what else does Discord do?)
-
-## ATTICO WORKS
-
-- [ ] Trova stoffe utilizzabili per tende: Ask Malaka/Charlie for spare fabric
-- [ ] Find spray to make fabric ignifugo (fireproof spray)
-
-## LEGAL
-
-- [ ] Review legal evidence timeline with attorney Monica
-- [ ] Coordinate witness testimonies (Martino - URGENT before share sale)
-- [ ] Calculate expenses to be paid back from legal case
-
