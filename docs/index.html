@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- VERSION 5.2 - Jan 15, 2026 16:35 CET - SUBTASKS FEATURE ADDED -->
-<!-- ✅ Pure ASCII, All tasks visible, Subtasks support -->
+<!-- VERSION 5.3 - Jan 15, 2026 16:40 CET - Edit button + Daily reset -->
+<!-- ✅ Pure ASCII, All tasks visible, Subtasks, Edit tasks, Daily NON-NEGOTIABLES reset -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -261,6 +261,24 @@
             opacity: 1;
         }
         
+        .btn-edit {
+            background: transparent;
+            border: none;
+            color: #cbd5e0;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 2px 6px;
+            margin-left: auto;
+            margin-right: 5px;
+            opacity: 0.5;
+            transition: opacity 0.2s, color 0.2s;
+        }
+        
+        .btn-edit:hover {
+            opacity: 1;
+            color: #667eea;
+        }
+        
         .btn-add-subtask {
             background: transparent;
             border: 1px solid #667eea;
@@ -377,7 +395,7 @@
         <div class="header">
             <button class="btn-settings" onclick="app.showSetup()">⚙️ Settings</button>
             <h1>Sarah's TODO</h1>
-            <p style="font-size: 0.75em; color: #999; margin-top: -5px;">v5.2 - Jan 15, 16:35 - With Subtasks!</p>
+            <p style="font-size: 0.75em; color: #999; margin-top: -5px;">v5.3 - Jan 15, 16:40 - Edit + Daily Reset!</p>
             <p style="font-size: 0.9em; color: #666;">ADHD-Friendly Manager</p>
             <div class="sync-status" id="syncStatus">Synced</div>
         </div>
@@ -640,12 +658,38 @@
                     this.data = JSON.parse(stored);
                     if (!this.data.pagination) this.data.pagination = {};
                     if (!this.data.lastSHA) this.data.lastSHA = null;
+                    if (!this.data.lastResetDate) this.data.lastResetDate = null;
+                    
+                    // DAILY RESET for NON-NEGOTIABLES
+                    const today = new Date().toDateString();
+                    if (this.data.lastResetDate !== today) {
+                        // Find DAILY NON-NEGOTIABLES section
+                        const dailySection = this.data.sections.find(s => 
+                            s.title.includes('DAILY') || s.title.includes('NON-NEGOTIABLES')
+                        );
+                        
+                        if (dailySection) {
+                            // Reset all tasks to unchecked
+                            dailySection.tasks.forEach(task => {
+                                task.completed = false;
+                                // Also reset subtasks if any
+                                if (task.subtasks) {
+                                    task.subtasks.forEach(sub => sub.completed = false);
+                                }
+                            });
+                            console.log('✅ Daily tasks reset!');
+                        }
+                        
+                        this.data.lastResetDate = today;
+                        await this.saveData();
+                    }
                 } else {
                     this.data.sections = INITIAL_DATA;
                     this.data.history = [];
                     this.data.hasUnsyncedChanges = false;
                     this.data.pagination = {};
                     this.data.lastSHA = null;
+                    this.data.lastResetDate = new Date().toDateString();
                     INITIAL_DATA.forEach(s => { this.data.pagination[s.id] = { page: 1 }; });
                 }
             },
@@ -706,6 +750,7 @@
                                 <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="app.toggleTask('${section.id}', ${task.id})">
                                 <div class="task-text">${task.text}</div>
                                 <button class="btn-add-subtask" onclick="app.showAddSubtask('${section.id}', ${task.id})" title="Add subtask">+</button>
+                                <button class="btn-edit" onclick="app.editTask('${section.id}', ${task.id})" title="Edit task">✏️</button>
                                 <button class="btn-delete" onclick="app.deleteTask('${section.id}', ${task.id})" title="Delete task">🗑️</button>
                                 ${subtasksHTML}
                             </div>
@@ -776,6 +821,20 @@
                     this.render();
                     this.updateStats();
                     this.showToast('Task deleted');
+                }
+            },
+            
+            async editTask(sid, tid) {
+                const s = this.data.sections.find(x => x.id === sid);
+                const task = s.tasks.find(t => t.id === tid);
+                const newText = prompt('Edit task:', task.text);
+                
+                if (newText !== null && newText.trim() && newText.trim() !== task.text) {
+                    task.text = newText.trim();
+                    this.data.hasUnsyncedChanges = true;
+                    await this.saveData();
+                    this.render();
+                    this.showToast('Task updated');
                 }
             },
             
