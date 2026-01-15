@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- VERSION 5.1 - Jan 12, 2026 16:30 CET - TRULY ALL TASKS (No pagination!) -->
-<!-- ✅ Pure ASCII text, NO pagination at all, ALL tasks always visible -->
+<!-- VERSION 5.2 - Jan 15, 2026 16:35 CET - SUBTASKS FEATURE ADDED -->
+<!-- ✅ Pure ASCII, All tasks visible, Subtasks support -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -261,6 +261,78 @@
             opacity: 1;
         }
         
+        .btn-add-subtask {
+            background: transparent;
+            border: 1px solid #667eea;
+            color: #667eea;
+            padding: 4px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            margin-right: 5px;
+            opacity: 0.6;
+            transition: opacity 0.2s, background 0.2s;
+        }
+        
+        .btn-add-subtask:hover {
+            opacity: 1;
+            background: #f7fafc;
+        }
+        
+        .subtasks {
+            width: 100%;
+            margin-top: 8px;
+            margin-left: 32px;
+            padding-left: 10px;
+            border-left: 2px solid #e2e8f0;
+        }
+        
+        .subtask {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 0;
+            font-size: 0.9em;
+        }
+        
+        .subtask.completed {
+            opacity: 0.5;
+        }
+        
+        .subtask.completed .subtask-text {
+            text-decoration: line-through;
+            color: #a0aec0;
+        }
+        
+        .subtask input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        
+        .subtask-text {
+            flex: 1;
+            color: #4a5568;
+        }
+        
+        .btn-delete-sub {
+            background: transparent;
+            border: none;
+            color: #cbd5e0;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 2px 6px;
+            opacity: 0.5;
+            transition: opacity 0.2s, color 0.2s;
+        }
+        
+        .btn-delete-sub:hover {
+            opacity: 1;
+            color: #f56565;
+        }
+        
         .add-task-row {
             margin-top: 10px;
             padding-top: 10px;
@@ -305,7 +377,7 @@
         <div class="header">
             <button class="btn-settings" onclick="app.showSetup()">⚙️ Settings</button>
             <h1>Sarah's TODO</h1>
-            <p style="font-size: 0.75em; color: #999; margin-top: -5px;">v5.1 - Jan 12, 16:30 - TRULY ALL TASKS</p>
+            <p style="font-size: 0.75em; color: #999; margin-top: -5px;">v5.2 - Jan 15, 16:35 - With Subtasks!</p>
             <p style="font-size: 0.9em; color: #666;">ADHD-Friendly Manager</p>
             <div class="sync-status" id="syncStatus">Synced</div>
         </div>
@@ -615,13 +687,30 @@
                     // SHOW ALL TASKS - NO PAGINATION!
                     const visibleTasks = section.tasks;
                     
-                    const tasksHTML = visibleTasks.map(task => `
-                        <div class="task ${task.completed ? 'completed' : ''}">
-                            <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="app.toggleTask('${section.id}', ${task.id})">
-                            <div class="task-text">${task.text}</div>
-                            <button class="btn-delete" onclick="app.deleteTask('${section.id}', ${task.id})" title="Delete task">🗑️</button>
-                        </div>
-                    `).join('');
+                    const tasksHTML = visibleTasks.map(task => {
+                        const subtasksHTML = task.subtasks && task.subtasks.length > 0 ? `
+                            <div class="subtasks">
+                                ${task.subtasks.map((sub, idx) => `
+                                    <div class="subtask ${sub.completed ? 'completed' : ''}">
+                                        <input type="checkbox" ${sub.completed ? 'checked' : ''} 
+                                            onchange="app.toggleSubtask('${section.id}', ${task.id}, ${idx})">
+                                        <div class="subtask-text">${sub.text}</div>
+                                        <button class="btn-delete-sub" onclick="app.deleteSubtask('${section.id}', ${task.id}, ${idx})" title="Delete subtask">✕</button>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : '';
+                        
+                        return `
+                            <div class="task ${task.completed ? 'completed' : ''}">
+                                <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="app.toggleTask('${section.id}', ${task.id})">
+                                <div class="task-text">${task.text}</div>
+                                <button class="btn-add-subtask" onclick="app.showAddSubtask('${section.id}', ${task.id})" title="Add subtask">+</button>
+                                <button class="btn-delete" onclick="app.deleteTask('${section.id}', ${task.id})" title="Delete task">🗑️</button>
+                                ${subtasksHTML}
+                            </div>
+                        `;
+                    }).join('');
                     
                     // NO LOAD MORE - ALL TASKS ALWAYS VISIBLE!
                     
@@ -709,6 +798,50 @@
                 this.render();
                 this.updateStats();
                 this.showToast('Task added!');
+            },
+            
+            showAddSubtask(sid, tid) {
+                const subtaskText = prompt('Enter subtask:');
+                if (!subtaskText || !subtaskText.trim()) return;
+                
+                const s = this.data.sections.find(x => x.id === sid);
+                const task = s.tasks.find(t => t.id === tid);
+                
+                if (!task.subtasks) task.subtasks = [];
+                
+                task.subtasks.push({
+                    text: subtaskText.trim(),
+                    completed: false
+                });
+                
+                this.data.hasUnsyncedChanges = true;
+                this.saveData();
+                this.render();
+                this.showToast('Subtask added!');
+            },
+            
+            async toggleSubtask(sid, tid, subIdx) {
+                const s = this.data.sections.find(x => x.id === sid);
+                const task = s.tasks.find(t => t.id === tid);
+                task.subtasks[subIdx].completed = !task.subtasks[subIdx].completed;
+                
+                await this.saveData();
+                this.render();
+                this.updateStats();
+                this.showToast(task.subtasks[subIdx].completed ? 'Done!' : 'Undone');
+            },
+            
+            async deleteSubtask(sid, tid, subIdx) {
+                if (!confirm('Delete this subtask?')) return;
+                const s = this.data.sections.find(x => x.id === sid);
+                const task = s.tasks.find(t => t.id === tid);
+                task.subtasks.splice(subIdx, 1);
+                
+                this.data.hasUnsyncedChanges = true;
+                await this.saveData();
+                this.render();
+                this.updateStats();
+                this.showToast('Subtask deleted');
             },
             
             async clearCompleted() {
