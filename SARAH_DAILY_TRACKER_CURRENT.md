@@ -17,11 +17,12 @@
 
 ---
 
-## 💊 MEDICATIONS - Jan 11-12, 2026
+## 💊 MEDICATIONS - Jan 11-16, 2026
 
 ### Sarah:
 - **Jan 11:** No medications tracked
 - **Jan 12:** Not tracked yet (early morning session)
+- **Jan 16:** Zopiclona at 05:38 AM (sleep medication after long work session)
 
 ### Meu:
 - **Daily ongoing:** AMODIP + BENEFORTIL + CYSTAID (consistent routine)
