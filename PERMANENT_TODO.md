@@ -19,6 +19,7 @@
 - [ ] PREP HOUSE FOR RAIN!!! staple gun and punting from workshop through Malaka
 - [ ] check payment not successful in Caixabank
 - [ ] fare NIE NUOVO!!
+- [ ] cita con Olga (update on ADHD, need help to start the legal case, too triggering for now
 
 ## URGENT - THIS WEEK
 
