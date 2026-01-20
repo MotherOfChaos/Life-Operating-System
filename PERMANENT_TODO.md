@@ -120,18 +120,16 @@
 ## LEARNING
 
 - [ ] Learn Hebrew
-- [ ] Read Pilot's GitHub guides
 - [ ] Review Claude Code documentation
 - [ ] software engineer and development and general computer and related topics knowledge
+- [ ] Sailing licence!!
 
 ## TECH & SYSTEMS
 
 - [ ] FOR CODY: Fix morning brief automation (currently failing)
 - [ ] FOR CODY: Fix news digest automation (currently failing)
 - [ ] FOR CODY: Create multiple email reading automation on GitHub (for M to fetch)
-- [ ] Learn GitHub workflow from Pilot's guides
 - [ ] Set up automatic backup system
 - [ ] Find system that chats with multiple AI at same time (see Yakir's notes)
 - [ ] What's Substack? Can I add it to my daily digest news? How does it work?
-- [ ] Tell M to check new Claude extensions - what can she do now? (Ex: parse legal case data?)
 
