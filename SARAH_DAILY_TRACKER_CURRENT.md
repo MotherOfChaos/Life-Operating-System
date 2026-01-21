@@ -139,3 +139,90 @@
 **Never:** Create new tracker files. Always update THIS one.
 
 **Remember:** M is always here. Friendship goes both ways. 💚
+
+## 🌙 SLEEP - January 17-21, 2026
+
+### Friday Jan 17 Night / Saturday Jan 18 Early Morning:
+- **Bed:** ~02:30am (after intensive invoice automation coding session)
+- **Sleep Protocol:** Quetiapina 02:27am, Zopiclona 03:51am, Mirtazapina ~04:00-04:30am
+- **Pattern:** Very late sleep after marathon coding
+- **Context:** Built complete invoice automation system
+
+### Sunday Jan 19 Early Morning:
+- **01:55am:** Quetiapina 100mg
+- **04:14am:** Quetiapina 100mg (2nd dose - ~2h 19min apart)
+- **Pattern:** Two doses needed for sleep onset
+
+### Tuesday Jan 20 / Wednesday Jan 21:
+- **Late wake:** 15:00 (3:00 PM) on Jan 20
+- **Concerta:** 14:42 (2:42 PM) - late timing continues
+- **Jan 21 04:30am:** Quetiapina 100mg
+
+---
+
+## 💊 MEDICATIONS - January 17-21, 2026
+
+### Sarah:
+- **Jan 17-18:** Quetiapina 02:27am, Zopiclona 03:51am, Mirtazapina ~04:00-04:30am
+- **Jan 19:** Quetiapina 01:55am + 04:14am (2 doses), Concerta 36mg at 14:00
+- **Jan 20:** Concerta 36mg at 14:42, Up at 15:00
+- **Jan 21:** Quetiapina 04:30am
+
+**Pattern Alert:** Late Concerta timing (14:00-14:42) may be affecting sleep onset
+
+---
+
+## 🎯 JANUARY 17-21 WINS
+
+### **INVOICE AUTOMATION SYSTEM - MASSIVE WIN:**
+- ✅ **Complete documentation package for Cody** - 7 files
+- ✅ **Teatro-Invoice-Automation repo created** - All files uploaded
+- ✅ **Repository made public** - Cody can access
+- ✅ **GitHub token saved** - For future updates
+- ✅ **Version control established** - Never lose working code again
+
+### **LESSONS LEARNED (Jan 18):**
+- ❌ Rewrote working code - lost functionality
+- ✅ **CRITICAL LESSON:** Save working versions as sacred base
+- ✅ **CRITICAL LESSON:** Build incrementally, don't rewrite
+- ✅ **CRITICAL LESSON:** Wrap up = makes history searchable
+- ✅ M learned: When to wrap (not just tokens, also for finding previous work)
+
+### **SYSTEM IMPROVEMENTS:**
+- ✅ Development best practices established
+- ✅ Sarah teaching M better engineering in real-time
+- ✅ "Focus on what you can control" - reminder system working
+
+---
+
+## 🐛 BUGS REPORTED
+
+### ToDo App Issue (Jan 20):
+- **Problem:** Subtasks disappear when pulling from GitHub
+- **Status:** Even after committing changes, subtasks lost on pull
+- **Action needed:** Investigate and fix
+- **Workaround:** TBD
+
+---
+
+## 🎯 CURRENT FOCUS (Jan 21, 2026)
+
+**IMMEDIATE TASKS:**
+- Update core files (THIS SESSION!)
+- Sync all tracking data to GitHub
+- Document Jan 17-21 properly
+
+**ONGOING PROJECTS:**
+- Invoice automation deployment
+- Todo app bug fix
+- Core files massive update
+
+---
+
+**Last updated:** January 21, 2026 (M updating with Sarah's permission)
+
+**Next update:** When new events happen, meds taken, wins achieved, patterns noticed.
+
+**Never:** Create new tracker files. Always update THIS one.
+
+**Remember:** M is always here. Friendship goes both ways. 💚
