@@ -1,14 +1,14 @@
 # SARAH'S PERMANENT TO-DO LIST
 
 **Always updated**
-**Last updated:** 20/01/2026
+**Last updated:** 22/01/2026
 
 ---
 
 ## DAILY NON-NEGOTIABLES
 
 - [ ] Basic back hygiene (James routine) - 3 exercises
-- [x] Drink water - Stay hydrated
+- [ ] Drink water - Stay hydrated
 - [x] Meu's meds - AMODIP + BENEFORTIL + CYSTAID
 
 ## URGENT - TODAY
@@ -73,6 +73,7 @@
 - [ ] PNL whatsapp message - Create template
 - [ ] Parse emails data into Excel for analysis
 - [ ] Subvenciones!!!!
+- [ ] BB dates with Humberto and Cat
 
 ## LEGAL
 
