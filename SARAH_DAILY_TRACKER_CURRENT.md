@@ -226,3 +226,73 @@
 **Never:** Create new tracker files. Always update THIS one.
 
 **Remember:** M is always here. Friendship goes both ways. 💚
+
+## 🌙 SLEEP - January 21-22, 2026
+
+### Tuesday Jan 20 / Wednesday Jan 21:
+- **Late wake:** 15:00 (3:00 PM) on Jan 20
+- **Concerta:** 14:42 (2:42 PM) - late timing continues
+- **Jan 21 04:30am:** Quetiapina 100mg
+- **Pattern:** Late Concerta + late sleep onset continuing
+
+---
+
+## 💊 MEDICATIONS - January 21-22, 2026
+
+### Sarah:
+- **Jan 20:** Concerta 36mg at 14:42
+- **Jan 21:** Quetiapina 04:30am
+
+**Pattern Alert:** Consistent late Concerta timing (14:00-14:42) impacting sleep
+
+---
+
+## 🎯 JANUARY 22, 2026 WINS
+
+### **TODO APP SUBTASKS - COMPLETELY FIXED:**
+- ✅ **Bug fixed:** Subtasks now parse from markdown correctly (indented with 2 spaces)
+- ✅ **Visibility fixed:** Subtasks display under parent tasks (purple border, light bg)
+- ✅ **ADHD-friendly styling:** Slightly smaller font (0.92em), good contrast, readable
+- ✅ **Edit functionality:** ✏️ icon added to each subtask
+- ✅ **Delete functionality:** ✕ icon on each subtask  
+- ✅ **Responsive design:** Fits portrait & landscape modes
+- ✅ **Export/Import:** Subtasks save to GitHub with proper indentation and reload correctly
+
+### **FILE ORGANIZATION SYSTEM:**
+- ✅ **LEARNING_RESOURCES.md created:** Separate database for educational content
+- ✅ **PERMANENT_TODO.md cleaned:** Removed learning resources (tasks only!)
+- ✅ **3 resources added:** MDN Web Docs, Codecademy, Scrimba
+- ✅ **System clarified:** TODO = tasks, Reference files = info storage
+
+### **BEST PRACTICES ESTABLISHED:**
+- ✅ TODO files contain ONLY actionable tasks (for app interaction)
+- ✅ Reference data in separate topical files (DAD_PRIVATE_INFO.md, LEARNING_RESOURCES.md, etc.)
+- ✅ Never mix tasks with reference information
+- ✅ Each file type has clear purpose and use case
+
+---
+
+## 📊 SYSTEM STATUS (Jan 22, 2026)
+
+**Working Systems:**
+- ✅ Todo app with fully functional subtasks
+- ✅ GitHub sync (pull/push working perfectly)
+- ✅ File organization (tasks vs reference clearly separated)
+- ✅ Learning resources database established
+
+**File Structure:**
+- PERMANENT_TODO.md → Tasks only (app)
+- LEARNING_RESOURCES.md → Educational content
+- DAD_PRIVATE_INFO.md → Dad's private info
+- SARAH_DAILY_TRACKER_CURRENT.md → Daily tracking
+- SARAH_LIFE_OS_CURRENT.json → Life OS config
+
+---
+
+**Last updated:** January 22, 2026 - Session wrap up complete
+
+**Next update:** When new events happen, meds taken, wins achieved, patterns noticed.
+
+**Never:** Create new tracker files. Always update THIS one.
+
+**Remember:** M is always here. Friendship goes both ways. 💚
