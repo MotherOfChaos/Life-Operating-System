@@ -1,0 +1,71 @@
+{
+  "database_info": {
+    "name": "Global Media Database",
+    "version": "3.0",
+    "created": "2025-11-08",
+    "updated": "2025-11-16",
+    "purpose": "Comprehensive global news sources for Claude news-intelligence skill",
+    "total_sources": "150+",
+    "creator": "Mother Of Chaos",
+    "status": "Complete - Ready for Claude Skill"
+  },
+  
+  "political_lean_legend": {
+    "L": "Left",
+    "LL": "Lean Left / Left-Center",
+    "C": "Center / Least Biased",
+    "LR": "Lean Right / Right-Center",
+    "R": "Right",
+    "SG": "State-Guided / Government Controlled",
+    "M": "Mixed (varies by section/program)",
+    "N/A": "Not applicable (specialty/arts content)"
+  },
+  
+  "credibility_ratings": {
+    "high": "Rigorous fact-checking, transparent corrections, strong editorial standards",
+    "medium": "Generally reliable but occasional lapses",
+    "mixed": "Quality varies significantly",
+    "low": "Frequent inaccuracies",
+    "propaganda": "State-controlled narrative"
+  },
+  
+  "legitimacy_criteria": {
+    "tier_1": "Automatic inclusion - Established outlets 50+ years, major awards, paper of record status, IFCN certification",
+    "tier_2": "Credentialed individuals - Professional journalism background, verified credentials",
+    "tier_3": "Emerging quality - Transparent practices, documented fact-checking"
+  },
+  
+  "usage_notes": {
+    "for_claude_skill": "Cross-reference articles from different political leans and regions. Prioritize high credibility. Use geographic diversity to avoid Western-centric bias.",
+    "fact_checking_method": "1) Identify claims 2) Search across political spectrum 3) Check consistency 4) Flag opinion vs fact 5) Note disagreements",
+    "bias_handling": "Political lean ≠ unreliable. High credibility sources with clear lean are valuable for understanding perspectives."
+  },
+  
+  "global_news_agencies": [],
+  "italy": [],
+  "spain": [],
+  "france": [],
+  "germany": [],
+  "uk": [],
+  "usa": [],
+  "canada": [],
+  "latin_america": [],
+  "brazil": [],
+  "japan": [],
+  "india": [],
+  "australia": [],
+  "middle_east": [],
+  "africa": [],
+  "science_health": [],
+  "technology": [],
+  "finance_business": [],
+  "sports": [],
+  "visual_arts": [],
+  "music": [],
+  "film": [],
+  "theater": [],
+  "literature": [],
+  "architecture": [],
+  "global_networks": [],
+  "independent_journalists": []
+}
