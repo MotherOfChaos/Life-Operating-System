@@ -135,12 +135,3 @@
 - [ ] What's Substack? Can I add it to my daily digest news? How does it work?
 
 
----
-
-## 📚 LEARNING RESOURCES
-
-### Web Development
-- **MDN Web Docs - Learn Web Development**: https://developer.mozilla.org/en-US/docs/Learn_web_development
-  - Comprehensive web development learning resource
-  - Added: January 22, 2026
-
