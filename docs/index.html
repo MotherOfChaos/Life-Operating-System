@@ -3,53 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarah's TODO - ADHD Friendly</title>
+    <title>Sarah's TODO</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
             min-height: 100vh;
+            padding: 20px;
         }
         
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            overflow: hidden;
         }
         
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px 20px;
             text-align: center;
+            color: white;
+            margin-bottom: 30px;
         }
         
-        .header h1 { font-size: 2em; margin-bottom: 5px; }
-        .header p { opacity: 0.9; font-size: 0.9em; }
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
         
         .sync-bar {
-            background: #f7fafc;
-            padding: 15px 20px;
-            border-bottom: 1px solid #e2e8f0;
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
             display: flex;
             gap: 10px;
-            flex-wrap: wrap;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
-        .btn-sync {
+        .btn {
             flex: 1;
-            min-width: 120px;
-            padding: 10px 20px;
+            padding: 12px;
             border: none;
-            border-radius: 6px;
-            cursor: pointer;
+            border-radius: 8px;
+            font-size: 0.95em;
             font-weight: 600;
+            cursor: pointer;
             transition: all 0.2s;
         }
         
@@ -58,61 +56,40 @@
             color: white;
         }
         
-        .btn-pull:hover { background: #38a169; }
+        .btn-pull:active {
+            background: #38a169;
+        }
         
         .btn-push {
             background: #4299e1;
             color: white;
         }
         
-        .btn-push:hover { background: #3182ce; }
-        
-        .content {
-            padding: 20px;
-            max-height: calc(100vh - 300px);
-            overflow-y: auto;
+        .btn-push:active {
+            background: #3182ce;
         }
         
         .section {
-            margin-bottom: 25px;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            overflow: hidden;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
         .section-header {
-            background: #f7fafc;
-            padding: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 15px;
             cursor: pointer;
-            border-bottom: 1px solid #e2e8f0;
+            user-select: none;
         }
-        
-        .section-header:hover { background: #edf2f7; }
         
         .section-title {
-            font-weight: 600;
             font-size: 1.1em;
-            color: #2d3748;
-        }
-        
-        .section-count {
-            background: #667eea;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.85em;
             font-weight: 600;
-        }
-        
-        .section-tasks {
-            padding: 15px;
-        }
-        
-        .section.collapsed .section-tasks {
-            display: none;
+            color: #2d3748;
         }
         
         .task {
@@ -120,19 +97,17 @@
             align-items: flex-start;
             gap: 10px;
             padding: 12px;
-            margin-bottom: 10px;
-            background: white;
+            margin-bottom: 8px;
+            background: #f7fafc;
+            border-radius: 8px;
             border: 1px solid #e2e8f0;
-            border-radius: 6px;
         }
-        
-        .task:hover { background: #f7fafc; }
         
         .task input[type="checkbox"] {
             width: 20px;
             height: 20px;
-            cursor: pointer;
             margin-top: 2px;
+            cursor: pointer;
             flex-shrink: 0;
         }
         
@@ -141,7 +116,6 @@
             line-height: 1.5;
             color: #2d3748;
             word-wrap: break-word;
-            min-width: 0;
         }
         
         .task.completed .task-text {
@@ -149,54 +123,50 @@
             color: #a0aec0;
         }
         
-        .task-actions {
+        .task-buttons {
             display: flex;
-            gap: 4px;
+            gap: 8px;
             flex-shrink: 0;
         }
         
-        .btn-icon {
+        .task-buttons button {
             background: none;
             border: none;
-            cursor: pointer;
             font-size: 1.2em;
+            cursor: pointer;
             padding: 4px 8px;
             border-radius: 4px;
-            transition: all 0.2s;
+            transition: background 0.2s;
         }
         
-        .btn-add { color: #48bb78; }
-        .btn-add:hover { background: #e6fffa; }
+        .task-buttons button:hover {
+            background: #edf2f7;
+        }
         
-        .btn-edit { color: #4299e1; }
-        .btn-edit:hover { background: #ebf8ff; }
-        
-        .btn-delete { color: #f56565; }
-        .btn-delete:hover { background: #fed7d7; }
-        
-        /* SUBTASKS STYLING */
+        /* SUBTASKS STYLING - CLEAN AND SIMPLE */
         .subtasks {
-            margin: 10px 0 0 30px;
+            margin: 10px 0 0 40px;
             padding: 10px;
-            background: #f7fafc;
             border-left: 3px solid #9f7aea;
-            border-radius: 0 6px 6px 0;
+            background: #faf5ff;
+            border-radius: 4px;
         }
         
         .subtask {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 8px;
             padding: 8px;
-            margin: 6px 0;
+            margin-bottom: 6px;
             background: white;
-            border: 1px solid #e2e8f0;
             border-radius: 4px;
+            border: 1px solid #e9d8fd;
         }
         
         .subtask input[type="checkbox"] {
             width: 18px;
             height: 18px;
+            margin-top: 2px;
             cursor: pointer;
             flex-shrink: 0;
         }
@@ -204,10 +174,9 @@
         .subtask-text {
             flex: 1;
             font-size: 0.92em;
-            color: #2d3748;
             line-height: 1.4;
+            color: #4a5568;
             word-wrap: break-word;
-            min-width: 0;
         }
         
         .subtask.completed .subtask-text {
@@ -215,60 +184,85 @@
             color: #a0aec0;
         }
         
+        .subtask-buttons {
+            display: flex;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+        
+        .subtask-buttons button {
+            background: none;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        
+        .subtask-buttons button:hover {
+            background: #f3e8ff;
+        }
+        
+        .add-task-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
         .toast {
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             background: #2d3748;
             color: white;
-            padding: 15px 20px;
+            padding: 12px 24px;
             border-radius: 8px;
             opacity: 0;
             transition: opacity 0.3s;
             z-index: 1000;
         }
         
-        .toast.active { opacity: 1; }
-        
-        .btn-add-task {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 10px;
+        .toast.show {
+            opacity: 1;
         }
-        
-        .btn-add-task:hover { opacity: 0.9; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>Sarah's TODO</h1>
-            <p>ADHD-Friendly Task Manager</p>
+            <p>v7.0 - Clean Build</p>
         </div>
         
         <div class="sync-bar">
-            <button class="btn-sync btn-pull" onclick="app.pullFromGitHub()">⬇ Pull Latest</button>
-            <button class="btn-sync btn-push" onclick="app.pushToGitHub()">⬆ Save Changes</button>
+            <button class="btn btn-pull" onclick="app.pullFromGitHub()">⬇️ Pull Latest</button>
+            <button class="btn btn-push" onclick="app.pushToGitHub()">⬆️ Save Changes</button>
         </div>
         
-        <div class="content" id="sections"></div>
+        <div id="sections"></div>
     </div>
     
-    <div class="toast" id="toast"></div>
+    <div id="toast" class="toast"></div>
     
     <script>
-        const GITHUB_TOKEN = localStorage.getItem('github_token') || '';
+        const GITHUB_TOKEN = localStorage.getItem('gh_token') || prompt('Paste GitHub token:');
         const GITHUB_REPO = 'MotherOfChaos/Life-Operating-System';
         const GITHUB_FILE = 'PERMANENT_TODO.md';
         
         const app = {
-            data: { sections: [], lastSHA: null },
+            data: {
+                sections: [],
+                lastSHA: null
+            },
             
             async init() {
                 await this.loadFromLocalStorage();
@@ -287,7 +281,6 @@
             },
             
             async pullFromGitHub() {
-                this.showToast('Pulling from GitHub...');
                 try {
                     const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
                     const response = await fetch(url, {
@@ -297,62 +290,56 @@
                         }
                     });
                     
-                    if (!response.ok) throw new Error('Pull failed');
+                    if (!response.ok) throw new Error('Failed to fetch');
                     
                     const markdown = await response.text();
-                    const shaSEOF
-echo "Part 1 created..."response = await fetch(url, { headers: { 'Authorization': `token ${GITHUB_TOKEN}` }});
-                    const data = await response.json();
-                    this.data.lastSHA = data.sha;
-                    
                     this.data.sections = this.parseMarkdown(markdown);
+                    
+                    // Get SHA for later push
+                    const shaResponse = await fetch(url, {
+                        headers: {
+                            'Authorization': `token ${GITHUB_TOKEN}`,
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    });
+                    const shaData = await shaResponse.json();
+                    this.data.lastSHA = shaData.sha;
+                    
                     await this.saveToLocalStorage();
                     this.render();
                     this.showToast('✅ Pulled from GitHub!');
                 } catch (error) {
-                    this.showToast('❌ Pull failed');
-                    console.error(error);
+                    this.showToast('❌ Pull failed: ' + error.message);
                 }
             },
             
             async pushToGitHub() {
-                this.showToast('Pushing to GitHub...');
                 try {
-                    if (!this.data.lastSHA) {
-                        const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
-                        const response = await fetch(url, {
-                            headers: { 'Authorization': `token ${GITHUB_TOKEN}` }
-                        });
-                        const data = await response.json();
-                        this.data.lastSHA = data.sha;
-                    }
-                    
                     const markdown = this.generateMarkdown();
-                    const content = btoa(unescape(encodeURIComponent(markdown)));
+                    const encoded = btoa(unescape(encodeURIComponent(markdown)));
                     
                     const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
                     const response = await fetch(url, {
                         method: 'PUT',
                         headers: {
                             'Authorization': `token ${GITHUB_TOKEN}`,
-                            'Content-Type': 'application/json'
+                            'Accept': 'application/vnd.github.v3+json'
                         },
                         body: JSON.stringify({
                             message: `TODO update - ${new Date().toLocaleString()}`,
-                            content: content,
+                            content: encoded,
                             sha: this.data.lastSHA
                         })
                     });
                     
-                    if (!response.ok) throw new Error('Push failed');
+                    if (!response.ok) throw new Error('Failed to push');
                     
                     const data = await response.json();
                     this.data.lastSHA = data.content.sha;
                     await this.saveToLocalStorage();
                     this.showToast('✅ Saved to GitHub!');
                 } catch (error) {
-                    this.showToast('❌ Save failed');
-                    console.error(error);
+                    this.showToast('❌ Push failed: ' + error.message);
                 }
             },
             
@@ -366,18 +353,17 @@ echo "Part 1 created..."response = await fetch(url, { headers: { 'Authorization'
                 for (let line of lines) {
                     const trimmed = line.trim();
                     
+                    // Section header
                     if (trimmed.startsWith('## ')) {
-                        if (currentSection && currentSection.tasks.length > 0) {
-                            sections.push(currentSection);
-                        }
+                        if (currentSection) sections.push(currentSection);
                         currentSection = {
                             id: 'section-' + sections.length,
                             title: trimmed.substring(3).trim(),
-                            collapsed: false,
                             tasks: []
                         };
                         currentTask = null;
                     }
+                    // Main task (starts with "- [ ]" or "- [x]")
                     else if (trimmed.match(/^- \[(x| )\] /) && currentSection) {
                         const completed = trimmed.includes('[x]');
                         const text = trimmed.substring(6).trim();
@@ -389,6 +375,7 @@ echo "Part 1 created..."response = await fetch(url, { headers: { 'Authorization'
                         };
                         currentSection.tasks.push(currentTask);
                     }
+                    // Subtask (indented with 2+ spaces)
                     else if (line.match(/^  +- \[(x| )\] /) && currentTask) {
                         const completed = trimmed.includes('[x]');
                         const text = trimmed.substring(6).trim();
@@ -400,22 +387,19 @@ echo "Part 1 created..."response = await fetch(url, { headers: { 'Authorization'
                     }
                 }
                 
-                if (currentSection && currentSection.tasks.length > 0) {
-                    sections.push(currentSection);
-                }
-                
+                if (currentSection) sections.push(currentSection);
                 return sections;
             },
             
             generateMarkdown() {
-                let md = '# SARAH\'S PERMANENT TO-DO LIST\n\n';
-                md += '**Always updated**\n';
+                let md = '# SARAH\'S PERMANENT TO-DO LIST\n\n**Always updated**\n';
                 md += `**Last updated:** ${new Date().toLocaleDateString()}\n\n---\n\n`;
                 
                 this.data.sections.forEach(section => {
                     md += `## ${section.title}\n\n`;
                     section.tasks.forEach(task => {
                         md += `- ${task.completed ? '[x]' : '[ ]'} ${task.text}\n`;
+                        // Add subtasks with indentation
                         if (task.subtasks && task.subtasks.length > 0) {
                             task.subtasks.forEach(sub => {
                                 md += `  - ${sub.completed ? '[x]' : '[ ]'} ${sub.text}\n`;
@@ -434,65 +418,83 @@ echo "Part 1 created..."response = await fetch(url, { headers: { 'Authorization'
                 
                 this.data.sections.forEach(section => {
                     const sectionDiv = document.createElement('div');
-                    sectionDiv.className = 'section' + (section.collapsed ? ' collapsed' : '');
+                    sectionDiv.className = 'section';
                     
-                    const completed = section.tasks.filter(t => t.completed).length;
-                    const total = section.tasks.length;
+                    const header = document.createElement('div');
+                    header.className = 'section-header';
+                    header.innerHTML = `<div class="section-title">${section.title}</div>`;
+                    sectionDiv.appendChild(header);
                     
-                    sectionDiv.innerHTML = `
-                        <div class="section-header" onclick="app.toggleSection('${section.id}')">
-                            <div class="section-title">${section.title}</div>
-                            <div class="section-count">${completed}/${total}</div>
-                        </div>
-                        <div class="section-tasks">
-                            ${section.tasks.map(task => this.renderTask(section.id, task)).join('')}
-                            <button class="btn-add-task" onclick="app.addTask('${section.id}')">+ Add Task</button>
-                        </div>
-                    `;
+                    section.tasks.forEach(task => {
+                        const taskDiv = document.createElement('div');
+                        taskDiv.className = 'task' + (task.completed ? ' completed' : '');
+                        
+                        const checkbox = document.createElement('input');
+                        checkbox.type = 'checkbox';
+                        checkbox.checked = task.completed;
+                        checkbox.onchange = () => this.toggleTask(section.id, task.id);
+                        
+                        const text = document.createElement('div');
+                        text.className = 'task-text';
+                        text.textContent = task.text;
+                        
+                        const buttons = document.createElement('div');
+                        buttons.className = 'task-buttons';
+                        buttons.innerHTML = `
+                            <button onclick="app.addSubtask('${section.id}', ${task.id})" title="Add subtask">+</button>
+                            <button onclick="app.editTask('${section.id}', ${task.id})" title="Edit">✏️</button>
+                            <button onclick="app.deleteTask('${section.id}', ${task.id})" title="Delete">🗑️</button>
+                        `;
+                        
+                        taskDiv.appendChild(checkbox);
+                        taskDiv.appendChild(text);
+                        taskDiv.appendChild(buttons);
+                        
+                        // Add subtasks if they exist
+                        if (task.subtasks && task.subtasks.length > 0) {
+                            const subtasksDiv = document.createElement('div');
+                            subtasksDiv.className = 'subtasks';
+                            
+                            task.subtasks.forEach((subtask, idx) => {
+                                const subDiv = document.createElement('div');
+                                subDiv.className = 'subtask' + (subtask.completed ? ' completed' : '');
+                                
+                                const subCheckbox = document.createElement('input');
+                                subCheckbox.type = 'checkbox';
+                                subCheckbox.checked = subtask.completed;
+                                subCheckbox.onchange = () => this.toggleSubtask(section.id, task.id, idx);
+                                
+                                const subText = document.createElement('div');
+                                subText.className = 'subtask-text';
+                                subText.textContent = subtask.text;
+                                
+                                const subButtons = document.createElement('div');
+                                subButtons.className = 'subtask-buttons';
+                                subButtons.innerHTML = `
+                                    <button onclick="app.editSubtask('${section.id}', ${task.id}, ${idx})" title="Edit">✏️</button>
+                                    <button onclick="app.deleteSubtask('${section.id}', ${task.id}, ${idx})" title="Delete">✕</button>
+                                `;
+                                
+                                subDiv.appendChild(subCheckbox);
+                                subDiv.appendChild(subText);
+                                subDiv.appendChild(subButtons);
+                                subtasksDiv.appendChild(subDiv);
+                            });
+                            
+                            taskDiv.appendChild(subtasksDiv);
+                        }
+                        
+                        sectionDiv.appendChild(taskDiv);
+                    });
+                    
+                    const addBtn = document.createElement('button');
+                    addBtn.className = 'add-task-btn';
+                    addBtn.textContent = '+ Add Task';
+                    addBtn.onclick = () => this.addTask(section.id);
+                    sectionDiv.appendChild(addBtn);
                     
                     container.appendChild(sectionDiv);
                 });
-            },
-            
-            renderTask(sectionId, task) {
-                let html = `
-                    <div class="task ${task.completed ? 'completed' : ''}">
-                        <input type="checkbox" ${task.completed ? 'checked' : ''} 
-                            onchange="app.toggleTask('${sectionId}', ${task.id})">
-                        <div class="task-text">${task.text}</div>
-                        <div class="task-actions">
-                            <button class="btn-icon btn-add" onclick="app.addSubtask('${sectionId}', ${task.id})" title="Add subtask">+</button>
-                            <button class="btn-icon btn-edit" onclick="app.editTask('${sectionId}', ${task.id})" title="Edit">✏️</button>
-                            <button class="btn-icon btn-delete" onclick="app.deleteTask('${sectionId}', ${task.id})" title="Delete">🗑️</button>
-                        </div>
-                    </div>
-                `;
-                
-                if (task.subtasks && task.subtasks.length > 0) {
-                    html += '<div class="subtasks">';
-                    task.subtasks.forEach((sub, idx) => {
-                        html += `
-                            <div class="subtask ${sub.completed ? 'completed' : ''}">
-                                <input type="checkbox" ${sub.completed ? 'checked' : ''}
-                                    onchange="app.toggleSubtask('${sectionId}', ${task.id}, ${idx})">
-                                <div class="subtask-text">${sub.text}</div>
-                                <div class="task-actions">
-                                    <button class="btn-icon btn-edit" onclick="app.editSubtask('${sectionId}', ${task.id}, ${idx})" title="Edit">✏️</button>
-                                    <button class="btn-icon btn-delete" onclick="app.deleteSubtask('${sectionId}', ${task.id}, ${idx})" title="Delete">✕</button>
-                                </div>
-                            </div>
-                        `;
-                    });
-                    html += '</div>';
-                }
-                
-                return html;
-            },
-            
-            toggleSection(sectionId) {
-                const section = this.data.sections.find(s => s.id === sectionId);
-                section.collapsed = !section.collapsed;
-                this.render();
             },
             
             async toggleTask(sectionId, taskId) {
@@ -516,13 +518,14 @@ echo "Part 1 created..."response = await fetch(url, { headers: { 'Authorization'
                 if (!text || !text.trim()) return;
                 
                 const section = this.data.sections.find(s => s.id === sectionId);
-                const maxId = section.tasks.length > 0 ? Math.max(...section.tasks.map(t => t.id)) : 0;
+                const maxId = Math.max(...section.tasks.map(t => t.id), 0);
                 section.tasks.push({
                     id: maxId + 1,
                     text: text.trim(),
                     completed: false,
                     subtasks: []
                 });
+                
                 await this.saveToLocalStorage();
                 this.render();
                 this.showToast('✅ Task added!');
@@ -534,12 +537,14 @@ echo "Part 1 created..."response = await fetch(url, { headers: { 'Authorization'
                 
                 const section = this.data.sections.find(s => s.id === sectionId);
                 const task = section.tasks.find(t => t.id === taskId);
-                const maxId = task.subtasks.length > 0 ? Math.max(...task.subtasks.map(s => s.id)) : taskId * 100;
+                const maxId = task.subtasks.length > 0 ? Math.max(...task.subtasks.map(s => s.id)) : taskId * 10;
+                
                 task.subtasks.push({
                     id: maxId + 1,
                     text: text.trim(),
                     completed: false
                 });
+                
                 await this.saveToLocalStorage();
                 this.render();
                 this.showToast('✅ Subtask added!');
@@ -549,6 +554,7 @@ echo "Part 1 created..."response = await fetch(url, { headers: { 'Authorization'
                 const section = this.data.sections.find(s => s.id === sectionId);
                 const task = section.tasks.find(t => t.id === taskId);
                 const newText = prompt('Edit task:', task.text);
+                
                 if (newText && newText.trim() && newText.trim() !== task.text) {
                     task.text = newText.trim();
                     await this.saveToLocalStorage();
@@ -562,6 +568,7 @@ echo "Part 1 created..."response = await fetch(url, { headers: { 'Authorization'
                 const task = section.tasks.find(t => t.id === taskId);
                 const subtask = task.subtasks[subIdx];
                 const newText = prompt('Edit subtask:', subtask.text);
+                
                 if (newText && newText.trim() && newText.trim() !== subtask.text) {
                     subtask.text = newText.trim();
                     await this.saveToLocalStorage();
@@ -572,28 +579,30 @@ echo "Part 1 created..."response = await fetch(url, { headers: { 'Authorization'
             
             async deleteTask(sectionId, taskId) {
                 if (!confirm('Delete this task?')) return;
+                
                 const section = this.data.sections.find(s => s.id === sectionId);
                 section.tasks = section.tasks.filter(t => t.id !== taskId);
                 await this.saveToLocalStorage();
                 this.render();
-                this.showToast('🗑️ Task deleted');
+                this.showToast('🗑️ Task deleted!');
             },
             
             async deleteSubtask(sectionId, taskId, subIdx) {
                 if (!confirm('Delete this subtask?')) return;
+                
                 const section = this.data.sections.find(s => s.id === sectionId);
                 const task = section.tasks.find(t => t.id === taskId);
                 task.subtasks.splice(subIdx, 1);
                 await this.saveToLocalStorage();
                 this.render();
-                this.showToast('🗑️ Subtask deleted');
+                this.showToast('🗑️ Subtask deleted!');
             },
             
             showToast(message) {
                 const toast = document.getElementById('toast');
                 toast.textContent = message;
-                toast.classList.add('active');
-                setTimeout(() => toast.classList.remove('active'), 3000);
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2500);
             }
         };
         
