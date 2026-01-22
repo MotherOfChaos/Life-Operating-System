@@ -614,18 +614,29 @@
                 };
                 
                 for (let line of lines) {
-                    line = line.trim();
-                    if (line.startsWith('## ')) {
+                    const trimmed = line.trim();
+                    
+                    // Section header
+                    if (trimmed.startsWith('## ')) {
                         if (currentSection && currentSection.tasks.length > 0) sections.push(currentSection);
-                        const title = line.substring(3).trim();
+                        const title = trimmed.substring(3).trim();
                         currentSection = { id: 'section-' + sections.length, title: title, collapsed: false, tasks: [] };
                         currentTask = null;
-                    } else if (line.match(/^- \[(x| )\] /) && currentSection) {
-                        const completed = line.includes('[x]');
-                        let text = line.substring(6).trim();
-                        text = cleanText(text); // Clean markdown formatting
+                    }
+                    // Main task (no indentation)
+                    else if (trimmed.match(/^- \[(x| )\] /) && currentSection) {
+                        const completed = trimmed.includes('[x]');
+                        let text = trimmed.substring(6).trim();
+                        text = cleanText(text);
                         currentTask = { id: taskId++, text: text, completed: completed, subtasks: [] };
                         currentSection.tasks.push(currentTask);
+                    }
+                    // Subtask (indented with 2+ spaces)
+                    else if (line.match(/^  +- \[(x| )\] /) && currentTask) {
+                        const completed = trimmed.includes('[x]');
+                        let text = trimmed.substring(6).trim();
+                        text = cleanText(text);
+                        currentTask.subtasks.push({ id: taskId++, text: text, completed: completed });
                     }
                 }
                 if (currentSection && currentSection.tasks.length > 0) sections.push(currentSection);
