@@ -299,21 +299,22 @@
         }
         
         .subtasks {
-            width: calc(100% - 10px);
+            width: calc(100% - 30px);
             max-width: 100%;
-            margin: 12px 0 0 20px;
-            padding: 10px;
+            margin: 12px 0 0 10px;
+            padding: 8px;
             border-left: 3px solid #9f7aea;
             background: #f7fafc;
             border-radius: 0 6px 6px 0;
             box-sizing: border-box;
+            overflow: visible;
         }
         
         .subtask {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px;
+            gap: 6px;
+            padding: 8px;
             font-size: 0.92em;
             background: white;
             margin: 6px 0;
@@ -322,6 +323,7 @@
             min-height: 44px;
             box-sizing: border-box;
             max-width: 100%;
+            width: 100%;
         }
         
         .subtask.completed {
