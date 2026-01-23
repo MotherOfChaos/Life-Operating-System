@@ -1,7 +1,7 @@
 # SARAH'S PERMANENT TO-DO LIST
 
 **Always updated**
-**Last updated:** 22/01/2026
+**Last updated:** 23/01/2026
 
 ---
 
@@ -9,7 +9,7 @@
 
 - [ ] Basic back hygiene (James routine) - 3 exercises
 - [ ] Drink water - Stay hydrated
-- [x] Meu's meds - AMODIP + BENEFORTIL + CYSTAID
+- [ ] Meu's meds - AMODIP + BENEFORTIL + CYSTAID
 
 ## URGENT - TODAY
 
@@ -19,14 +19,14 @@
 - [ ] PREP HOUSE FOR RAIN!!! staple gun and punting from workshop through Malaka
 - [ ] check payment not successful in Caixabank
 - [ ] fare NIE NUOVO!!
-- [ ] cita con Olga (update on ADHD, need help to start the legal case, too triggering for now
+- [x] cita con Olga (update on ADHD, need help to start the legal case, too triggering for now
+- [ ] invoice James per Sanitas
 
 ## URGENT - THIS WEEK
 
-- [ ] Follow up Oriol about Mutua and pension
+- [x] Follow up Oriol about Mutua and pension
 - [ ] READ EMAILS FROM SEG.SOCIAL
 - [ ] READ BILLS
-- [ ] add tasks to ToDo App
 - [ ] subtasks disappear when pulling latest from Git
 
 ## URGENT - THIS MONTH
