@@ -19,13 +19,10 @@
 - [ ] PREP HOUSE FOR RAIN!!! staple gun and punting from workshop through Malaka
 - [ ] check payment not successful in Caixabank
 - [ ] fare NIE NUOVO!!
-- [x] cita con Olga (update on ADHD, need help to start the legal case, too triggering for now
-- [x] invoice James per Sanitas
 - [ ] soldi Yakir cajero
 
 ## URGENT - THIS WEEK
 
-- [x] Follow up Oriol about Mutua and pension
 - [ ] READ EMAILS FROM SEG.SOCIAL
 - [ ] READ BILLS
 - [ ] subtasks disappear when pulling latest from Git
@@ -70,7 +67,6 @@
 ## TEATRO
 
 - [ ] create automation for theatre's invoices for Laura
-- [x] Get invoices from Oriol for Laura
 - [ ] Pagare facturas fringe (check with Laura)
 - [ ] Follow up on management transfer documentation
 - [ ] PNL whatsapp message - Create template
