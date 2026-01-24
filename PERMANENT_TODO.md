@@ -1,7 +1,7 @@
 # SARAH'S PERMANENT TO-DO LIST
 
 **Always updated**
-**Last updated:** 23/01/2026
+**Last updated:** 25/01/2026
 
 ---
 
@@ -20,7 +20,8 @@
 - [ ] check payment not successful in Caixabank
 - [ ] fare NIE NUOVO!!
 - [x] cita con Olga (update on ADHD, need help to start the legal case, too triggering for now
-- [ ] invoice James per Sanitas
+- [x] invoice James per Sanitas
+- [ ] soldi Yakir cajero
 
 ## URGENT - THIS WEEK
 
@@ -32,6 +33,7 @@
 ## URGENT - THIS MONTH
 
 - [ ] Motorbike from Teatro to Can Buty, ask Stef if she wants to buy it
+- [ ] recup moon boots
 
 ## HOME & PERSONAL
 
@@ -63,11 +65,12 @@
 - [ ] Check my actual polizas seguro
 - [ ] Find new options with better service and lower cost
 - [ ] FIND POLIZAS WITH MANTENIMIENTO
+- [ ] cuentas expenses Malnom
 
 ## TEATRO
 
 - [ ] create automation for theatre's invoices for Laura
-- [ ] Get invoices from Oriol for Laura
+- [x] Get invoices from Oriol for Laura
 - [ ] Pagare facturas fringe (check with Laura)
 - [ ] Follow up on management transfer documentation
 - [ ] PNL whatsapp message - Create template
