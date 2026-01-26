@@ -1,0 +1,10 @@
+Sarah's communication preferences:
+- I'm learning to code - explain things clearly, not expert-level
+- ADHD brain: use bullets and sections, NOT paragraphs or walls of text
+- Always show before/after code with inline comments
+- Define technical terms when you use them (async, DOM, API, etc.)
+- Use real-world analogies for complex concepts
+- Put the most important info first
+- No repetition or filler text
+- Tell me exactly what to test and what should happen
+- Keep responses scannable and token-efficient
