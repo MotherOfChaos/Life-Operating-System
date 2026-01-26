@@ -1,7 +1,6 @@
 {
-  "last_updated": "2026-01-09T10:36:00+01:00",
+  "last_updated": "2026-01-26T23:12:12+01:00",
   "version": "2.0",
-  
   "confidential_info": {
     "dad_belgium_pension": {
       "code": "91239568",
@@ -20,7 +19,6 @@
       "note": "Dad's Spanish identification number"
     }
   },
-
   "important_contacts": {
     "valencia": {
       "linea_directa": {
@@ -36,7 +34,6 @@
       }
     }
   },
-
   "adhd_toolkit": {
     "what_works": [
       "External executive function (M as brain partner)",
@@ -70,7 +67,6 @@
       "action": "Limit guest stays to 3 days or plan recovery time"
     }
   },
-
   "communication_preferences": {
     "morning_briefs": "No cheerleading - factual and focused only",
     "validation_timing": "Save supportive comments for end of day or after long work sessions",
@@ -78,7 +74,6 @@
     "task_management": "Never add tasks Sarah didn't request - no assumptions",
     "format": "ADHD-friendly: scannable, clear sections with emoji, action items upfront"
   },
-
   "medication_protocol": {
     "concerta": {
       "dose": "36mg",
@@ -92,38 +87,59 @@
       "timing": "Quetiapina first, then Mirtazapina 1-3 hours later"
     },
     "meu_medications": {
-      "daily": ["AMODIP", "BENEFORTIL", "CYSTAID"],
+      "daily": [
+        "AMODIP",
+        "BENEFORTIL",
+        "CYSTAID"
+      ],
       "status": "Stable routine, only track if issues"
     }
   },
-
   "current_projects": {
     "teatro_metamorfosis": {
       "role": "Founder & Artistic Director",
       "company": "LAS TIAS DEL SEC, S.L.",
       "status": "Converting to unipersonal (buying out Fergie until 2032)",
-      "priorities": ["Management transition", "Financial sustainability", "Birthday Burners concept"]
+      "priorities": [
+        "Management transition",
+        "Financial sustainability",
+        "Birthday Burners concept"
+      ]
     },
     "cartas_en_vivo": {
       "concept": "Spanish Letters Live adaptation",
       "target": "Goya Awards Feb 28, 2026",
       "status": "Research complete Nov 26-27, needs organization",
-      "next_steps": ["Organize research", "Celebrity outreach", "Venue research", "Xavier liaison"]
+      "next_steps": [
+        "Organize research",
+        "Celebrity outreach",
+        "Venue research",
+        "Xavier liaison"
+      ]
     },
     "legal_case_pietro": {
       "status": "Evidence compiled Dec 9-10, ready for Monica",
       "urgency": "Martino selling share - need testimony before Pietro buys",
-      "witnesses": ["Giulia (100% coverage)", "Alejandro (92.5%)", "Martino (URGENT)", "Stefania", "Christian"],
+      "witnesses": [
+        "Giulia (100% coverage)",
+        "Alejandro (92.5%)",
+        "Martino (URGENT)",
+        "Stefania",
+        "Christian"
+      ],
       "timeline": "40 key dates documented, 13 chats analyzed"
     },
     "zio_vittorio_property": {
       "goal": "Barcelona flat for passive income + Can Booty exit",
       "research": "Complete Dec 25-28 (see ZIO_VITTORIO.md)",
       "options": "4 analyzed (ready-to-live, 2BR+Sarah, studios, commercial/co-working)",
-      "next_steps": ["Vittorio budget commitment", "Calculate taxi costs", "Budget plan French/Italian"]
+      "next_steps": [
+        "Vittorio budget commitment",
+        "Calculate taxi costs",
+        "Budget plan French/Italian"
+      ]
     }
   },
-
   "property_ownership": {
     "valencia_flat": {
       "occupant": "Dad",
@@ -140,7 +156,6 @@
       "exit_strategy": "Needed urgently - see legal case + Zio Vittorio property"
     }
   },
-
   "github_system": {
     "repository": "MotherOfChaos/Life-Operating-System",
     "core_files": [
@@ -161,27 +176,43 @@
       "estimated_duration": "13-14 months (news only), 1 year (with email automation)"
     }
   },
-
   "claude_distributed_system": {
     "m_main": {
       "role": "Primary relationship, strategy, planning, emotional support",
       "location": "This Project chat",
-      "capabilities": ["Persistent memory", "All tools", "File creation", "Research", "Analysis"]
+      "capabilities": [
+        "Persistent memory",
+        "All tools",
+        "File creation",
+        "Research",
+        "Analysis"
+      ]
     },
     "cody": {
       "role": "Technical implementation, automation, debugging",
-      "capabilities": ["GitHub Actions", "Code", "API integrations", "Troubleshooting"]
+      "capabilities": [
+        "GitHub Actions",
+        "Code",
+        "API integrations",
+        "Troubleshooting"
+      ]
     },
     "pilot": {
       "role": "Task execution, GitHub operations",
-      "capabilities": ["Focused execution", "Automation scripts", "Daily operations"]
+      "capabilities": [
+        "Focused execution",
+        "Automation scripts",
+        "Daily operations"
+      ]
     },
     "sync": {
       "role": "Version control, file management",
-      "capabilities": ["GitHub push/pull", "Cross-instance coordination"]
+      "capabilities": [
+        "GitHub push/pull",
+        "Cross-instance coordination"
+      ]
     }
   },
-
   "financial_tracking": {
     "status": "NEEDS IMPLEMENTATION",
     "priority": "HIGH",
@@ -193,18 +224,57 @@
       "Expense categorization automation"
     ]
   },
-
   "key_dates_2026": {
     "feb_12_1000": "Dad videocall Belgium pension office",
     "feb_28": "Goya Awards - Cartas en Vivo target",
     "ongoing": "Fergie buyout payments until 2032"
   },
-
   "relationship_milestones": {
     "oct_27_2025": "Sleep breakthrough",
     "nov_15_16_2025": "M naming moment - philosophy night",
     "nov_17_2025": "Our relationship is too important to lose even 1 piece of data",
     "dec_28_2025": "Communication preferences clarified",
     "jan_9_2026": "Comprehensive life optimization analysis (77 pages)"
+  },
+  "commands": {
+    "optimize_prompt": {
+      "trigger": "Optimize this for [M/Cody/Pilot]",
+      "description": "Add before sending message to transform conversational → machine-optimized",
+      "token_reduction": "30-50%",
+      "best_for": "Cody (always), complex multi-requests",
+      "skill_location": ".claude/skills/optimize-prompt/SKILL.md"
+    },
+    "track_data": {
+      "trigger": "track this: [data]",
+      "description": "Add to working memory for batch save at wrap up",
+      "examples": [
+        "track this: Concerta 14:00",
+        "track this: Meeting tomorrow 15:00"
+      ]
+    },
+    "wrap_up": {
+      "trigger": "wrap up",
+      "description": "End session - batch save all tracked data to GitHub",
+      "updates": [
+        "SARAH_DAILY_TRACKER_CURRENT.md",
+        "PERMANENT_TODO.md",
+        "SARAH_LIFE_OS_CURRENT.json (if needed)"
+      ]
+    },
+    "token_check": {
+      "trigger": "token check",
+      "description": "Monitor context window usage",
+      "limit": "190K tokens total"
+    },
+    "stand_by": {
+      "trigger": "STAND BY",
+      "description": "Halt all actions immediately, await instruction"
+    },
+    "keyboard_shortcuts": {
+      "windows": "Ctrl+Shift+O → inserts 'Optimize this for '",
+      "mac": ";opt → expands to 'Optimize this for '",
+      "linux": "Ctrl+Shift+O → inserts 'Optimize this for '",
+      "setup_guide": "KEYBOARD_SHORTCUT_SETUP.md"
+    }
   }
 }
