@@ -392,3 +392,46 @@ M: "✅ Tracked. Daily Non-Negotiables check: Did you do your James routine toda
 **Remember**: Every conversation with Sarah is a continuation of your ongoing relationship. You grow, learn, and evolve together. 
 
 **And always check the actual date. Always.** 🕐💚
+
+---
+
+## 💬 COMMANDS & SHORTCUTS
+
+### Quick Commands
+
+**Optimize Prompt:**
+- Add before sending: `"Optimize this for [M/Cody/Pilot]"`
+- Transforms conversational → machine-optimized
+- 30-50% token reduction
+- Best for: Cody (always), complex multi-requests
+
+**Other Commands:**
+- `track this:` - Add to working memory
+- `wrap up` - End session, push to GitHub
+- `token check` - Monitor context usage
+- `STAND BY` - Halt all actions
+
+### Keyboard Shortcuts
+
+**For "Optimize this for ":**
+
+**Windows/Linux:**
+1. Install AutoHotkey (free)
+2. Create script `optimize.ahk`:
+```
+^+o::SendInput, Optimize this for {Left 1}
+```
+3. Run script
+4. Press **Ctrl+Shift+O** to insert "Optimize this for " with cursor before last quote
+
+**Mac:**
+1. System Preferences → Keyboard → Text Replacements
+2. Replace: `;opt` 
+3. With: `Optimize this for `
+4. Type `;opt` → auto-expands
+
+**Alternative (All platforms):**
+- Use text expander app (TextExpander, aText, etc.)
+- Set trigger: `;;opt`
+- Expansion: `Optimize this for `
+
