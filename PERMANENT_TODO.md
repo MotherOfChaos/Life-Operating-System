@@ -1,7 +1,7 @@
 # SARAH'S PERMANENT TO-DO LIST
 
 **Always updated**
-**Last updated:** 25/01/2026
+**Last updated:** 27/01/2026
 
 ---
 
@@ -9,7 +9,7 @@
 
 - [ ] Basic back hygiene (James routine) - 3 exercises
 - [ ] Drink water - Stay hydrated
-- [ ] Meu's meds - AMODIP + BENEFORTIL + CYSTAID
+- [x] Meu's meds - AMODIP + BENEFORTIL + CYSTAID
 
 ## URGENT - TODAY
 
@@ -20,6 +20,8 @@
 - [ ] check payment not successful in Caixabank
 - [ ] fare NIE NUOVO!!
 - [ ] soldi Yakir cajero
+- [ ] farmacia
+- [ ] knfrom Andres
 
 ## URGENT - THIS WEEK
 
@@ -100,7 +102,7 @@
 - [ ] Follow up DENNYS: Money from Ayto, Quote for works, Permits and timings
 - [ ] Dad videocall Belgium pension office - Feb 12 at 10am (code: 91239568, hotmail.it)
 - [ ] Call LINEA DIRECTA (919 180 012, 09:00-18:00) - kitchen leak, Exp: 15600223
-- [ ] Text Andreu - Share AirCon costs instalaciÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³n with cherry picker + initial costs of messa a terra)
+- [ ] Text Andreu - Share AirCon costs instalaciÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³n with cherry picker + initial costs of messa a terra)
 - [ ] Follow up on Dependencia (letter to arrive end of February)
 - [ ] Follow up AYUDA SUMINISTRO OXYGENO (registered January 9)
 
@@ -115,7 +117,7 @@
 
 - [ ] THINK ABOUT SELLING: VESPA, rino, moto
 - [ ] SAILING LICENCE!!! get studying material, info, money back from Malaka
-- [ ] TRIP TO ITALY: ORGANIZZA VIAGGIO A ROMA: (Per cambio domicilio e nuova carta identitÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ  // Check my calendar for availability // Check flights // Check in with Diego for availability // Find info from Comune di Roma)
+- [ ] TRIP TO ITALY: ORGANIZZA VIAGGIO A ROMA: (Per cambio domicilio e nuova carta identitÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ  // Check my calendar for availability // Check flights // Check in with Diego for availability // Find info from Comune di Roma)
 
 ## LEARNING
 
@@ -133,8 +135,7 @@
 - [ ] Find system that chats with multiple AI at same time (see Yakir's notes)
 - [ ] What's Substack? Can I add it to my daily digest news? How does it work?
 
-
-## 🛒 GROCERIES
+## ð GROCERIES
 
 - [ ] Burro
 - [ ] Uova
