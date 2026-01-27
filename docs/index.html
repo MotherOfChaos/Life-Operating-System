@@ -531,6 +531,28 @@
                     this.showToast('Pulled from GitHub!');
                     status.textContent = 'Synced';
                     status.className = 'sync-status';
+                    
+                    // AUTO-RELOAD: Check if app code was updated, reload if needed
+                    setTimeout(() => {
+                        const appUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/docs/index.html`;
+                        fetch(appUrl, {
+                            headers: {
+                                'Authorization': `token ${token}`,
+                                'Accept': 'application/vnd.github.v3+json'
+                            }
+                        }).then(r => r.json()).then(appData => {
+                            const cachedAppSHA = localStorage.getItem('appCodeSHA');
+                            if (cachedAppSHA && cachedAppSHA !== appData.sha) {
+                                // App code changed! Auto-reload to get new version
+                                this.showToast('New app version! Reloading...');
+                                setTimeout(() => location.reload(true), 1500);
+                            } else {
+                                // First time or no change, just save current SHA
+                                localStorage.setItem('appCodeSHA', appData.sha);
+                            }
+                        });
+                    }, 500);
+                    
                 } catch (error) {
                     this.showToast('Pull failed');
                     status.textContent = 'Failed';
