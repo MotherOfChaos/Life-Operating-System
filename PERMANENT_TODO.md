@@ -34,6 +34,17 @@
 - [ ] Motorbike from Teatro to Can Buty, ask Stef if she wants to buy it
 - [ ] recup moon boots
 
+## ð GROCERIES
+
+- [ ] Burro
+- [ ] Uova
+- [ ] Vino
+- [ ] Cheese
+- [ ] Carne
+- [ ] Insalata
+- [ ] Verdura
+
+
 ## HOME & PERSONAL
 
 - [ ] ATTICO WORKS: Find spray to make fabric ignifugo (fireproof spray)
@@ -134,14 +145,4 @@
 - [ ] Set up automatic backup system
 - [ ] Find system that chats with multiple AI at same time (see Yakir's notes)
 - [ ] What's Substack? Can I add it to my daily digest news? How does it work?
-
-## ð GROCERIES
-
-- [ ] Burro
-- [ ] Uova
-- [ ] Vino
-- [ ] Cheese
-- [ ] Carne
-- [ ] Insalata
-- [ ] Verdura
 
