@@ -551,16 +551,16 @@
                 status.className = 'sync-status syncing';
                 
                 try {
-                    if (!this.data.lastSHA) {
-                        const getUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
-                        const getResponse = await fetch(getUrl, {
-                            headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
-                        });
-                        if (getResponse.ok) {
-                            const getData = await getResponse.json();
-                            this.data.lastSHA = getData.sha;
-                        }
+                    // ALWAYS fetch latest SHA before pushing (file might have been updated elsewhere!)
+                    const getUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+                    const getResponse = await fetch(getUrl, {
+                        headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+                    });
+                    if (!getResponse.ok) {
+                        throw new Error('Could not fetch latest file SHA');
                     }
+                    const getData = await getResponse.json();
+                    this.data.lastSHA = getData.sha;
                     
                     const markdown = this.generateTODOMarkdown();
                     const encodedContent = btoa(unescape(encodeURIComponent(markdown)));
