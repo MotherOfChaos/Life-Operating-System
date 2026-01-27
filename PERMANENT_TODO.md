@@ -133,3 +133,14 @@
 - [ ] Find system that chats with multiple AI at same time (see Yakir's notes)
 - [ ] What's Substack? Can I add it to my daily digest news? How does it work?
 
+
+## 🛒 GROCERIES
+
+- [ ] Burro
+- [ ] Uova
+- [ ] Vino
+- [ ] Cheese
+- [ ] Carne
+- [ ] Insalata
+- [ ] Verdura
+
