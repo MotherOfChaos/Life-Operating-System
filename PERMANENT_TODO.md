@@ -102,6 +102,12 @@
 - [ ] Create roadmap with M
 - [ ] Devil's advocate strategy session
 
+## ATTICO WORKS
+
+- [ ] 
+
+---
+
 ## MALNOM - Property
 
 - [ ] FOLLOW UP: pared malnom - A que punto estamos con la finca a lado?
