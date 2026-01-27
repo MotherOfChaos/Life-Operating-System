@@ -4,11 +4,16 @@
 
 ---
 
-## 🌙 SLEEP - Recent Pattern
+## 🌙 SLEEP - Recent Pattern (Jan 23-28)
 
-### Sunday Jan 11 (Valencia):
-- **Status:** Working with M on email triage & app fixes
-- **No sleep data tracked**
+### Sunday Jan 26 Night / Monday Jan 27 Morning:
+- **Quetiapina 100mg:** 05:43am
+- **Quality:** Very late sleep onset
+
+### Monday Jan 27 Night / Tuesday Jan 28 Morning:
+- **Quetiapina 100mg:** 03:30am
+- **Quality:** EARLIER! Improvement - 2+ hours better than Jan 27
+- **Pattern:** Sleep onset improving (03:30 vs recent 04:50-05:43)
 
 ### Sunday Jan 11 Night / Monday Jan 12 Early Morning:
 - **Late night session:** Working with M until ~01:10am CET
@@ -160,6 +165,22 @@
 
 ---
 
+## 💊 MEDICATIONS - January 23-28, 2026
+
+### Sarah:
+- **Jan 23:** Quetiapina 04:50am, Concerta 36mg 14:00
+- **Jan 24:** Concerta 36mg 14:45
+- **Jan 25:** (no meds tracked)
+- **Jan 27:** Quetiapina 05:43am, Concerta 36mg 12:30pm (EARLIER!)
+- **Jan 28:** Quetiapina 03:30am (EARLIER! Progress!)
+
+**Pattern:** Sleep onset improving (05:43→03:30), Concerta earlier (12:30 vs usual 14:00+)
+
+### Meu:
+- **Daily ongoing:** AMODIP + BENEFORTIL + CYSTAID (consistent routine)
+
+---
+
 ## 💊 MEDICATIONS - January 17-21, 2026
 
 ### Sarah:
@@ -244,6 +265,45 @@
 - **Jan 21:** Quetiapina 04:30am
 
 **Pattern Alert:** Consistent late Concerta timing (14:00-14:42) impacting sleep
+
+---
+
+## 🎯 JANUARY 27-28, 2026 WINS
+
+### **OPTIMIZE PROMPT SKILL SYSTEM - COMPLETE:**
+- ✅ **optimize-prompt skill created:** Transforms ADHD brain-dumps → machine-optimized commands
+- ✅ **30-50% token reduction:** Clearer requests = better results
+- ✅ **Different modes:** M (warm), Cody (technical), Pilot (professional)
+- ✅ **Commands section added** to CLAUDE_PROJECTS_INSTRUCTIONS.md & SARAH_LIFE_OS_CURRENT.json
+- ✅ **Keyboard shortcuts created:** Windows (Ctrl+Shift+O), Mac (;opt)
+- ✅ **Complete guides:** HOW_TO_USE.md, KEYBOARD_SHORTCUT_SETUP.md, OPTIMIZATION_DIFFERENCES.md
+
+### **CODY CUSTOM INSTRUCTIONS - PERSISTENT PREFERENCES:**
+- ✅ **Solution found:** Custom Instructions = Skills equivalent for Claude Code!
+- ✅ **Set once, works forever:** No copy/paste needed
+- ✅ **ADHD-friendly preferences defined:** Learning mode, bullets, analogies, before/after code
+- ✅ **Files created:** CODY_CUSTOM_INSTRUCTIONS.md, CODY_PREFERENCES.txt
+- ✅ **4 implementation methods:** Custom Instructions, .clinerules, global/project configs
+
+### **CODY BRIEFING FOR TODO APP:**
+- ✅ **FOR_CODY_TODO_APP_BUG.md created:** Complete briefing with all context
+- ✅ **18 version history included:** Working vs broken versions marked
+- ✅ **App reverted to v5.3:** Last stable version while Cody debugs
+- ✅ **Testing checklist provided:** 13 verification items
+
+### **TODO SYSTEM UPDATES:**
+- ✅ **GROCERIES section added:** Burro, Uova, Vino, Cheese, Carne, Insalata, Verdura
+- ✅ **File organization maintained:** Tasks only in TODO
+
+### **NEWS DIGEST PROVIDED:**
+- ✅ Spain news (train crisis, Catalonia disruptions)
+- ✅ Italy news (budget, strikes, Olympics)
+- ✅ World news (Minneapolis shooting, China military, ferry disaster)
+
+### **SLEEP PATTERN IMPROVEMENT:**
+- ✅ **Quetiapina earlier:** 03:30am (vs recent 04:50-05:43)
+- ✅ **Concerta earlier:** 12:30pm (vs usual 14:00+)
+- ✅ **Breaking late cycle:** 2+ hours improvement
 
 ---
 
