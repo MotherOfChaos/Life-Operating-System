@@ -579,7 +579,11 @@
                         })
                     });
                     
-                    if (!putResponse.ok) throw new Error('Failed');
+                    if (!putResponse.ok) {
+                        const errorData = await putResponse.json();
+                        console.error('GitHub API Error:', errorData);
+                        throw new Error(`GitHub API: ${errorData.message || 'Failed'}`);
+                    }
                     
                     const putData = await putResponse.json();
                     this.data.lastSHA = putData.content.sha;
@@ -589,7 +593,8 @@
                     status.textContent = 'Synced';
                     status.className = 'sync-status';
                 } catch (error) {
-                    this.showToast('Push failed');
+                    console.error('Push error details:', error);
+                    this.showToast(`Push failed: ${error.message}`);
                     status.textContent = 'Failed';
                     status.className = 'sync-status pending';
                 }
